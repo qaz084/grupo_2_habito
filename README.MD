@@ -24,4 +24,5 @@ Estuvimos analizando diferentes sitios y basamos nuestros wireframes en aquellos
 
 # Diseño de Wireframes
 
-Se realizo la estructura y el diseño de todas las secciones en Figma. Diseño final : [link](https://www.figma.com/proto/N0mxfqmGKBOaNLa0NDVqed/Wireframes?node-id=128%3A75&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=128%3A75)
+Se realizó la estructura y el diseño de todas las secciones en Figma.
+Diseño final: [link](https://www.figma.com/proto/N0mxfqmGKBOaNLa0NDVqed/Wireframes?node-id=128%3A75&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=128%3A75)
