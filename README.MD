@@ -21,3 +21,8 @@ Estuvimos analizando diferentes sitios y basamos nuestros wireframes en aquellos
 - **NAHUEL**: 29 años, Administrativo, amante del basquet, el cine y los videojuegos.
 - **JUAN**: 34 años, actualmente Customer Success Manager en Odoo, empresa dedicada al desarrollo y venta de software de gestión de procesos empresariales. Me encanta el fútbol, el surf y viajar.
 - **JONATHAN**: 34 años, Docente de informática y TICS y diseñador Freelance. Apasionado por la tecnología, el cine y los videojuegos.
+- 
+
+# Diseño de Wireframes
+Se realizo la estructura y el diseño de todas las secciones en Figma.
+[title](https://www.figma.com/proto/N0mxfqmGKBOaNLa0NDVqed/Wireframes?node-id=128%3A75&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=128%3A75)
