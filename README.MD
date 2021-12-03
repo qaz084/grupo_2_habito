@@ -26,3 +26,6 @@ Estuvimos analizando diferentes sitios y basamos nuestros wireframes en aquellos
 
 Se realizó la estructura y el diseño de todas las secciones en Figma.
 - https://www.figma.com/proto/N0mxfqmGKBOaNLa0NDVqed/Wireframes?node-id=128%3A75&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=128%3A75
+
+# Tablero de Trabajo
+- https://trello.com/b/lJuQ97no/proyecto-integrador-dh
