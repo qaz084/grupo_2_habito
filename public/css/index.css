@@ -126,8 +126,91 @@ h3 {
     margin-top: 25px;
 }
 
+main{
+    font-family: "roboto";
+}
 
+.categories{
+    color: rgb(68, 68, 68);
+}
 
+.products{
+    width: 80%;
+    margin: auto;
+}
+
+article{
+    justify-self: center;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+.product-description{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+    
+}
+
+.prices{
+    color: #7ccc7c; 
+    font-weight: 400;
+    margin-right: 80px;
+}
+
+.product-name{
+    font-weight: 600;
+    margin-left: 20px;
+    color: #666;
+}
+
+.free-shipping{
+    align-self: center; /* le agregue un camion de envio gratis, si no gusta lo sacamos, lo agrego porque creo que es un dato importante*/
+    color: #7ccc7c;
+    margin-right: 20px;
+}
+
+.newsletter{
+    background-color:#f2f0d5;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.newsletter-text{
+    width: 324px;
+    margin: auto;
+    font-weight: 800;
+    font-size: 24px;
+    font-family: "cursive";
+
+}
+
+.suscribe{
+    width: 150px;
+    background-color: #dbc0b6;
+    border-radius: 7px;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 15px;
+}
+
+.formulario-suscribe{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.search{
+    align-self: center;
+}
+
+#search{
+    width: 220px;
+    height: 25px;
+}
 /* ---------- Version Tablet ----------------------------------------------------------------------------------------------- */
 
 @media (min-width: 481px) {
