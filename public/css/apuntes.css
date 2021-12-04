@@ -1,4 +1,5 @@
 /* COLORES --------------------------------------------------------
+
 Paleta de Colores 1
 crema: #f2f0d5
 naranja: #f2c53d
@@ -14,6 +15,7 @@ violeta: #d2cff9
 
 
 MEDIDAS DE PANTALLA ===--------------------------------------------
+
  mobile: 0 - 480
  tablet: 481-768
  laptop: 769 - 1279
@@ -23,13 +25,20 @@ MEDIDAS DE PANTALLA ===--------------------------------------------
 
 
 /* ACCESO A FONT AWESOME-------------------------------------------
+
 https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free
+
 */
 
-/* LOGOS----------------------------------------------------------
+/* Iconos ----------------------------------------------------------
 
 Lupa: <i class="fas fa-search"></i>
 Carrito: <i class="fas fa-shopping-cart"></i>
 User: <i class="fas fa-user"></i>
+
+Twitter: <i class="fab fa-twitter"></i>
+Facebook: <i class="fab fa-facebook"></i>
+Instagram: <i class="fab fa-instagram"></i>
+Youtube: <i class="fab fa-youtube"></i>
 
 */
