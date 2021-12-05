@@ -126,6 +126,9 @@ main{
 
 .categories{
     color: rgb(68, 68, 68);
+    margin-left: 31%;
+    margin-right: 31%;
+    width: 38%; /* para que la categoria quede centrada, hay que crear una clase por categoria, ya que tienen largos distintos por ejemplo short y camperas, al ser largos diferentes no quedan todas bien centradas, si les parece asi, en dos minutos lo hago*/
 }
 
 .products{
@@ -146,25 +149,44 @@ article{
     width: 100%;
     justify-content: space-between;
     font-size: 20px;
+    flex-direction: column-reverse;
+    background-color: white;
+}
+
+.off-price{
+    display: flex;
     
 }
 
 .prices{
     color: #7ccc7c; 
     font-weight: 400;
-    margin-right: 80px;
+    margin-left: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.off{
+    font-weight: 600;
+    color: #666;
+    margin-left: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .product-name{
     font-weight: 600;
-    margin-left: 20px;
     color: #666;
+    margin-left: 5%;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .free-shipping{
-    align-self: center; /* le agregue un camion de envio gratis, si no gusta lo sacamos, lo agrego porque creo que es un dato importante*/
+    align-self:flex-end; /* le agregue un camion de envio gratis, si no gusta lo sacamos, lo agrego porque creo que es un dato importante*/
     color: #7ccc7c;
-    margin-right: 20px;
+    margin-right: 5%;
+    margin-top: 5px;
 }
 
 .newsletter{
@@ -314,6 +336,15 @@ article{
         padding-left: 25px;
     }
 
+    .products{
+        justify-content: space-around;
+    }
+
+    .product-article{
+        width:29%;
+        margin: 12px;
+    }
+
 }
 
 /* ---------- Version Monitor ----------------------------------------------------------------------------------------------- */
@@ -326,4 +357,15 @@ article{
     .header-container {
         background-color: #f2f0d5;
     }
+    
+    .products{
+        justify-content: space-around;
+    }
+
+    .product-article{
+        width:22.5%;
+        margin: 12px;
+    }
+
+
 }
