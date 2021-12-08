@@ -9,104 +9,110 @@
 </head>
 <body>
     <header>
-        <div>
-            <h2>HÁBITO</h2>
-            <form action="/">
-                <button type="submit">Volver</button>
+        <div class="logo-buttontop">
+            <a href="/"><img src="img/Logo-prueba.png" alt=""></a>
+            <form action="/" method="get" class="top-button">
+                <button type="submit" class="top-button">Volver</button>
             </form>
         </div>
-        <div>
-            <p>Datos de contacto</p>
-            <p>¿Ya tienes cuenta? <a href="/login"> Inicia sesion</a> </p>
+        <div class="data-contact">
+            <p class="data-contact1">Datos de contacto</p>
+            <p >¿Ya tienes cuenta? <a href="/login"> Iniciar sesion</a> </p>
         </div>
     </header>
     <main>
-        <div>
+        <div class="email-ofertas">
             <form action="" method="get"></form>
-            <label for="email">e-mail</label>
-            <input type="text" name="novedades" id="email" placeholder="Quiero recibir novedades a mi e-mail">           
+            <input type="text" name="novedades"  placeholder="e-mail" class="inputs">
+            <div class="recibir-ofertas">
+                <input type="checkbox" name="recibirOfertas" value="recibirOfertas" id="recibirOfertas">
+                <label for="recibirOfertas" >Quiero recibir ofertas y novedades en mi correo.</label>     
+            </div>      
             </form>
         </div>
         <h2>Datos de envío</h2>
         <nav>
             <form action="" method="get">
                 <div>
-                    <input type="text" name="nombre" placeholder="Nombre:" >
+                    <input type="text" name="nombre" placeholder="Nombre" class="inputs">
                 </div>
                 <div>
-                    <input type="text" name="apellido" placeholder="Apellido:">
+                    <input type="text" name="apellido" placeholder="Apellido" class="inputs">
                 </div>
                 <div>
-                    <input type="text" name="direccion" placeholder="Direccion:">
+                    <input type="text" name="direccion" placeholder="Direccion" class="inputs">
                 </div>
                 <div>
-                    <input type="text" name="provincia" placeholder="Provincia:">
+                    <input type="text" name="provincia" placeholder="Provincia" class="inputs">
                 </div>
                 <div>
-                    <input type="text" name="localidad" placeholder="localidad:">
-                    <input type="text" name="codigoPostar" placeholder="Codigo Postal:">
+                    <input type="text" name="localidad" placeholder="localidad" class="inputs">
+                    <input type="number" name="codigoPostar" placeholder="Codigo Postal" class="inputs">
                 </div>
                 <div>
-                    <input type="number" name="telefono" placeholder="Telefono:">
+                    <input type="number" name="telefono" placeholder="Telefono" class="inputs">
                 </div>
-                <div>
+                <div class="save-info">
                     <input type="checkbox"  name="guardarDatosDeEnvio" id="guardarDatos" value="GuardarMisDatosDeEnvio">
-                    <label for="guardarDatos">Guardar informacion para proximas compras</label>
+                    <label for="guardarDatos" >Guardar informacion para proximas compras</label>
                 </div>     
             </form>      
         </nav>
         <nav>
             <nav>
-                <div>
-                    <p>1x producto</p>
-                    <p>$1700</p>
+                <h2 class="productos">Productos</h2>
+                <div class="product-price">
+                    <p class="product">1x producto</p>
+                    <p class="price">$1700</p>
                 </div>
                 <div>
-                    <p>M (talle)</p>
+                    <p class="talle">M</p>
                 </div>
-                <div>
-                    <p>(Azul)</p>
-                    <form action="" method="get"></form>
-                    <button type="??">quitar</button>
+                <div class="color-quitar">
+                    <p class="color"><i class="fas fa-dot-circle"></i></p>
+                    <form action="" method="get">
+                        <button type="submit" class="button-quitar">quitar</button>
+                    </form>
                 </div>
             </nav>
             <nav>
-                <div>
-                    <p>1x producto</p>
-                    <p>$2500</p>
+                <div class="product-price">
+                    <p class="product">1x producto</p>
+                    <p class="price">$2500</p>
                 </div>
                 <div>
-                    <p>L (talle)</p>
+                    <p class="talle">L </p>
                 </div>
-                <div>
-                    <p>(Amarillo)</p>
-                    <form action="" method="get"></form>
-                    <button type="??">quitar</button>
+                <div class="color-quitar">
+                    <p class="color"><i class="fas fa-dot-circle"></i></p>
+                    <form action="" method="get">
+                        <button type="submit" class="button-quitar">quitar</button>
+                    </form>
                 </div>
             </nav>
         </nav>
-        <div>
+        <div class="discount">
             <form action="" method="get">
                 <input type="text" name="codigoDescuento" placeholder="Codigo de descuento" id="codigoDescuento">
-                <button type="submit">Aplicar</button>
+                <button type="submit" class="button-discount">Aplicar</button>
             </form>
         </div>
         <nav>
-            <div>
+            <div class="subtotal-price">
                 <p>Subtotal</p>
-                <p>$4200</p>
+                <p class="price">$4200</p>
             </div>
-            <div>
+            <div class="envio-price">
                 <p>Envio</p>
-                <p>$500</p>
+                <p class="price">$500</p>
             </div>
-            <div>
+            <div class="total-price">
                 <p>TOTAL</p>
-                <p>$4700</p>
+                <p class="price">$4700</p>
             </div>
-            <div>
-                <form action="" method="get">
-                    <button type="submit">COMPRAR</button>
+            <div class="buy">
+                <form action="" method="get" class="buy">
+                    <button type="submit" class="button-buy">COMPRAR</button>
                 </form>
             </div>
         </nav>
