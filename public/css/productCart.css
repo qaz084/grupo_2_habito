@@ -116,7 +116,6 @@ main{
     margin-right: 15px;
 }
 
-
 .data-contact{
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +155,10 @@ main{
 }
 .price{
     font-size: 18px;
-    
+}
+.discount-input{
+    display: flex;
+    justify-content: center;
 }
 .color{
     color: blue;
@@ -166,7 +168,14 @@ main{
     color: rgba(90, 75, 10, 0.534);
     text-decoration: underline;
 }
-
+.img-cart{
+    width: 150px;
+    height: 200px;
+}
+.img-cart-container{
+    display: flex;
+    justify-content: center;
+}
 .talle{
     text-decoration: underline;
 }
@@ -200,6 +209,7 @@ main{
     border-radius: 3px;
     font-size: 15px;
     transition: 450ms;
+    margin-left: 15px;
 }
 .button-discount:hover{
     background-color: aqua;
@@ -227,7 +237,7 @@ main{
     font-size: 15px;
     margin-bottom: 100px;
     margin-top: 20px;
-    padding: 7px;
+    padding: 10px 50px 10px 50px;
     transition: 450ms;
 }
 .button-buy:hover{
@@ -235,7 +245,7 @@ main{
 }
 
 .buy{
-    width: 87px;
+    width: 171px;
     margin: auto;
 }
 .cart{
@@ -349,7 +359,6 @@ main{
         border-radius: 5px;
         padding: 5px;
     }
-
     .middle-bottom {
         display: flex;
         flex-wrap: wrap;
@@ -358,10 +367,10 @@ main{
         margin: auto;
         max-width: 1280px;
     }
-
     main{
         display: flex;
         justify-content: center;
+        flex-direction: row;
     }   
     .lefts{
         width: 40%;
@@ -374,6 +383,7 @@ main{
         width: 90%;
     }
     .cart{
+        width: 100%;
         margin-right: 0px;
     }
     .discount{
