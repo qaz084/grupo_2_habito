@@ -485,8 +485,8 @@ main{
     .header-icons {
         width: 15%;
         align-self: flex-end;
-        position: relative;
-        top: -30px
+        position: absolute;
+        top: 45%;
     }
 
     .navbar {
@@ -586,11 +586,9 @@ main{
     }
 
     body {
-
+        max-width: 1200px;
         margin: auto;
     }
-    
-
 }
 
 /* ---------- Version Monitor ----------------------------------------------------------------------------------------------- */
@@ -600,10 +598,5 @@ main{
     .header-container {
         background-color: #f2f0d5;
     }
-
-    body {
-        max-width: 1200px;
-    }
-    
 }
 
