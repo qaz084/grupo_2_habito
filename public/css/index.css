@@ -26,11 +26,8 @@
     top: 0;
     z-index: 10;
     width: 100%;
+    max-width: 1200px;
     height: 100px;
-}
-
-.bottom-container {
-        
 }
 
 .main-container {
@@ -341,7 +338,8 @@ article{
     .top-container {
         flex-direction: column;
         padding: 2% 5%;
-        
+        margin: auto;
+        height: 20%;    
     }
 
     .logo-nav {
@@ -354,9 +352,9 @@ article{
 
     .header-icons {
         width: 15%;
-        display: flex;
-        flex-wrap: wrap;
         align-self: flex-end;
+        position: relative;
+        top: -30px
         
     }
 
@@ -427,14 +425,16 @@ article{
         margin: 12px;
     }
 
+    body {
+        max-width: 1000px;
+        margin: auto;
+    }
+
 }
 
 /* ---------- Version Monitor ----------------------------------------------------------------------------------------------- */
 
 @media (min-width: 1280px) {
-    .top-container {
-        max-width: 1280px;
-    }
 
     .header-container {
         background-color: #f2f0d5;
@@ -449,5 +449,7 @@ article{
         margin: 12px;
     }
 
-
+    body {
+        max-width: 1200px;
+    }
 }

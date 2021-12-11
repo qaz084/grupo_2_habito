@@ -26,11 +26,8 @@
     top: 0;
     z-index: 10;
     width: 100%;
+    max-width: 1200px;
     height: 100px;
-}
-
-.bottom-container {
-        
 }
 
 .main-container {
@@ -174,7 +171,6 @@ h3 {
 main{
     font-family: "Roboto";    
     position: relative;
-    top: 100%;
 }
 
 .categories{
@@ -284,7 +280,7 @@ main{
 .product-detail {
     position: relative;
     background-color: white;
-    margin-top: 10px ;
+    margin-top: 10px;
 }
 
 .product-detail-top img {
@@ -475,7 +471,8 @@ main{
     .top-container {
         flex-direction: column;
         padding: 2% 5%;
-        
+        margin: auto;
+        height: 20%;
     }
 
     .logo-nav {
@@ -483,15 +480,13 @@ main{
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
-        width: 100%;
     }
 
     .header-icons {
         width: 15%;
-        display: flex;
-        flex-wrap: wrap;
         align-self: flex-end;
-        
+        position: relative;
+        top: -30px
     }
 
     .navbar {
@@ -569,6 +564,31 @@ main{
     .cond-devs p {
         font-size: 14px;
     }
+
+    .product-detail-top {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .product-detail-top img {
+        width: 30%;
+    }
+
+    .product-description{
+        width: 50%;
+        margin: 0;
+        padding-left: 30px;
+        
+    }
+
+    body {
+
+        margin: auto;
+    }
     
 
 }
@@ -576,177 +596,14 @@ main{
 /* ---------- Version Monitor ----------------------------------------------------------------------------------------------- */
 
 @media (min-width: 1280px) {
-    .top-container {
-        max-width: 1280px;
-    }
 
     .header-container {
         background-color: #f2f0d5;
     }
-    
-}
 
-@media (min-width: 481px) {
-    .product-article {
-        width: 40%;
-    }
-}
-
-
-@media (min-width: 769px) {
-
-    .burger-menu {
-        display: none;
-    }
-
-    .logo {
-        justify-content: center;
-        width: 50%;
-        margin-bottom: 15px;
-    }
-
-    .top-container {
-        flex-direction: column;
-        padding: 2% 5%;
-    }
-
-    .logo-nav {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .header-icons {
-        width: 15%;
-        display: flex;
-        flex-wrap: wrap;
-        align-self: flex-end;
-    }
-
-    .navbar {
-        display: flex;
-        font-family: 'Roboto';
-        width: 100%;
-        color: #686868;
-        margin: auto;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    .main-navbar {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    body {
+        max-width: 1200px;
     }
     
-    .navbar .main-menu {
-        margin: 0 10px;
-        font-weight: 700;
-    }
-
-    .main-menu:hover {
-        background-color: #686868;
-        color: white;
-        transition: all 450ms;
-        text-align: center;
-        border-radius: 5px;
-        padding: 5px;
-    }
-
-    .middle-bottom {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:space-around;
-        margin-top: 50px;
-        margin: auto;
-        max-width: 1280px;
-    }
-     
-    /*.lefts{
-        width: 40%;
-        
-    }
-    .right{
-        width: 35%;
-    }
-    .inputs{
-        width: 90%;
-    }
-    .cart{
-        margin-right: 0px;
-    }
-    .discount{
-        width: 260px;
-        margin-left: 15%;
-    }
-    .subtotal-price{
-        margin-top: 30px;
-    }
-    .button-buy{
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-    .buy{
-        width: 270px;
-    }
-    .button-quitar{
-        display: flex;
-        align-self: center;
-    }
-    .data-contact{
-        margin-top:190px ;
-    }*/
-
-    /* Aca comienza main de detalle de producto para laptop*/
-
-    .product-detail {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-
-    .product-detail-top {
-        width: 80%;
-        max-width: 720px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        margin: 20px auto;
-    }
-
-    .product-detail-top img {
-        width: 250px;
-    }
-
-    .product-description{
-        width: 50%;
-        justify-content: flex-start;
-        font-size: 25px;
-    }
-
-}
-
-
-@media (min-width: 1280px) {
-    .top-container {
-        max-width: 1280px;
-    }
-
-    .header-container {
-        background-color: #f2f0d5;
-    }
-    .data-contact{
-        margin-top:190px ;
-    }
 }
 
