@@ -1,7 +1,6 @@
 @import url("/css/normalize.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
 
 * {
@@ -150,7 +149,7 @@
 .footer-container {
     padding: 5%;
     background-color: #b6dbcb;
-    font-family: 'Roboto';
+    font-family:'Open Sans', sans-serif;
     color: #686868;
 }
 
@@ -204,15 +203,18 @@ h3 {
 }
 
 main{
-    font-family: "Roboto";    
+    font-family:'Open Sans', sans-serif;    
     position: relative;
 }
 
 .categories{
     color: rgb(68, 68, 68);
-    margin-left: 31%;
-    margin-right: 31%;
-    width: 38%; /* para que la categoria quede centrada, hay que crear una clase por categoria, ya que tienen largos distintos por ejemplo short y camperas, al ser largos diferentes no quedan todas bien centradas, si les parece asi, en dos minutos lo hago*/
+    position: absolute;
+    background-color: #f2f0d5;
+    margin: 0 auto;
+    font-size: 14px;
+    padding: 2px 5px;
+    
 }
 
 .products{
@@ -234,24 +236,30 @@ article{
     justify-content: space-between;
     font-size: 20px;
     flex-direction: column-reverse;
-    background-color: white;
+    background-color: #b6dbcb;
+    position: relative;
 }
 
 .off-price{
     display: flex;
-    
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5% 5% 0 5%;
 }
 
 .prices{
-    color: #7ccc7c; 
-    font-weight: 400;
-    margin-left: 5%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    color: #686868; 
+    background-color: #f2f0d5;
+    text-align: left;
+    padding: 5px;
+    font-weight: 700;
+    margin: 0;
+    border-radius: 10px;
 }
 
 .off{
     font-weight: 600;
+    font-size: 15px;
     color: #666;
     margin-left: 5%;
     margin-top: 5px;
@@ -259,7 +267,7 @@ article{
 }
 
 .product-name{
-    font-weight: 600;
+    font-weight: 700;
     color: #666;
     margin-left: 5%;
     margin-top: 5px;
@@ -271,6 +279,12 @@ article{
     color: #7ccc7c;
     margin-right: 5%;
     margin-top: 5px;
+    position: absolute;
+    top: 10px;
+    border-radius: 100%;
+    background-color: white;
+    padding: 2%;
+    font-size: 15px;
 }
 
 .newsletter{
@@ -409,7 +423,7 @@ article{
 
     .navbar {
         display: flex;
-        font-family: 'Roboto';
+        font-family:'Open Sans', sans-serif;;
         width: 100%;
         color: #686868;
         margin: auto;
@@ -489,7 +503,8 @@ article{
 
     .product-article{
         width:29%;
-        margin: 12px;
+        margin: 4% 8%;
+        position: relative;
     }
 
     body {

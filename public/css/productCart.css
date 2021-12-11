@@ -1,11 +1,14 @@
 @import url("/css/normalize.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
+.header-container {
+    height: 100px;
+}
 
 .main-navbar li {
     list-style: none;
@@ -23,6 +26,8 @@
     top: 0;
     z-index: 10;
     width: 100%;
+    max-width: 1200px;
+    height: 100px;
 }
 
 .bottom-container {
@@ -99,25 +104,14 @@
     display: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body{
     font-family: "roboto";
     color: #666;
+    max-width: 1200px;
+    margin: auto;
 }
 main{
+    font-family:'Open Sans', sans-serif;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -252,7 +246,7 @@ main{
 .footer-container {
     padding: 5%;
     background-color: #b6dbcb;
-    font-family: 'Roboto';
+    font-family:'Open Sans', sans-serif;
     color: #686868;
 }
 
@@ -276,22 +270,6 @@ main{
     margin: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media (min-width: 481px) {
     .product-article {
         width: 40%;
@@ -314,6 +292,8 @@ main{
     .top-container {
         flex-direction: column;
         padding: 2% 5%;
+        margin: auto;
+        height: 20%;
     }
 
     .logo-nav {
@@ -326,15 +306,14 @@ main{
 
     .header-icons {
         width: 15%;
-        display: flex;
-        flex-wrap: wrap;
         align-self: flex-end;
-        
+        position: absolute;
+        top: 45%    
     }
 
     .navbar {
         display: flex;
-        font-family: 'Roboto';
+        font-family:'Open Sans', sans-serif;
         width: 100%;
         color: #686868;
         margin: auto;
@@ -379,9 +358,6 @@ main{
         margin: auto;
         max-width: 1280px;
     }
-
-
-
 
     main{
         display: flex;
