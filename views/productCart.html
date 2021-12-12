@@ -47,7 +47,7 @@
         </div>
     </header>
     <main>
-        <div class="lefts">
+        <nav class="lefts">
             <div class="email-ofertas">
                 <form action="" method="get"></form>
                 <input type="text" name="novedades"  placeholder="e-mail" class="inputs" required>
@@ -58,7 +58,7 @@
                 </form>
             </div>
             <h2>Datos de envío</h2>
-            <nav>
+            <nav class="datos">
                 <form action="" method="get">
                     <div>
                         <input type="text" name="nombre" placeholder="Nombre" class="inputs" required>
@@ -73,7 +73,7 @@
                         <input type="text" name="provincia" placeholder="Provincia" class="inputs" required>
                     </div>
                     <div>
-                        <input type="text" name="localidad" placeholder="localidad" class="inputs" required>
+                        <input type="text" name="localidad" placeholder="Localidad" class="inputs" required>
                         <input type="number" name="codigoPostar" placeholder="Codigo Postal" class="inputs" required>
                     </div>
                     <div>
@@ -85,14 +85,17 @@
                     </div>     
                 </form>      
             </nav>
-        </div>
+        </nav>
         <nav class="right">
             <nav class="carts">
                 <nav class="cart">
                     <h2 class="productos">Productos</h2>
                     <div class="product-price">
-                        <p class="product">1x producto</p>
+                        <p class="product">1X Remeras</p>
                         <p class="price">$1700</p>
+                    </div>
+                    <div class="img-cart-container">
+                        <img src="img/productosHome/img-producto-home-remeras.jpg" alt="" class="img-cart">
                     </div>
                     <div>
                         <p class="talle">M</p>
@@ -106,8 +109,11 @@
                 </nav>
                 <nav class="cart">
                     <div class="product-price">
-                        <p class="product">1x producto</p>
+                        <p class="product">1X Shorts</p>
                         <p class="price">$2500</p>
+                    </div>
+                    <div class="img-cart-container">
+                        <img src="img/productosHome/img-producto-home-short.jpg" alt="" class="img-cart">
                     </div>
                     <div>
                         <p class="talle">L </p>
@@ -121,7 +127,7 @@
                 </nav>
             </nav>
             <div class="discount">
-                <form action="" method="get">
+                <form action="" method="get" class="discount-input">
                     <input type="text" name="codigoDescuento" placeholder="Codigo de descuento" id="codigoDescuento">
                     <button type="submit" class="button-discount">Aplicar</button>
                 </form>
