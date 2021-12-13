@@ -506,7 +506,7 @@ main{
 
     .logo {
         justify-content: center;
-        width: 50%;
+        width: 250px;
         margin-bottom: 15px;
     }
 
@@ -514,7 +514,7 @@ main{
         flex-direction: column;
         padding: 2% 5%;
         margin: auto;
-        height: 20%;
+        height: 15%;
     }
 
     .logo-nav {

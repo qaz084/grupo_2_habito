@@ -374,7 +374,6 @@ article{
     position: relative;
     top: 85px;
     background-color: white;
-    height: 150px;
 }
 
 .product-detail-top img {
@@ -418,7 +417,7 @@ article{
 
     .logo {
         justify-content: center;
-        width: 50%;
+        width: 250px;
         margin-bottom: 15px;
     }
 
@@ -426,7 +425,7 @@ article{
         flex-direction: column;
         padding: 2% 5%;
         margin: auto;
-        height: 20%;    
+        height: 15%;    
     }
 
     .logo-nav {
