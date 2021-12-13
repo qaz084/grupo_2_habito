@@ -1,6 +1,5 @@
 @import url("/css/normalize.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
 
 * {
@@ -120,6 +119,11 @@
     background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
     bottom: 30%;
+    transition: box-shadow 450ms ;
+}
+
+.slider-button:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 .next-prev {
@@ -140,6 +144,13 @@
 .prev:hover, .next:hover {
     opacity: 1;
 }
+.product-article {
+    position: relative;
+}
+
+.small-next-prev {
+    display: none;
+}
 
 .navbar {
     display: none;
@@ -158,6 +169,14 @@
     flex-wrap: wrap;
     font-size: 25px;
     justify-content: space-between;
+}
+
+.footer-icons i:hover {
+    color: #f2f0d5;
+}
+
+.footer-icons i {
+    transition: color 450ms;
 }
 
 .top-footer {
@@ -314,6 +333,11 @@ article{
     padding: 15px;
     margin: auto;
     margin-top: 20px;
+    transition: background-color 450ms;
+}
+
+.suscribe:hover {
+    background-color: #b6dbcb;
 }
 
 .formulario-suscribe{
@@ -343,7 +367,6 @@ article{
     padding-left: 20px;
     font-style: italic;
 }
-
 
 /* Detalle de Producto */
 
@@ -444,6 +467,27 @@ article{
         display: flex;
     }
 
+    .small-next-prev {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        top: 45%;
+        left: 0;
+        z-index: 20;
+        font-size: 30px;
+        padding: 0 5%; 
+        margin: auto;
+        opacity: 0;
+        color: #686868;
+        transition: opacity 450ms;
+    }
+
+    .product-article:hover .small-next-prev {
+        opacity: 1;
+    }
+
     .main-navbar {
         width: 100%;
         display: flex;
@@ -508,6 +552,7 @@ article{
     }
 
     body {
+        width: 100%;
         max-width: 1200px;
         margin: auto;
     }
@@ -527,8 +572,8 @@ article{
     }
 
     .product-article{
-        width:22.5%;
-        margin: 12px;
+        width:25%;
+        margin: 4% 2%;
     }
 
 }

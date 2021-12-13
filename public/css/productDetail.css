@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-.main-navbar li {
+.main-navbar li, .pictures-list {
     list-style: none;
 }
 
@@ -50,6 +50,10 @@
     text-align: center;
 }
 
+.pictures-list {
+    display: none;
+}
+
 
 .search-logo, .user-logo, .cart-logo {
     padding-left: 3px;
@@ -73,7 +77,6 @@
     align-items: center;
 }
 
-
 .burger-menu i {
     color: #686868;
     font-size: 30px;
@@ -89,14 +92,16 @@
 }
 
 .next-prev {
-    display: flex;
+    display: none;
     justify-content: space-between;
     position: absolute;
     top: 45%;
+    left: 0;
     z-index: 5;
+    padding: 0 15%;
     font-size: 30px;
     width: 100%;
-    padding: 0 5%;
+    margin: auto;
 }
 
 .prev, .next {
@@ -124,6 +129,14 @@
     flex-wrap: wrap;
     font-size: 25px;
     justify-content: space-between;
+}
+
+.footer-icons i:hover {
+    color: #f2f0d5;
+}
+
+.footer-icons i {
+    transition: color 450ms;
 }
 
 .top-footer {
@@ -177,7 +190,7 @@ main{
     color: rgb(68, 68, 68);
     margin-left: 31%;
     margin-right: 31%;
-    width: 38%; /* para que la categoria quede centrada, hay que crear una clase por categoria, ya que tienen largos distintos por ejemplo short y camperas, al ser largos diferentes no quedan todas bien centradas, si les parece asi, en dos minutos lo hago*/
+    width: 38%; 
 }
 
 .products{
@@ -244,6 +257,11 @@ main{
     padding: 15px;
     margin: auto;
     margin-top: 20px;
+    transition: background-color 450ms;
+}
+
+.suscribe:hover {
+    background-color: #b6dbcb;
 }
 
 .formulario-suscribe{
@@ -296,6 +314,7 @@ main{
     display:flex;
     flex-wrap: wrap;
     width: 80%;
+    padding-right: 5%;
     margin:0 auto;
     justify-content: space-between;
     font-size: 20px;
@@ -396,6 +415,11 @@ main{
     text-align: center;
     padding: 15px;
     margin: 20px auto;
+    transition: background-color 450ms;
+}
+
+.purchase:hover {
+    background-color: #f2f0d5;
 }
 
 .purchase h4 {
@@ -408,8 +432,21 @@ main{
     padding: 50px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    align-items: center;
 }
+
+.sugerencias-separador-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 .prod-1 {
     display: flex;
     flex-wrap: wrap;
@@ -436,16 +473,21 @@ main{
     padding: 3px;
     background-color: #b6dbcb;
     border-radius: 7px;
+    transition: background-color 450ms;
 }
 
 .sugerencia-price p {
     margin: 5px;
 }
 
-.prod-2 {
+.prod {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.prod:hover .sugerencia-description .price-text {
+    background-color: #f2f0d5;
 }
 
 
@@ -528,6 +570,10 @@ main{
         padding: 5px;
     }
 
+    .next-prev {
+        display: flex;
+    }
+
     .middle-bottom {
         display: flex;
         flex-wrap: wrap;
@@ -581,11 +627,21 @@ main{
     .product-description{
         width: 50%;
         margin: 0;
-        padding-left: 30px;
-        
+        padding-left: 30px;   
+    }
+
+    .pictures-list {
+        width: 20%;
+        height: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-self: flex-start;
+
     }
 
     body {
+        width: 100%;
         max-width: 1200px;
         margin: auto;
     }
