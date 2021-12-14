@@ -1,6 +1,6 @@
  @import url("/css/normalize.css");
  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
- @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
  * {
      box-sizing: border-box;
  }
@@ -28,6 +28,8 @@
      top: 0;
      z-index: 10;
      width: 100%;
+     max-width: 1200px;
+     height: 100px;
  }
  
  .main-navbar li {
@@ -81,7 +83,7 @@
  }
  
  .estructura {
-     font-family: "roboto";
+    font-family:'Open Sans', sans-serif;
      color: #686868;
      background-color: #ffff;
      border-radius: 10px;
@@ -189,7 +191,7 @@
  .footer-container {
      padding: 5%;
      background-color: #b6dbcb;
-     font-family: 'Roboto';
+     font-family:'Open Sans', sans-serif;
      color: #686868;
  }
  
@@ -318,6 +320,12 @@
          padding-top: 200px;
          padding-bottom: 25px;
      }
+
+     body {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
  }
  
  @media (min-width: 1280px) {
@@ -327,4 +335,8 @@
      .button {
          font-size: 12px;
      }
+
+     .header-container {
+        background-color: #f2f0d5;
+    }
  }
