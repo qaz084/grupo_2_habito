@@ -186,6 +186,33 @@ main{
     position: relative;
 }
 
+.color-negro{
+    color:black ;
+    margin-left: 5px;
+    margin-right: 5px ;
+}
+.color-verde{
+    color: green;
+    margin-left: 5px;
+    margin-right: 5px ;
+}
+.color-rojo{
+    color: red;
+    margin-left: 5px;
+    margin-right: 5px ;
+}
+.color-azul{
+    color:blue ;
+    margin-left: 5px;
+    margin-right: 5px ;
+}
+
+
+
+
+
+
+
 .categories{
     color: rgb(68, 68, 68);
     margin-left: 31%;
