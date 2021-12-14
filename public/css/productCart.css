@@ -295,7 +295,7 @@ main{
 
     .logo {
         justify-content: center;
-        width: 50%;
+        width: 250px;
         margin-bottom: 15px;
     }
 
@@ -303,7 +303,7 @@ main{
         flex-direction: column;
         padding: 2% 5%;
         margin: auto;
-        height: 20%;
+        height: 15%;
     }
 
     .logo-nav {
@@ -408,13 +408,15 @@ main{
         margin-top:190px ;
     }
 
+    body {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+    }
+
 }
 
-
 @media (min-width: 1280px) {
-    .top-container {
-        max-width: 1280px;
-    }
 
     .header-container {
         background-color: #f2f0d5;
