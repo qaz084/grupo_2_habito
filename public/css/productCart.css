@@ -120,7 +120,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 .data-contact1{
     font-weight: 650;
@@ -130,13 +130,14 @@ main{
     margin-top: 15px;
 }
 .inputs{
-    background-color: rgb(212, 212, 212);
+    background-color: white;
     border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 280px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 .save-info{
     margin-top: 20px;
@@ -195,7 +196,8 @@ main{
 }
 #codigoDescuento{
     border: none;
-    background-color: rgb(212, 212, 212);
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
     border-radius: 4px;
 }
 .discount{
@@ -203,16 +205,18 @@ main{
 
 }
 .button-discount{
-    background-color: teal;
+    background-color: #b6dbcb;
     color: white;
-    border: 3px solid teal;
     border-radius: 3px;
     font-size: 15px;
     transition: 450ms;
     margin-left: 15px;
+    border: 0px;
+    color: #666;
+    font-weight: 400;
 }
 .button-discount:hover{
-    background-color: aqua;
+    background-color: #f2f0d5;
 }
 
 .subtotal-price{
@@ -230,18 +234,19 @@ main{
     justify-content: space-around;
 }
 .button-buy{
-    background-color: teal;
-    color: white;
-    border: 0.5px solid #666;
+    background-color: #b6dbcb;
+    color: #666;
+    border: 0px;
     border-radius: 3px;
     font-size: 15px;
     margin-bottom: 100px;
     margin-top: 20px;
     padding: 10px 50px 10px 50px;
     transition: 450ms;
+    font-weight: 600;
 }
 .button-buy:hover{
-    background-color: aqua;
+    background-color: #f2f0d5;
 }
 
 .buy{
@@ -252,21 +257,24 @@ main{
     width: 80%;
     margin: auto;
 }
-
 .footer-container {
     padding: 5%;
     background-color: #b6dbcb;
     font-family:'Open Sans', sans-serif;
     color: #686868;
 }
-
 .footer-icons {
     display: flex;
     flex-wrap: wrap;
     font-size: 25px;
     justify-content: space-between;
 }
-
+.footer-icons i:hover {
+    color: #f2f0d5;
+}
+.footer-icons i {
+    transition: color 450ms;
+}
 .top-footer {
     display: flex; 
     flex-wrap: wrap;
@@ -274,11 +282,36 @@ main{
     align-content: center;   
     color: #686868; 
 }
-
 .logo-footer {
     padding: 0;
     margin: 10px;
 }
+.empresa, .compras {
+    text-align: center;
+    margin-top: 20px;
+}
+h3 {
+    margin: 19px 0 10px 0;
+}
+.empresa il, .compras il {
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    line-height: 1.9;
+    margin: 0;
+    padding-left: 0;
+}
+.lista-empresa, .lista-compras {
+    margin: 0;
+    padding: 0;
+}
+
+.copyright {
+    font-size: 10px;
+    margin-top: 25px;
+}
+
 
 @media (min-width: 481px) {
     .product-article {
@@ -383,7 +416,7 @@ main{
         width: 90%;
     }
     .cart{
-        width: 100%;
+        width: 80%;
         margin-right: 0px;
     }
     .discount{
@@ -405,13 +438,22 @@ main{
         align-self: center;
     }
     .data-contact{
-        margin-top:190px ;
+        margin-top:20px ;
     }
 
     body {
         width: 100%;
         max-width: 1200px;
         margin: auto;
+    }
+    .lista-compras, .lista-empresa, h3 {
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .der {
+        padding-left: 25px;
     }
 
 }
@@ -422,7 +464,7 @@ main{
         background-color: #f2f0d5;
     }
     .data-contact{
-        margin-top:190px ;
+        margin-top:20px ;
     }
 }
 
