@@ -16,6 +16,13 @@
         text-align: center;
     }
     
+    .fa-shopping-cart{
+        color: #666;
+    }
+    .fa-user{
+        color: #666;
+    }
+
     .top-container {
         background-color: #f2f0d5;
         padding: 5%;

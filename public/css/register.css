@@ -34,6 +34,13 @@
     height: 100px;
 }
 
+.fa-shopping-cart{
+    color: #666;
+}
+.fa-user{
+    color: #666;
+}
+
 .main-navbar li {
     list-style: none;
 }
