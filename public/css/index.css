@@ -14,12 +14,7 @@
     height: 100px;
 }
 
-.fa-shopping-cart{
-    color: #666;
-}
-.fa-user{
-    color: #666;
-}
+
 
 .top-container {
     background-color: #f2f0d5;
@@ -59,11 +54,18 @@
 
 
 .search-logo, .user-logo, .cart-logo {
+    color: #666;
     padding-left: 3px;
     text-align: center;
 }
 
-.search-logo:hover, .user-logo:hover, .cart-logo:hover {
+.fa-shopping-cart, .fa-user, .fa-search{
+    color: #666;
+}
+
+
+.search-logo:hover .fa-search, .user-logo:hover .fa-user, .cart-logo:hover .fa-shopping-cart
+{
     background-color: #686868;
     color: white;
     font-size: 25px;
@@ -580,6 +582,11 @@ article{
     .product-article{
         width:25%;
         margin: 4% 2%;
+    }
+
+    .foto-bug{
+               
+       height: 382px; 
     }
 
 }
