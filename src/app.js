@@ -13,22 +13,13 @@ app.listen(3000, () => {
 
 app.set('view engine', 'ejs');
 
-mainRoutes = require('./routes/main')
 
+mainRoutes = require('./routes/main');
 app.use("/", mainRoutes);
 
-app.get("/productDetail", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
-});
+productsRoutes = require("./routes/products");
+app.use("/", productsRoutes);
 
-app.get("/productCart", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
-});
+usersRoutes = require("./routes/users");
+app.use("/", usersRoutes)
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/register.html"))
-});
-
-app.get("/login", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/login.html"))
-});
