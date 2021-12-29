@@ -1,0 +1,13 @@
+@import url("/css/normalize.css");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+
+
+h1{
+
+    color: brown;
+}
