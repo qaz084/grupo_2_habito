@@ -14,7 +14,9 @@
     height: 100px;
 }
 
-
+a:link{
+    text-decoration: none;
+}
 
 .top-container {
     background-color: #f2f0d5;
@@ -584,9 +586,7 @@ article{
         margin: 4% 2%;
     }
 
-    .foto-bug{
-               
-       height: 382px; 
+    .foto-bug{             
+    height: 382px; 
     }
-
 }
