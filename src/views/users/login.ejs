@@ -1,162 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
-</head>
+    <body>
+        <%- include('../partials/header')%>
+            <main class="estructura">
+                <div class="box-login">
+                    <div class="position-x">
+                        <a class="x" href="/"><i class="far fa-times-circle"></i></a>
+                    </div>
+                    <h2 class="size">Iniciá Sesión</h2>
 
-<body>
-    <header>
-        <div class="header-container">
-            <div class="top-container">
-                <div class="left">
-                    <div class="main-container">
-                        <a href='#' class="burger-menu">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                    </div>
-                    <div class="logo-nav">
-                        <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
-                        <nav class="main-navbar">
-                            <ul class="navbar">
-                                <li class="main-menu">Categorías</li >
-                                <li class="main-menu">Ofertas</li>
-                                <li class="main-menu">Contacto</li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="header-icons">
-                    <div class="search-logo">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="user-logo">
-                        <a href="/login"><i class="fas fa-user"></i></a>
-                    </div>
-                    <div class="cart-logo">
-                        <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <div class="box-buttons">
 
-    </header>
-    <main class="estructura">
-        <div class="box-login">
-            <div class="position-x">
-                <a class="x" href="/"><i class="far fa-times-circle"></i></a>
-            </div>
-            <h2 class="size">Iniciá Sesión</h2>
-
-            <div class="box-buttons">
-
-                <div class="container-button">
-                    <a class="button" href="https://www.instagram.com/
+                        <div class="container-button">
+                            <a class="button" href="https://www.instagram.com/
                     " target="_blank">
-                        <i class="fab fa-instagram"> </i> Instagram
-                    </a>
-                </div>
+                                <i class="fab fa-instagram"> </i> Instagram
+                            </a>
+                        </div>
 
-                <div class="container-button">
-                    <a class="button" href="https://www.facebook.com/
+                        <div class="container-button">
+                            <a class="button" href="https://www.facebook.com/
                     " target="_blank">
-                        <i class="fab fa-facebook"> </i> Facebook
-                    </a>
-                </div>
+                                <i class="fab fa-facebook"> </i> Facebook
+                            </a>
+                        </div>
 
-                <div class="container-button">
-                    <a class="button" href="https://mail.google.com/mail/u/0/#inbox
+                        <div class="container-button">
+                            <a class="button" href="https://mail.google.com/mail/u/0/#inbox
                     " target="_blank">
-                        <i class="fab fa-google"></i> Google
-                        </i>
-                    </a>
-                </div>
-            </div>
-            <form action="" method="get" class="usuario">
-                <div class="container-inputs">
-                    <br>
-                    <input class="inputs-color" type="text" name="usuario" placeholder="Usuario" required>
-                    <label for="usuario"></label>
-                </div>
-                <br>
-
-                <div class="container-inputs">
-                    <input class="inputs-color" type="password" name="contraseña" placeholder="Contraseña" required>
-                    <label for="contraseña"></label>
-                </div>
-                <br>
-
-            </form>
-
-            <div class="container-password">
-                <a class="x" href="">¿Te olvidaste la contraseña?</a>
-            </div>
-
-            <button class="button-sesion" type="submit">Iniciar Sesion</button>
-
-        </div>
-
-    </main>
-    <footer>
-
-
-        <div class="footer-container">
-            <div class="top-footer">
-                <img src="img/Logo-prueba.png" alt="logo Hábito" class="logo-footer">
-                <div class="footer-icons">
-                    <div class="twitter">
-                        <i class="fab fa-twitter"></i>
+                                <i class="fab fa-google"></i> Google
+                                </i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="facebook">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <div class="instagram">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <div class="youtube">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="middle-bottom">
-                <div class="footer-middle">
-                    <div class="empresa">
-                        <h3>Empresa</h3>
-                        <ul class="lista-empresa">
-                            <div class="izq">
-                                <il>Quiénes Somos</il>
-                                <il>Locales</il>
-                            </div>
-                            <div class="der">
-                                <il>Trabaja con Nosotros</il>
-                                <il>Noticias</il>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="compras">
-                        <h3>Compras</h3>
-                        <ul class="lista-compras">
-                            <div class="izq">
-                                <il>Métodos de Pago</il>
-                                <il>Devoluciones</il>
-                            </div>
-                            <div class="der">
-                                <il>Preguntas Frecuentes</il>
-                                <il>Envíos y Condiciones</il>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p class="copyright">© 2021 Hábito</p>
-        </div>
-    </footer>
-</body>
+                    <form action="" method="get" class="usuario">
+                        <div class="container-inputs">
+                            <br>
+                            <input class="inputs-color" type="text" name="usuario" placeholder="Usuario" required>
+                            <label for="usuario"></label>
+                        </div>
+                        <br>
 
-</html>
+                        <div class="container-inputs">
+                            <input class="inputs-color" type="password" name="contraseña" placeholder="Contraseña" required>
+                            <label for="contraseña"></label>
+                        </div>
+                        <br>
+
+                    </form>
+
+                    <div class="container-password">
+                        <a class="x" href="">¿Te olvidaste la contraseña?</a>
+                    </div>
+
+                    <button class="button-sesion" type="submit">Iniciar Sesion</button>
+
+                </div>
+
+            </main>
+            <%- include('../partials/footer')  %>
+    </body>
+
+    </html>
