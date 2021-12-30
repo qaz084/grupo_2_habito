@@ -1,4 +1,4 @@
-Fecha de reunión: 29/01/2021
+Fecha de reunión: 29/12/2021
 
 Juan: Ayudó en la organización de carpetas del proyecto y asistió en la organización de las rutas. Para los próximos días se va a encargar de dinamizar la plantilla de la vista del detalle de producto. También va a corregir un error que hay en las rutas.
 
