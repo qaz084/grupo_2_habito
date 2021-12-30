@@ -19,7 +19,7 @@
                         </a>
                     </div>
                     <div class="logo-nav">
-                        <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
+                        <a href="/"><img src="/img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
                         <nav class="main-navbar">
                             <ul class="navbar">
                                 <li class="main-menu">Categorías</li>
@@ -50,19 +50,19 @@
         <section class="product-detail">
             <div class="product-detail-top">
                 <ul class="pictures-list">
-                    <li><img src="img/detalle_producto/img-remera-1.jpg" alt="" width="140px"></li>
-                    <li><img src="img/detalle_producto/img-remera-2.jpg" alt="" width="140px"></li>
-                    <li><img src="img/detalle_producto/img-remera-3.jpg" alt="" width="140px"></li>
-                    <li><img src="img/detalle_producto/img-remera-4.jpg" alt="" width="140px"></li>
+                    <li><img src="<%= productDetail.img2 %> " alt="" width="140px"></li>
+                    <li><img src="<%= productDetail.img3 %>" alt="" width="140px"></li>
+                    <li><img src="<%= productDetail.img4 %>" alt="" width="140px"></li>
+                    <li><img src="<%= productDetail.img5 %>" alt="" width="140px"></li>
                 </ul>
-                <img src="img/detalle_producto/img-remera-1.jpg" alt="" width="50%">
+                <img src="<%= productDetail.img %> " alt="" width="50%">
                 <div class="product-description">
-                    <h3 class="product-name">Conjunto Remera y jogging</h3>
+                    <h3 class="product-name"> <%= productDetail.description %> </h3>
                     <div class="off-price">
-                        <p class="prices">$15.000</p>
-                        <p class="off">25% Off</p>
+                        <p class="prices"> <%= productDetail.price %>  </p>
+                        <p class="off"> <%= productDetail.discount %> </p>
                     </div>
-                    <p class="prod-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo</p>
+                    <p class="prod-text"> <%= productDetail.longDescription %> </p>
                     <div class="characteristics">
                         <div class="size">
                             <h6>Talle</h6>
@@ -149,7 +149,7 @@
     <footer>
         <div class="footer-container">
             <div class="top-footer">
-                <img src="img/Logo-prueba.png" alt="logo Hábito" class="logo-footer">
+                <img src="/img/Logo-prueba.png" alt="logo Hábito" class="logo-footer">
                 <div class="footer-icons">
                     <div class="twitter">
                         <i class="fab fa-twitter"></i>
