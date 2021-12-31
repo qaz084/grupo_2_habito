@@ -1,4 +1,4 @@
-const products = [
+const productsDetails = [
     {
         id: 1,
         categories: "Hoddie",
@@ -73,7 +73,7 @@ const suggestions = [
 const controller = {
     productDetail:(req,res)=>{
         let idProduct = req.params.id;
-        const productDetail = products.find(element => element.id == idProduct);
+        const productDetail = productsDetails.find(element => element.id == idProduct);
         return res.render(
             "../views/products/productDetail",
             {productDetail:productDetail}

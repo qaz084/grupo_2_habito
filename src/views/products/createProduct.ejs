@@ -8,8 +8,169 @@
     <title>Crear Producto</title>
 </head>
 <body>
-    <h1>Crear Producto</h1>
 
-    <form action=""></form>
+    <header>
+
+            <span class="logo-header">HÁBITO</span>
+
+    </header>
+
+    <main>
+
+        <div class="backButton">
+            <a href="/"><span>Volver</span></a>
+        </div>
+
+        <div class="headForm">
+            <span class="tituloForm">Crear producto:</span>
+            <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
+        </div>
+    
+            <form action="">
+            
+            
+
+                <div class="menuContainer" >
+                    
+            <!-- LEFT CONTAINER---------------------------- -->
+                    <div class="leftContainer">
+                        <input class="img-checkbox" type="file" id='image-selection'>
+                        <label for="image-selection">
+                        
+                        
+                        <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
+                            
+                        </label>
+                    </input>
+                    <input class="img-checkbox" type="file" id='image-selection'>
+                        <label for="image-selection">
+                        
+                        
+                            <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
+                            
+                        </label>
+                    </input>
+                    <input class="img-checkbox" type="file" id='image-selection'>
+                    <label for="image-selection">
+                    
+                        <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
+                    
+                        
+                    </label>
+                </input>
+                    
+                    
+
+                    
+
+                    
+
+                    </div>
+
+
+                    <!-- MIDDLE CONTAINER--------------------- -->
+                    <div class="middleContainer">
+                        <div
+                        class="middle-img-container">
+                        <input class="img-checkbox" type="file" id='image-selection'>
+                            <label for="image-selection">
+                            
+                            
+                                <img src="\img\createProduct\jeans_enteros.jpg" alt="Chica caminando con jeans"  >
+                                
+                            </label>
+                        </input>
+                    </div>
+                
+                
+                    </div>
+
+                <!-- RIGHT CONTAINER--------------------------- -->
+
+                    <div class="rightContainer">
+
+                            <input type="text" class="input-product-name" placeholder="Nombre del producto"
+                            name="productName" required>
+
+                            <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="$1700"
+                            name="productPrice" required>
+
+                            <span class="product-description">Descripción:</span>
+
+                            <textarea class="input-description" name="productDescription" id="" cols="30" rows="10" placeholder="Escribe la descripción..." required></textarea  >
+
+                            <!-- TALLE------------------------------- -->
+                            <SPAN class="input-product-size">Talle: </SPAN>
+                            
+                                    <div class="sizeContainer">
+
+                                        <input type="checkbox" class="checkbox" name="sizeProduct-XS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
+
+                                        <input type="checkbox" class="checkbox" name="sizeProduct-S" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
+
+                                        <input type="checkbox" class="checkbox" name="sizeProduct-M" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
+
+                                        <input type="checkbox" class="checkbox" name="sizeProduct-L" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
+
+                                        <input type="checkbox" class="checkbox" name="sizeProduct-XL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
+                                    
+                                    </div>
+
+                                    <!-- COLOR-------------------------- -->
+                        <SPAN class="input-product-color">Color: </SPAN>
+
+                        <div class="colorContainer">
+
+                            <input type="checkbox" class="checkbox" name="colorProduct-white" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
+
+                            <input type="checkbox" class="checkbox" name="colorProduct-red" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
+
+                            <input type="checkbox" class="checkbox" name="colorProduct-blue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
+
+                            <input type="checkbox" class="checkbox" name="colorProduct-green" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
+
+                            <input type="checkbox" class="checkbox" name="colorProduct-yellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+
+                                                
+                        </div>
+                    
+                        <!-- CATEGORIA------------------------- -->
+                        <SPAN class="input-product-category">Categoría: </SPAN>
+
+                        <div class="categoryContainer">
+
+                            <select name="product-categories" id="categorias">
+
+                                <option value="Camisas">Camisas</option>
+                                <option value="Remeras">Remeras</option>
+                                <option value="Hoddies">Hoddies</option>
+                                <option value="Pantalones">Pantalones</option>
+                            </select>
+                           
+                           
+
+                            
+
+                                                
+                        </div>
+                        
+
+
+                            <button class="btn-add" type="submit">Crear producto</button>
+
+                        
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+
+    </main>
+
+    <footer></footer>
+   
 </body>
 </html>

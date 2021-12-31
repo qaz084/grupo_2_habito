@@ -1,4 +1,4 @@
-const products =[
+const productsCategories =[
     {
         categories: "Hoddie",
         price: "$5.700",
@@ -37,7 +37,7 @@ const products =[
 ]
 const controller = {
     index: (req, res) => {
-        return res.render("../views/index",{"products":products});
+        return res.render("../views/index",{"products":productsCategories});
     }
 }
 
