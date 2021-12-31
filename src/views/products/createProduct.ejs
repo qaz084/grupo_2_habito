@@ -1,10 +1,20 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head')%>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crear producto</title>
+        <link rel="stylesheet" href="/css/createProduct.css">
+    </head>
 <body>
 
-    <%- include('../partials/header')%>
+   <header>
+       <div></div>
+   </header>
 
     <main>
 
@@ -25,50 +35,39 @@
                     
             <!-- LEFT CONTAINER---------------------------- -->
                     <div class="leftContainer">
-                        <input class="img-checkbox" type="file" id='image-selection'>
+                         <input class="img-checkbox"        type="file" id='image-selection' accept="image/*,.pdf">
+
                         <label for="image-selection">
-                        
-                        
-                        <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
-                            
+                        <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">    
                         </label>
-                    </input>
-                    <input class="img-checkbox" type="file" id='image-selection'>
-                        <label for="image-selection">
-                        
-                        
-                            <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
-                            
-                        </label>
-                    </input>
-                    <input class="img-checkbox" type="file" id='image-selection'>
-                    <label for="image-selection">
-                    
-                        <img src="\img\createProduct\jeans_apilados.jpg" alt="Jeans apilados" class="left-img-container">
-                    
-                        
-                    </label>
-                </input>
-                    
-                    
 
-                    
+                          </input>
 
-                    
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
 
+                            <label for="image-selection">
+                                <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
+                                
+                            </label>
+                        </input>
+
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+
+                            <label for="image-selection">
+                            <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
+                            </label>
+                         </input>
+                    
                     </div>
-
 
                     <!-- MIDDLE CONTAINER--------------------- -->
                     <div class="middleContainer">
                         <div
                         class="middle-img-container">
-                        <input class="img-checkbox" type="file" id='image-selection'>
+                        <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
+
                             <label for="image-selection">
-                            
-                            
-                                <img src="\img\createProduct\jeans_enteros.jpg" alt="Chica caminando con jeans"  >
-                                
+                                <img src="\img\createProduct\insert-product-image.png" alt="Inserte imagen del producto"  >
                             </label>
                         </input>
                     </div>
@@ -83,8 +82,19 @@
                             <input type="text" class="input-product-name" placeholder="Nombre del producto"
                             name="productName" required>
 
-                            <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="$1700"
-                            name="productPrice" required>
+                            <div class="contenedor-precio">
+                                <span class='signo-precio'>$</span>
+                                <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="1700"
+                                name="productPrice" required>
+                                
+                            </div>
+                            <div class="contenedor-precio">
+                                <span class='signo-precio'>%</span>
+                                <input type="number" class="input-product-price" min='0 ' max='100' placeholder="Tiene descuento del..."
+                                name="productDiscount" >
+                               
+                                
+                            </div>
 
                             <span class="product-description">Descripción:</span>
 
@@ -147,7 +157,7 @@
 
     </main>
 
-    <%- include('../partials/footer')  %>
+    
    
 </body>
 </html>
