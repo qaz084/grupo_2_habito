@@ -1,175 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../partials/head')%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrate a Hábito</title>
-    <link rel="stylesheet" href="/css/register.css">
-</head>
+    <body class="body-style">
+        <%- include('../partials/header')%>
+            <main class="estructura">
+                <div class="container-img">
+                    <img src="img/img-crearcuenta.jpg" alt="imagen de crear cuenta" class="img" width="200"></div>
+                <div class="count">
+                    <div class="position">
+                        <h2>Crear cuenta</h2>
+                        <a class="style1" href="/">Volver</a>
+                    </div>
+                    <div class="container-create-count">
+                        <h3 class="use">Usando:</h3>
+                        <div class="box-buttons">
 
-<body class="body-style">
-    <header>
-        <div class="header-container">
-            <div class="top-container">
-                <div class="left">
-                    <div class="main-container">
-                        <a href='#' class="burger-menu">
-                            <i class="fas fa-bars"></i>
-                        </a>
-                    </div>
-                    <div class="logo-nav">
-                        <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
-                        <nav class="main-navbar">
-                            <ul class="navbar">
-                                <li class="main-menu">Categorías</li>
-                                <li class="main-menu">Ofertas</li>
-                                <li class="main-menu">Contacto</li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="header-icons">
-                    <div class="search-logo">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="user-logo">
-                        <a href="/login"><i class="fas fa-user"></i></a>
-                    </div>
-                    <div class="cart-logo">
-                        <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <div class="container-button">
+                                <a class="button" href="">
+                                    <i class="fab fa-instagram"> </i> Instagram
+                                </a>
+                            </div>
 
-    </header>
-    <main class="estructura">
-        <div class="container-img">
-            <img src="img/img-crearcuenta.jpg" alt="imagen de crear cuenta" class="img" width="200"></div>
-        <div class="count">
-            <div class="position">
-                <h2>Crear cuenta</h2>
-                <a class="style1" href="/">Volver</a>
-            </div>
-            <div class="container-create-count">
-                <h3 class="use">Usando:</h3>
-                <div class="box-buttons">
+                            <div class="container-button">
+                                <a class="button" href="">
+                                    <i class="fab fa-facebook"> </i> Facebook
+                                </a>
+                            </div>
 
-                    <div class="container-button">
-                        <a class="button" href="">
-                            <i class="fab fa-instagram"> </i> Instagram
-                        </a>
-                    </div>
+                            <div class="container-button">
+                                <a class="button" href="">
+                                    <i class="fab fa-google"></i> Google
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
 
-                    <div class="container-button">
-                        <a class="button" href="">
-                            <i class="fab fa-facebook"> </i> Facebook
-                        </a>
-                    </div>
-
-                    <div class="container-button">
-                        <a class="button" href="">
-                            <i class="fab fa-google"></i> Google
-                            </i>
-                        </a>
-                    </div>
-                </div>
-
-                <p class="have-count">¿Ya tenés cuenta?
-                    <a class="login" href="/login ">Iniciar sesión</a>
-                </p>
-                <h3>O con tu correo electrónico:</h3>
-                <form class="inputs" action=" " method="get">
-                    <div class="inputs">
-                        <input class="inputs color" type="text " name="Usuario " placeholder="Usuario: " required>
-                    </div>
-                    <br>
-                    <div class="inputs">
-                        <input class="inputs color" type="email " name="email " placeholder="E-mail: " required>
-                    </div>
-                    <br>
-                    <div class="inputs"><label for="contraseña"></label>
-                        <input class="inputs color" type="password " name="contraseña " placeholder="Contraseña: " required>
-                    </div>
-                    <br>
-                    <div class="inputs"><label for="repetircontraseña">
+                        <p class="have-count">¿Ya tenés cuenta?
+                            <a class="login" href="/login ">Iniciar sesión</a>
+                        </p>
+                        <h3>O con tu correo electrónico:</h3>
+                        <form class="inputs" action=" " method="get">
+                            <div class="inputs">
+                                <input class="inputs color" type="text " name="Usuario " placeholder="Usuario: " required>
+                            </div>
+                            <br>
+                            <div class="inputs">
+                                <input class="inputs color" type="email " name="email " placeholder="E-mail: " required>
+                            </div>
+                            <br>
+                            <div class="inputs"><label for="contraseña"></label>
+                                <input class="inputs color" type="password " name="contraseña " placeholder="Contraseña: " required>
+                            </div>
+                            <br>
+                            <div class="inputs"><label for="repetircontraseña">
                         </label>
-                        <input class="inputs color" type="password " name="repetircontraseña " placeholder="Repetir contraseña: " required>
+                                <input class="inputs color" type="password " name="repetircontraseña " placeholder="Repetir contraseña: " required>
+                            </div>
                     </div>
-            </div>
-            <br>
-            <div>
-                <input type="checkbox" name="recibir-ofertas">
-                <label class="text" for="recibir-ofertas ">Quiero recibir ofertas y novedades en mi correo </label>
-            </div>
-
-            <div class="create">
-                <button class="button-count" type=" submit ">Crear cuenta</button>
-            </div>
-        </div>
-        </form>
-
-        </div>
-
-    </main>
-    <footer>
-
-
-        <div class="footer-container">
-            <div class="top-footer">
-                <img src="img/Logo-prueba.png" alt="logo Hábito" class="logo-footer">
-                <div class="footer-icons">
-                    <div class="twitter">
-                        <i class="fab fa-twitter"></i>
+                    <br>
+                    <div>
+                        <input type="checkbox" name="recibir-ofertas">
+                        <label class="text" for="recibir-ofertas ">Quiero recibir ofertas y novedades en mi correo </label>
                     </div>
-                    <div class="facebook">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <div class="instagram">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <div class="youtube">
-                        <i class="fab fa-youtube"></i>
+
+                    <div class="create">
+                        <button class="button-count" type=" submit ">Crear cuenta</button>
                     </div>
                 </div>
-            </div>
-            <div class="middle-bottom">
-                <div class="footer-middle">
-                    <div class="empresa">
-                        <h3>Empresa</h3>
-                        <ul class="lista-empresa">
-                            <div class="izq">
-                                <il>Quiénes Somos</il>
-                                <il>Locales</il>
-                            </div>
-                            <div class="der">
-                                <il>Trabaja con Nosotros</il>
-                                <il>Noticias</il>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="compras">
-                        <h3>Compras</h3>
-                        <ul class="lista-compras">
-                            <div class="izq">
-                                <il>Métodos de Pago</il>
-                                <il>Devoluciones</il>
-                            </div>
-                            <div class="der">
-                                <il>Preguntas Frecuentes</il>
-                                <il>Envíos y Condiciones</il>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p class="copyright">© 2021 Hábito</p>
-        </div>
-    </footer>
-</body>
+                </form>
 
-</html>
+                </div>
+
+            </main>
+            <%- include('../partials/footer')  %>
+    </body>
+
+    </html>

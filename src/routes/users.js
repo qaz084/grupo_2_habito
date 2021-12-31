@@ -4,7 +4,7 @@ const router = express.Router();
 const controller = require("../controllers/usersController");
 
 router.get("/login", controller.userLogin);
-router.get("/usersRegister", controller.userRegister);
+router.get("/register", controller.userRegister);
 
 
 module.exports = router;

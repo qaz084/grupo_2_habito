@@ -1,211 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product Cart</title>
-    <link rel="stylesheet" href="/css/productCart.css">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <div class="top-container">
-                <div class="left">
-                    <div class="main-container">
-                        <a href ='#' class="burger-menu">
-                            <i class="fas fa-bars"></i>
-                        </a>
+<%- include('../partials/head')%>
+
+    <body>
+        <header>
+            <div class="header-container">
+                <div class="top-container">
+                    <div class="left">
+                        <div class="main-container">
+                            <a href='#' class="burger-menu">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>
+                        <div class="logo-nav">
+                            <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
+                            <nav class="main-navbar">
+                                <ul class="navbar">
+                                    <li class="main-menu">Categorías</li>
+                                    <li class="main-menu">Ofertas</li>
+                                    <li class="main-menu">Contacto</li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                    <div class="logo-nav">
-                        <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
-                        <nav class="main-navbar">
-                            <ul class="navbar">
-                                <li class="main-menu">Categorías</li>
-                                <li class="main-menu">Ofertas</li>
-                                <li class="main-menu">Contacto</li>
-                            </ul>
-                        </nav> 
-                    </div>
-                </div>
-                <div class="header-icons">
-                    <div class="search-logo">
-                        <i class="fas fa-search"></i>
-                    </div>  
-                    <div class="user-logo">
-                        <a href="/login"><i class="fas fa-user"></i></a>
-                    </div>
-                    <div class="cart-logo">
-                        <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                    <div class="header-icons">
+                        <div class="search-logo">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="user-logo">
+                            <a href="/login"><i class="fas fa-user"></i></a>
+                        </div>
+                        <div class="cart-logo">
+                            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="data-contact">
-            <p class="data-contact1">Datos de contacto</p>
-            <p >¿Ya tienes cuenta? <a href="/login"> Iniciar sesion</a> </p>
-        </div>
-    </header>
-    <main>
-        <nav class="lefts">
-            <div class="email-ofertas">
-                <form action="" method="get"></form>
-                <input type="text" name="novedades"  placeholder="e-mail" class="inputs" required>
-                <div class="recibir-ofertas">
-                    <input type="checkbox" name="recibirOfertas" value="recibirOfertas" id="recibirOfertas" >
-                    <label for="recibirOfertas" >Quiero recibir ofertas y novedades en mi correo.</label>     
-                </div>      
-                </form>
+            <div class="data-contact">
+                <p class="data-contact1">Datos de contacto</p>
+                <p>¿Ya tienes cuenta? <a href="/login"> Iniciar sesion</a> </p>
             </div>
-            <h2>Datos de envío</h2>
-            <nav class="datos">
-                <form action="" method="get">
-                    <div>
-                        <input type="text" name="nombre" placeholder="Nombre" class="inputs" required>
+        </header>
+        <main>
+            <nav class="lefts">
+                <div class="email-ofertas">
+                    <form action="" method="get"></form>
+                    <input type="text" name="novedades" placeholder="e-mail" class="inputs" required>
+                    <div class="recibir-ofertas">
+                        <input type="checkbox" name="recibirOfertas" value="recibirOfertas" id="recibirOfertas">
+                        <label for="recibirOfertas">Quiero recibir ofertas y novedades en mi correo.</label>
                     </div>
-                    <div>
-                        <input type="text" name="apellido" placeholder="Apellido" class="inputs" required>
-                    </div>
-                    <div>
-                        <input type="text" name="direccion" placeholder="Direccion" class="inputs" required>
-                    </div>
-                    <div>
-                        <input type="text" name="provincia" placeholder="Provincia" class="inputs" required>
-                    </div>
-                    <div>
-                        <input type="text" name="localidad" placeholder="Localidad" class="inputs" required>
-                        <input type="number" name="codigoPostar" placeholder="Codigo Postal" class="inputs" required>
-                    </div>
-                    <div>
-                        <input type="number" name="telefono" placeholder="Telefono" class="inputs">
-                    </div>
-                    <div class="save-info">
-                        <input type="checkbox"  name="guardarDatosDeEnvio" id="guardarDatos" value="GuardarMisDatosDeEnvio">
-                        <label for="guardarDatos" >Guardar informacion para proximas compras</label>
-                    </div>     
-                </form>      
-            </nav>
-        </nav>
-        <nav class="right">
-            <nav class="carts">
-                <nav class="cart">
-                    <h2 class="productos">Productos</h2>
-                    <div class="product-price">
-                        <p class="product">1X Remeras</p>
-                        <p class="price">$1700</p>
-                    </div>
-                    <div class="img-cart-container">
-                        <img src="img/productosHome/img-producto-home-remeras.jpg" alt="" class="img-cart">
-                    </div>
-                    <div>
-                        <p class="talle">M</p>
-                    </div>
-                    <div class="color-quitar">
-                        <p class="color"><i class="fas fa-dot-circle"></i></p>
-                        <form action="" method="get" class="button-quitar">
-                            <button type="submit" class="button-quitar">quitar</button>
-                        </form>
-                    </div>
-                </nav>
-                <nav class="cart">
-                    <div class="product-price">
-                        <p class="product">1X Shorts</p>
-                        <p class="price">$2500</p>
-                    </div>
-                    <div class="img-cart-container">
-                        <img src="img/productosHome/img-producto-home-short.jpg" alt="" class="img-cart">
-                    </div>
-                    <div>
-                        <p class="talle">L </p>
-                    </div>
-                    <div class="color-quitar">
-                        <p class="colors"><i class="fas fa-dot-circle"></i></p>
-                        <form action="" method="get" class="button-quitar">
-                            <button type="submit" class="button-quitar">quitar</button>
-                        </form>
-                    </div>
-                </nav>
-            </nav>
-            <div class="discount">
-                <form action="" method="get" class="discount-input">
-                    <input type="text" name="codigoDescuento" placeholder="Codigo de descuento" id="codigoDescuento">
-                    <button type="submit" class="button-discount">Aplicar</button>
-                </form>
-            </div>
-            <nav>
-                <div class="subtotal-price">
-                    <p>Subtotal</p>
-                    <p class="price">$4200</p>
-                </div>
-                <div class="envio-price">
-                    <p>Envio</p>
-                    <p class="price">$500</p>
-                </div>
-                <div class="total-price">
-                    <p>TOTAL</p>
-                    <p class="price">$4700</p>
-                </div>
-                <div class="buys">
-                    <form action="" method="get" class="buy">
-                        <button type="submit" class="button-buy">COMPRAR</button>
                     </form>
                 </div>
+                <h2>Datos de envío</h2>
+                <nav class="datos">
+                    <form action="" method="get">
+                        <div>
+                            <input type="text" name="nombre" placeholder="Nombre" class="inputs" required>
+                        </div>
+                        <div>
+                            <input type="text" name="apellido" placeholder="Apellido" class="inputs" required>
+                        </div>
+                        <div>
+                            <input type="text" name="direccion" placeholder="Direccion" class="inputs" required>
+                        </div>
+                        <div>
+                            <input type="text" name="provincia" placeholder="Provincia" class="inputs" required>
+                        </div>
+                        <div>
+                            <input type="text" name="localidad" placeholder="Localidad" class="inputs" required>
+                            <input type="number" name="codigoPostar" placeholder="Codigo Postal" class="inputs" required>
+                        </div>
+                        <div>
+                            <input type="number" name="telefono" placeholder="Telefono" class="inputs">
+                        </div>
+                        <div class="save-info">
+                            <input type="checkbox" name="guardarDatosDeEnvio" id="guardarDatos" value="GuardarMisDatosDeEnvio">
+                            <label for="guardarDatos">Guardar informacion para proximas compras</label>
+                        </div>
+                    </form>
+                </nav>
             </nav>
-        </nav>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <div class="top-footer">
-                <img src="img/Logo-prueba.png" alt="logo Hábito" class="logo-footer">
-                <div class="footer-icons">
-                    <div class="twitter">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <div class="facebook">
-                        <i class="fab fa-facebook"></i>
-                    </div>
-                    <div class="instagram">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <div class="youtube">
-                        <i class="fab fa-youtube"></i>
-                    </div>
+            <nav class="right">
+                <nav class="carts">
+                    <nav class="cart">
+                        <h2 class="productos">Productos</h2>
+                        <div class="product-price">
+                            <p class="product">1X Remeras</p>
+                            <p class="price">$1700</p>
+                        </div>
+                        <div class="img-cart-container">
+                            <img src="img/productosHome/img-producto-home-remeras.jpg" alt="" class="img-cart">
+                        </div>
+                        <div>
+                            <p class="talle">M</p>
+                        </div>
+                        <div class="color-quitar">
+                            <p class="color"><i class="fas fa-dot-circle"></i></p>
+                            <form action="" method="get" class="button-quitar">
+                                <button type="submit" class="button-quitar">quitar</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <nav class="cart">
+                        <div class="product-price">
+                            <p class="product">1X Shorts</p>
+                            <p class="price">$2500</p>
+                        </div>
+                        <div class="img-cart-container">
+                            <img src="img/productosHome/img-producto-home-short.jpg" alt="" class="img-cart">
+                        </div>
+                        <div>
+                            <p class="talle">L </p>
+                        </div>
+                        <div class="color-quitar">
+                            <p class="colors"><i class="fas fa-dot-circle"></i></p>
+                            <form action="" method="get" class="button-quitar">
+                                <button type="submit" class="button-quitar">quitar</button>
+                            </form>
+                        </div>
+                    </nav>
+                </nav>
+                <div class="discount">
+                    <form action="" method="get" class="discount-input">
+                        <input type="text" name="codigoDescuento" placeholder="Codigo de descuento" id="codigoDescuento">
+                        <button type="submit" class="button-discount">Aplicar</button>
+                    </form>
                 </div>
-            </div>
-            <div class="middle-bottom">
-                <div class="footer-middle">
-                    <div class="empresa">
-                        <h3>Empresa</h3>
-                        <ul class="lista-empresa">
-                            <div class="izq">
-                                <il>Quiénes Somos</il>
-                                <il>Locales</il>
-                            </div>
-                            <div class="der">
-                                <il>Trabaja con Nosotros</il>
-                                <il>Noticias</il>
-                            </div>
-                        </ul>
-                    </div> 
-                </div>
-                <div class="footer-bottom">
-                    <div class="compras">
-                        <h3>Compras</h3>
-                        <ul class="lista-compras">
-                            <div class="izq">
-                                <il>Métodos de Pago</il>
-                                <il>Devoluciones</il>
-                            </div>
-                            <div class="der">
-                                <il>Preguntas Frecuentes</il>
-                                <il>Envíos y Condiciones</il>
-                            </div>
-                        </ul>
+                <nav>
+                    <div class="subtotal-price">
+                        <p>Subtotal</p>
+                        <p class="price">$4200</p>
                     </div>
-                </div>
-            </div>
-            <p class="copyright">© 2021 Hábito</p>
-        </div>
-    </footer>
-</body>
-</html>
+                    <div class="envio-price">
+                        <p>Envio</p>
+                        <p class="price">$500</p>
+                    </div>
+                    <div class="total-price">
+                        <p>TOTAL</p>
+                        <p class="price">$4700</p>
+                    </div>
+                    <div class="buys">
+                        <form action="" method="get" class="buy">
+                            <button type="submit" class="button-buy">COMPRAR</button>
+                        </form>
+                    </div>
+                </nav>
+            </nav>
+        </main>
+        <%- include('../partials/footer')  %>
+    </body>
+
+    </html>
