@@ -1,12 +1,164 @@
-<%- include('../partials/head')%>
 
-    <body>
-        <%- include('../partials/header')%>
-            <h1>Editar Producto</h1>
 
-            <form action=""></form>
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar producto</title>
+        <link rel="stylesheet" href="/css/editProduct.css">
+    </head>
+<body>
 
-            <%- include('../partials/footer')  %>
-    </body>
+   <header>
+       <div></div>
+   </header>
 
-    </html>
+    <main>
+
+        <div class="backButton">
+            <a href="/"><span>Volver</span></a>
+        </div>
+
+        <div class="headForm">
+            <span class="tituloForm">Editar producto:</span>
+            <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
+        </div>
+    
+            <form action="">
+            
+            
+
+                <div class="menuContainer" >
+                    
+            <!-- LEFT CONTAINER---------------------------- -->
+                    <div class="leftContainer">
+                         <input class="img-checkbox"        type="file" id='image-selection' accept="image/*,.pdf">
+
+                        <label for="image-selection">
+                        <img src=/img/editProduct/hoddie_infinite_01.jpg alt="Hoddie front" class="left-img-container">    
+                        </label>
+
+                          </input>
+
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+
+                            <label for="image-selection">
+                                <img src=/img/editProduct/hoddie_infinite_02.jpg alt="Hoddie back" class="left-img-container">
+                                
+                            </label>
+                        </input>
+
+                        <!-- <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+
+                            <label for="image-selection">
+                            <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
+                            </label>
+                         </input> -->
+                    
+                    </div>
+
+                    <!-- MIDDLE CONTAINER--------------------- -->
+                    <div class="middleContainer">
+                        <div
+                        class="middle-img-container">
+                        <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
+
+                            <label for="image-selection">
+                                <img src=/img/ProductosHome/img-producto-home-hoodies.jpg alt="Inserte imagen del producto"  >
+                            </label>
+                        </input>
+                    </div>
+                
+                
+                    </div>
+
+                <!-- RIGHT CONTAINER--------------------------- -->
+
+                    <div class="rightContainer">
+
+                            <input type="text" class="input-product-name" placeholder="Hoddie Infinite"
+                            name="productName" required>
+
+                            <div class="contenedor-precio">
+                                <span class='signo-precio'>$</span>
+                                <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="5.700"
+                                name="productPrice" required>
+                                
+                            </div>
+                            <div class="contenedor-precio">
+                                <span class='signo-precio'>%</span>
+                                <input type="number" class="input-product-price" min='0 ' max='100' placeholder="40 off"
+                                name="productDiscount" >
+                               
+                                
+                            </div>
+
+                            <span class="product-description">Descripción:</span>
+
+                            <textarea class="input-description" name="productDescription" id="" cols="30" rows="10" placeholder="Escribe la descripción..." required></textarea  >
+
+                            <!-- TALLE------------------------------- -->
+                            <div class="input-product-size">
+                                <SPAN >Talle: </SPAN>
+                                
+                                        <div class="sizeContainer">
+                                            <input type="checkbox" class="checkbox" name="sizeProduct-XS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProduct-S" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProduct-M" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProduct-L" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProduct-XL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
+                                
+                                        </div>
+                            </div>
+
+                                    <!-- COLOR-------------------------- -->
+                        <div class="input-product-color">
+                            <SPAN >Color: </SPAN>
+                            <div class="colorContainer">
+                                <input type="checkbox" class="checkbox" name="colorProduct-white" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProduct-red" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProduct-blue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProduct-green" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProduct-yellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+                            
+                            </div>
+                        </div>
+                    
+                        <!-- CATEGORIA------------------------- -->
+                        <div class="input-product-category">
+                            <SPAN >Categoría: </SPAN>
+                            <div class="categoryContainer">
+                                <select name="product-categories" id="categorias" required>
+                                    <option value="Hoddies">Hoddies</option>
+                                    <option value="Camisas">Camisas</option>
+                                    <option value="Remeras">Remeras</option>
+                                    <option value="Pantalones">Pantalones</option>
+                                </select>
+                            
+                            </div>
+                        </div>
+                        
+
+
+                            <button class="btn-add" type="submit">Editar producto</button>
+
+                        
+
+                    </div>
+
+                </div>
+
+
+            </form>
+
+
+    </main>
+
+    
+   
+</body>
+</html>
+
