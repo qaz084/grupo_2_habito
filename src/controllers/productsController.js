@@ -2,7 +2,7 @@ const productsDetails = [
     {
         id: 1,
         categories: "Hoddie",
-        price: "$5.700",
+        price: '5700',
         discount: "40% Off",
         description: "Hoddie infinite",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
@@ -15,7 +15,7 @@ const productsDetails = [
     {
         id: 2,
         categories: "Joggers",
-        price: "$2.300",
+        price: "2300",
         discount: "10% Off",
         description: "Joger solvang",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
@@ -28,7 +28,7 @@ const productsDetails = [
     {
         id: 3,
         categories: "Remeras",
-        price: "$1.200",
+        price: "1200",
         discount: "37% Off",
         description: "Remera",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
@@ -41,7 +41,7 @@ const productsDetails = [
     {
         id: 4,
         categories: "Shorts",
-        price: "$2.500",
+        price: "2500",
         discount: "7% Off",
         description: "Short",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
@@ -54,7 +54,7 @@ const productsDetails = [
     {
         id: 5,
         categories: "Camperas",
-        price: "$15.000",
+        price: "15000",
         discount: "25% Off",
         description: "Campera",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
@@ -88,7 +88,9 @@ const controller = {
     },
 
     editProduct: (req, res) => {
-        res.render('../views/products/editProduct')
+        let idProduct = req.params.id;
+        const editProduct = productsDetails.find(element => element.id == idProduct);
+        res.render('../views/products/editProduct',{'editProduct': editProduct})
     }
 }
 

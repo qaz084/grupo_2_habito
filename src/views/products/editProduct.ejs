@@ -4,11 +4,10 @@
 })%>
 <body>
 
-<header>
-    <div></div>
-</header>
+    <%- include('../partials/header')%>
 
     <main>
+
 
         <div class="backButton">
             <a href="/"><span>Volver</span></a>
@@ -30,17 +29,16 @@
                         <input class="img-checkbox"        type="file" id='image-selection' accept="image/*,.pdf">
 
                         <label for="image-selection">
-                        <img src=/img/editProduct/hoddie_infinite_01.jpg alt="Hoddie front" class="left-img-container">    
+                        <img src= <%=editProduct.img2%>  alt="Hoddie front" class="left-img-container">    
                         </label>
 
                         </input>
 
                         <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
 
-                            <label for="image-selection">
-                                <img src=/img/editProduct/hoddie_infinite_02.jpg alt="Hoddie back" class="left-img-container">
-                                
-                            </label>
+                        <label for="image-selection">
+                        <img src=<%=editProduct.img5 %> alt="Hoddie back" class="left-img-container">    
+                        </label>
                         </input>
 
                         <!-- <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
@@ -59,7 +57,7 @@
                         <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
 
                             <label for="image-selection">
-                                <img src=/img/ProductosHome/img-producto-home-hoodies.jpg alt="Inserte imagen del producto"  >
+                                <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >
                             </label>
                         </input>
                     </div>
@@ -72,25 +70,26 @@
                     <div class="rightContainer">
 
                             <input type="text" class="input-product-name" placeholder="Hoddie Infinite"
+                            value="<%=editProduct.description %>"
                             name="productName" required>
 
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>$</span>
-                                <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="5.700"
+                                <input type="number" class="input-product-price" min='0 ' value=<%= parseInt(editProduct.price) %>
                                 name="productPrice" required>
-                                
+                              
                             </div>
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>%</span>
-                                <input type="number" class="input-product-price" min='0 ' max='100' placeholder="40 off"
+                                <input type="number" class="input-product-price" min='0 ' max='100' value="<%= parseInt(editProduct.discount) %>"
                                 name="productDiscount" >
                             
                                 
                             </div>
 
-                            <span class="product-description">Descripción:</span>
-
-                            <textarea class="input-description" name="productDescription" id="" cols="30" rows="10" placeholder="Escribe la descripción..." required></textarea  >
+                            <label for="descripcion"><span class="product-description">Descripción:</span></label>
+                            
+                            <textarea class="input-description" name="productDescription" id="descripcion" cols="30" rows="10" required> <%=editProduct.longDescription %> </textarea  >
 
                             <!-- TALLE------------------------------- -->
                             <div class="input-product-size">
