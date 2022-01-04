@@ -4,44 +4,7 @@
 })%>
 
     <body>
-        <header>
-            <div class="header-container">
-                <div class="top-container">
-                    <div class="left">
-                        <div class="main-container">
-                            <a href='#' class="burger-menu">
-                                <i class="fas fa-bars"></i>
-                            </a>
-                        </div>
-                        <div class="logo-nav">
-                            <a href="/"><img src="img/Habito_01.svg" alt="logo Hábito" class="logo"></a>
-                            <nav class="main-navbar">
-                                <ul class="navbar">
-                                    <li class="main-menu">Categorías</li>
-                                    <li class="main-menu">Ofertas</li>
-                                    <li class="main-menu">Contacto</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="header-icons">
-                        <div class="search-logo">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="user-logo">
-                            <a href="/login"><i class="fas fa-user"></i></a>
-                        </div>
-                        <div class="cart-logo">
-                            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="data-contact">
-                <p class="data-contact1">Datos de contacto</p>
-                <p>¿Ya tienes cuenta? <a href="/login"> Iniciar sesion</a> </p>
-            </div>
-        </header>
+        <%- include('../partials/header')%>
         <main>
             <nav class="lefts">
                 <div class="email-ofertas">

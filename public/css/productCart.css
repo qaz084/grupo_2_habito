@@ -329,6 +329,9 @@ h3 {
 
 @media (min-width: 769px) {
 
+    .email-ofertas{
+        margin-top: 60px;
+    }
     .burger-menu {
         display: none;
     }
@@ -425,6 +428,9 @@ h3 {
     .cart{
         width: 80%;
         margin-right: 0px;
+    }
+    .carts{
+        margin-top: 60px;
     }
     .discount{
         width: 260px;
