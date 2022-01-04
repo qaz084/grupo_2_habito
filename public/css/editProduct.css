@@ -591,7 +591,10 @@ top: 526px; */
         outline: none;
         border: none;
         border-bottom: 2px solid #aaaaaa;
+        
     }
+
+    
     .checkbox{
 
         display: none;
