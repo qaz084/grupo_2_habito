@@ -18,8 +18,8 @@ mainRoutes = require('./routes/main');
 app.use("/", mainRoutes);
 
 productsRoutes = require("./routes/products");
-app.use("/", productsRoutes);
+app.use("/products", productsRoutes);
 
 usersRoutes = require("./routes/users");
-app.use("/", usersRoutes)
+app.use("/users", usersRoutes)
 
