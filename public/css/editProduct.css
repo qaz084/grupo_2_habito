@@ -7,9 +7,9 @@
     box-sizing: border-box;
 }
 
+/* ----------CSS HEADER------------------ */
 
-
-header{
+/* header{
    display: flex;
    justify-content: center;
    align-items: center;
@@ -18,7 +18,194 @@ height: 214px;
 
 background: rgba(196, 196, 196, 0.63);
 
+} */
+
+.header-container {
+    height: 100px;
 }
+.main-navbar li {
+    list-style: none;
+}
+.top-container {
+    background-color: #F2F0D5;
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    height: 100px;
+}
+.bottom-container {
+    margin-top: 80px;
+}
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.logo {
+    width: 150px;
+    padding-left: 10px;
+}
+.header-icons {
+    font-size: 20px;
+    color: #686868;
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+.search-logo, .user-logo, .cart-logo {
+    padding-left: 3px;
+    text-align: center;
+}
+.fa-shopping-cart, .fa-user, .fa-search{
+    color: #666;
+}
+.search-logo:hover .fa-search, .user-logo:hover .fa-user, .cart-logo:hover .fa-shopping-cart {
+    background-color: #686868;
+    color: white;
+    font-size: 25px;
+    padding-left: 3px;
+    transition: all 450ms;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+.left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.burger-menu i {
+    color: #686868;
+    font-size: 30px;
+}
+.slider .img3 {
+    width: 100%;
+    position: relative;
+}
+.next-prev {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 24%;
+    z-index: 5;
+    font-size: 30px;
+    width: 100%;
+    opacity: 0.5;
+    padding: 0 5%;
+}
+.navbar {
+    display: none;
+}
+.colors{
+    color: rgba(90, 75, 10, 0.534);
+    text-decoration: underline;
+}
+.img-cart{
+    width: 150px;
+    height: 200px;
+}
+.img-cart-container{
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 481px) {
+    .product-article {
+        width: 40%;
+    }
+}
+@media (min-width: 769px) {
+    .email-ofertas{
+        margin-top: 60px;
+    }
+    .burger-menu {
+        display: none;
+    }
+    .logo {
+        justify-content: center;
+        width: 250px;
+        margin-bottom: 15px;
+    }
+    .top-container {
+        flex-direction: column;
+        padding: 2% 5%;
+        margin: auto;
+        height: 15%;
+    }
+    .logo-nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        width: 100%;
+    }
+    .header-icons {
+        width: 15%;
+        align-self: flex-end;
+        position: absolute;
+        top: 45%    
+    }
+    .navbar {
+        display: flex;
+        font-family:'Open Sans', sans-serif;
+        width: 100%;
+        color: #686868;
+        margin: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .main-navbar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar .main-menu {
+        margin: 0 10px;
+        font-weight: 700;
+    }
+    .main-menu:hover {
+        background-color: #686868;
+        color: white;
+        transition: all 450ms;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+    }
+    .middle-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        margin-top: 50px;
+        margin: auto;
+        max-width: 1280px;
+    }
+   
+}
+@media (min-width: 1280px) {
+    .header-container {
+       display: flex;
+       justify-content: center;
+    }
+}
+
+
+/* -----------------CSS MAIN----------------------- */
 
 .logo-header{
 
@@ -48,8 +235,7 @@ main{
     margin: auto;
     margin-top: 2%;
     margin-bottom: 30px;
-    
-   
+      
 }
 .backButton{
   
