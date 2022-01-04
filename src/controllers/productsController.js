@@ -32,7 +32,7 @@ const productsDetails = [
         discount: "37% Off",
         description: "Remera",
         longDescription: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
-        img1: "/img/productosHome/img-producto-home-remeras.jpg",
+        img: "/img/productosHome/img-producto-home-remeras.jpg",
         img2: "/img/detalle_producto/img-remera-1.jpg",
         img3: "/img/detalle_producto/img-remera-2.jpg",
         img4: "/img/detalle_producto/img-remera-3.jpg",
