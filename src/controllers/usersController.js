@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 //Ubicar archivo Json
-const filePath = path.resolve(__dirname, '../../data/users.json');
+const filePath = path.resolve(__dirname, '../data/users.json');
 //Lectura de Json y Parseo
 const usersArray = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
