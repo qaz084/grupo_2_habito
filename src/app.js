@@ -11,7 +11,12 @@ app.listen(3000, () => {
     console.log("Servidor corriendo")
 });
 
+// Setup template engine
 app.set('view engine', 'ejs');
+
+// Setup del req.body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 mainRoutes = require('./routes/main');
@@ -21,5 +26,5 @@ productsRoutes = require("./routes/products");
 app.use("/products", productsRoutes);
 
 usersRoutes = require("./routes/users");
-app.use("/users", usersRoutes)
+app.use("/users", usersRoutes);
 

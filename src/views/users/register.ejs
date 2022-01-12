@@ -41,22 +41,30 @@
                             <a class="login" href="/login ">Iniciar sesión</a>
                         </p>
                         <h3>O con tu correo electrónico:</h3>
-                        <form class="inputs" action=" " method="get">
+                        
+                        <form class="inputs" action="/users" method="post" enctype="multipart/form-data">
                             <div class="inputs">
-                                <input class="inputs color" type="text " name="Usuario " placeholder="Usuario: " required>
+                                <input class="inputs color" type="text " name="nombre" placeholder="Nombre: " required>
                             </div>
                             <br>
                             <div class="inputs">
-                                <input class="inputs color" type="email " name="email " placeholder="E-mail: " required>
+                                <input class="inputs color" type="text " name="apellido" placeholder="Apellido: " required>
+                            </div>
+                            <br>
+                            <div class="inputs">
+                                <input class="inputs color" type="email " name="email" placeholder="E-mail: " required>
                             </div>
                             <br>
                             <div class="inputs"><label for="contraseña"></label>
-                                <input class="inputs color" type="password " name="contraseña " placeholder="Contraseña: " required>
+                                <input class="inputs color" type="password " name="contraseña" placeholder="Contraseña: " required>
                             </div>
                             <br>
-                            <div class="inputs"><label for="repetircontraseña">
-                        </label>
-                                <input class="inputs color" type="password " name="repetircontraseña " placeholder="Repetir contraseña: " required>
+                            <div class="inputs"><label for="repetircontraseña"></label>
+                                <input class="inputs color" type="password " name="repetirContraseña" placeholder="Repetir contraseña: " required>
+                            </div>
+                            <br>
+                            <div class="inputs">
+                                <input class="inputs color" type="file" name="imagen">
                             </div>
                     </div>
                     <br>
@@ -68,8 +76,9 @@
                     <div class="create">
                         <button class="button-count" type=" submit ">Crear cuenta</button>
                     </div>
-                </div>
                 </form>
+                </div>
+                
 
                 </div>
 
