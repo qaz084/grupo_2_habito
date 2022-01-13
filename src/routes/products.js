@@ -27,9 +27,9 @@ router.get("/create",controller.createProduct);
 router.post('/', controller.add);
 
 router.get("/edit/:id",controller.editProduct);
-// router.put('/:id',controller.update);
+router.put('/:id',controller.update);
 
-// router.delete('/:id',controller.delete);
+router.delete('/:id',controller.delete);
 
 
 module.exports = router;

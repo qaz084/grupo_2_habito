@@ -19,8 +19,6 @@
         </div>
     
             <form action="">
-            
-            
 
                 <div class="menuContainer" >
                     
@@ -53,14 +51,13 @@
                     <!-- MIDDLE CONTAINER--------------------- -->
                     <div class="middleContainer">
                         <div
-                        class="middle-img-container">
-                        <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
+                             class="middle-img-container">
+                                <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
 
-                            <label for="image-selection">
-                                <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >
-                            </label>
-                        </input>
-                    </div>
+                                    <label for="image-selection">
+                                        <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >                            </label>
+                                </input>
+                        </div>
                 
                 
                     </div>
@@ -69,8 +66,7 @@
 
                     <div class="rightContainer">
 
-                            <input type="text" class="input-product-name" placeholder="Hoddie Infinite"
-                            value="<%=editProduct.description %>"
+                            <input type="text" class="input-product-name" placeholder="Hoddie Infinite" 
                             name="productName" required>
 
                             <div class="contenedor-precio">
@@ -132,11 +128,13 @@
                             </div>
                         </div>
                         
+ <!-- ------------------------BOTONES----------------- -->
+                            <div class="botones">
 
+                                <form action="/products/<% =editProduct.id %>?_method=POST" method="post"><button class="btn-add" type="submit">Editar producto</button></form>
 
-                            <button class="btn-add" type="submit">Editar producto</button>
-
-                        
+                                <form action="/products/<% =editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
+                            </div>
 
                     </div>
 

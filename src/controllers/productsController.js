@@ -42,14 +42,17 @@ const controller = {
         res.render('../views/products/editProduct',{'editProduct': editProduct})
     },
 
-    update:{
+    update:(req, res) => {
+            const productId= req.params.id;
+            return res.send('editamos el producto con ID '+productId);
 
+     },
 
-    },
+    delete: (req, res) => {
+        const productId= req.params.id;
+       return res.send('borramos producto con ID '+productId);
+       
 
-    delete:{
-
-        
     }
 }
 
