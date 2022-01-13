@@ -28,7 +28,8 @@
             <main>
                 <nav class="products">
                     <% for (let i = 0; i<products.length; i++) {%>
-                        <article class="product-article">
+                      <article class="product-article">
+                         <a href="/products/detail/<%=products[i].id%>">
                             <h2 class="categories">
                                 <%=products[i].categories%>
                             </h2>
@@ -41,7 +42,7 @@
                                     <i class="fas fa-chevron-circle-right"></i>
                                 </div>
                             </div>
-                            <a href="/productdetail">
+                            <a href="/products/detail/<%=products[i].id%>">
                                 <div class="product-description">
                                     <p class="product-name">
                                         <%=products[i].description%>

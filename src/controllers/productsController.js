@@ -22,10 +22,34 @@ const controller = {
         res.render('../views/products/createProduct')
     },
 
+    add: (req, res) => {
+		
+		productsDetails.push({
+			description: req.body.description,
+			price: req.body.price,
+		});
+
+		
+		fs.writeFileSync(filePath, JSON.stringify(productsDetails, null, ' '));
+
+		// Y luego la redirección
+		res.redirect('/products?saved=true');
+	},
+
     editProduct: (req, res) => {
         let idProduct = req.params.id;
         const editProduct = productsDetails.find(element => element.id == idProduct);
         res.render('../views/products/editProduct',{'editProduct': editProduct})
+    },
+
+    update:{
+
+
+    },
+
+    delete:{
+
+        
     }
 }
 

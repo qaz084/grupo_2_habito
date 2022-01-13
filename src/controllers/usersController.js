@@ -24,7 +24,7 @@ const controller = {
         })
 
         fs.writeFileSync(filePath, JSON.stringify(usersArray, null, ' '))
-        res.redirect('/users?saved=true');
+        res.redirect('/?saved=true');
     },
 }
 
