@@ -176,6 +176,13 @@ h3 {
     margin: 0;
     padding-left: 0;
 }
+.botones-detail{
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items:center;
+ }
 
 .lista-empresa, .lista-compras {
     margin: 0;

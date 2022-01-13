@@ -50,8 +50,7 @@
 
                     <!-- MIDDLE CONTAINER--------------------- -->
                     <div class="middleContainer">
-                        <div
-                             class="middle-img-container">
+                        <div class="middle-img-container">
                                 <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
 
                                     <label for="image-selection">
@@ -67,7 +66,7 @@
                     <div class="rightContainer">
 
                             <input type="text" class="input-product-name" placeholder="Hoddie Infinite" 
-                            name="productName" required>
+                            name="productName" value="<%= editProduct.name %> " required>
 
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>$</span>
@@ -129,12 +128,12 @@
                         </div>
                         
  <!-- ------------------------BOTONES----------------- -->
-                            <div class="botones">
+                                    <div class="botones">
 
-                                <form action="/products/<% =editProduct.id %>?_method=POST" method="post"><button class="btn-add" type="submit">Editar producto</button></form>
+                                        <form action="/products/<%= editProduct.id %>?_method=PUT" method="post"><button class="btn-add" type="submit">Editar producto</button></form>
 
-                                <form action="/products/<% =editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
-                            </div>
+                                        <form action="/products/<%= editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
+                                    </div>
 
                     </div>
 
