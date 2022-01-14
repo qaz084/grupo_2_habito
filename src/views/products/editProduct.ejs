@@ -18,26 +18,28 @@
             <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
         </div>
     
-            <form action="">
+            <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST">
 
                 <div class="menuContainer" >
                     
-            <!-- LEFT CONTAINER---------------------------- -->
+            <!-- LEFT CONTAINER  ACA SE CAMBIAN LAS IMAGENES DE LA IZQUIERDA---------------------------- -->
                     <div class="leftContainer">
-                        <input class="img-checkbox"        type="file" id='image-selection' accept="image/*,.pdf">
+                        <input class="img-checkbox"        type="file" id='img2' accept="image/*,.pdf">
 
-                        <label for="image-selection">
+                        <label for="img2">
                         <img src= <%=editProduct.img2 %>  alt="Hoddie front" class="left-img-container">    
                         </label>
 
                         </input>
 
-                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+                        <input class="img-checkbox" type="file" id='img3' accept="image/*,.pdf">
 
-                        <label for="image-selection">
+                        <label for="img3">
                         <img src=<%=editProduct.img3 %> alt="Hoddie back" class="left-img-container">    
                         </label>
                         </input>
+
+              
 
                         <!-- <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
 
@@ -48,43 +50,43 @@
                     
                     </div>
 
-                    <!-- MIDDLE CONTAINER--------------------- -->
+                    <!----------- MIDDLE CONTAINER  ACA SE EDITA LA IMAGEN CENTRAL--------------------- -->
                     <div class="middleContainer">
                         <div class="middle-img-container">
-                                <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
+                                <input class="img-checkbox" type="file" id='img'accept="image/*,.pdf">
 
-                                    <label for="image-selection">
+                                    <label for="img">
                                         <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >                            </label>
                                 </input>
                         </div>
                 
                 
                     </div>
-
-                <!-- RIGHT CONTAINER--------------------------- -->
+<!-- ------------------------------------------------------------- -->
+                <!-- RIGHT CONTAINER ACA SE EDITAN LOS DATOS DEL PRODUCTO--------------------------- -->
 
                     <div class="rightContainer">
 
                             <input type="text" class="input-product-name" placeholder="Hoddie Infinite" 
-                            name="productName" value="<%= editProduct.name %> " required>
+                            name="name" value="<%= editProduct.name %> " required>
 
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>$</span>
                                 <input type="number" class="input-product-price" min='0 ' value=<%= parseInt(editProduct.price) %>
-                                name="productPrice" required>
+                                name="price" required>
                               
                             </div>
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>%</span>
                                 <input type="number" class="input-product-price" min='0 ' max='100' value="<%= parseInt(editProduct.discount) %>"
-                                name="productDiscount" >
+                                name="discount" >
                             
                                 
                             </div>
 
                             <label for="descripcion"><span class="product-description">Descripción:</span></label>
                             
-                            <textarea class="input-description" name="productDescription" id="descripcion" cols="30" rows="10" required> <%=editProduct.longDescription %> </textarea  >
+                            <textarea class="input-description" name="longDescription" id="descripcion" cols="30" rows="10" required> <%=editProduct.longDescription %> </textarea  >
 
                             <!-- TALLE------------------------------- -->
                             <div class="input-product-size">
@@ -117,7 +119,7 @@
                         <div class="input-product-category">
                             <SPAN >Categoría: </SPAN>
                             <div class="categoryContainer">
-                                <select name="product-categories" id="categorias" required>
+                                <select name="categories" id="categorias" required>
                                     <option value="Hoddies">Hoddies</option>
                                     <option value="Camisas">Camisas</option>
                                     <option value="Remeras">Remeras</option>
@@ -130,7 +132,7 @@
  <!-- ------------------------BOTONES----------------- -->
                                     <div class="botones">
 
-                                        <form action="/products/<%= editProduct.id %>?_method=PUT" method="post"><button class="btn-add" type="submit">Editar producto</button></form>
+                                        <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST"><button class="btn-add" type="submit">Editar producto</button></form>
 
                                         <form action="/products/<%= editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
                                     </div>
