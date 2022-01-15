@@ -128,13 +128,13 @@ const controller = {
 
             return res.redirect('./detail/'+  productId );
 
-     },
+    },
 
     delete: (req, res) => {
-        const productId= req.params.id;
-       return res.send('borramos producto con ID '+productId);
-       
-
+        let idProducto = req.params.id;
+        productsDetails = productsDetails.filter(product => product.id != idProducto);
+        fs.writeFileSync(filePath, JSON.stringify(productsDetails, null, ' '));
+        res.redirect("/");
     }
 }
 
