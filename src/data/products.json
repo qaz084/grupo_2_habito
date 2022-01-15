@@ -53,37 +53,5 @@
   "img": "/img/productosHome/img-productos-home-campera.jpg",
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
- },
- {
-  "id": 6,
-  "categories": "Remeras",
-  "discount": "32",
-  "name": "Intel core i5 12800k",
-  "description": "asdasdasdasdasads",
-  "talles": [
-   "XS",
-   "S"
-  ],
-  "colors": [
-   "White",
-   "Red"
-  ],
-  "img3": "IMG-1642214029160.jpg"
- },
- {
-  "id": 7,
-  "categories": "Camisas",
-  "discount": "32",
-  "name": "Intel core i5 12800k",
-  "description": "2ddsadsadsadassad",
-  "talles": [
-   "S",
-   "M"
-  ],
-  "colors": [
-   "Red",
-   "Blue"
-  ],
-  "img3": "IMG-1642214568774.jpg"
  }
 ]
