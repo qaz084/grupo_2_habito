@@ -19,7 +19,7 @@
             <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
         </div>
     
-            <form action="">
+            <form action="/products/" method="post" enctype="multipart/form-data">
             
             
 
@@ -27,41 +27,37 @@
                     
             <!-- LEFT CONTAINER---------------------------- -->
                     <div class="leftContainer">
-                         <input class="img-checkbox"        type="file" id='image-selection' accept="image/*,.pdf">
 
-                        <label for="image-selection">
-                        <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">    
-                        </label>
-
-                          </input>
-
-                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf" name="imagenes">
+                        
 
                             <label for="image-selection">
-                                <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
-                                
+                            <img src="\img\createProduct\insert-product-image.png" class="left-img-container">    
                             </label>
-                        </input>
 
-                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+                            <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf" name="imagenes">
 
                             <label for="image-selection">
-                            <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
+                            <img src="\img\createProduct\insert-product-image.png" class="left-img-container">                                
                             </label>
-                         </input>
-                    
+
+                            <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf" name="imagenes">
+
+                            <label for="image-selection">
+                            <img src="\img\createProduct\insert-product-image.png" class="left-img-container">
+                            </label>
+
                     </div>
 
                     <!-- MIDDLE CONTAINER--------------------- -->
                     <div class="middleContainer">
-                        <div
-                        class="middle-img-container">
-                        <input class="img-checkbox" type="file" id='image-selection'accept="image/*,.pdf">
+                        <div class="middle-img-container">
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf" name="imagenes">
 
                             <label for="image-selection">
-                                <img src="\img\createProduct\insert-product-image.png" alt="Inserte imagen del producto"  >
+                                <img src="\img\createProduct\insert-product-image.png">
                             </label>
-                        </input>
+                        
                     </div>
                 
                 
@@ -84,7 +80,7 @@
                                 <span class='signo-precio'>%</span>
                                 <input type="number" class="input-product-price" min='0 ' max='100' placeholder="Tiene descuento del..."
                                 name="productDiscount" >
-                               
+                            
                                 
                             </div>
 
@@ -97,11 +93,11 @@
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-XS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-S" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-M" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-L" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-XL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
+                                            <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
                                 
                                         </div>
                             </div>
@@ -110,11 +106,11 @@
                         <div class="input-product-color">
                             <SPAN >Color: </SPAN>
                             <div class="colorContainer">
-                                <input type="checkbox" class="checkbox" name="colorProduct-white" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-red" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-blue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-green" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-yellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductwhite" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductred" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductblue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductgreen" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
                             
                             </div>
                         </div>
@@ -123,7 +119,7 @@
                         <div class="input-product-category">
                             <SPAN >Categoría: </SPAN>
                             <div class="categoryContainer">
-                                <select name="product-categories" id="categorias" required>
+                                <select name="productcategories" id="categorias" required>
                                     <option value="Camisas">Camisas</option>
                                     <option value="Remeras">Remeras</option>
                                     <option value="Hoddies">Hoddies</option>
@@ -133,7 +129,6 @@
                             </div>
                         </div>
                         
-
 
                             <button class="btn-add" type="submit">Crear producto</button>
 
@@ -150,7 +145,6 @@
     </main>
 
     
-   
 </body>
 </html>
 

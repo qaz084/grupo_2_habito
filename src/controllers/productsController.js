@@ -23,17 +23,72 @@ const controller = {
     },
 
     add: (req, res) => {
-		
+
+        const generateID = () => {
+            if(productsDetails.length != 0){       
+                const lastProduct =  productsDetails[Number(productsDetails.length) - Number(1)];	         
+                const lastID = Number(lastProduct.id) + Number(1);	
+                return lastID;
+            }else{
+                const lastID = 1
+                return lastID;
+            }
+        }
+
+        let talles=[]
+        if(req.body.sizeProductXS != null){
+            talles.push("XS")
+        }
+        if(req.body.sizeProductS != null){
+            talles.push("S")
+        }
+        if(req.body.sizeProductM != null){
+            talles.push("M")
+        }
+        if(req.body.sizeProductL != null){
+            talles.push("L")
+        }
+        if(req.body.sizeProductXL != null){
+            talles.push("Xl")
+        }
+
+        let colors = []
+        if(req.body.colorProductwhite != null){
+            colors.push("White")
+        }
+        if(req.body.colorProductred != null){
+            colors.push("Red")
+        }
+        if(req.body.colorProductblue != null){
+            colors.push("Blue")
+        }
+        if(req.body.colorProductgreen != null){
+            colors.push("Green")
+        }
+        if(req.body.colorProductyellow != null){
+            colors.push("Yellow")
+        }
+
+        let imagesNames = req.files.map(imgData => imgData.filename);
+        console.log(req.files)
 		productsDetails.push({
-			description: req.body.description,
-			price: req.body.price,
+            id:generateID(),
+            categories: req.body.productcategories,
+            price: req.body.price,
+            discount: req.body.productDiscount,
+            name: req.body.productName,
+            description: req.body.productDescription,
+            talles: talles,
+            colors: colors,
+            img: imagesNames[3],
+            img2: imagesNames[2],
+            img3: imagesNames[0],
+            img4: imagesNames[1],
+            
 		});
 
-		
 		fs.writeFileSync(filePath, JSON.stringify(productsDetails, null, ' '));
-
-		// Y luego la redirección
-		res.redirect('/products?saved=true');
+        res.redirect("/");
 	},
 
     editProduct: (req, res) => {
