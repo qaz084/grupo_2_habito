@@ -21,7 +21,8 @@ const controller = require("../controllers/usersController");
 
 //GET - http://localhost3000/users/login
 router.get("/login", controller.userLogin);
-
+//POST - http://localhost3000/users/login
+router.post("/login", controller.logUser);
 
 
 //GET - http://localhost3000/users/register

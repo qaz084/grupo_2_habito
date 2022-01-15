@@ -36,27 +36,27 @@
                             </a>
                         </div>
                     </div>
-                    <form action="" method="get" class="usuario">
+                    <form action="/users/login" method="post" class="usuario">
                         <div class="container-inputs">
                             <br>
-                            <input class="inputs-color" type="text" name="usuario" placeholder="Usuario" required>
+                            <input class="inputs-color" type="email" name="email" placeholder="Email" required>
                             <label for="usuario"></label>
                         </div>
                         <br>
 
                         <div class="container-inputs">
-                            <input class="inputs-color" type="password" name="contraseña" placeholder="Contraseña" required>
+                            <input class="inputs-color" type="password" name="contrasenia" placeholder="Contraseña" required>
                             <label for="contraseña"></label>
                         </div>
                         <br>
 
+                        <div class="container-password">
+                            <a class="x" href="">¿Te olvidaste la contraseña?</a>
+                            
+                        </div>
+
+                        <button class="button-sesion" type="submit">Iniciar Sesion</button>
                     </form>
-
-                    <div class="container-password">
-                        <a class="x" href="">¿Te olvidaste la contraseña?</a>
-                    </div>
-
-                    <button class="button-sesion" type="submit">Iniciar Sesion</button>
 
                 </div>
 

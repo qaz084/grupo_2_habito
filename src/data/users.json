@@ -1,34 +1,11 @@
 [
  {
-  "nombre": "Jonathan",
-  "apellido": "Iurman",
-  "email": "jonathaniurman@gmail.com",
-  "pass": "1234",
-  "repetirPass": "1234",
-  "imagen": "1642021685435_172381971imagen.jpg"
- },
- {
-  "nombre": "Jonathan",
-  "apellido": "Iurman",
-  "email": "jonathaniurman@gmail.com",
-  "pass": "1234",
-  "repetirPass": "1234",
-  "imagen": "1642021686039_860910215imagen.jpg"
- },
- {
-  "nombre": "Jonathan",
-  "apellido": "Iurman",
-  "email": "jonathaniurman@gmail.com",
-  "pass": "1234",
-  "repetirPass": "1234",
-  "imagen": "1642022431970_97505334imagen.jpg"
- },
- {
-  "nombre": "Jonathan",
-  "apellido": "Iurman",
-  "email": "jonathaniurman@gmail.com",
-  "pass": "1234",
-  "repetirPass": "1234",
-  "imagen": "1642022552234_350350300imagen.jpg"
+  "nombre": "Juan",
+  "apellido": "Arrospide",
+  "email": "jarros87@gmail.com",
+  "pass": "roque",
+  "repetirPass": "roque",
+  "imagen": "1642200168090_761904491imagen.jpg",
+  "id": 1
  }
 ]
