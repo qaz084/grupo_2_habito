@@ -53,5 +53,74 @@
   "img": "/img/productosHome/img-productos-home-campera.jpg",
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
+ },
+ {
+  "id": 6,
+  "categories": "Remeras",
+  "discount": "43",
+  "name": "Intel core i5 12800k",
+  "description": "dsadsadsasdadas",
+  "talles": [
+   "XS",
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Red",
+   "Blue",
+   "Green"
+  ],
+  "img3": "IMG-1642644203399.jpg"
+ },
+ {
+  "id": 7,
+  "categories": "Camisas",
+  "discount": "32",
+  "name": "Intel core i5 12800k",
+  "description": "dsaddasdas",
+  "talles": [
+   "XS",
+   "S"
+  ],
+  "colors": [
+   "Red",
+   "Blue"
+  ],
+  "img3": "IMG-1642646228611.jpg"
+ },
+ {
+  "id": 8,
+  "categories": "Remeras",
+  "discount": "32",
+  "name": "Intel core i5 12800k",
+  "description": "sdasddsadsasd",
+  "talles": [
+   "XS",
+   "S"
+  ],
+  "colors": [
+   "Red",
+   "Blue"
+  ],
+  "img3": "IMG-1642646390468.jpg"
+ },
+ {
+  "id": 9,
+  "categories": "Camisas",
+  "discount": "32",
+  "name": "Intel core i5 12800k",
+  "description": "sdaasddsadsa",
+  "talles": [
+   "S",
+   "M"
+  ],
+  "colors": [
+   "Blue",
+   "Green"
+  ],
+  "img": "IMG-1642646822324.jpg",
+  "img2": "IMG-1642646822286.jpg",
+  "img3": "IMG-1642646822253.jpg",
+  "img4": "IMG-1642646822277.jpg"
  }
 ]
