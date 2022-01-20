@@ -2,10 +2,10 @@
  {
   "id": 1,
   "categories": "Hoddies",
-  "price": "5700",
-  "discount": "40",
-  "name": "Hoddie Marron ",
-  "longDescription": "     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo     ",
+  "price": 5700,
+  "discount": 40,
+  "name": "Hoddie Marron  ",
+  "longDescription": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo      ",
   "img": "/img/productosHome/img-producto-home-hoodies.jpg",
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
@@ -13,8 +13,8 @@
  {
   "id": 2,
   "categories": "Hoddies",
-  "price": "2800",
-  "discount": "10",
+  "price": 2800,
+  "discount": 10,
   "name": "Joger solvang   ",
   "longDescription": "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo   ",
   "img": "/img/productosHome/img-producto-home-joggers.jpg",
@@ -24,8 +24,8 @@
  {
   "id": 3,
   "categories": "Remeras",
-  "price": "1200",
-  "discount": "37",
+  "price": 1200,
+  "discount": 37,
   "name": "Remera",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
   "img": "/img/productosHome/img-producto-home-remeras.jpg",
@@ -35,8 +35,8 @@
  {
   "id": 4,
   "categories": "Shorts",
-  "price": "2500",
-  "discount": "7",
+  "price": 2500,
+  "discount": 7,
   "name": "Short",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
   "img": "/img/productosHome/img-producto-home-short.jpg",
@@ -46,81 +46,13 @@
  {
   "id": 5,
   "categories": "Camperas",
-  "price": "15000",
-  "discount": "25",
+  "price": 15000,
+  "discount": 25,
   "name": "Campera",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
   "img": "/img/productosHome/img-productos-home-campera.jpg",
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
- },
- {
-  "id": 6,
-  "categories": "Remeras",
-  "discount": "43",
-  "name": "Intel core i5 12800k",
-  "description": "dsadsadsasdadas",
-  "talles": [
-   "XS",
-   "S",
-   "M"
-  ],
-  "colors": [
-   "Red",
-   "Blue",
-   "Green"
-  ],
-  "img3": "IMG-1642644203399.jpg"
- },
- {
-  "id": 7,
-  "categories": "Camisas",
-  "discount": "32",
-  "name": "Intel core i5 12800k",
-  "description": "dsaddasdas",
-  "talles": [
-   "XS",
-   "S"
-  ],
-  "colors": [
-   "Red",
-   "Blue"
-  ],
-  "img3": "IMG-1642646228611.jpg"
- },
- {
-  "id": 8,
-  "categories": "Remeras",
-  "discount": "32",
-  "name": "Intel core i5 12800k",
-  "description": "sdasddsadsasd",
-  "talles": [
-   "XS",
-   "S"
-  ],
-  "colors": [
-   "Red",
-   "Blue"
-  ],
-  "img3": "IMG-1642646390468.jpg"
- },
- {
-  "id": 9,
-  "categories": "Camisas",
-  "discount": "32",
-  "name": "Intel core i5 12800k",
-  "description": "sdaasddsadsa",
-  "talles": [
-   "S",
-   "M"
-  ],
-  "colors": [
-   "Blue",
-   "Green"
-  ],
-  "img": "IMG-1642646822324.jpg",
-  "img2": "IMG-1642646822286.jpg",
-  "img3": "IMG-1642646822253.jpg",
-  "img4": "IMG-1642646822277.jpg"
  }
+
 ]
