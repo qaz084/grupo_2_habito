@@ -24,7 +24,7 @@ router.get("/detail/:id", controller.productDetail);
 router.get("/cart", controller.productCart);
 
 router.get("/create",controller.createProduct);
-router.post('/', upload.array("imagenes"),controller.add);
+router.post('/', upload.fields([{name:"img"},{name:"img2"},{name:"img3"},{name:"img4"}]),controller.add);
 
 router.get("/edit/:id",controller.editProduct);
 router.put('/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);

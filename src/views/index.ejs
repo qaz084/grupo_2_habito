@@ -28,8 +28,8 @@
             <main>
                 <nav class="products">
                     <% for (let i = 0; i<products.length; i++) {%>
-                      <article class="product-article">
-                         <a href="/products/detail/<%=products[i].id%>">
+                    <article class="product-article">
+                        <a href="/products/detail/<%=products[i].id%>">
                             <h2 class="categories">
                                 <%=products[i].categories%>
                             </h2>
@@ -49,7 +49,7 @@
                                     </p>
                                     <div class="off-price">
                                         <p class="prices">
-                                           $ <%=products[i].price%>
+                                        $ <%=products[i].price%>
                                         </p>
                                         <p class="off">
                                             <%=products[i].discount%> % OFF
