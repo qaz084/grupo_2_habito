@@ -80,10 +80,10 @@ const controller = {
             description: req.body.productDescription,
             talles: talles,
             colors: colors,
-            img: imagesNames[3],
+            img:  imagesNames[3],
             img2: imagesNames[2],
             img3: imagesNames[0],
-            img4: imagesNames[1],
+            // img4: imagesNames[1],
             
 		});
 
@@ -100,33 +100,33 @@ const controller = {
     update:(req, res) => {
 
             const productId=Number(req.params.id) ;
-
-            const productsArrayEdited= productsDetails.map(product=>{
+           
+            
+           const productsArrayEdited= productsDetails.map(product=>{
                 if(product.id=== productId){
                     return{
-                        ...product,
-                        categories:req.body.categories ,
-                        price:req.body.price ,
-                        discount: req.body.discount,
-                        name: req.body.name ,
-                        longDescription:req.body.longDescription ,
-                        // size: req.body.size,
-                        // color: req.body.color ,
-                        // img:req.body.img ,
-                        // img2: req.body.img2 ,
-                        // img3:req.body.img3 ,
-                        // img4:req.body.img4 ,
-                        // img5:req.body.img5 ,
-                    }
-
+                    ...product,
+                    categories:req.body.categories ,
+                    price:req.body.price ,
+                    discount: req.body.discount,
+                    name: req.body.name ,
+                    longDescription:req.body.longDescription ,
+                    img: req.files.img?req.files.img[0].filename: product.img,
+                    img2:req.files.img2?req.files.img2[0].filename:product.img2,
+                    img3:req.files.img3?req.files.img3[0].filename:product.img3,
+                    size: req.body.size,
+                    color: req.body.color ,
+                 
                 }
-                return product;
 
-
-            });
+            } 
+            
+             return product;
+         
+        });
             fs.writeFileSync(filePath, JSON.stringify(productsArrayEdited, null, ' '));
 
-            return res.redirect('./detail/'+  productId );
+            return res.redirect('./detail/'+ productId )
 
     },
 

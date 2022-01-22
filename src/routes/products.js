@@ -9,12 +9,12 @@ const multer=require("multer");
 const storage=multer.diskStorage({
         destination:(req, file, cb)=>{
 
-            cb(null, path.resolve(__dirname,'../../public/products'));
+            cb(null, path.resolve(__dirname,'../../public/uploads/products'));
 
         }, 
         filename:(req, file, cb)=>{
             const uniqueSuffix = Date.now();
-            cb(null, "IMG-" + uniqueSuffix + path.extname(file.originalname));
+            cb(null, "IMG-" +  uniqueSuffix + path.extname(file.originalname));
         }
 })
 
@@ -27,7 +27,7 @@ router.get("/create",controller.createProduct);
 router.post('/', upload.array("imagenes"),controller.add);
 
 router.get("/edit/:id",controller.editProduct);
-router.put('/:id',controller.update);
+router.put('/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);
 
 router.delete('/:id',controller.delete);
 

@@ -18,13 +18,13 @@
             <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
         </div>
     
-            <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST">
+            <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <div class="menuContainer" >
                     
             <!-- LEFT CONTAINER  ACA SE CAMBIAN LAS IMAGENES DE LA IZQUIERDA---------------------------- -->
                     <div class="leftContainer">
-                        <input class="img-checkbox"        type="file" id='img2' accept="image/*,.pdf">
+                        <input class="img-checkbox"        type="file" id='img2' accept="image/*,.pdf" name="img2">
 
                         <label for="img2">
                         <img src= <%=editProduct.img2 %>  alt="Hoddie front" class="left-img-container">    
@@ -32,7 +32,7 @@
 
                         </input>
 
-                        <input class="img-checkbox" type="file" id='img3' accept="image/*,.pdf">
+                        <input class="img-checkbox" type="file" id='img3' accept="image/*,.pdf" name="img3">
 
                         <label for="img3">
                         <img src=<%=editProduct.img3 %> alt="Hoddie back" class="left-img-container">    
@@ -53,7 +53,7 @@
                     <!----------- MIDDLE CONTAINER  ACA SE EDITA LA IMAGEN CENTRAL--------------------- -->
                     <div class="middleContainer">
                         <div class="middle-img-container">
-                                <input class="img-checkbox" type="file" id='img'accept="image/*,.pdf">
+                                <input class="img-checkbox" type="file" id='img'accept="image/*,.pdf" name="img">
 
                                     <label for="img">
                                         <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >                            </label>

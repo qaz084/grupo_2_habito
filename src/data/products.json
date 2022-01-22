@@ -2,11 +2,11 @@
  {
   "id": 1,
   "categories": "Hoddies",
-  "price": 5700,
+  "price": 4700,
   "discount": 40,
-  "name": "Hoddie Marron  ",
-  "longDescription": "      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo      ",
-  "img": "/img/productosHome/img-producto-home-hoodies.jpg",
+  "name": "Hoddie Marron",
+  "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo ",
+  "img": "/img/productosHome/img-producto-home-remeras.jpg",
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
  },
@@ -16,10 +16,10 @@
   "price": 2800,
   "discount": 10,
   "name": "Joger solvang   ",
-  "longDescription": "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo   ",
-  "img": "/img/productosHome/img-producto-home-joggers.jpg",
-  "img2": "/img/detalle_producto/img-remera2-1.jpg",
-  "img3": "/img/detalle_producto/img-remera2-2.jpg"
+  "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo   ",
+  "img": "/img/productosHome/img-producto-home-remeras.jpg",
+  "img2": "/img/detalle_producto/img-remera-1.jpg",
+  "img3": "/img/detalle_producto/img-remera-2.jpg"
  },
  {
   "id": 3,
@@ -54,5 +54,4 @@
   "img2": "/img/detalle_producto/img-remera-1.jpg",
   "img3": "/img/detalle_producto/img-remera-2.jpg"
  }
-
 ]
