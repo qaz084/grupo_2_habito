@@ -69,22 +69,19 @@ const controller = {
             colors.push("Yellow")
         }
 
-        let imagesNames = req.files.map(imgData => imgData.filename);
-        console.log(req.files)
 		productsDetails.push({
             id:generateID(),
             categories: req.body.productcategories,
             price: req.body.price,
-            discount: req.body.productDiscount,
+            discount: Number(req.body.productDiscount),
             name: req.body.productName,
             description: req.body.productDescription,
             talles: talles,
             colors: colors,
-            img:  imagesNames[3],
-            img2: imagesNames[2],
-            img3: imagesNames[0],
-            // img4: imagesNames[1],
-            
+            img: req.files.img? req.files.img[0].filename : "default-image.png",
+            img2: req.files.img2? req.files.img2[0].filename : "default-image.png",
+            img3: req.files.img3? req.files.img3[0].filename : "default-image.png",
+            img4: req.files.img4? req.files.img4[0].filename : "default-image.png",
 		});
 
 		fs.writeFileSync(filePath, JSON.stringify(productsDetails, null, ' '));
