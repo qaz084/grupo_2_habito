@@ -27,7 +27,7 @@
                         <input class="img-checkbox"        type="file" id='img2' accept="image/*,.pdf" name="img2">
 
                         <label for="img2">
-                        <img src= <%=editProduct.img2 %>  alt="Hoddie front" class="left-img-container">    
+                        <img src='/uploads/products/<%=editProduct.img2 %>'  alt="Hoddie front" class="left-img-container">    
                         </label>
 
                         </input>
@@ -35,7 +35,7 @@
                         <input class="img-checkbox" type="file" id='img3' accept="image/*,.pdf" name="img3">
 
                         <label for="img3">
-                        <img src=<%=editProduct.img3 %> alt="Hoddie back" class="left-img-container">    
+                        <img src='/uploads/products/<%=editProduct.img3 %>' alt="Hoddie back" class="left-img-container">    
                         </label>
                         </input>
 
@@ -54,9 +54,10 @@
                     <div class="middleContainer">
                         <div class="middle-img-container">
                                 <input class="img-checkbox" type="file" id='img'accept="image/*,.pdf" name="img">
-
+                                   
+                                    
                                     <label for="img">
-                                        <img src=<%=editProduct.img %> alt="Inserte imagen del producto"  >                            </label>
+                                        <img src='/uploads/products/<%=editProduct.img %>' alt="Inserte imagen del producto"  >
                                 </input>
                         </div>
                 
@@ -93,11 +94,15 @@
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-XS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-S" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-M" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-L" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProduct-XL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
+                                            <input type="checkbox" class="checkbox" name="size" id="sizeXS" value="XS"><label for="sizeXS" class="check-product-size" >XS</label>
+
+                                            <input type="checkbox" class="checkbox" name="size" id="sizeS" value="S"><label for="sizeS" class="check-product-size" >S</label>
+
+                                            <input type="checkbox" class="checkbox" name="size" id="sizeM" value="M"><label for="sizeM" class="check-product-size" >M</label>
+
+                                            <input type="checkbox" class="checkbox" name="size" id="sizeL" value="L"><label role="button" for="sizeL" class="check-product-size" >L</label>
+
+                                            <input type="checkbox" class="checkbox" name="size" id="sizeXL" value="XL"><label for="sizeXL" class="check-product-size" >XL</label>
                                 
                                         </div>
                             </div>
@@ -106,11 +111,15 @@
                         <div class="input-product-color">
                             <SPAN >Color: </SPAN>
                             <div class="colorContainer">
-                                <input type="checkbox" class="checkbox" name="colorProduct-white" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-red" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-blue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-green" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProduct-yellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+                                <input type="checkbox" class="checkbox" name="color" id="colorWhite" value="White"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
+
+                                <input type="checkbox" class="checkbox" name="color" id="colorRed" value="Red"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
+
+                                <input type="checkbox" class="checkbox" name="color" id="colorBlue" value="Blue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
+
+                                <input type="checkbox" class="checkbox" name="color" id="colorgreen" value="Green"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
+
+                                <input type="checkbox" class="checkbox" name="color" id="coloryellow" value="Yellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
                             
                             </div>
                         </div>

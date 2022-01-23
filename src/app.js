@@ -4,18 +4,25 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+
+//OVERRIDE------------------------------------------
 const methodOverride=require("method-override");
 app.use(methodOverride('_method'));
 
+
+// PUBLIC PATH --------------------------------
 const publicPath = path.resolve(__dirname, "../public");
 app.use(express.static(publicPath));
 
+
+//SERVER CONFIG --------------------------------
 app.listen(3000, () => {
     console.log("Servidor corriendo")
 });
 
 // Setup template engine
 app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname,'views'));
 
 // Setup del req.body
 app.use(express.urlencoded({ extended: true }));

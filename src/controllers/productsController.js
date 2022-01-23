@@ -107,8 +107,8 @@ const controller = {
                     return{
                     ...product,
                     categories:req.body.categories ,
-                    price:req.body.price ,
-                    discount: req.body.discount,
+                    price: Number(req.body.price)  ,
+                    discount: Number(req.body.discount),
                     name: req.body.name ,
                     longDescription:req.body.longDescription ,
                     img: req.files.img?req.files.img[0].filename: product.img,

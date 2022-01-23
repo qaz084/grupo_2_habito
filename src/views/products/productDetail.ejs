@@ -11,12 +11,12 @@
                 <section class="product-detail">
                     <div class="product-detail-top">
                         <ul class="pictures-list">
-                            <li><img src="<%= productDetail.img2 %> " alt="" width="140px"></li>
-                            <li><img src="<%= productDetail.img3 %>" alt="" width="140px"></li>
-                            <li><img src="<%= productDetail.img4 %>" alt="" width="140px"></li>
-                            <li><img src="<%= productDetail.img5 %>" alt="" width="140px"></li>
+                            <li><img src="/uploads/products/<%= productDetail.img2 %> " alt="" width="140px"></li>
+                            <li><img src="/uploads/products/<%= productDetail.img3 %>" alt="" width="140px"></li>
+                            <!-- <li><img src="/public/uploads/products/<%= productDetail.img4 %>" alt="" width="140px"></li>
+                            <li><img src="/public/uploads/products/<%= productDetail.img5 %>" alt="" width="140px"></li> -->
                         </ul>
-                        <img src="<%= productDetail.img %> " alt="" width="50%">
+                        <img src='/uploads/products/<%= productDetail.img %>' alt="" width="50%">
                         <div class="product-description">
                             <h3 class="product-name">
                                 <%= productDetail.name %>

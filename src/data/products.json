@@ -4,22 +4,32 @@
   "categories": "Hoddies",
   "price": 4700,
   "discount": 40,
-  "name": "Hoddie Marron",
-  "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo ",
-  "img": "/img/productosHome/img-producto-home-remeras.jpg",
-  "img2": "/img/detalle_producto/img-remera-1.jpg",
-  "img3": "/img/detalle_producto/img-remera-2.jpg"
+  "name": "Hoddie Infinite  ",
+  "size": [
+   "XS",
+   "S",
+   "L",
+   "XL"
+  ],
+  "color": "Red",
+  "longDescription": "     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo           ",
+  "img": "img-producto-home-hoodies.jpg",
+  "img2": "hoddie_infinite_01.jpg",
+  "img3": "hoddie_infinite_02.jpg"
+  
  },
  {
   "id": 2,
   "categories": "Hoddies",
   "price": 2800,
   "discount": 10,
-  "name": "Joger solvang   ",
+  "name": "Joger solvang",
+  "size": "M",
+  "color": "Grey",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo   ",
-  "img": "/img/productosHome/img-producto-home-remeras.jpg",
-  "img2": "/img/detalle_producto/img-remera-1.jpg",
-  "img3": "/img/detalle_producto/img-remera-2.jpg"
+  "img": "img-producto-home-joggers.jpg",
+  "img2": "img-remera-1.jpg",
+  "img3": "img-remera-2.jpg"
  },
  {
   "id": 3,
@@ -27,10 +37,12 @@
   "price": 1200,
   "discount": 37,
   "name": "Remera",
+  "size": "M",
+  "color": "Grey",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
-  "img": "/img/productosHome/img-producto-home-remeras.jpg",
-  "img2": "/img/detalle_producto/img-remera-1.jpg",
-  "img3": "/img/detalle_producto/img-remera-2.jpg"
+  "img": "img-producto-home-remeras.jpg",
+  "img2": "img-remera-1.jpg",
+  "img3": "img-remera-2.jpg"
  },
  {
   "id": 4,
@@ -38,10 +50,12 @@
   "price": 2500,
   "discount": 7,
   "name": "Short",
+  "size": "M",
+  "color": "Grey",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
-  "img": "/img/productosHome/img-producto-home-short.jpg",
-  "img2": "/img/detalle_producto/img-remera-1.jpg",
-  "img3": "/img/detalle_producto/img-remera-2.jpg"
+  "img": "img-producto-home-short.jpg",
+  "img2": "img-remera-1.jpg",
+  "img3": "img-remera-2.jpg"
  },
  {
   "id": 5,
@@ -49,9 +63,11 @@
   "price": 15000,
   "discount": 25,
   "name": "Campera",
+  "size": "M",
+  "color": "Grey",
   "longDescription": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis aperiam pariatur in, quo quaerat doloribus quasi eaque sequi explicabo",
-  "img": "/img/productosHome/img-productos-home-campera.jpg",
-  "img2": "/img/detalle_producto/img-remera-1.jpg",
-  "img3": "/img/detalle_producto/img-remera-2.jpg"
+  "img": "img-productos-home-campera.jpg",
+  "img2": "img-remera-1.jpg",
+  "img3": "img-remera-2.jpg"
  }
 ]
