@@ -30,7 +30,9 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
 - #### Hacer menos/ Dejar de hacer:
   _Sprint 2: Por el momento, consideramos que no hay **algo** que deberíamos dejar de hacer o no hacer, ya nos iremos dando cuenta más adelante en futuros **sprints**_
   
-  _Sprint 3: Dejar de transmitir problemas complejos por slack. Algunos temas son difíciles de explicar de forma escrita y es mejor llearlos a un videollamado._
+  _Sprint 3: Dejar de transmitir problemas complejos por slack. Algunos temas son difíciles de explicar de forma escrita y es mejor llevarlos a un videollamado._
+  
+  _Sprint 4: Chequear y Cerrar  el sprint cercanos al deadline. Algunos de los entregables los terminamos el mismo día de entrega, cuando lo pudimos haber hecho antes._
   
   
 
