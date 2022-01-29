@@ -1,87 +1,370 @@
 @import url("/css/normalize.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100;300;400;500&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 * {
     box-sizing: border-box;
-}
-
-
-/* Header*/
-
-.header-icons {
-    font-size: 20px;
-    color: #686868;
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.top-container {
-    background-color: #f2f0d5;
-    padding: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    max-width: 1200px;
-    height: 100px;
-}
-
-
-
-.main-navbar li {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
     list-style: none;
 }
 
-.search-logo,
-.user-logo,
-.cart-logo {
-    padding-left: 3px;
-    text-align: center;
+/* -----------NUEVO HEADER-------- */
+
+body{
+
+    font-family:roboto,sans-serif;
+
+}
+.container-header{
+
+width : 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content:center;
+align-items: center;
+position: relative;
+position: fixed;
+z-index: 3;
+background-color : rgb(61, 61, 61);
+height: 180px;
+margin:  auto;
+box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.253);
+ 
 }
 
-.fa-shopping-cart, .fa-user, .fa-search{
-    color: #666;
+.main-navbar{
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+margin: auto;
+color: rgb(230, 230, 230);
+
+
+}
+.main-navbar li{
+display: inline;
+
+padding:.9rem;
+margin: auto;
+list-style: none;
+color: rgb(230, 230, 230);
+font-weight: 300;
+font-size: 1.1rem;
+transition: all 0.4s;
+}
+.main-navbar li:hover{
+font-weight: 500;
+
+}
+
+.logo-main-navbar{
+
+width: 100%;
+display: flex;
+justify-content: center;
+align-self: flex-end;
+text-align: center;
+
+}
+.logo-main-navbar img{
+
+width: 60%;
+} 
+
+
+
+/* -----------NUEVO HEADER-------- */
+
+
+
+/* -----------NUEVO PRODUCTS-------- */
+
+.products-container{
+
+display: flex;
+flex-wrap: wrap;
+justify-content:space-around;
+width: 90%;
+margin: auto;
+}
+
+.product2{
+
+width: 420px;
+height:650px;
+border-radius:2%;
+display: flex;
+flex-wrap: wrap;
+justify-content:center;
+align-items: center;
+overflow: hidden;
+transition: all 400ms;
+
+}
+
+.product2:hover{
+box-shadow: 2px 7px 5px rgba(0, 0, 0, 0.253);
+}
+/* .product-link{
+width: 280px;
+height:380px;
+display: flex;
+overflow: hidden;
+} */
+
+
+.category-container{
+width: 100%;
+/* height:50px; */
+color: #3D3D3D;
+background-color:white;
+align-self: flex-start;
+display: flex;
+align-items:center;
+padding-left:10px;
+font-size: 1rem;
+position: relative;
+z-index: 1;
+
+}
+
+.img-container{
+
+background-color:yellowgreen;
+display: flex;
+justify-content:center;
+
+width: 100%;
+align-self: flex-start;
+height: inherit;
+
+
+}
+
+.img-container img{
+
+overflow: hidden;
+width: 100%;
+position: relative;
+bottom: 5%;
+}
+
+.product-info{
+
+display: flex;
+align-items:center;
+flex-wrap: wrap;
+width: 100%;
+background-color:white;
+height: 70px;
+padding: 0px 20px;
+position: relative;
+bottom: 25%;
+z-index: 2;
+
+}
+
+.product-info-lef-container{
+
+display: flex;
+flex-wrap: wrap;
+width: 60%;
+justify-content:left;
+}
+
+.product-info-right-container{
+
+display: flex;
+flex-wrap: nowrap;
+width: 40%;
+justify-content:right;
+}
+.product-price{
+
+font-size: 1.3rem;
+color: #3D3D3D;
+font-weight:900;
+}
+.product-name{
+width: 100%;
+font-size: 1.3rem;
+
+}
+
+.product-discount{
+font-size: 1.3rem;
+font-weight: bold;
+
+color: rgb(54, 202, 138)
+
 }
 
 
-.search-logo:hover .fa-search, .user-logo:hover .fa-user, .cart-logo:hover .fa-shopping-cart {
-    background-color: #686868;
-    color: white;
-    font-size: 25px;
-    padding-left: 3px;
-    transition: all 450ms;
-    text-align: center;
-    border-radius: 5px;
-    padding: 5px;
-}
 
-.burger-menu i {
-    color: #686868;
-    font-size: 30px;
-}
+/* -----------NEW FOOTER------------------ */
 
-.navbar {
-    display: none;
-}
-
-.left {
+.footer-container2{
     display: flex;
+    justify-content:center;
+    align-items:center;
     flex-wrap: wrap;
-    align-items: center;
+    width: 100%;
+    background-color:#3D3D3D;
+    height:230px;
 }
 
-.logo {
-    width: 150px;
-    padding-left: 10px;
+.logo-footer{
+    text-align: center;
+    width: 100%;
+
 }
+
+.logo-footer img{
+
+    width: 10%;
+    
+}
+.footer-icons2{
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    margin: auto;
+    position:relative;
+    bottom:20px;
+}
+.footer-icons2 li{
+    display:inline;
+    padding: 10px;
+}
+
+.copyright2{
+
+    color: white;
+    margin: auto;
+    font-weight: 300;
+}
+
+
+
+/* -----------NUEVO HEADER QUERIES-------- */
+
+@media (min-width: 320px){
+
+    .container-header{
+
+        height: 150px;
+     
+    }
+
+    .main-navbar{
+
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+       
+       
+        /* text-align: center; */
+        
+    }
+    .logo-main-navbar img{
+
+        width: 40%;
+    } 
+    .main-navbar ul{
+        
+        text-align: center;
+     
+    }
+
+    .main-navbar li{
+
+        /* display: inline; */
+        padding:.25rem;
+      
+        list-style: none;
+        color: rgb(230, 230, 230);
+        font-weight: 300;
+        font-size: 0.75rem;
+        
+    }
+
+}
+
+/* -------------------1280--------------------- */
+@media (min-width: 1280px){
+
+    .container-header{
+
+        width : 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+        position: relative;
+        position: fixed;
+        z-index: 3;
+        background-color : rgb(61, 61, 61);
+        height: 180px;
+        margin:  auto;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.253);
+        
+        
+        
+        
+    }
+    
+    .main-navbar{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: auto;
+        color: rgb(230, 230, 230);
+       
+    
+    }
+    .main-navbar li{
+        display: inline;
+        padding:.9rem;
+        margin: auto;
+        list-style: none;
+        color: rgb(230, 230, 230);
+        font-weight: 300;
+        font-size: 1.1rem;
+        transition: all 0.4s;
+    }
+    .main-navbar li:hover{
+        font-weight: 500;
+       
+    }
+    
+    .logo-main-navbar{
+    
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: flex-end;
+        text-align: center;
+    
+    }
+     .logo-main-navbar img{
+    
+        width: 70%;
+    } 
+
+}
+
+
+/* ----------- TERMINAN NUEVO HEADER QUERIES-------- */
+
 
 
 /* Main */
@@ -200,66 +483,7 @@
 }
 
 
-/* Footer */
 
-.footer-container {
-    padding: 5%;
-    background-color: #b6dbcb;
-    font-family: 'Open Sans', sans-serif;
-    color: #686868;
-}
-
-.footer-icons {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 25px;
-    justify-content: space-between;
-}
-
-.top-footer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-    color: #686868;
-}
-
-.logo-footer {
-    padding: 0;
-    margin: 10px;
-}
-
-.empresa,
-.compras {
-    text-align: center;
-    margin-top: 20px;
-}
-
-h3 {
-    margin: 19px 0 10px 0;
-}
-
-.empresa il,
-.compras il {
-    font-size: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    line-height: 1.9;
-    margin: 0;
-    padding-left: 0;
-}
-
-.lista-empresa,
-.lista-compras {
-    margin: 0;
-    padding: 0;
-}
-
-.copyright {
-    font-size: 10px;
-    margin-top: 25px;
-}
 
 @media (min-width: 481px) {
     .container-img {
@@ -376,11 +600,11 @@ h3 {
         padding-top: 200px;
         padding-bottom: 25px;
     }
-    body {
+    /* body {
         width: 100%;
         max-width: 1200px;
         margin: auto;
-    }
+    } */
 }
 
 @media (min-width: 1280px) {

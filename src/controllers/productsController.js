@@ -9,6 +9,7 @@ const controller = {
     productDetail:(req,res)=>{
         let idProduct = req.params.id;
         const productDetail = productsDetails.find(element => element.id == idProduct);
+        
         return res.render(
             "../views/products/productDetail",
             {productDetail:productDetail}
