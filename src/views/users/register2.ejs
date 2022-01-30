@@ -1,0 +1,110 @@
+<%- include('../partials/head', {
+    pageTitle: 'Registrarse',
+    cssLink: 'href="/css/register2.css" '
+})%>
+
+<body>
+
+    <!------------ HEADER------------------- -->
+    <%- include('../partials/header2')%>
+    
+    <section class="register-container">
+
+ <!-- --------------------LEFT CONTAINER--------------------------- -->
+
+        <div class="left-container" >
+            
+            <img class="logo-left-container" src="/img/logo_negro.svg " >
+
+          <img class="background-img" src="/img/register-left-img.jpg" >
+
+
+        </div>
+<!-- --------------------RIGHT CONTAINER--------------------------- -->
+
+        <div class="right-container">
+
+            <div class="tittle-container">
+
+                <h1>Crear cuenta</h1>
+
+                <a href="/"><span>Volver</span></a>
+            </div>
+
+
+            <nav class="register-navbar">
+
+                <h2>Usando:</h2>
+
+                   
+
+                        <ul class="sessions-container-icons">
+                            <li >
+                               
+                                <img src="/img/icons/gmail.png " alt="">
+                               
+                            </li>
+
+                            <li >
+                               
+                                <img src="/img/icons/facebook.png" alt="">
+                            </li>
+
+                            <li >
+                            
+                                <img src="/img/icons/linkedin.svg" alt="">
+                            </li>
+                        </ul>
+
+             
+
+                 <div class="already-account">
+
+                     <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
+                     <a href="/users/login">
+                         <h3 class="sign-in">Iniciar sesión</h3>
+                     </a>
+                 </div>
+            </nav>
+
+            <!-- ------------FORMULARIO-------------------- -->
+
+            <form class="form-container" action="/users" method="post" enctype="multipart/form-data">
+                <H1>O con tu correo electrónico</H1>
+
+                <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:">
+
+                <input class="form-container-input"  type="email" name="email" id="" placeholder="  email@gmail.com">
+
+
+                <input class="form-container-input "  type="password" name="contraseña" id="" placeholder="  Contraseña: ">
+
+                <input class="form-container-input "  type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
+
+                <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
+                    <input  type="file" name="imagen" id="Imagen de perfil" > 
+                    Imagen de perfil  
+                </label>
+             
+
+                <div class="offertConfirmation">
+                    <input type="checkbox" name="recibir-ofertas" id="offertConfirmation">
+                    <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
+                </div>
+
+                <button class="submit-btn"type="submit">Registrarme </button>
+
+            </form>
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <%- include('../partials/footer2')  %>
+</body>
+
+</html>

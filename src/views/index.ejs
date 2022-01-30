@@ -3,7 +3,7 @@
     cssLink: 'href="/css/index.css" '
 })%>
 
-    <body>
+ <body>
 
 
 <!------------ HEADER------------------- -->
@@ -15,8 +15,11 @@
       
             <!-- Acá arranca el Main-->
             <main>
-
+             
               <section class="products-container" >
+
+                <h1 class="categories">Categorias</h1>
+
 
                   <% for (let i = 0; i<products.length; i++) {%>
                     <a  href="/products/detail/<%=products[i].id%>">

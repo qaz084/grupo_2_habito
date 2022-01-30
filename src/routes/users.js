@@ -26,7 +26,7 @@ router.post("/login", controller.logUser);
 
 
 //GET - http://localhost3000/users/register
-router.get("/register", controller.userRegister);
+router.get("/register2", controller.userRegister);
 //POST - http://localhost3000/users
 router.post("/", upload.single('imagen'),controller.addUser);
 

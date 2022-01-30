@@ -35,7 +35,7 @@ const controller = {
     )},
     
     userRegister:(req,res)=>{
-        return res.render("../views/users/register")
+        return res.render("../views/users/register2")
     },
     addUser: (req, res) => {
         usersArray.push({

@@ -15,7 +15,8 @@
 
 body{
 
-        font-family:roboto,sans-serif;
+ font-family:roboto,sans-serif;
+
 
 }
 .container-header{
@@ -25,9 +26,10 @@ body{
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
-    position: relative;
+    
     position: fixed;
     z-index: 3;
+    top: 0px;
     background-color : rgb(61, 61, 61);
     height: 180px;
     margin:  auto;
@@ -74,10 +76,8 @@ body{
 } 
 
 
-
-/* -----------NUEVO HEADER-------- */
-
 /* -----------NUEVO PRODUCTS-------- */
+
 
 .products-container{
 
@@ -86,12 +86,25 @@ body{
     justify-content:space-around;
     width: 90%;
     margin: auto;
+    position:relative;
+    bottom:20px;
+}
+
+.categories{
+
+    display: flex;
+    width:100%;
+    color: #3D3D3D;
+    font-size: 3rem;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    justify-content:left;
 }
 
 .product2{
 
-    width: 420px;
-    height:650px;
+    width: 400px;
+    height:630px;
     border-radius:2%;
     display: flex;
     flex-wrap: wrap;
@@ -344,6 +357,52 @@ justify-content:right;
         font-size: 0.75rem;
         
     }
+    
+
+}
+
+@media (min-width: 520px){
+
+    .container-header{
+
+        height: 150px;
+     
+    }
+
+    .main-navbar{
+
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+       
+       
+        /* text-align: center; */
+        
+    }
+    .logo-main-navbar img{
+
+        width: 50%;
+    } 
+    .main-navbar ul{
+        
+        text-align: center;
+     
+    }
+
+    .main-navbar li{
+
+        /* display: inline; */
+        padding:.25rem;
+      
+        list-style: none;
+        color: rgb(230, 230, 230);
+        font-weight: 300;
+        font-size: 1rem;
+        
+    }
+    
 
 }
 
@@ -357,8 +416,9 @@ justify-content:right;
         flex-wrap: wrap;
         justify-content:center;
         align-items: center;
-        position: relative;
+        
         position: fixed;
+        top: 0px;
         z-index: 3;
         background-color : rgb(61, 61, 61);
         height: 180px;
@@ -415,78 +475,42 @@ justify-content:right;
 @media(min-width:320px){
 
     .banner-container{
+
         display: flex;
-        justify-content:center;
+        flex-direction: row;
         align-items: center;
-        overflow: hidden;
-        flex-wrap: wrap;
+        justify-content:center;
+        
         width: 100%;
-        height: 200px;
-        text-align: center;
+        height: 150px;
+        background-color: red;
+        background-image: url(/img/CARROUSEL/img-banner.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
         position: relative;
-        top: 23vh;
-        margin-bottom: 200px;
-       
+        top: 0px;
+        margin: auto;
+        margin-top: 140px;
+        margin-bottom: 40px;
+        
         
     }
-
-    .banner-container img{
-
-        width: 140%;
-     
-    }
-
-
-    .over-img-bar{
+    .caja{
 
         display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        height: 40px;
-        background-color: #7ccc7c8e;
-        position: relative;
-        z-index: 1;
-        bottom: 270px;
-        align-self: center;
-    }
-
-    .over-img-bar h1{
-
-        font-size: .8rem ;
-        font-weight: 500;
-        color: #3D3D3D;
-    }
-
-    .arrows-container{
-
-        display: flex;
-        flex-wrap: nowrap;
-        width: 100%;
-        align-items: space-between;
-        justify-content:center;
-    }
-
-    .left-arrow{
-
-        
-        width: 30px;
-        height: 30px;
-        border-radius:50%;
-       display: flex;
-       justify-content:center;
-       align-items:center;
-       color: #3D3D3D;
-    } 
-    .right-arrow{
-
-        display: flex;
-        justify-content:center;
         align-items:center;
-        width: 30px;
+        justify-content:space-around;
+        width: 100%;
         height: 30px;
-        border-radius:50%;
-        color: #3D3D3D;
+        background-color: #3d3d3d79;
+        
+      
+    }
+    .caja h1{
+        color: rgb(228, 228, 228);
+        font-weight: 300;
+        font-size:.7rem;
     }
 
 
@@ -495,25 +519,42 @@ justify-content:right;
 @media(min-width:520px){
 
     .banner-container{
+
         display: flex;
-        justify-content:center;
+        flex-direction: row;
         align-items: center;
-        overflow: hidden;
-        flex-wrap: wrap;
+        justify-content:center;
+        
         width: 100%;
         height: 300px;
-        text-align: center;
+        background-color: red;
+        background-image: url(/img/CARROUSEL/img-banner.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
         position: relative;
-        top: 12vh;
-        margin-bottom: 200px;
-       
+        top: 0px;
+        margin: auto;
+        margin-top: 120px;
+        margin-bottom: 60px;
+        
         
     }
+    .caja{
 
-    .banner-container img{
-
+        display: flex;
+        align-items:center;
+        justify-content:space-around;
         width: 100%;
-     
+        height: 60px;
+        background-color: #3d3d3d79;
+        gap: 60px;
+      
+    }
+    .caja h1{
+        color: rgb(228, 228, 228);
+        font-weight: 300;
+        font-size:1.5rem;
     }
 
 
@@ -523,12 +564,13 @@ justify-content:right;
         align-items: center;
         justify-content: space-around;
         width: 100%;
-        height: 40px;
+        height: 60px;
         background-color: #7ccc7c8e;
         position: relative;
         z-index: 1;
-         margin:  auto;
-         bottom:400px
+         align-self: center;
+       
+       
     }
 
     .over-img-bar h1{
@@ -575,58 +617,71 @@ justify-content:right;
 @media(min-width:1280px){
 
     .banner-container{
+
         display: flex;
+        flex-direction: row;
+        align-items: center;
         justify-content:center;
-        align-items: center;
-        overflow: hidden;
-        flex-wrap: wrap;
+        
         width: 100%;
-        height: 500px;
-        text-align: center;
+        height: 450px;
+        background-color: red;
+        background-image: url(/img/CARROUSEL/img-banner.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
         position: relative;
-        top: 15vh;
-        margin-bottom: 250px;
-       
+        top: 0px;
+        margin: auto;
+        margin-top: 120px;
+        margin-bottom: 80px;
+        
         
     }
+    .caja{
 
-    .banner-container img{
-
+        display: flex;
+        align-items:center;
+        justify-content:space-around;
         width: 100%;
-        
-       
-     
+        height: 60px;
+        background-color: #3d3d3d79;
+        gap: 60px;
+      
+    }
+    .caja h1{
+        color: rgb(228, 228, 228);
+        font-weight: 300;
     }
 
-
-    .over-img-bar{
+    /* .over-img-bar{
 
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content:space-around;
+        
         width: 100%;
         height: 60px;
         background-color: #7ccc7c8e;
         position: relative;
         z-index: 1;
-        margin: auto;
-        bottom:740px
-       
-    }
+    
+    
+    } */
 
-    .over-img-bar h1{
+    /* .over-img-bar h1{
 
         font-size: 1.7rem ;
         font-weight: 600;
         color: #3D3D3D;
-    }
+    }  */
 
-    .arrows-container {
+    /* .arrows-container {
 
         display: flex;
         flex-wrap: nowrap;
         width: 100%;
-        align-items: space-between;
+        align-items: center;
         justify-content:center;
        
         
@@ -650,7 +705,7 @@ justify-content:right;
         height: 30px;
         border-radius:50%;
         color: #3D3D3D;
-    }
+    } */
 
 
 }
@@ -664,7 +719,7 @@ justify-content:right;
         display: flex;
         flex-wrap: wrap;
         justify-content:center;
-        width: 100%;
+        width: 90%;
         margin-bottom: 50px;
        
     }
@@ -684,6 +739,17 @@ justify-content:right;
         transition: all 400ms;
         
         
+    }
+
+    .categories{
+
+        display: flex;
+        width: 90%;
+        color: #3D3D3D;
+        font-size: 2.2rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+       justify-content:center;
     }
     .category-container{
         width: 100%;
@@ -765,9 +831,10 @@ justify-content:right;
         display: flex;
         flex-wrap: wrap;
         justify-content:space-around;
-        width: 100%;
+        width: 90%;
         
     }
+
     .product2{
 
         width: 210px;
@@ -781,6 +848,17 @@ justify-content:right;
         transition: all 400ms;
         
         
+    }
+    .categories{
+
+        display: flex;
+        width: 90%;
+        color: #3D3D3D;
+        font-size: 2.2rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        justify-content:left;
+       
     }
     .category-container{
         width: 100%;
@@ -857,7 +935,117 @@ justify-content:right;
     }
 }
 
-@media(min-width:1280px){
+@media(min-width: 720px){
+    .products-container{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        width: 90%;
+        
+    }
+
+    .product2{
+
+        width: 210px;
+        height:325px;
+        border-radius:2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+        overflow: hidden;
+        transition: all 400ms;
+        
+        
+    }
+    .categories{
+
+        display: flex;
+        width: 90%;
+        color: #3D3D3D;
+        font-size: 2.2rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        justify-content:left;
+       
+    }
+    .category-container{
+        width: 100%;
+        /* height:50px; */
+        color: #3D3D3D;
+        
+        align-self: flex-start;
+        display: flex;
+        align-items:center;
+        padding-left:10px;
+        font-size: .8rem;
+        position: relative;
+        height:40px;
+        z-index: 1;
+        
+    }
+
+    .img-container img{
+
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        bottom: 5%;
+    }
+    
+    .product-info{
+    
+        display: flex;
+        align-items:center;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color:white;
+        height: 70px;
+        padding: 0px 10px;
+        position: relative;
+        bottom: 37%;
+        z-index: 2;
+       
+    }
+    
+    .product-info-lef-container{
+    
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content:left;
+    }
+    
+    .product-info-right-container{
+    
+    display: flex;
+    flex-wrap: nowrap;
+    width: 40%;
+    justify-content:right;
+    }
+    .product-price{
+    
+        font-size: 1.3rem;
+        color: #3D3D3D;
+        font-weight:900;
+    }
+    .product-name{
+        width: 100%;
+        font-size: 1rem;
+      
+    }
+    
+    .product-discount{
+        font-size: 1rem;
+        font-weight: bold;
+        
+        color: rgb(54, 202, 138)
+       
+    }
+}
+
+@media(min-width: 1280px){
     
 
 .products-container{
@@ -873,14 +1061,16 @@ justify-content:right;
 
 .product2{
 
-    width: 420px;
-    height:650px;
+    width: 320px;
+    height:530px;
     border-radius:2%;
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     align-items: center;
     overflow: hidden;
+   
+    margin: 0px 30px;
     margin-bottom: 50px;
   
     transition: all 400ms;
@@ -937,7 +1127,7 @@ justify-content:right;
     width: 100%;
     background-color:white;
     height: 70px;
-    padding: 0px 30px;
+    padding: 0px 20px;
     position: relative;
     bottom: 20%;
     z-index: 2;
