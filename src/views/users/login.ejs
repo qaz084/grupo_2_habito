@@ -6,8 +6,68 @@
     <body>
         <%- include('../partials/header2')%>
 
-        
-            <main class="estructura">
+        <section class="form-container">
+
+            <div class="close-x">
+                <a href="/"><i class="fas fa-times-circle"></i></a>
+            </div> 
+
+            <div class="tittle">
+                <h1>Iniciar sesión</h1>
+
+            </div>
+
+            <nav class="register-navbar">
+
+                <h2>Usando:</h2>
+
+                        <ul class="sessions-container-icons">
+                            <li >
+                               
+                                <img src="/img/icons/gmail.png " alt="">
+                               
+                            </li>
+
+                            <li >
+                               
+                                <img src="/img/icons/facebook.png" alt="">
+                            </li>
+
+                            <li >
+                            
+                                <img src="/img/icons/linkedin.svg" alt="">
+                            </li>
+                        </ul>
+
+             
+
+                 <div class="already-account">
+
+                     <a href="/users/register2">
+                         <h3 class="already-account-text">¿No tenés cuenta?</h3>
+                     </a>
+
+
+                    
+                 </div>
+            </nav>
+            <form class="form-container-bottom"action="/users/login" method="post">
+
+             <input class="form-container-input" type="email" name="email" placeholder="Usuario:">
+
+             <input class="form-container-input" type="password" name="contrasenia" placeholder="Contraseña:">
+
+             <div class="login">
+                 <a href=""><span class="sign-in">¿Olvidaste la contraseña?</span></a>
+                 <button class="submit-btn" type="submit">Iniciar sesión</button>
+             </div>
+
+            </form>
+          </section>
+            <!-- <main class="estructura">
+            
+              
+              
                 <div class="box-login">
                     <div class="position-x">
                         <a class="x" href="/"><i class="far fa-times-circle"></i></a>
@@ -63,7 +123,8 @@
                 </div>
 
             </main>
-            <%- include('../partials/footer2')  %>
+            !-->
+            <%- include('../partials/footer2')  %> 
     </body>
 
     </html>

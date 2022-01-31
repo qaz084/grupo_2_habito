@@ -14,7 +14,8 @@
 body{
 
     font-family:roboto,sans-serif;
-    background-color:#e0e0e0;
+    background-color:#eeeeee;
+
 
 }
 
@@ -305,7 +306,7 @@ body{
     body{
 
         font-family:roboto,sans-serif;
-        background-color:white;
+        background-color:white
     
     }
     .register-container{
@@ -585,7 +586,7 @@ body{
     body{
 
         font-family:roboto,sans-serif;
-        background-color:white;
+        background-color:white
     
     }
     .register-container{
@@ -862,6 +863,9 @@ body{
 
 @media (min-width: 1280px){
 
+    body{
+        background-color:#eeeeee;
+    }
     .register-container{
        
         display: flex;
@@ -871,7 +875,7 @@ body{
         justify-content: center;
         margin-top: 200px;
         margin-bottom: 50px;
-        width: 80%;
+        width: 70%;
         height: 1050px;
         background-color:white;
         overflow: hidden;
@@ -880,7 +884,7 @@ body{
     .left-container{
         display: flex;
         flex-wrap: wrap;
-        width: 45%;
+        width: 50%;
         height: 100%;
         justify-content: center;
         align-items: stretch;
@@ -915,7 +919,7 @@ body{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        width: 50%;
+        width: 40%;
         height:100%;
         margin-top:20px;
         /* background-color: green; */
