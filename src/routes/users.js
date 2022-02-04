@@ -34,14 +34,22 @@ const validationLogin = [
 
 //GET - http://localhost3000/users/login
 router.get("/login", controller.userLogin);
+
 //POST - http://localhost3000/users/login
 router.post("/login", validationLogin, controller.logUser);
 
 
 //GET - http://localhost3000/users/register
 router.get("/register2", controller.userRegister);
+
 //POST - http://localhost3000/users
 const validationRegister = require("../middlewares/authRegisterMiddleware")
 router.post("/", upload.single('imagen'), validationRegister, controller.addUser);
+
+//GET - http://localhost3000/users/profile
+router.get("/profile", controller.userProfile);
+
+router.get('/logout',controller.logOut);
+
 
 module.exports = router;

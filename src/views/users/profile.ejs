@@ -1,11 +1,135 @@
 <%- include('../partials/head', {
     pageTitle: 'Perfil',
-    cssLink: 'href="/css/login.css" '
+    cssLink: 'href="/css/index.css" '
 })%>
 
     <body>
 
         <%- include('../partials/header2')%>
+
+        <section class="profile-container">
+
+            <div class="upper-container" >
+
+
+                <div class="back">
+
+                    <a href="/">
+                        <h2>Volver</h2>
+                    </a>
+
+                </div>
+                <div class="profile-picture-container">
+                   
+                   <div class="profile-picture">
+
+                    <!-- ACA HAY QUE CAMBIAR CON LA IMAGEN DEL REGISTER -->
+                       <img src="/uploads/users/default-image.png" alt="Profile Picture">
+
+
+                   </div>
+                                     
+    <!-- ACA HAY QUE CAMBIAR CON EL NOMBRE DEL USUARIO DEL REGISTER -->
+
+                    <h1>Nombre Usuario</h1>
+                    <a href="/users/logout">
+                        <h2>Logout</h2>
+                    </a>
+
+                  </div>
+
+
+            
+
+            </div>
+
+            <!-- -------CONTENEDOR DEL FORM------- -->
+
+            <div class="bottom-container" >
+
+
+            
+                 <form class="personal-data" action="">
+
+                     <h1 class="personal-data-tittle">
+
+                        Datos personales
+
+                     </h1>
+
+                     
+                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
+                     <% if (locals.errors && errors.nombre){%>
+                         <div class="text-danger">
+                             <%= errors.nombre.msg %>
+                         </div>
+                         <% } %>
+                             <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
+                             <% if (locals.errors && errors.email){%>
+                                 <div class="text-danger">
+                                     <%= errors.email.msg %>
+                                 </div>
+                                 <% } %>
+
+                                 <% if (locals.error && error.correo){%>
+                                     <div class="text-danger">
+                                         <%= error.correo %>
+                                     </div>
+                                     <% } %>
+
+                 </form>
+            
+
+              
+
+                 <form class="payment-method-container" action="">
+
+                        <h1 class="payment-method-tittle">
+
+                           Medios de pago
+                            
+                         </h1>
+
+                       <% mediosDePago=["Tarjeta de débito","Tarjeta de crédito"] %> 
+
+                       <% for( let index = 0; index < mediosDePago.length; index++ ) { %>
+                        
+                        <div class="payment-method-cards">
+
+                            <h2>
+                                <%=mediosDePago[index] %>
+                            </h2>
+                        </div>
+
+                       <% } %>
+                    
+                       <div class="payment-method-MercadoPago-cards">
+
+                       
+                           <img src="/img/icons/mercado_pago.png"  alt="">
+                        
+                    </div> 
+                    <div class="crear-tarjeta-container">
+
+                        <a href="">
+                            <h3 class="create-credit-card">Crear tarjeta</h3>
+                        </a>
+                    </div>
+                    </form>
+               
+
+
+                
+            </div>
+
+
+
+
+        </section>
+
+
+
+
 
             <%- include('../partials/footer2')  %>
     </body>

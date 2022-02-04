@@ -45,10 +45,17 @@ const controller = {
         })
     },
 
+    userProfile: (req, res) => {
+
+        return res.render("../views/users/profile");
+
+    },
+
     userRegister: (req, res) => {
 
         return res.render("../views/users/register2")
     },
+
     addUser: (req, res) => {
 
 
@@ -91,6 +98,16 @@ const controller = {
         }
 
     },
+
+    logOut:(req, res) => {
+ 
+        // MODIFICAR ESTO PARA BORRAR LA COOKIE
+        // res.clearCookie('userEmail');
+
+         // COMENTÉ ESTO PORQUE TODAVIA NO ESTAT CREADO EL SESSION
+        //   req.session.destroy();
+          return res.redirect('/');
+        }
 
 };
 
