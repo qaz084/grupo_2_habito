@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const bcrypt = require("bcryptjs");
 //Ubicar archivo Json
 const filePath = path.resolve(__dirname, '../data/users.json');
 //Lectura de Json y Parseo
@@ -49,27 +50,46 @@ const controller = {
         return res.render("../views/users/register2")
     },
     addUser: (req, res) => {
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            return res.render("../views/users/register2", {
-                errors: resultValidation.mapped(),
-                oldData: req.body,
-            })
-        } else {
-            return res.render("../views/index")
-        }
-        usersArray.push({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            pass: req.body.contraseña,
-            repetirPass: req.body.repetirContraseña,
-            imagen: req.file.filename,
-            id: generateID()
-        });
 
-        fs.writeFileSync(filePath, JSON.stringify(usersArray, null, ' '))
-        res.redirect('/?saved=true');
+
+        const userEmail = usersArray.find(user => user.email == req.body.email)
+
+        let userDoublepass = undefined;
+        if(req.body.contraseña == req.body.repetirContraseña){
+            userDoublepass = true;
+        }else{
+            userDoublepass = false;
+        }
+
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
+            return res.render("../views/users/register2", {errors: resultValidation.mapped(), oldData: req.body,})
+        } else {
+            if(userEmail == undefined){
+                if(userDoublepass == true){
+                    if((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")){
+                        usersArray.push({
+                            nombre: req.body.nombre,
+                            apellido: req.body.apellido,
+                            email: req.body.email,
+                            pass: bcrypt.hashSync(req.body.contraseña, 10),
+                            imagen: req.file && req.file.filename? req.file.filename : "default-image.png" ,
+                            id: generateID()
+                        });
+                        fs.writeFileSync(filePath, JSON.stringify(usersArray, null, ' '))
+                        return res.redirect("/")
+                    }else{
+                        return res.render("../views/users/register2", {errors: resultValidation.mapped(), oldData: req.body,})
+                    }
+                }else{
+                    return res.render("../views/users/register2", {error:{contraseña: "Las contraseñas no coinciden"} , oldData: req.body})
+                }
+
+            }else{
+                return res.render("../views/users/register2", {error:{correo: "Correo existente"} , oldData: req.body})
+            }
+        }
+
     },
 
 };

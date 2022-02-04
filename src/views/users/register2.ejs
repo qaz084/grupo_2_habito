@@ -69,7 +69,7 @@
 
                     <!-- ------------FORMULARIO-------------------- -->
 
-                    <form class="form-container" action="/users" method="post" enctype="multipart/form-data">
+                    <form class="form-container" action="/users/" method="post" enctype="multipart/form-data">
                         <H1>O con tu correo electrónico</H1>
 
                         <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
@@ -85,6 +85,11 @@
                                     </div>
                                     <% } %>
 
+                                    <% if (locals.error && error.correo){%>
+                                        <div class="text-danger">
+                                            <%= error.correo %>
+                                        </div>
+                                        <% } %>
 
                                         <input class="form-container-input " type="password" name="contraseña" id="" placeholder="  Contraseña: ">
                                         <% if (locals.errors && errors.contraseña){%>
@@ -93,24 +98,25 @@
                                             </div>
                                             <%}%>
                                                 <input class="form-container-input " type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
-
+                                                <% if (locals.error && error.contraseña){%>
+                                                    <div class="text-danger">
+                                                        <%= error.contraseña %>
+                                                    </div>
+                                                    <% } %>
                                                 <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                                         <input  type="file" name="imagen" id="Imagen de perfil" > Imagen de perfil  </label>
+                                        <input  type="file" name="imagen" id="Imagen de perfil" > Imagen de perfil  </label>
                                                 <% if (locals.errors && errors.imagen){%>
                                                     <div class="text-danger">
                                                         <%= errors.imagen.msg %>
                                                     </div>
                                                     <%}%>
 
-
-
-
                                                         <div class="offertConfirmation">
                                                             <input type="checkbox" name="recibir-ofertas" id="offertConfirmation">
                                                             <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
                                                         </div>
 
-                                                        <button class="submit-btn" type="submit">Registrarme </button>
+                                                        <button class="submit-btn" type="submit">Registrarme</button>
 
                     </form>
 
