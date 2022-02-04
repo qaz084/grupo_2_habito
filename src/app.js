@@ -1,9 +1,20 @@
-//---Require express & path----
+//---Requires express, path, etc----
 
 const express = require("express");
 const app = express();
 const path = require("path");
+const session = require('express-session');
+const cookies= require('cookie-parser');
 
+
+//SESSION----------------------------
+
+app.use(session({
+    secret: "its a secret",
+    saveUninitialized:false,
+    resave:false
+
+}));
 
 //OVERRIDE------------------------------------------
 const methodOverride=require("method-override");

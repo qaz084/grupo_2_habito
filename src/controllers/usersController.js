@@ -18,6 +18,9 @@ const generateID = () => {
     }
 };
 
+
+
+
 const controller = {
     userLogin: (req, res) => {
         return res.render("../views/users/login")
@@ -47,7 +50,10 @@ const controller = {
 
     userProfile: (req, res) => {
 
-        return res.render("../views/users/profile");
+        return res.render("../views/users/profile",{
+
+            user: req.session.userLogged
+        });
 
     },
 
@@ -101,12 +107,10 @@ const controller = {
 
     logOut:(req, res) => {
  
-        // MODIFICAR ESTO PARA BORRAR LA COOKIE
-        // res.clearCookie('userEmail');
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
 
-         // COMENTÉ ESTO PORQUE TODAVIA NO ESTAT CREADO EL SESSION
-        //   req.session.destroy();
-          return res.redirect('/');
         }
 
 };

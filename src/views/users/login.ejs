@@ -53,14 +53,14 @@
                 </nav>
                 <form class="form-container-bottom" action="/users/login" method="post">
 
-                    <input class="form-container-input" type="email" name="email" placeholder="Usuario:" value="<%= locals.oldData ? oldData.email:null %>">
+                    <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" placeholder="Usuario:" value="<%= locals.oldData ? oldData.email:null %>">
                     <% if (locals.errors && errors.email){%>
                         <div class="text-danger">
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
 
-                            <input class="form-container-input" type="password" name="contrasenia" placeholder="Contraseña:">
+                            <input class="form-container-input <%= locals.errors && errors.contrasenia? 'input-data-wrong':null %>" type="password" name="contrasenia" placeholder="Contraseña:">
                             <% if (locals.errors && errors.contrasenia){%>
                                 <div class="text-danger">
                                     <%= errors.contrasenia.msg %>

@@ -72,13 +72,13 @@
                     <form class="form-container" action="/users/" method="post" enctype="multipart/form-data">
                         <H1>O con tu correo electrónico</H1>
 
-                        <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
+                        <input class="form-container-input <%= locals.errors && errors.nombre? 'input-data-wrong':null %>" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
                         <% if (locals.errors && errors.nombre){%>
                             <div class="text-danger">
                                 <%= errors.nombre.msg %>
                             </div>
                             <% } %>
-                                <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
+                                <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
                                 <% if (locals.errors && errors.email){%>
                                     <div class="text-danger">
                                         <%= errors.email.msg %>
@@ -91,20 +91,20 @@
                                         </div>
                                         <% } %>
 
-                                        <input class="form-container-input " type="password" name="contraseña" id="" placeholder="  Contraseña: ">
+                                        <input class="form-container-input <%= locals.errors && errors.contraseña? 'input-data-wrong':null %>" type="password" name="contraseña" id="" placeholder="  Contraseña: ">
                                         <% if (locals.errors && errors.contraseña){%>
                                             <div class="text-danger">
                                                 <%= errors.contraseña.msg %>
                                             </div>
                                             <%}%>
-                                                <input class="form-container-input " type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
+                                                <input class="form-container-input <%= locals.errors && errors.repetirContraseña? 'input-data-wrong':null %>"  type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
                                                 <% if (locals.error && error.contraseña){%>
                                                     <div class="text-danger">
                                                         <%= error.contraseña %>
                                                     </div>
                                                     <% } %>
                                                 <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                                        <input  type="file" name="imagen" id="Imagen de perfil" > Imagen de perfil  </label>
+                                        <input  type="file" name="imagen" accept="image/*,.jpg .png" id="Imagen de perfil" > Imagen de perfil  </label>
                                                 <% if (locals.errors && errors.imagen){%>
                                                     <div class="text-danger">
                                                         <%= errors.imagen.msg %>
@@ -112,7 +112,7 @@
                                                     <%}%>
 
                                                         <div class="offertConfirmation">
-                                                            <input type="checkbox" name="recibir-ofertas" id="offertConfirmation">
+                                                            <input type="checkbox"  name="recibir-ofertas" id="offertConfirmation">
                                                             <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
                                                         </div>
 

@@ -2,16 +2,16 @@ const path = require('path');
 const { body } = require('express-validator');
 
 const validationRegister = [
-    body('nombre').notEmpty().withMessage('Debe ingresar un nombre'),
+    body('nombre').notEmpty().withMessage('Debes ingresar un nombre'),
 
-    body('email').notEmpty().withMessage('Debe ingresar un email').bail()
+    body('email').notEmpty().withMessage('Debes ingresar un email').bail()
     .isEmail().withMessage('Debe ingresar un Email valido'),
 
-    body('contraseña').notEmpty().withMessage('Debe ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe ser mas larga'),
+    body('contraseña').notEmpty().withMessage('Debes ingresar la contraseña').bail()
+    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
-    body('repetirContraseña').notEmpty().withMessage('Debe ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe ser mas larga'),
+    body('repetirContraseña').notEmpty().withMessage('Debes ingresar la contraseña').bail()
+    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
     body('imagen').custom((value, { req }) => {
         let file = req.file;
@@ -22,7 +22,7 @@ const validationRegister = [
         } else {
             let extensionFile = path.extname(file.originalname);
             if (!extensionAccepted.includes(extensionFile)) {
-                throw new Error('Debe cargar una imagen en formato .jpg o .png');
+                throw new Error('Debes cargar una imagen en formato .jpg o .png');
 
             }
         }

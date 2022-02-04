@@ -19,6 +19,29 @@ body{
 
 }
 
+.form-container-input:focus{
+    
+  
+    outline: 2px solid rgb(70, 170, 228);
+
+    }
+    .input-data-wrong{
+    
+        outline: 2px solid rgb(245, 60, 60);
+       
+        
+    }
+    .text-danger{
+        
+        color:rgb(245, 60, 60);
+        text-align: right;
+        margin-bottom: 25px;
+        margin-top: -15px;
+        font-size:1.2rem;
+        
+    }
+    
+
 /* -------------REGISTER QUERIES---------------- */
 @media (min-width: 320px){
 
@@ -28,6 +51,8 @@ body{
         background-color:white;
     
     }
+
+
     .register-container{
 
         display: flex;
@@ -43,6 +68,8 @@ body{
         overflow: hidden;
     }
     
+  
+
     .left-container{
         display: none;
     
@@ -56,10 +83,10 @@ body{
         flex-wrap: nowrap;
         flex-direction: column;
         width: 95%;
-        height:100%;
+        height:95%;
+        margin: auto;
         margin-top:20px;
-        /* background-color: green; */
-       
+      
     }
     
     .tittle-container{
@@ -253,16 +280,7 @@ body{
     input[type="file"]{
         display:none;
     }
-    .input-data-ok{
-    
-        border: 5px solid rgb(16, 196, 106);
-    }
-    .input-data-wrong{
-    
-        border: 5px solid rgb(199, 51, 51);
-        color: rgb(199, 51, 51);
-    
-    }
+  
     
     input[type="checkbox"]{
         
@@ -336,8 +354,9 @@ body{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        width: 100%;
+        width: 95%;
         height:100%;
+        margin: auto;
         margin-top:20px;
         /* background-color: green; */
        
@@ -531,16 +550,7 @@ body{
     input[type="file"]{
         display:none;
     }
-    .input-data-ok{
-    
-        border: 5px solid rgb(16, 196, 106);
-    }
-    .input-data-wrong{
-    
-        border: 5px solid rgb(199, 51, 51);
-        color: rgb(199, 51, 51);
-    
-    }
+  
     
     input[type="checkbox"]{
         
@@ -604,6 +614,12 @@ body{
         overflow: hidden;
     }
     
+    .input-data-wrong{
+    
+        outline: 2px solid rgb(245, 60, 60);
+       
+        
+    }
     .left-container{
         display: none;
     
@@ -616,11 +632,11 @@ body{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        width: 100%;
+        width: 95%;
         height:100%;
+        margin: auto;
         margin-top:20px;
-        /* background-color: green; */
-       
+     
     }
     
     .tittle-container{
@@ -811,16 +827,7 @@ body{
     input[type="file"]{
         display:none;
     }
-    .input-data-ok{
-    
-        border: 5px solid rgb(16, 196, 106);
-    }
-    .input-data-wrong{
-    
-        border: 5px solid rgb(199, 51, 51);
-        color: rgb(199, 51, 51);
-    
-    }
+   
     
     input[type="checkbox"]{
         
@@ -876,7 +883,7 @@ body{
         margin-top: 200px;
         margin-bottom: 50px;
         width: 70%;
-        height: 1050px;
+        height: 1200px;
         background-color:white;
         overflow: hidden;
     }
@@ -1092,7 +1099,7 @@ body{
     cursor:pointer;
     margin-bottom: 20px;
     }
-    
+ 
     .input-avatar{
     
     
@@ -1117,12 +1124,6 @@ body{
     .input-data-ok{
     
         border: 5px solid rgb(16, 196, 106);
-    }
-    .input-data-wrong{
-    
-        border: 5px solid rgb(199, 51, 51);
-        color: rgb(199, 51, 51);
-    
     }
     
     input[type="checkbox"]{

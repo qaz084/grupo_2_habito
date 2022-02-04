@@ -21,6 +21,29 @@ body{
 
 }
 
+.form-container-input:focus{
+    
+  
+    outline: 2px solid rgb(70, 170, 228);
+
+    }
+    .input-data-wrong{
+    
+        outline: 2px solid rgb(245, 60, 60);
+       
+        
+    }
+    .text-danger{
+        
+        color:rgb(245, 60, 60);
+        text-align: right;
+        margin-bottom: 25px;
+        margin-top: -15px;
+        font-size:1.2rem;
+        
+    }
+    
+
 a{
     list-style: none;
     color: #3D3D3D;
@@ -570,16 +593,7 @@ font-weight: 300;
         cursor:pointer;
         margin-bottom: 20px;
         }
-      .input-data-ok{
-        
-            border: 5px solid rgb(16, 196, 106);
-        }
-        .input-data-wrong{
-        
-            border: 5px solid rgb(199, 51, 51);
-            color: rgb(199, 51, 51);
-        
-        }
+     
     
     .login{
     
@@ -784,17 +798,7 @@ font-weight: 300;
         cursor:pointer;
         margin-bottom: 20px;
         }
-      .input-data-ok{
-        
-            border: 5px solid rgb(16, 196, 106);
-        }
-        .input-data-wrong{
-        
-            border: 5px solid rgb(199, 51, 51);
-            color: rgb(199, 51, 51);
-        
-        }
-    
+      
     .login{
     
         display:flex;
@@ -993,16 +997,7 @@ font-weight: 300;
         cursor:pointer;
         margin-bottom: 20px;
         }
-      .input-data-ok{
-        
-            border: 5px solid rgb(16, 196, 106);
-        }
-        .input-data-wrong{
-        
-            border: 5px solid rgb(199, 51, 51);
-            color: rgb(199, 51, 51);
-        
-        }
+    
     
     .login{
     
@@ -1202,16 +1197,7 @@ font-weight: 300;
         cursor:pointer;
         margin-bottom: 20px;
         }
-      .input-data-ok{
-        
-            border: 5px solid rgb(16, 196, 106);
-        }
-        .input-data-wrong{
-        
-            border: 5px solid rgb(199, 51, 51);
-            color: rgb(199, 51, 51);
-        
-        }
+
     
     .login{
     
@@ -1411,16 +1397,7 @@ font-weight: 300;
         cursor:pointer;
         margin-bottom: 20px;
         }
-      .input-data-ok{
-        
-            border: 5px solid rgb(16, 196, 106);
-        }
-        .input-data-wrong{
-        
-            border: 5px solid rgb(199, 51, 51);
-            color: rgb(199, 51, 51);
-        
-        }
+   
     
     .login{
     
