@@ -6,64 +6,73 @@
     <body>
         <%- include('../partials/header2')%>
 
-        <section class="form-container">
+            <section class="form-container">
 
-            <div class="close-x">
-                <a href="/"><i class="fas fa-times-circle"></i></a>
-            </div> 
+                <div class="close-x">
+                    <a href="/"><i class="fas fa-times-circle"></i></a>
+                </div>
 
-            <div class="tittle">
-                <h1>Iniciar sesión</h1>
+                <div class="tittle">
+                    <h1>Iniciar sesión</h1>
 
-            </div>
+                </div>
 
-            <nav class="register-navbar">
+                <nav class="register-navbar">
 
-                <h2>Usando:</h2>
+                    <h2>Usando:</h2>
 
-                        <ul class="sessions-container-icons">
-                            <li >
-                               
-                                <img src="/img/icons/gmail.png " alt="">
-                               
-                            </li>
+                    <ul class="sessions-container-icons">
+                        <li>
 
-                            <li >
-                               
-                                <img src="/img/icons/facebook.png" alt="">
-                            </li>
+                            <img src="/img/icons/gmail.png " alt="">
 
-                            <li >
-                            
-                                <img src="/img/icons/linkedin.svg" alt="">
-                            </li>
-                        </ul>
+                        </li>
 
-             
+                        <li>
 
-                 <div class="already-account">
+                            <img src="/img/icons/facebook.png" alt="">
+                        </li>
 
-                     <a href="/users/register2">
-                         <h3 class="already-account-text">¿No tenés cuenta?</h3>
-                     </a>
+                        <li>
+
+                            <img src="/img/icons/linkedin.svg" alt="">
+                        </li>
+                    </ul>
 
 
-                    
-                 </div>
-            </nav>
-            <form class="form-container-bottom"action="/users/login" method="post">
 
-             <input class="form-container-input" type="email" name="email" placeholder="Usuario:">
+                    <div class="already-account">
 
-             <input class="form-container-input" type="password" name="contrasenia" placeholder="Contraseña:">
+                        <a href="/users/register2">
+                            <h3 class="already-account-text">¿No tenés cuenta?</h3>
+                        </a>
 
-             <div class="login">
-                 <a href=""><span class="sign-in">¿Olvidaste la contraseña?</span></a>
-                 <button class="submit-btn" type="submit">Iniciar sesión</button>
-             </div>
 
-            </form>
-          </section>
+
+                    </div>
+                </nav>
+                <form class="form-container-bottom" action="/users/login" method="post">
+
+                    <input class="form-container-input" type="email" name="email" placeholder="Usuario:" value="<%= locals.oldData ? oldData.email:null %>">
+                    <% if (locals.errors && errors.email){%>
+                        <div class="text-danger">
+                            <%= errors.email.msg %>
+                        </div>
+                        <% } %>
+
+                            <input class="form-container-input" type="password" name="contrasenia" placeholder="Contraseña:">
+                            <% if (locals.errors && errors.contrasenia){%>
+                                <div class="text-danger">
+                                    <%= errors.contrasenia.msg %>
+                                </div>
+                                <% } %>
+                                    <div class="login">
+                                        <a href=""><span class="sign-in">¿Olvidaste la contraseña?</span></a>
+                                        <button class="submit-btn" type="submit">Iniciar sesión</button>
+                                    </div>
+
+                </form>
+            </section>
             <!-- <main class="estructura">
             
               
@@ -124,7 +133,7 @@
 
             </main>
             !-->
-            <%- include('../partials/footer2')  %> 
+            <%- include('../partials/footer2')  %>
     </body>
 
     </html>

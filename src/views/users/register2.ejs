@@ -3,108 +3,126 @@
     cssLink: 'href="/css/register2.css" '
 })%>
 
-<body>
+    <body>
 
-    <!------------ HEADER------------------- -->
-    <%- include('../partials/header2')%>
-    
-    <section class="register-container">
+        <!------------ HEADER------------------- -->
+        <%- include('../partials/header2')%>
 
- <!-- --------------------LEFT CONTAINER--------------------------- -->
+            <section class="register-container">
 
-        <div class="left-container" >
-            
-            <img class="logo-left-container" src="/img/logo_negro.svg " >
+                <!-- --------------------LEFT CONTAINER--------------------------- -->
 
-          <img class="background-img" src="/img/register-left-img.jpg" >
+                <div class="left-container">
 
+                    <img class="logo-left-container" src="/img/logo_negro.svg ">
 
-        </div>
-<!-- --------------------RIGHT CONTAINER--------------------------- -->
-
-        <div class="right-container">
-
-            <div class="tittle-container">
-
-                <h1>Crear cuenta</h1>
-
-                <a href="/"><span>Volver</span></a>
-            </div>
+                    <img class="background-img" src="/img/register-left-img.jpg">
 
 
-            <nav class="register-navbar">
+                </div>
+                <!-- --------------------RIGHT CONTAINER--------------------------- -->
 
-                <h2>Usando:</h2>
+                <div class="right-container">
 
-                   
+                    <div class="tittle-container">
+
+                        <h1>Crear cuenta</h1>
+
+                        <a href="/"><span>Volver</span></a>
+                    </div>
+
+
+                    <nav class="register-navbar">
+
+                        <h2>Usando:</h2>
+
+
 
                         <ul class="sessions-container-icons">
-                            <li >
-                               
+                            <li>
+
                                 <img src="/img/icons/gmail.png " alt="">
-                               
+
                             </li>
 
-                            <li >
-                               
+                            <li>
+
                                 <img src="/img/icons/facebook.png" alt="">
                             </li>
 
-                            <li >
-                            
+                            <li>
+
                                 <img src="/img/icons/linkedin.svg" alt="">
                             </li>
                         </ul>
 
-             
-
-                 <div class="already-account">
-
-                     <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
-                     <a href="/users/login">
-                         <h3 class="sign-in">Iniciar sesión</h3>
-                     </a>
-                 </div>
-            </nav>
-
-            <!-- ------------FORMULARIO-------------------- -->
-
-            <form class="form-container" action="/users" method="post" enctype="multipart/form-data">
-                <H1>O con tu correo electrónico</H1>
-
-                <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:">
-
-                <input class="form-container-input"  type="email" name="email" id="" placeholder="  email@gmail.com">
 
 
-                <input class="form-container-input "  type="password" name="contraseña" id="" placeholder="  Contraseña: ">
+                        <div class="already-account">
 
-                <input class="form-container-input "  type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
+                            <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
+                            <a href="/users/login">
+                                <h3 class="sign-in">Iniciar sesión</h3>
+                            </a>
+                        </div>
+                    </nav>
 
-                <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                    <input  type="file" name="imagen" id="Imagen de perfil" > 
-                    Imagen de perfil  
-                </label>
-             
+                    <!-- ------------FORMULARIO-------------------- -->
 
-                <div class="offertConfirmation">
-                    <input type="checkbox" name="recibir-ofertas" id="offertConfirmation">
-                    <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
+                    <form class="form-container" action="/users" method="post" enctype="multipart/form-data">
+                        <H1>O con tu correo electrónico</H1>
+
+                        <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
+                        <% if (locals.errors && errors.nombre){%>
+                            <div class="text-danger">
+                                <%= errors.nombre.msg %>
+                            </div>
+                            <% } %>
+                                <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
+                                <% if (locals.errors && errors.email){%>
+                                    <div class="text-danger">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                    <% } %>
+
+
+                                        <input class="form-container-input " type="password" name="contraseña" id="" placeholder="  Contraseña: ">
+                                        <% if (locals.errors && errors.contraseña){%>
+                                            <div class="text-danger">
+                                                <%= errors.contraseña.msg %>
+                                            </div>
+                                            <%}%>
+                                                <input class="form-container-input " type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
+
+                                                <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
+                                         <input  type="file" name="imagen" id="Imagen de perfil" > Imagen de perfil  </label>
+                                                <% if (locals.errors && errors.imagen){%>
+                                                    <div class="text-danger">
+                                                        <%= errors.imagen.msg %>
+                                                    </div>
+                                                    <%}%>
+
+
+
+
+                                                        <div class="offertConfirmation">
+                                                            <input type="checkbox" name="recibir-ofertas" id="offertConfirmation">
+                                                            <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
+                                                        </div>
+
+                                                        <button class="submit-btn" type="submit">Registrarme </button>
+
+                    </form>
+
                 </div>
 
-                <button class="submit-btn"type="submit">Registrarme </button>
 
-            </form>
-
-        </div>
-
-
-    </section>
+            </section>
 
 
 
 
-    <%- include('../partials/footer2')  %>
-</body>
+            <%- include('../partials/footer2')  %>
+    </body>
 
-</html>
+    </html>
