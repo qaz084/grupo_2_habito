@@ -35,7 +35,9 @@ const controller = {
             })
         } else {
             return res.render("../views/users/profile")
-        }
+        };
+
+
 
         const email = req.body.email;
         const pass = req.body.contrasenia;
@@ -63,7 +65,6 @@ const controller = {
     },
 
     addUser: (req, res) => {
-
 
         const userEmail = usersArray.find(user => user.email == req.body.email)
 

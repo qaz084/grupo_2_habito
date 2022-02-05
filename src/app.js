@@ -39,10 +39,13 @@ app.set('views', path.resolve(__dirname,'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// MD userLogged
+const userLoggedMD = require('./middlewares/userLoggedMiddleware')
+app.use(userLoggedMD);
+
 
 const mainRoutes = require('./routes/main');
 app.use("/", mainRoutes);
-
 
 const productsRoutes= require('./routes/products');
 app.use("/products", productsRoutes);
