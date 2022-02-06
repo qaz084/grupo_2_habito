@@ -33,26 +33,43 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             })
-        } else {
-            return res.render("../views/users/profile")
-        };
+        }
 
 
+        let userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
+        if (userToLogin) {
+            let okPassword = bcrypt.compareSync(req.body.contrasenia, userToLogin.pass);
 
-        const email = req.body.email;
-        const pass = req.body.contrasenia;
-        usersArray.forEach(usuario => {
-            if (usuario.email == email && usuario.pass == pass) {
-                res.redirect('/?logged=true');
-            } else {
-                res.redirect('/users/login?logged=false');
+            if (okPassword) {
+                delete userToLogin.pass;
+
+                req.session.userLogged = userToLogin;
+                return res.redirect('./profile');
+
             }
+            return res.render("../views/users/login", {
+                errors: {
+                    email: {
+                        msg: 'Credenciales invalidas'
+                    }
+                },
+                oldData: req.body,
+            })
+        }
+        return res.render("../views/users/login", {
+            errors: {
+                email: {
+                    msg: 'Email no registrado'
+                }
+            },
+            oldData: req.body,
         })
+
     },
 
     userProfile: (req, res) => {
 
-        return res.render("../views/users/profile",{
+        return res.render("../views/users/profile", {
 
             user: req.session.userLogged
         });
@@ -69,50 +86,50 @@ const controller = {
         const userEmail = usersArray.find(user => user.email == req.body.email)
 
         let userDoublepass = undefined;
-        if(req.body.contraseña == req.body.repetirContraseña){
+        if (req.body.contraseña == req.body.repetirContraseña) {
             userDoublepass = true;
-        }else{
+        } else {
             userDoublepass = false;
         }
 
         const resultValidation = validationResult(req);
         if (!resultValidation.isEmpty()) {
-            return res.render("../views/users/register2", {errors: resultValidation.mapped(), oldData: req.body,})
+            return res.render("../views/users/register2", { errors: resultValidation.mapped(), oldData: req.body, })
         } else {
-            if(userEmail == undefined){
-                if(userDoublepass == true){
-                    if((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")){
+            if (userEmail == undefined) {
+                if (userDoublepass == true) {
+                    if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")) {
                         usersArray.push({
                             nombre: req.body.nombre,
                             apellido: req.body.apellido,
                             email: req.body.email,
                             pass: bcrypt.hashSync(req.body.contraseña, 10),
-                            imagen: req.file && req.file.filename? req.file.filename : "default-image.png" ,
+                            imagen: req.file && req.file.filename ? req.file.filename : "default-image.png",
                             id: generateID()
                         });
                         fs.writeFileSync(filePath, JSON.stringify(usersArray, null, ' '))
                         return res.redirect("/")
-                    }else{
-                        return res.render("../views/users/register2", {errors: resultValidation.mapped(), oldData: req.body,})
+                    } else {
+                        return res.render("../views/users/register2", { errors: resultValidation.mapped(), oldData: req.body, })
                     }
-                }else{
-                    return res.render("../views/users/register2", {error:{contraseña: "Las contraseñas no coinciden"} , oldData: req.body})
+                } else {
+                    return res.render("../views/users/register2", { error: { contraseña: "Las contraseñas no coinciden" }, oldData: req.body })
                 }
 
-            }else{
-                return res.render("../views/users/register2", {error:{correo: "Correo existente"} , oldData: req.body})
+            } else {
+                return res.render("../views/users/register2", { error: { correo: "Correo existente" }, oldData: req.body })
             }
         }
 
     },
 
-    logOut:(req, res) => {
- 
+    logOut: (req, res) => {
+
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
 
-        }
+    }
 
 };
 

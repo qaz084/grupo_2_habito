@@ -19,15 +19,9 @@ const upload = multer({ storage });
 const controller = require("../controllers/usersController");
 const { body } = require('express-validator');
 
-const validationLogin = [
-    body('email').notEmpty().withMessage('Debe ingresar un email').bail()
-    .isEmail().withMessage('Debe ingresar un Email valido'),
-
-    body('contrasenia').notEmpty().withMessage('Debe ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe ser mas larga')
-];
 
 //Middlewares
+const validationLogin = require("../middlewares/validateLoginMiddleware");
 const validationRegister = require("../middlewares/validateRegisterMiddleware")
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
@@ -47,7 +41,7 @@ router.post("/", upload.single('imagen'), validationRegister, controller.addUser
 //GET - http://localhost3000/users/profile
 router.get("/profile", authMiddleware, controller.userProfile);
 
-router.get('/logout',controller.logOut);
+router.get('/logout', controller.logOut);
 
 
 module.exports = router;
