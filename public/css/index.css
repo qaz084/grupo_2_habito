@@ -16,13 +16,24 @@
 /* -----------NUEVO HEADER-------- */
 
 body{
-
- font-family:roboto,sans-serif;
-
-
+    font-family:roboto,sans-serif;
 }
 
+.profile-pic {
+    border-radius: 100%;
+}
 
+.ul-header2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.name-img{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
 .container-header{
 

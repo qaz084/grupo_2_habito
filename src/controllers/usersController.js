@@ -19,8 +19,6 @@ const generateID = () => {
 };
 
 
-
-
 const controller = {
     userLogin: (req, res) => {
         return res.render("../views/users/login")
@@ -45,8 +43,8 @@ const controller = {
 
                 req.session.userLogged = userToLogin;
                 return res.redirect('./profile');
-
             }
+
             return res.render("../views/users/login", {
                 errors: {
                     email: {
@@ -70,10 +68,8 @@ const controller = {
     userProfile: (req, res) => {
 
         return res.render("../views/users/profile", {
-
             user: req.session.userLogged
         });
-
     },
 
     userRegister: (req, res) => {
@@ -115,12 +111,10 @@ const controller = {
                 } else {
                     return res.render("../views/users/register2", { error: { contraseña: "Las contraseñas no coinciden" }, oldData: req.body })
                 }
-
             } else {
                 return res.render("../views/users/register2", { error: { correo: "Correo existente" }, oldData: req.body })
             }
         }
-
     },
 
     logOut: (req, res) => {

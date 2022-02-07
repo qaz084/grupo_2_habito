@@ -9,23 +9,31 @@
 
         <nav class="main-navbar">
 
-            <ul>
+            <ul class = ul-header2>
+                <% if (locals.isAnUserLogged === true) { %>
+                    
+                    <a href="/products/cart">
+                        <li>Carrito (0)</li>
+                    </a>
+                    <a href="/products/create">
+                        <li>Crear Productos</li>
+                    </a>
+                    <a href="/users/profile">
+                        <li>Perfil</li>
+                    </a>
+                    <a class="name-img" href="/products/profile">
+                        <li>Hi <%= locals.userData.name %> </li>
+                        <img class = "profile-pic" src="../../uploads/users/<%= locals.userData.imagen %>" width="40px">
+                    </a>
+                <% } else {%>
 
-                <a href="/users/register2">
-                    <li>Registrarse</li>
-                </a>
-                <a href="/users/login">
-                    <li>Login</li>
-                </a>
-                <a href="/products/cart">
-                    <li>Carrito (0)</li>
-                </a>
-                <a href="/products/create">
-                    <li>Crear Productos</li>
-                </a>
-                <a href="/users/profile">
-                    <li>Perfil</li>
-                </a>
+                    <a href="/users/register2">
+                        <li>Registrarse</li>
+                    </a>
+                    <a href="/users/login">
+                        <li>Login</li>
+                    </a>
+                <% } %>
 
             </ul>
 

@@ -24,14 +24,13 @@
                    <div class="profile-picture">
 
                     <!-- ACA HAY QUE CAMBIAR CON LA IMAGEN DEL REGISTER -->
-                       <img src="/uploads/users/default-image.png" alt="Profile Picture">
-
-
+                    <img src="/uploads/users/<%= locals.userData.imagen %>" alt="Profile Picture">
+                    <!-- HAY QUE HACER UN IF PARA QUE APAREZCA LA FOTO POR DEFECTO EN CASO DE NO HABER IMAGEN DE USUARIO -->
                    </div>
                                      
     <!-- ACA HAY QUE CAMBIAR CON EL NOMBRE DEL USUARIO DEL REGISTER -->
 
-                    <h1>Nombre Usuario</h1>
+                    <h1><%= locals.userData.name %></h1>
                     <a href="/users/logout">
                         <h2>Logout</h2>
                     </a>
