@@ -19,9 +19,24 @@ body{
     font-family:roboto,sans-serif;
 }
 
-.profile-pic {
-    border-radius: 100%;
+.profile-picture{
+    background-color: #3D3D3D;
 }
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    display:flex;
+}
+
+
+.profile-pic img{
+    width: 100%;
+}
+
+
 
 .ul-header2 {
     display: flex;

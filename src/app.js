@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const session = require('express-session');
-const cookies= require('cookie-parser');
+const cookie= require('cookie-parser');
 
 
 //SESSION----------------------------
@@ -15,6 +15,9 @@ app.use(session({
     resave:false
 
 }));
+
+// COOKIE------------------------------------------------
+app.use(cookie());
 
 //OVERRIDE------------------------------------------
 const methodOverride=require("method-override");
@@ -39,10 +42,18 @@ app.set('views', path.resolve(__dirname,'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+// MD AutoLogin
+const autoLogin = require('./middlewares/autoLoginMiddleware')
+app.use(autoLogin);
+
 // MD userLogged
 const userLoggedMD = require('./middlewares/userLoggedMiddleware')
 app.use(userLoggedMD);
 
+
+
+//RUTAS
 
 const mainRoutes = require('./routes/main');
 app.use("/", mainRoutes);
@@ -56,10 +67,7 @@ app.use("/users", usersRoutes);
 
 
 
-
-
-
-
+//ERROR
 
 app.use((req,res,next)=>{
     res.status(404).render("./error/error404")

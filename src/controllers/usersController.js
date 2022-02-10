@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require("bcryptjs");
 //Ubicar archivo Json
 const filePath = path.resolve(__dirname, '../data/users.json');
+
 //Lectura de Json y Parseo
 const usersArray = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
@@ -42,7 +43,15 @@ const controller = {
                 delete userToLogin.pass;
 
                 req.session.userLogged = userToLogin;
+                if(req.body.recordarUsuario){
+
+                    res.cookie("userEmail",userToLogin.email,{
+                        maxAge: (1000*60)*5
+                    })
+                }
+
                 return res.redirect('./profile');
+
             }
 
             return res.render("../views/users/login", {
@@ -95,6 +104,7 @@ const controller = {
             if (userEmail == undefined) {
                 if (userDoublepass == true) {
                     if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")) {
+                        
                         usersArray.push({
                             nombre: req.body.nombre,
                             apellido: req.body.apellido,
@@ -104,7 +114,7 @@ const controller = {
                             id: generateID()
                         });
                         fs.writeFileSync(filePath, JSON.stringify(usersArray, null, ' '))
-                        return res.redirect("/")
+                        return res.redirect("/users/login")
                     } else {
                         return res.render("../views/users/register2", { errors: resultValidation.mapped(), oldData: req.body, })
                     }

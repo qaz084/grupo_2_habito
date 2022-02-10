@@ -12,20 +12,30 @@
             <ul class = ul-header2>
                 <% if (locals.isAnUserLogged === true) { %>
                     
+                    <a href="/">
+                        <li>Inicio</li>
+                    </a>
                     <a href="/products/cart">
                         <li>Carrito (0)</li>
                     </a>
                     <a href="/products/create">
                         <li>Crear Productos</li>
                     </a>
+<!-- -------------------NOMBRE DEL PERFIL--------- -->
                     <a href="/users/profile">
-                        <li>Perfil</li>
+                        <li><%=locals.isAnUserLogged.name%> </li>
                     </a>
-                    <a class="name-img" href="/products/profile">
-                        <li>Hi <%= locals.userData.name %> </li>
-                        <img class = "profile-pic" src="../../uploads/users/<%= locals.userData.imagen %>" width="40px">
-                    </a>
+
+                    <!-- <a class="name-img" href="/users/profile">
+                        <li> locals.userData.name </li>
+                        <img class = "profile-pic" src="../../uploads/users/ locals.userData.imagen " width="40px">
+                  </a> -->
+                    
                 <% } else {%>
+
+                    <a href="/">
+                        <li>Inicio</li>
+                    </a>
 
                     <a href="/users/register2">
                         <li>Registrarse</li>

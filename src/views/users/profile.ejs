@@ -32,7 +32,7 @@
 
                     <h1><%= locals.userData.name %></h1>
                     <a href="/users/logout">
-                        <h2>Logout</h2>
+                        <h2>Cerrar sesión</h2>
                     </a>
 
                   </div>
@@ -57,24 +57,11 @@
                      </h1>
 
                      
-                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
-                     <% if (locals.errors && errors.nombre){%>
-                         <div class="text-danger">
-                             <%= errors.nombre.msg %>
-                         </div>
-                         <% } %>
-                             <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
-                             <% if (locals.errors && errors.email){%>
-                                 <div class="text-danger">
-                                     <%= errors.email.msg %>
-                                 </div>
-                                 <% } %>
-
-                                 <% if (locals.error && error.correo){%>
-                                     <div class="text-danger">
-                                         <%= error.correo %>
-                                     </div>
-                                     <% } %>
+                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%=user.nombre%>">
+                     
+                         
+                             <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%=user.email%>">
+                            
 
                  </form>
             
