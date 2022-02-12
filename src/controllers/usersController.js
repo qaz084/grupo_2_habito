@@ -25,7 +25,7 @@ const controller = {
         return res.render("../views/users/login")
     },
 
-    logUser: (req, res) => {
+    logUser:  (req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render("../views/users/login", {
@@ -35,16 +35,16 @@ const controller = {
         }
 
 
-        let userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
+        let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
         if (userToLogin) {
-            let okPassword = bcrypt.compareSync(req.body.contrasenia, userToLogin.pass);
+            let okPassword =  bcrypt.compareSync(req.body.contrasenia, userToLogin.pass);
 
             if (okPassword) {
                 delete userToLogin.pass;
-
+              
                 req.session.userLogged = userToLogin;
                 if(req.body.recordarUsuario){
-
+                    
                     res.cookie("userEmail",userToLogin.email,{
                         maxAge: (1000*60)*5
                     })
