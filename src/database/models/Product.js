@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         quantity: DataTypes.INTEGER(11),
         image: DataTypes.STRING(255),
         categoryId: DataTypes.INTEGER(11),
-    }, {});
+    }, {
+        deletedAt:true,
+    });
 
     Product.associate = function (models) {
 

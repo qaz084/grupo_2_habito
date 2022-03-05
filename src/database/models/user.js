@@ -6,7 +6,9 @@ module.exports = (sequelize, DataTypes) => {
         avatar: DataTypes.STRING(500),
         password: DataTypes.STRING(500),
         userCategoryId: DataTypes.INTEGER(11)
-    }, {});
+    }, {
+        deletedAt:true
+    });
 
     User.associate = function (models) {
         User.hasMany(modelos.Cart, {
