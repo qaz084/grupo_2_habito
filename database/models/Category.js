@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     Category.associate = function (models) {
         Category.hasMany(models.Product, {
             as: 'product',
-            
+            // Algo más acá?
         })
     };
 
