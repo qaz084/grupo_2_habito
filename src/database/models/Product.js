@@ -19,21 +19,21 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'categoryId'
         });
 
-        Product.belongsToMany(modelos.Size, {
+        Product.belongsToMany(models.Size, {
             as: 'size',
             through: 'productSize',
             foreignKey: 'productId',
             otherKey: 'sizeId', 
         });
 
-        Product.belongsToMany(modelos.Color, {
+        Product.belongsToMany(models.Color, {
             as: 'color',
             through: 'colorProduct',
             foreignKey: 'productId',
             otherKey: 'colorId', 
         });
 
-        Product.belongsToMany(modelos.Cart, {
+        Product.belongsToMany(models.Cart, {
             as: 'cart',
             through: 'cartProduct',
             foreignKey: 'productId',

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
 
     Size.associate = function (models) {
-        Size.belongsToMany(modelos.Product, {
+        Size.belongsToMany(models.Product, {
             as: 'product',
             through: 'productSize',
             foreignKey: 'sizeId',
