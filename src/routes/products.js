@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
-const controller = require("../controllers/productsController");
+const controller = require("../controllers/dbControllers/productsController");
 
 const multer=require("multer");
 
@@ -20,16 +20,19 @@ const storage=multer.diskStorage({
 
 const upload = multer({storage});
 
+
+router.get("/mock", controller.mock);
+
 router.get("/detail/:id", controller.productDetail);
-router.get("/cart", controller.productCart);
+// router.get("/cart", controller.productCart);
 
-router.get("/create",controller.createProduct);
-router.post('/', upload.fields([{name:"img"},{name:"img2"},{name:"img3"},{name:"img4"}]),controller.add);
+// router.get("/create",controller.createProduct);
+// router.post('/', upload.fields([{name:"img"},{name:"img2"},{name:"img3"},{name:"img4"}]),controller.add);
 
-router.get("/edit/:id",controller.editProduct);
-router.put('/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);
+// router.get("/edit/:id",controller.editProduct);
+// router.put('/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);
 
-router.delete('/:id',controller.delete);
+// router.delete('/:id',controller.delete);
 
 
 module.exports = router;

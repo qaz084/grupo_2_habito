@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
         discount: DataTypes.INTEGER(11),
         description: DataTypes.STRING(1000),
         quantity: DataTypes.INTEGER(11),
-        image: DataTypes.STRING(255),
+        image1: DataTypes.STRING(255),
+        image2: DataTypes.STRING(255),
+        image3: DataTypes.STRING(255),
+        image4: DataTypes.STRING(255),
         categoryId: DataTypes.INTEGER(11),
     }, {
         deletedAt:true,

@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         email: DataTypes.STRING(255),
         avatar: DataTypes.STRING(500),
         password: DataTypes.STRING(500),
-        userCategoryId: DataTypes.INTEGER(11)
+        statusId: DataTypes.INTEGER(11)
     }, {
         deletedAt:true
     });
