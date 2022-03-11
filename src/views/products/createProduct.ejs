@@ -95,12 +95,11 @@
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS"><label for="sizeXS" class="check-product-size" >XS</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS"><label for="sizeS" class="check-product-size" >S</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM"><label for="sizeM" class="check-product-size" >M</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL"><label role="button" for="sizeL" class="check-product-size" >L</label>
-                                            <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL"><label for="sizeXL" class="check-product-size" >XL</label>
-                                
+                                                <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS" value = "2"><label for="sizeS" class="check-product-size" >S</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>                                                             
                                         </div>
                             </div>
 
@@ -121,13 +120,12 @@
                         <div class="input-product-category">
                             <SPAN >Categoría: </SPAN>
                             <div class="categoryContainer">
-                                <select name="productcategories" id="categorias" required>
-                                    <option value="Camisas">Camisas</option>
-                                    <option value="Remeras">Remeras</option>
-                                    <option value="Hoddies">Hoddies</option>
-                                    <option value="Pantalones">Pantalones</option>
+                                <select name="category" id="" required>
+                                    <option value="" disabled selected>- Seleccionar categoria - </option>
+                                    <% category.forEach(oneCategory => { %>
+                                    <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
+                                    <% }); %>
                                 </select>
-                            
                             </div>
                         </div>
                         

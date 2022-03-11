@@ -14,7 +14,11 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Cart, {
             as: 'cart',
             foreignKey: 'userId'
-        })
+        });
+        User.belongsTo(models.Status, {
+            as: 'status',
+            foreignKey: 'statusId'
+        });
             
     };
 

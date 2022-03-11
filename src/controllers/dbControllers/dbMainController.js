@@ -2,7 +2,7 @@ const db = require("../../database/models")
 
 const mainController = {
     index: (req, res) => {
-        db.Product.findAll()
+        db.Category.findAll()
             .then(products => {
                 res.render("index",{products})
             })
