@@ -89,6 +89,7 @@ CREATE TABLE `categories` (
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -99,7 +100,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL),(2,'Pantalones',NULL,NULL,NULL),(3,'Camisas',NULL,NULL,NULL),(4,'Shorts',NULL,NULL,NULL),(5,'Buzos',NULL,NULL,NULL);
+INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL,''),(2,'Pantalones',NULL,NULL,NULL,''),(3,'Camisas',NULL,NULL,NULL,''),(4,'Shorts',NULL,NULL,NULL,''),(5,'Buzos',NULL,NULL,NULL,'');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -321,4 +322,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09 18:15:28
+-- Dump completed on 2022-03-10 22:10:46
