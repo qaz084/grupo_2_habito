@@ -18,7 +18,7 @@
             <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
         </div>
     
-            <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <div class="menuContainer" >
                     
@@ -27,7 +27,7 @@
                         <input class="img-checkbox"        type="file" id='img2' accept="image/*,.pdf" name="img2">
 
                         <label for="img2">
-                        <img src='/uploads/products/<%=editProduct.img2 %>'  alt="Hoddie front" class="left-img-container">    
+                        <img src='/uploads/products/<%=product.img2 %>'  alt="Hoddie front" class="left-img-container">    
                         </label>
 
                         </input>
@@ -35,7 +35,7 @@
                         <input class="img-checkbox" type="file" id='img3' accept="image/*,.pdf" name="img3">
 
                         <label for="img3">
-                        <img src='/uploads/products/<%=editProduct.img3 %>' alt="Hoddie back" class="left-img-container">    
+                        <img src='/uploads/products/<%=product.img3 %>' alt="Hoddie back" class="left-img-container">    
                         </label>
                         </input>
 
@@ -57,7 +57,7 @@
                                    
                                     
                                     <label for="img">
-                                        <img src='/uploads/products/<%=editProduct.img %>' alt="Inserte imagen del producto"  >
+                                        <img src='/uploads/products/<%=product.img %>' alt="Inserte imagen del producto"  >
                                 </input>
                         </div>
                 
@@ -69,17 +69,17 @@
                     <div class="rightContainer">
 
                             <input type="text" class="input-product-name" placeholder="Hoddie Infinite" 
-                            name="name" value="<%= editProduct.name %> " required>
+                            name="name" value="<%= product.name %> " required>
 
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>$</span>
-                                <input type="number" class="input-product-price" min='0 ' value=<%= parseInt(editProduct.price) %>
+                                <input type="number" class="input-product-price" min='0 ' value=<%= product.price %>
                                 name="price" required>
                               
                             </div>
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>%</span>
-                                <input type="number" class="input-product-price" min='0 ' max='100' value="<%= parseInt(editProduct.discount) %>"
+                                <input type="number" class="input-product-price" min='0 ' max='100' value="<%= product.discount) %>"
                                 name="discount" >
                             
                                 
@@ -87,14 +87,21 @@
 
                             <label for="descripcion"><span class="product-description">Descripción:</span></label>
                             
-                            <textarea class="input-description" name="longDescription" id="descripcion" cols="30" rows="10" required> <%=editProduct.longDescription %> </textarea  >
+                            <textarea class="input-description" name="longDescription" id="descripcion" cols="30" rows="10" required> <%=product.description %> </textarea  >
 
                             <!-- TALLE------------------------------- -->
                             <div class="input-product-size">
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <input type="checkbox" class="checkbox" name="size" id="sizeXS" value="XS"><label for="sizeXS" class="check-product-size" >XS</label>
+                                            <% for (let i = 0; i< sizes.length; i++){%>
+                                                <% if(sizes[i].id === product.sizeId){%>
+                                                    <input type="checkbox" class="checkbox" name="size" id='<%= sizes[i].name %>' value='<%= sizes[i].id %>'selected><label for="'<%= sizes[i].name %>'" class="check-product-size" ><%=sizes[i].name%></label>
+                                                    <%} else {%>
+                                                        <input type="checkbox" class="checkbox" name="size" id='<%= sizes[i].name %>' value='<%= sizes[i].id %>'><label for="'<%= sizes[i].name %>'" class="check-product-size" ><%=sizes[i].name%></label>
+                                                    <%}%> 
+                                            <%}%>
+                                                 
 
                                             <input type="checkbox" class="checkbox" name="size" id="sizeS" value="S"><label for="sizeS" class="check-product-size" >S</label>
 
@@ -129,10 +136,15 @@
                             <SPAN >Categoría: </SPAN>
                             <div class="categoryContainer">
                                 <select name="categories" id="categorias" required>
-                                    <option value="Hoddies">Hoddies</option>
-                                    <option value="Camisas">Camisas</option>
-                                    <option value="Remeras">Remeras</option>
-                                    <option value="Pantalones">Pantalones</option>
+                                    <% for (let i = 0; i< categories.length; i++){%>
+                                        <% if(categories[i].id === product.cateroryId){ %>
+                                            <option value="<%= categories[i].id %>" selected></option>
+                                            <%} else {%>
+                                                <option value="<%= categories[i].id %>">categories[i].name</option>
+                                               
+                                            <%}%> 
+                                    <%}%>                                                                             
+                                                       
                                 </select>
                             
                             </div>

@@ -22,6 +22,20 @@ const controller={
 			image4: req.files.img4? req.files.img[0].filename : "default-image.png",
 			categoryId: req.body.category
 		}).then(()=>{res.redirect("/")})
+	},
+	editProduct:(req,res)=>{
+		let requestProduct= Product.findByPk(req.params.id);
+		let requestCategories= Category.findAll();
+		let requestSizes = Size.findAll();
+		let requestColors = Color.findAll();
+		Promise.all([requestProduct,requestCategories,requestColors,requestSizes])
+			.then(function(product,categories,sizes,colors){
+				res.render('editProduct',{product:product,categories:categories,sizes:sizes,colors:colors})
+			}) 
+		
+
+
+
 	}
 }
 
