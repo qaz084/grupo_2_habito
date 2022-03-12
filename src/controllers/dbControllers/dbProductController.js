@@ -4,10 +4,11 @@ const fs = require('fs');
 const path=require('path');
 
 const controller={
-	createProduct: (req,res)=>{
-		Category.findAll({}).then((categories =>{
-			res.render("../views/products/createProduct",{category : categories})
-		}))
+	createProduct: async (req,res)=>{
+		//const sizes = await Size.findAll({});
+		const categories = await Category.findAll({})
+		res.render("../views/products/createProduct",{category : categories/*, size : sizes*/})
+		
 	},
 	add : (req, res) => {
 		Product.create({
