@@ -6,9 +6,9 @@ const path=require('path');
 const controller={
 	createProduct: async (req,res)=>{
 		//const sizes = await Size.findAll({});
-		const categories = await Category.findAll({})
-		res.render("../views/products/createProduct",{category : categories/*, size : sizes*/})
-		
+		const colors = await Color.findAll({});
+		const categories = await Category.findAll({});
+		res.render("../views/products/createProduct",{category : categories, color : colors/*, size : sizes*/})
 	},
 	add : (req, res) => {
 		Product.create({

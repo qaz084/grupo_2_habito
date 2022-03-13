@@ -40,8 +40,14 @@ flex-wrap: nowrap;
 justify-content: space-between;
 margin: auto;
 color: rgb(230, 230, 230);
-
-
+}
+.colorSelected{
+    border-top: 4px solid #616161;
+    border-bottom: 2px solid #616161
+}
+.sizeSelected{
+    color: #A96028;
+    
 }
 .main-navbar li{
 display: inline;
@@ -1904,7 +1910,7 @@ top: 526px; */
 
         font-weight: 300;
         font-size: 1em;
-        color: #7D7D7D;
+
     }
 
     .check-product-size:hover,.check-product-size:active{
