@@ -1,3 +1,9 @@
 [
-
+ {
+  "nombre": "Jonathan",
+  "email": "jonathaniurman@gmail.com",
+  "pass": "$2a$10$5X9D1UEsowj0iRZxaFXaJehUDN2PyomzXD3OlHB96I7rXTnYgxvMu",
+  "imagen": "1647283790916_847054866imagen.jpg",
+  "id": 1
+ }
 ]

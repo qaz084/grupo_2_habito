@@ -15,6 +15,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+DROP DATABASE IF EXISTS `habito`;
+CREATE DATABASE `habito`;
+USE `habito`;
+
 --
 -- Table structure for table `cartproducts`
 --
@@ -90,6 +95,8 @@ CREATE TABLE `categories` (
   `updatedAt` timestamp NULL DEFAULT NULL,
   `deletedAt` timestamp NULL DEFAULT NULL,
   `image` varchar(255) NOT NULL,
+  `description` varchar(255) NULL,
+
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -100,7 +107,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL,''),(2,'Pantalones',NULL,NULL,NULL,''),(3,'Camisas',NULL,NULL,NULL,''),(4,'Shorts',NULL,NULL,NULL,''),(5,'Buzos',NULL,NULL,NULL,'');
+INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL,'category_1',null),(2,'Pantalones',NULL,NULL,NULL,'category_2',null),(3,'Camisas',NULL,NULL,NULL,'category_3',null),(4,'Shorts',NULL,NULL,NULL,'category_4',null),(5,'Buzos',NULL,NULL,NULL,'category_5',null);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 

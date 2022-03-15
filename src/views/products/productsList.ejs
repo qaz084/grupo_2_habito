@@ -1,4 +1,4 @@
-<%- include('./partials/head', {
+<%- include('../partials/head', {
     pageTitle: 'Hábito',
     cssLink: 'href="/css/index.css" '
 })%>
@@ -7,52 +7,50 @@
 
 
 <!------------ HEADER------------------- -->
-        <%- include('./partials/headerSearchBar')%>
+        <%- include('../partials/headerSearchBar')%>
 
   <!--------------- BANNER------------------- -->
 
-        <%- include('./partials/banner')  %>
+        <%- include('../partials/banner')  %>
       
             <!-- Acá arranca el Main-->
             <main>
              
               <section class="products-container" >
 
-                <h1 class="categories">Categorias</h1>
+                <h1 class="categories">Productos</h1>
 
 
-                  <% for (let i = 0; i<categories.length; i++) {%>
-
-                 
-                    <a  href="/products/list/<%=categories[i].id%>">
+                  <% for (let i = 0; i<productsList.length; i++) {%>
+                    <a  href="/products/detail/<%=productsList[i].id%>">
 
                         <article class="product2" >
 
                             <div class="category-container">
 
-                             <h1>  <%=/*categories[i].name*/%></h1>
+                             <h1>  <%=productsList[i].categories%></h1>
 
                             </div>
 
                             <div class="img-container">
-                                <img src="/products/<%=categories[i].image%>" alt="" >
+                                <img src="/uploads/products/default-image.png" alt="" >
                             </div>
 
                             <div class="product-info">
 
                                 <div class="product-info-lef-container">
 
-                                    <span class="product-name"> <%=categories[i].name%></span>
+                                    <span class="product-name"> <%=productsList[i].name%></span>
 
                                     <!--<span class="product-price">
-                                      $ <%= /*products[i].price*/%>
+                                        $ <%=productsList[i].price%>
                                     </span> -->
 
                                 </div >
 
                                 <div class="product-info-right-container">
                                     <!--<span class="product-discount">
-                                        <%=/*products[i].discount*/%> % OFF 
+                                        <%=productsList[i].discount%> % OFF 
                                       </span> -->
 
                                 </div>
@@ -68,11 +66,11 @@
                 </section >
 
 <!-- --------------------NEWSLETTER--------------------- -->
-          <%- include('./partials/newsletter')  %>
+          <%- include('../partials/newsletter')  %>
              
 <!-- --------------------FOOTER--------------------- -->
             </main>
-            <%- include('./partials/footer2')  %>
+            <%- include('../partials/footer2')  %>
     </body>
 
     </html>
