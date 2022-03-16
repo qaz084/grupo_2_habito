@@ -95,18 +95,18 @@
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <!--  <select name="size" id="" required multiple>
-                                                <option value="" disabled selected>- Seleccionar talle - </option>
-                                                <% //size.forEach(oneSize => { %>
-                                                <option value="<%= //oneSize.id %>"><%= //oneSize.name %></option>
-                                                <% //}); %>
-                                            </select> -->
-
+                                            <select name="size" id="" required multiple>
+                                                <option value="" disabled selected>- Seleccionar Talle - </option>
+                                                <% size.forEach(oneSize => { %>
+                                                    <option value="<%= oneSize.id %>"><%= oneSize.name %></option>
+                                                    <% }); %>
+                                            </select> 
+<!-- 
                                                 <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
                                                 <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS" value = "2"><label for="sizeS" class="check-product-size" >S</label>
                                                 <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
                                                 <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
-                                                <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>                                                            
+                                                <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->                                                           
                                         </div>
                             </div>
 

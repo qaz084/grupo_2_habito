@@ -17,29 +17,34 @@ const controller={
 			}
 		});
 		res.render("../views/products/productsList",{productsList})
-
 	},
 
-	createProduct: async (req,res)=>{
-		//const sizes = await Size.findAll({});
-		const colors = await Color.findAll({});
-		const categories = await Category.findAll({});
-		res.render("../views/products/createProduct",{category : categories, color : colors/*, size : sizes*/})
+	createProduct: async (req,res) => {
+		try{
+			const size = await Size.findAll({});
+			const colors = await Color.findAll({});
+			const categories = await Category.findAll({});
+			res.render("../views/products/createProduct",{category : categories, color : colors, size : size})
+	} catch (err) {
+		console.log(err)
+	}
 	},
-	// add : (req, res) => {
-	// 	Product.create({
-	// 		name: req.body.productName,
-	// 		price: req.body.productPrice,
-	// 		discount: req.body.productDiscount,
-	// 		description: req.body.productDescription,
-	// 		quantity: 10,
-	// 		// image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
-	// 		// image2: req.files.image2? req.files.image[0].filename : "default-image.png",
-	// 		// image3: req.files.image3? req.files.image[0].filename : "default-image.png",
-	// 		// image4: req.files.image4? req.files.image[0].filename : "default-image.png",
-	// 		categoryId: req.body.category
-	// 	}).then(()=>{res.redirect("/")})
-	// },
+	add :async (req, res) => {
+		const newProduct = await Product.create({
+			name: req.body.productName,
+			price: req.body.productPrice,
+			discount: req.body.productDiscount,
+			description: req.body.productDescription,
+			quantity: 10,
+			image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
+			image2: req.files.image2? req.files.image[0].filename : "default-image.png",
+			image3: req.files.image3? req.files.image[0].filename : "default-image.png",
+			image4: req.files.image4? req.files.image[0].filename : "default-image.png",
+			categoryId: req.body.category
+		});
+		newProduct.addSize(req.body.size)
+		.then(()=>{res.redirect("/")})
+	}, 
 
 	editProduct:(req,res)=>{
 		let requestProduct= Product.findByPk(req.params.id);

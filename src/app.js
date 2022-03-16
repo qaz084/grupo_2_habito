@@ -31,7 +31,7 @@ app.use(express.static(publicPath));
 
 //SERVER CONFIG --------------------------------
 app.listen(3000, () => {
-    console.log("Servidor corriendo")
+    console.log("Server running in port 3000")
 });
 
 // Setup template engine
