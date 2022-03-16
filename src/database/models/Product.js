@@ -24,21 +24,21 @@ module.exports = (sequelize, DataTypes) => {
 
         Product.belongsToMany(models.Size, {
             as: 'size',
-            through: 'productSize',
+            through: 'productssize',
             foreignKey: 'productId',
             otherKey: 'sizeId', 
         });
 
         Product.belongsToMany(models.Color, {
             as: 'color',
-            through: 'colorProduct',
+            through: 'colorproduct',
             foreignKey: 'productId',
             otherKey: 'colorId', 
         });
 
         Product.belongsToMany(models.Cart, {
             as: 'cart',
-            through: 'cartProduct',
+            through: 'cartproduct',
             foreignKey: 'productId',
             otherKey: 'cartId', 
         })

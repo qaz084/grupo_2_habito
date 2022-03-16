@@ -72,10 +72,10 @@
                     <form class="form-container" action="/users/" method="post" enctype="multipart/form-data">
                         <H1>O con tu correo electrónico</H1>
 
-                        <input class="form-container-input <%= locals.errors && errors.nombre? 'input-data-wrong':null %>" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.nombre:null%>">
-                        <% if (locals.errors && errors.nombre){%>
+                        <input class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>" type="text" name="name" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.name:null%>">
+                        <% if (locals.errors && errors.name){%>
                             <div class="text-danger">
-                                <%= errors.nombre.msg %>
+                                <%= errors.name.msg %>
                             </div>
                             <% } %>
                                 <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
@@ -85,29 +85,29 @@
                                     </div>
                                     <% } %>
 
-                                    <% if (locals.error && error.correo){%>
+                                    <% if (locals.error && error.email){%>
                                         <div class="text-danger">
-                                            <%= error.correo %>
+                                            <%= error.email %>
                                         </div>
                                         <% } %>
 
-                                        <input class="form-container-input <%= locals.errors && errors.contraseña? 'input-data-wrong':null %>" type="password" name="contraseña" id="" placeholder="  Contraseña: ">
-                                        <% if (locals.errors && errors.contraseña){%>
+                                        <input class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" id="" placeholder="  Contraseña: ">
+                                        <% if (locals.errors && errors.password){%>
                                             <div class="text-danger">
-                                                <%= errors.contraseña.msg %>
+                                                <%= errors.password.msg %>
                                             </div>
                                             <%}%>
-                                                <input class="form-container-input <%= locals.errors && errors.repetirContraseña? 'input-data-wrong':null %>"  type="password" name="repetirContraseña" id="" placeholder="  Repetir contraseña:">
-                                                <% if (locals.error && error.contraseña){%>
+                                                <input class="form-container-input <%= locals.errors && errors.repeatPassword? 'input-data-wrong':null %>"  type="password" name="repeatPassword" id="" placeholder="  Repetir contraseña:">
+                                                <% if (locals.error && error.repeatPassword){%>
                                                     <div class="text-danger">
-                                                        <%= error.contraseña %>
+                                                        <%= error.repeatPassword %>
                                                     </div>
                                                     <% } %>
                                                 <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                                        <input  type="file" name="imagen" accept="image/*,.jpg .png" id="Imagen de perfil" > Imagen de perfil  </label>
-                                                <% if (locals.errors && errors.imagen){%>
+                                        <input  type="file" name="avatar" accept="image/*,.jpg .png" id="Imagen de perfil" > Imagen de perfil  </label>
+                                                <% if (locals.errors && errors.avatar){%>
                                                     <div class="text-danger">
-                                                        <%= errors.imagen.msg %>
+                                                        <%= errors.avatar.msg %>
                                                     </div>
                                                     <%}%>
 

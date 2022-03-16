@@ -2,18 +2,18 @@ const path = require('path');
 const { body } = require('express-validator');
 
 const validationRegister = [
-    body('nombre').notEmpty().withMessage('Debes ingresar un nombre'),
+    body('name').notEmpty().withMessage('Debes ingresar un nombre'),
 
     body('email').notEmpty().withMessage('Debes ingresar un email').bail()
     .isEmail().withMessage('Debe ingresar un Email valido'),
 
-    body('contraseña').notEmpty().withMessage('Debes ingresar la contraseña').bail()
+    body('password').notEmpty().withMessage('Debes ingresar la contraseña').bail()
     .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
-    body('repetirContraseña').notEmpty().withMessage('Debes ingresar la contraseña').bail()
+    body('repeatPassword').notEmpty().withMessage('Debes ingresar la contraseña').bail()
     .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
-    body('imagen').custom((value, { req }) => {
+    body('avatar').custom((value, { req }) => {
         let file = req.file;
         let extensionAccepted = ['.jpg', '.png'];
         if (!file) {

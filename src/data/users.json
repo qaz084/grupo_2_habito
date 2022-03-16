@@ -1,3 +1,9 @@
 [
-
+ {
+  "nombre": "Juan",
+  "email": "jarros87@gmail.com",
+  "pass": "$2a$10$kupnVxbuHOlLaxpuPVPdw.kkmFJe2lNmGUXPO3jxDP62YEII1ups6",
+  "imagen": "1647221232501_979745089imagen.jpg",
+  "id": 1
+ }
 ]

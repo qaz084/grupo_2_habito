@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         password: DataTypes.STRING(500),
         statusId: DataTypes.INTEGER(11)
     }, {
+        
         deletedAt:true
     });
 
