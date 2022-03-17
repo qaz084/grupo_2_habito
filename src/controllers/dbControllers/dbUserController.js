@@ -108,11 +108,13 @@ const controller = {
         });
 
         //Chequear si el correo es @habito o no
-        /* if (userEmail.includes('@habito.com')){
-            let statusId = 1 
+        
+        let statusUser = null;
+        if (userEmail.includes('@habito.com')){
+            statusUser = 1 
         }  else {
-            let statusId = 2
-        } */
+            statusUser = 2
+        }
 
         //Corroborar que password es igual a repeatPassword
         let userDoublePassword = undefined;
@@ -138,7 +140,7 @@ const controller = {
                                 password: bcrypt.hashSync(req.body.password, 10),
                                 avatar: req.file && req.file.filename ? req.file.filename : "default-image.png",
                                 //statusId: statusId
-                                statusId: 1 //agregar funcion que traiga el email e identifique si es @habito
+                                statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
                             });
                             return res.redirect('/login');
                         } catch (err) {
