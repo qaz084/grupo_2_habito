@@ -28,7 +28,8 @@ const controller = {
         return res.render("../views/users/login")
     },
 
-    logUser:  (req, res) => {
+    logUser: async (req, res) => {
+        
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render("../views/users/login", {
@@ -37,18 +38,27 @@ const controller = {
             })
         }
 
+        
+            //Buscar si el correo que se inserta en el formulario ya existe
+        const userEmail = req.body.email;
+        const userToLogin = await User.findOne({
+            where: {
+                email: userEmail
+            }
+        });
 
-        let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
+        //return res.json(userToLogin)
+        //let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
         if (userToLogin) {
-            let okPassword =  bcrypt.compareSync(req.body.contrasenia, userToLogin.pass);
+            let okPassword =  bcrypt.compareSync(req.body.password, userToLogin.password);
 
             if (okPassword) {
-                delete userToLogin.pass;
+                //delete userToLogin.password;
               
                 req.session.userLogged = userToLogin;
-                if(req.body.recordarUsuario){
+                if(req.body.rememberUser){
                     
-                    res.cookie("userEmail",userToLogin.email,{
+                    res.cookie("userEmail", userToLogin.email,{
                         maxAge: (1000*60)*5
                     })
                 }
@@ -56,7 +66,7 @@ const controller = {
                 return res.redirect('./profile');
 
             }
-
+            // ELSE
             return res.render("../views/users/login", {
                 errors: {
                     email: {
@@ -66,6 +76,7 @@ const controller = {
                 oldData: req.body,
             })
         }
+        //este es el ELSE del primer IF
         return res.render("../views/users/login", {
             errors: {
                 email: {
@@ -97,11 +108,11 @@ const controller = {
         });
 
         //Chequear si el correo es @habito o no
-        if (userEmail.includes('@habito.com')){
+        /* if (userEmail.includes('@habito.com')){
             let statusId = 1 
         }  else {
             let statusId = 2
-        }
+        } */
 
         //Corroborar que password es igual a repeatPassword
         let userDoublePassword = undefined;

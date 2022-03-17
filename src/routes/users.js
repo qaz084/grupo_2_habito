@@ -28,10 +28,10 @@ const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 //GET - http://localhost3000/users/login
-//router.get("/login", guestMiddleware, controller.userLogin);
+router.get("/login", guestMiddleware, controller.userLogin);
 
 //POST - http://localhost3000/users/login
-//router.post("/login", validationLogin, controller.logUser);
+router.post("/login", validationLogin, controller.logUser);
 
 //GET - http://localhost3000/users/register
 router.get("/register2", guestMiddleware, controller.userRegister);

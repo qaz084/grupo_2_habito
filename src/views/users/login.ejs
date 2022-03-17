@@ -60,15 +60,15 @@
                         </div>
                         <% } %>
 
-                            <input class="form-container-input <%= locals.errors && errors.contrasenia? 'input-data-wrong':null %>" type="password" name="contrasenia" placeholder="Contraseña:">
-                            <% if (locals.errors && errors.contrasenia){%>
+                            <input class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" placeholder="Contraseña:">
+                            <% if (locals.errors && errors.password){%>
                                 <div class="text-danger">
-                                    <%= errors.contrasenia.msg %>
+                                    <%= errors.password.msg %>
                                 </div>
                                 <% } %>
 
                                 <label class="remember-user" for="checkbox">
-                                    <input type="checkbox" name="recordarUsuario" id="checkbox" class="remember-user-checkbox">Recordar usuario
+                                    <input type="checkbox" name="rememberUser" id="checkbox" class="remember-user-checkbox">Recordar usuario
                                 </label>
 
                                     <div class="login">
