@@ -1756,6 +1756,10 @@ justify-content:right;
         transition: all;
     }
 
+    .delete-account {
+        background-color: #ffffff;
+    }
+
     .upper-container h2:hover{
        
         font-weight: 800;

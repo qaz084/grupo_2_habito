@@ -24,16 +24,20 @@
                    <div class="profile-picture">
 
                     <!-- ACA HAY QUE CAMBIAR CON LA IMAGEN DEL REGISTER -->
-                    <img src="/uploads/users/<%= locals.userData.imagen %>" alt="Profile Picture">
+                    <img src="/uploads/users/<%= locals.user.avatar %>" alt="Profile Picture">
                     <!-- HAY QUE HACER UN IF PARA QUE APAREZCA LA FOTO POR DEFECTO EN CASO DE NO HABER IMAGEN DE USUARIO -->
                    </div>
                                      
     <!-- ACA HAY QUE CAMBIAR CON EL NOMBRE DEL USUARIO DEL REGISTER -->
 
-                    <h1><%= locals.userData.name %></h1>
+                    <h1><%= locals.user.name %></h1>
                     <a href="/users/logout">
                         <h2>Cerrar sesión</h2>
                     </a>
+
+                    <form action="/users/<%= locals.user.id %>?_method=delete" method="post"> 
+                        <button class="delete-account" type="submit"> <h2>Borrar suscripción</h2>  </button>   
+                    </form>
 
                   </div>
 
@@ -57,7 +61,7 @@
                      </h1>
 
                      
-                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%=user.nombre%>">
+                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%=user.name%>">
                      
                          
                              <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%=user.email%>">
