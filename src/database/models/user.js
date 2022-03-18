@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         statusId: DataTypes.INTEGER(11)
     }, {
         
-        deletedAt:true
+        deletedAt: true,
+        paranoid: true
     });
 
     User.associate = function (models) {

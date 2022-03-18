@@ -40,9 +40,11 @@ router.get("/register2", guestMiddleware, controller.userRegister);
 router.post("/", upload.single('avatar'), validationRegister, controller.addUser);
 
 //GET - http://localhost3000/users/profile
-//router.get("/profile", authMiddleware, controller.userProfile);
+router.get("/profile", authMiddleware, controller.userProfile);
 
-//router.get('/logout', controller.logOut);
+router.get('/logout', controller.logOut);
+
+router.delete('/:id', controller.delete)
 
 
 module.exports = router;

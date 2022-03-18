@@ -24,6 +24,71 @@ const generateID = () => {
 
 const controller = {
 
+    userRegister: (req, res) => {
+        return res.render("../views/users/register2")
+    },
+
+    addUser: async (req, res) => {
+        //Buscar si el correo que se inserta en el formulario ya existe
+        const userEmail = req.body.email;
+        const findEmail = await User.findOne({
+            where: {
+                email: userEmail
+            }
+        });
+
+        //Chequear si el correo es @habito o no
+        
+        let statusUser = null;
+        if (userEmail.includes('@habito.com')){
+            statusUser = 1 
+        }  else {
+            statusUser = 2
+        }
+
+        //Corroborar que password es igual a repeatPassword
+        let userDoublePassword = undefined;
+        if (req.body.password == req.body.repeatPassword) {
+            userDoublePassword = true;
+        } else {
+            userDoublePassword = false;
+        }
+
+
+        // Si encuentra al usuario que lance error, de lo contrario, que genere un usuario nuevo
+        const resultValidation = validationResult(req);
+        if (!resultValidation.isEmpty()) {
+            return res.render("../views/users/register2", { errors: resultValidation.mapped(), oldData: req.body, })
+        } else {
+            if (!findEmail) {
+                if (userDoublePassword == true) {
+                    if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")) {
+                        try {
+                            const addUser = await User.create({
+                                name: req.body.name,
+                                email: req.body.email,
+                                password: bcrypt.hashSync(req.body.password, 10),
+                                avatar: req.file && req.file.filename ? req.file.filename : "default-image.png",
+                                //statusId: statusId
+                                statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
+                            });
+                            return res.redirect('../users/login');
+                        } catch (err) {
+                            console.log('error')
+                        }
+                    } else {
+                    return res.redirect ('../../views/users/register2', { errors: resultValidation.mapped(), oldData: req.body, })
+                }
+            } else {
+                    return res.render("../views/users/register2", { error: { contraseña: "Las contraseñas no coinciden" }, oldData: req.body })
+                }
+            } else {
+                return res.render("../views/users/register2", { error: { correo: "Correo existente" }, oldData: req.body })
+            }
+        }
+        
+    },
+
     userLogin: (req, res) => {
         return res.render("../views/users/login")
     },
@@ -36,10 +101,9 @@ const controller = {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
             })
-        }
-
+        };
         
-            //Buscar si el correo que se inserta en el formulario ya existe
+        //Buscar si el correo que se inserta en el formulario ya existe
         const userEmail = req.body.email;
         const userToLogin = await User.findOne({
             where: {
@@ -92,81 +156,23 @@ const controller = {
         return res.render("../views/users/profile", {
             user: req.session.userLogged
         });
-    },
-
-    userRegister: (req, res) => {
-        return res.render("../views/users/register2")
-    },
-
-    addUser: async (req, res) => {
-        //Buscar si el correo que se inserta en el formulario ya existe
-        const userEmail = req.body.email;
-        const findEmail = await User.findOne({
-            where: {
-                email: userEmail
-            }
-        });
-
-        //Chequear si el correo es @habito o no
-        
-        let statusUser = null;
-        if (userEmail.includes('@habito.com')){
-            statusUser = 1 
-        }  else {
-            statusUser = 2
-        }
-
-        //Corroborar que password es igual a repeatPassword
-        let userDoublePassword = undefined;
-        if (req.body.password == req.body.repeatPassword) {
-            userDoublePassword = true;
-        } else {
-            userDoublePassword = false;
-        }
-
-
-        // Si encuentra al usuario que lance error, de lo contrario, que genere un usuario nuevo
-        const resultValidation = validationResult(req);
-        if (!resultValidation.isEmpty()) {
-            return res.render("../views/users/register2", { errors: resultValidation.mapped(), oldData: req.body, })
-        } else {
-            if (!findEmail) {
-                if (userDoublePassword == true) {
-                    if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")) {
-                        try {
-                            const addUser = await User.create({
-                                name: req.body.name,
-                                email: req.body.email,
-                                password: bcrypt.hashSync(req.body.password, 10),
-                                avatar: req.file && req.file.filename ? req.file.filename : "default-image.png",
-                                //statusId: statusId
-                                statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
-                            });
-                            return res.redirect('/login');
-                        } catch (err) {
-                            console.log('error')
-                        }
-                    } else {
-                    return res.redirect ('../../views/users/register2', { errors: resultValidation.mapped(), oldData: req.body, })
-                }
-            } else {
-                    return res.render("../views/users/register2", { error: { contraseña: "Las contraseñas no coinciden" }, oldData: req.body })
-                }
-            } else {
-                return res.render("../views/users/register2", { error: { correo: "Correo existente" }, oldData: req.body })
-            }
-        }
-        
-    },
+    },    
 
     logOut: (req, res) => {
 
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
 
+    delete: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        const userId = req.params.id;
+        User.destroy({ where: {id: userId}});
+        return res.redirect('../users/register2')
     }
 
-};
+}
 
 module.exports = controller;
