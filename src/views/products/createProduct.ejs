@@ -95,11 +95,11 @@
                                 <SPAN >Talle: </SPAN>
                                 
                                         <div class="sizeContainer">
-                                            <select name="size" id="" required multiple>
-                                                <option value="" disabled selected>- Seleccionar Talle - </option>
+                                            <select name="size" id="" required multiple size="0">
+                                                <option value="" disabled selected>Seleccionar Talle</option>
                                                 <% size.forEach(oneSize => { %>
-                                                    <option value="<%= oneSize.id %>"><%= oneSize.name %></option>
-                                                    <% }); %>
+                                                    <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
+                                                <% }); %>
                                             </select> 
 <!-- 
                                                 <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
@@ -112,13 +112,16 @@
 
                                     <!-- COLOR-------------------------- -->
                         <div class="input-product-color">
-                            <SPAN >Color: </SPAN>
+                            <SPAN >Color</SPAN>
                             <div class="colorContainer">
-                                <input type="checkbox" class="checkbox" name="colorProductwhite" id="colorWhite"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProductred" id="colorRed"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProductblue" id="colorBlue"><label for="colorBlue" class="check-product-blue" ><div class="blue"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProductgreen" id="colorgreen"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
-                                <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+                                <% color.forEach((oneColor)=>{%> 
+                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                <% }); %>
+<!--                                 <input type="checkbox" class="checkbox" name="colorProductwhite" id="colorWhite"><label for="colorWhite"><div class="white"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductred" id="colorRed"><label for="colorRed"><div class="red"></div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductblue" id="colorBlue"><label for="colorBlue"><div class="blue"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductgreen" id="colorgreen"><label for="colorgreen"><div class="green"> </div></label>
+                                <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow"><div class="yellow"> </div></label> -->
                             </div>
                         </div>
                     
@@ -127,7 +130,7 @@
                             <SPAN > </SPAN>
                             <div class="categoryContainer">
                                 <select name="category" id="" required>
-                                    <option value="" disabled selected>- Seleccionar categoria - </option>
+                                    <option value="" disabled selected>Seleccionar categoria</option>
                                     <% category.forEach(oneCategory => { %>
                                     <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
                                     <% }); %>

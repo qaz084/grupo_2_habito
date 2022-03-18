@@ -24,12 +24,23 @@ const controller={
 			const size = await Size.findAll({});
 			const colors = await Color.findAll({});
 			const categories = await Category.findAll({});
+
+			for (let i = 0; i< colors.length; i++){
+				colors[i].name = colors[i].name.split("").slice(1).join("")
+			}
 			res.render("../views/products/createProduct",{category : categories, color : colors, size : size})
 	} catch (err) {
 		console.log(err)
 	}
 	},
 	add :async (req, res) => {
+		let a = Object.keys(req.body).filter((element)=>{
+			return element.length<=2
+		}) 
+		for ( let i = 0;  i <a.length;i++){
+			a[i] = a[i].split("").slice(1).join("")
+		}
+
 		const newProduct = await Product.create({
 			name: req.body.productName,
 			price: req.body.productPrice,
@@ -42,6 +53,7 @@ const controller={
 			image4: req.files.image4? req.files.image[0].filename : "default-image.png",
 			categoryId: req.body.category
 		});
+		newProduct.addColor(a).then(()=>{});
 		newProduct.addSize(req.body.size)
 		.then(()=>{res.redirect("/")})
 	}, 

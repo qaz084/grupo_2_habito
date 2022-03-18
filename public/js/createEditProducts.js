@@ -1,20 +1,28 @@
-console.log("Hola mundo")
-let colorWhiteInput = document.querySelector(".white");
-let colorRedInput = document.querySelector(".red");
+let inputsColors = document.querySelectorAll(".colorContainer input")
+console.log(inputsColors[3].id)
+let colorWhiteInput = document.querySelectorAll(".red");
+console.log(colorWhiteInput)
+
+for (let i = 0; i<inputsColors.length; i++){
+    colorWhiteInput[i].style.backgroundColor = "#" + inputsColors[i].id
+}
+
+/* let colorRedInput = document.querySelector(".red");
 let colorBlueInput = document.querySelector(".blue");
 let colorGreenInput = document.querySelector(".green");
 let colorYellowInput = document.querySelector(".yellow");
+ */
 
-let colorSelected = ((e)=>{
+/* let colorSelected = ((e)=>{
     let input = e.target
     input.classList.toggle("colorSelected")
-})
+}) */
 
-colorWhiteInput.addEventListener("click",colorSelected);
+/* colorWhiteInput.addEventListener("click",colorSelected);
 colorRedInput.addEventListener("click",colorSelected);
 colorBlueInput.addEventListener("click",colorSelected);
 colorGreenInput.addEventListener("click",colorSelected);
-colorYellowInput.addEventListener("click",colorSelected);
+colorYellowInput.addEventListener("click",colorSelected); */
 
 let sizes = document.querySelectorAll(".check-product-size")
 
