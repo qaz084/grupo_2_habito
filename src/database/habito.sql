@@ -107,7 +107,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL,'category_1',null),(2,'Pantalones',NULL,NULL,NULL,'category_2',null),(3,'Camisas',NULL,NULL,NULL,'category_3',null),(4,'Shorts',NULL,NULL,NULL,'category_4',null),(5,'Buzos',NULL,NULL,NULL,'category_5',null);
+INSERT INTO `categories` VALUES (1,'Remeras',NULL,NULL,NULL,'category_1.jpg',null),(2,'Pantalones',NULL,NULL,NULL,'category_2.jpg',null),(3,'Camisas',NULL,NULL,NULL,'category_3.jpg',null),(4,'Shorts',NULL,NULL,NULL,'category_4.jpg',null),(5,'Buzos',NULL,NULL,NULL,'category_5.jpg',null);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,11 +129,11 @@ CREATE TABLE `colors` (
 -- Dumping data for table `colors`
 --
 
-LOCK TABLES `colors` WRITE;
+ LOCK TABLES `colors` WRITE;
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
-INSERT INTO `colors` VALUES (1,'#FF0000'),(2,' #00FFD8'),(3,'#000CFF'),(4,' #FFFF00'),(5,'#000000'),(6,'#FFFFFF'),(7,'#8700FF'),(8,' #906000'),(9,' #F0D9AB');
+INSERT INTO `colors` VALUES (1,'#EB363C'),(2,'#B3563D'),(3,'#184787'),(4,'#EDEE82'),(5,'#141414'),(6,'#FFFFFF'),(7,'#9274B8'),(8,'#C0C26B'),(9,'#A0CC83');
 /*!40000 ALTER TABLE `colors` ENABLE KEYS */;
-UNLOCK TABLES;
+ UNLOCK TABLES;
 
 --
 -- Table structure for table `colorsproducts`
@@ -162,7 +162,12 @@ LOCK TABLES `colorsproducts` WRITE;
 /*!40000 ALTER TABLE `colorsproducts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `colorsproducts` ENABLE KEYS */;
 UNLOCK TABLES;
-
+ALTER TABLE colorsproducts
+ADD createdAt TIMESTAMP NULL;
+ALTER TABLE colorsproducts
+ADD updatedAt TIMESTAMP NULL;
+ALTER TABLE colorsproducts
+ADD  deletedAt TIMESTAMP NULL;
 --
 -- Table structure for table `products`
 --
@@ -252,6 +257,7 @@ CREATE TABLE `size` (
 
 LOCK TABLES `size` WRITE;
 /*!40000 ALTER TABLE `size` DISABLE KEYS */;
+INSERT INTO `size` VALUES (1,'XS'),(2,'S'),(3,'M'),(4,'L'),(5,'XL');
 /*!40000 ALTER TABLE `size` ENABLE KEYS */;
 UNLOCK TABLES;
 
