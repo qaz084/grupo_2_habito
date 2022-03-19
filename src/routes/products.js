@@ -33,7 +33,7 @@ router.post('/', upload.fields([{name:"img"},{name:"img2"},{name:"img3"},{name:"
 router.get("/edit/:id",controller.editProduct);
 router.post("/search",controller.search);
 
-// router.put('/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);
+router.put('/edit/:id',upload.fields([{name: 'img'},{name: 'img2'},{name: 'img3'},]),controller.update);
 
 // router.delete('/:id',controller.delete);
 

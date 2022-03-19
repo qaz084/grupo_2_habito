@@ -1,5 +1,6 @@
+console.log("Hola mundo")
 let inputsColors = document.querySelectorAll(".colorContainer input")
-console.log(inputsColors[3].id)
+console.log(inputsColors)
 let colorWhiteInput = document.querySelectorAll(".red");
 console.log(colorWhiteInput)
 

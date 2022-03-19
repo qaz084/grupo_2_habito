@@ -17,6 +17,7 @@ body{
     font-family:roboto,sans-serif;
 
 }
+
 .container-header{
 
 width : 100%;
@@ -1783,7 +1784,6 @@ top: 526px; */
       
         width: 1em;
         height: 1em;
-        background-color: #FF7D7D; 
         border-radius: 100%;
         box-shadow: 0px 2px 5px 0px #a3a3a3bb;
       
