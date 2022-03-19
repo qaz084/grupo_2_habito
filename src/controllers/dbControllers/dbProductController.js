@@ -104,6 +104,13 @@ const controller={
 		})
 
 
+	},
+	delete: async(req,res) =>{
+		const productId= req.params.id;
+		Product.destroy({where: {id:productId}});
+		return res.redirect('./products/productsList')
+
+
 	}
 }
 
