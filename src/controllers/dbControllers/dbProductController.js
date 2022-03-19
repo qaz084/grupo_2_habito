@@ -29,7 +29,7 @@ const controller={
 				colors[i].name = colors[i].name.split("").slice(1).join("")
 			}
 			res.render("../views/products/createProduct",{category : categories, color : colors, size : size})
-		} catch (err) {
+		}catch (err) {
 			console.log(err)
 		}
 	},
@@ -62,16 +62,18 @@ const controller={
 		}
 	}, 
 
-	editProduct:(req,res)=>{
-		let requestProduct= Product.findByPk(req.params.id);
-		let requestCategories= Category.findAll();
-		let requestSizes = Size.findAll();
-		let requestColors = Color.findAll();
-		Promise.all([requestProduct,requestCategories,requestColors,requestSizes])
-			.then(function(product,categories,sizes,colors){
-				res.render('editProduct',{product:product,categories:categories,sizes:sizes,colors:colors})
-			}) 
-		
+	editProduct:async(req,res)=>{
+		let requestProduct= await Product.findByPk(req.params.id);
+		let requestCategories= await Category.findAll();
+		let requestSizes = await Size.findAll();
+		let requestColors = await Color.findAll();
+		for (let i = 0; i< requestColors.length; i++){
+			requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
+		}
+		res.render('../views/products/editProduct',{product:requestProduct,categories:requestCategories,sizes:requestSizes,color:requestColors})
+	},
+	update : async(req,res)=>{
+		res.json(req.body)
 	},
 
 	search: (req, res) => {
@@ -81,9 +83,9 @@ const controller={
 			
 			where: {
 				name: { 
-				  [Op.like] : '%' + req.body.mainSearchBar + '%' 
+				[Op.like] : '%' + req.body.mainSearchBar + '%' 
 				}
-			  }, 
+			}, 
 		})
 		.then(product => {
 			let searchArray = [];
@@ -91,15 +93,15 @@ const controller={
 				searchArray.push(product[i]);
 			}
 			if ( searchArray == "" ) {
-			  res.redirect('/');
+			res.redirect('/');
 			} else {
 				
-			  res.render('./products/productSearch', { searchArray });
+			res.render('./products/productSearch', { searchArray });
 			}
-		  })
-		  .catch(error => {
+		})
+		.catch(error => {
 			return res.send(error);
-		  })
+		})
 
 
 	}

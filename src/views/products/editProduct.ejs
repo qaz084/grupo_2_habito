@@ -39,14 +39,13 @@
                         </label>
                         </input>
 
-              
 
-                        <!-- <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
+                        <input class="img-checkbox" type="file" id='image-selection' accept="image/*,.pdf">
 
                             <label for="image-selection">
                             <img src="\img\createProduct\insert-product-image.png" alt="Jeans apilados" class="left-img-container">
                             </label>
-                        </input> -->
+                        </input>
                     
                     </div>
 
@@ -54,7 +53,7 @@
                     <div class="middleContainer">
                         <div class="middle-img-container">
                                 <input class="img-checkbox" type="file" id='img'accept="image/*,.pdf" name="img">
-                                   
+                                
                                     
                                     <label for="img">
                                         <img src='/uploads/products/<%=product.img %>' alt="Inserte imagen del producto"  >
@@ -75,11 +74,11 @@
                                 <span class='signo-precio'>$</span>
                                 <input type="number" class="input-product-price" min='0 ' value=<%= product.price %>
                                 name="price" required>
-                              
+                            
                             </div>
                             <div class="contenedor-precio">
                                 <span class='signo-precio'>%</span>
-                                <input type="number" class="input-product-price" min='0 ' max='100' value="<%= product.discount) %>"
+                                <input type="number" class="input-product-price" min='0 ' max='100' value="<%= product.discount %>"
                                 name="discount" >
                             
                                 
@@ -92,33 +91,28 @@
                             <!-- TALLE------------------------------- -->
                             <div class="input-product-size">
                                 <SPAN >Talle: </SPAN>
-                                
-                                        <div class="sizeContainer">
-                                            <% for (let i = 0; i< sizes.length; i++){%>
-                                                <% if(sizes[i].id === product.sizeId){%>
-                                                    <input type="checkbox" class="checkbox" name="size" id='<%= sizes[i].name %>' value='<%= sizes[i].id %>'selected><label for="'<%= sizes[i].name %>'" class="check-product-size" ><%=sizes[i].name%></label>
-                                                    <%} else {%>
-                                                        <input type="checkbox" class="checkbox" name="size" id='<%= sizes[i].name %>' value='<%= sizes[i].id %>'><label for="'<%= sizes[i].name %>'" class="check-product-size" ><%=sizes[i].name%></label>
-                                                    <%}%> 
-                                            <%}%>
-                                                 
-
-                                            <input type="checkbox" class="checkbox" name="size" id="sizeS" value="S"><label for="sizeS" class="check-product-size" >S</label>
-
-                                            <input type="checkbox" class="checkbox" name="size" id="sizeM" value="M"><label for="sizeM" class="check-product-size" >M</label>
-
-                                            <input type="checkbox" class="checkbox" name="size" id="sizeL" value="L"><label role="button" for="sizeL" class="check-product-size" >L</label>
-
-                                            <input type="checkbox" class="checkbox" name="size" id="sizeXL" value="XL"><label for="sizeXL" class="check-product-size" >XL</label>
-                                
+                                    <div class="sizeContainer">
+                                            <select name="size" id="" required multiple size="0">
+                                                <option value="" disabled selected>Seleccionar Talle</option>
+                                                <% sizes.forEach(oneSize => { %>
+                                                    <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
+                                                <% }); %>
+                                            </select> 
+                                            <!--<input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS" value = "2"><label for="sizeS" class="check-product-size" >S</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
+                                                <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->                                                           
                                         </div>
-                            </div>
-
+                                </div>          
                                     <!-- COLOR-------------------------- -->
                         <div class="input-product-color">
                             <SPAN >Color: </SPAN>
                             <div class="colorContainer">
-                                <input type="checkbox" class="checkbox" name="color" id="colorWhite" value="White"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
+                                <% color.forEach((oneColor)=>{%> 
+                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                <% }); %> 
+<!--                                 <input type="checkbox" class="checkbox" name="color" id="colorWhite" value="White"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
 
                                 <input type="checkbox" class="checkbox" name="color" id="colorRed" value="Red"><label for="colorRed" class="check-product-color" ><div class="red"> </div></label>
 
@@ -126,7 +120,7 @@
 
                                 <input type="checkbox" class="checkbox" name="color" id="colorgreen" value="Green"><label for="colorgreen" class="check-product-green" ><div class="green"> </div></label>
 
-                                <input type="checkbox" class="checkbox" name="color" id="coloryellow" value="Yellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label>
+                                <input type="checkbox" class="checkbox" name="color" id="coloryellow" value="Yellow"><label for="coloryellow" class="check-product-yellow" ><div class="yellow"> </div></label> -->
                             
                             </div>
                         </div>
@@ -136,26 +130,25 @@
                             <SPAN >Categoría: </SPAN>
                             <div class="categoryContainer">
                                 <select name="categories" id="categorias" required>
-                                    <% for (let i = 0; i< categories.length; i++){%>
-                                        <% if(categories[i].id === product.cateroryId){ %>
-                                            <option value="<%= categories[i].id %>" selected></option>
+                                    <% for (let i = 0; i< categories.length; i++){%>                                        
+                                        <% if(categories[i].id== product.categoryId){ %>
+                                            <option value="<%= categories[i].id %>" selected><%= categories[i].name %></option>
                                             <%} else {%>
-                                                <option value="<%= categories[i].id %>">categories[i].name</option>
-                                               
+                                                <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>                              
                                             <%}%> 
                                     <%}%>                                                                             
-                                                       
+
                                 </select>
                             
                             </div>
                         </div>
                         
- <!-- ------------------------BOTONES----------------- -->
+<!-- ------------------------BOTONES----------------- -->
                                     <div class="botones">
 
-                                        <form action="/products/<%= editProduct.id %>?_method=PUT" method="POST"><button class="btn-add" type="submit">Editar producto</button></form>
+                                        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST"><button class="btn-add" type="submit">Editar producto</button></form>
 
-                                        <form action="/products/<%= editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
+                                        <!-- <form action="/products/<%= //editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form> -->
                                     </div>
 
                     </div>
@@ -169,7 +162,7 @@
     </main>
 
     
-
+    <script src="/js/createEditProducts.js"></script>
 </body>
 </html>
 
