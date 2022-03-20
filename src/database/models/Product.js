@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         categoryId: DataTypes.INTEGER(11),
     }, {
         deletedAt:true,
+        paranoid:true,
     });
 
     Product.associate = function (models) {

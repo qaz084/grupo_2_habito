@@ -14,7 +14,8 @@
         </div>
 
         <div class="headForm">
-            <span class="tituloForm">Editar producto:</span>
+            <span class="tituloForm">Editar producto: <%= product.id %>
+            </span>
             <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
         </div>
     
@@ -110,7 +111,7 @@
                             <SPAN >Color: </SPAN>
                             <div class="colorContainer">
                                 <% color.forEach((oneColor)=>{%> 
-                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                    <input type="checkbox" class="checkbox" name="<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                 <% }); %> 
 <!--                                 <input type="checkbox" class="checkbox" name="color" id="colorWhite" value="White"><label for="colorWhite" class="check-product-color" ><div class="white"> </div></label>
 
@@ -148,7 +149,7 @@
 
                                         <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST"><button class="btn-add" type="submit">Editar producto</button></form>
 
-                                        <!-- <form action="/products/<%= //editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form> -->
+                                        <form action="/products/<%= //editProduct.id %>?_method=DELETE" method='POST'><button class="btn-delete" type=>Eliminar producto</button></form>
                                     </div>
 
                     </div>

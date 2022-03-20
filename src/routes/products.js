@@ -35,7 +35,7 @@ router.post("/search",controller.search);
 
 router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},]),controller.update);
 
-// router.delete('/:id',controller.delete);
+router.delete('/:id',controller.delete);
 
 
 module.exports = router;
