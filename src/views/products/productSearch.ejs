@@ -33,7 +33,7 @@
                             </div>
  
                             <div class="img-container">
-                                <img src="/uploads/products/<%=searchArray.image1 %>" alt="" >
+                                <img src="/uploads/products/<%=searchArray[i].image1%>" alt="<%=searchArray[i].name%>" >
                             </div>
 
                             <div class="product-info">
@@ -42,22 +42,24 @@
 
                                     <span class="product-name"> <%=searchArray[i].name%></span>
 
-                                    <!--<span class="product-price">
+                                   <span class="product-price">
                                         $ <%=searchArray[i].price%>
-                                    </span> -->
+                                    </span> 
 
                                 </div >
 
                                 <div class="product-info-right-container">
-                                    <!--<span class="product-discount">
+                                   <span class="product-discount">
+
+                                       <% if (searchArray[i].discount>0) { %>
+        
                                         <%=searchArray[i].discount%> % OFF 
-                                      </span> -->
+                                       <% } %>
+
+                                      </span> 
 
                                 </div>
-                               
-
-                                
-
+                            
                             </div>
                         </article>
                     </a>

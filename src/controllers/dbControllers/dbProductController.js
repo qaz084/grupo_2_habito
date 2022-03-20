@@ -49,9 +49,9 @@ const controller={
 				description: req.body.productDescription,
 				quantity: 10,
 				image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
-				image2: req.files.image2? req.files.image[0].filename : "default-image.png",
-				image3: req.files.image3? req.files.image[0].filename : "default-image.png",
-				image4: req.files.image4? req.files.image[0].filename : "default-image.png",
+				image2: req.files.image2? req.files.image2[0].filename : "default-image.png",
+				image3: req.files.image3? req.files.image3[0].filename : "default-image.png",
+				image4: req.files.image4? req.files.image4[0].filename : "default-image.png",
 				categoryId: req.body.category
 			});
 			await newProduct.addColor(a)
@@ -80,6 +80,8 @@ const controller={
 		productToSearch=req.body.mainSearchBar;
 		// return res.json({productToSearch});
 		Product.findAll({
+
+			include:['category'],
 			
 			where: {
 				name: { 

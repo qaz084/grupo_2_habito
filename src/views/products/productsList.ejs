@@ -14,26 +14,22 @@
         <%- include('../partials/banner')  %>
       
             <!-- Acá arranca el Main-->
-            <main>
+  <main>
              
-              <section class="products-container" >
+      <section class="products-container" >
 
-                <h1 class="categories">Productos</h1>
+         <h1 class="categories">Productos</h1>
 
 
                   <% for (let i = 0; i<productsList.length; i++) {%>
-                    <a  href="/products/detail/<%=productsList[i].id%>">
+                    <a class="a-product-list"  href="/products/detail/<%=productsList[i].id%>">
 
                         <article class="product2" >
 
-                            <div class="category-container">
-
-                             <h1>  <%=productsList[i].categories%></h1>
-
-                            </div>
+                         
 
                             <div class="img-container">
-                                <img src="/uploads/products/default-image.png" alt="" >
+                                <img src="/uploads/products/<%=productsList[i].image1%>" alt=" <%=productsList[i].categories%>" >
                             </div>
 
                             <div class="product-info">
@@ -42,16 +38,22 @@
 
                                     <span class="product-name"> <%=productsList[i].name%></span>
 
-                                    <!--<span class="product-price">
+                                   <span class="product-price">
                                         $ <%=productsList[i].price%>
-                                    </span> -->
+                                    </span> 
 
                                 </div >
 
                                 <div class="product-info-right-container">
-                                    <!--<span class="product-discount">
+                                   <span class="product-discount">
+                                       
+                                    <% if (productsList[i].discount>0) { %>
+        
                                         <%=productsList[i].discount%> % OFF 
-                                      </span> -->
+                                       
+                                       <% } %>
+
+                                      </span> 
 
                                 </div>
                                

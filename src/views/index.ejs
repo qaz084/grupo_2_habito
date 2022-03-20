@@ -16,9 +16,9 @@
             <!-- Acá arranca el Main-->
             <main>
              
-              <section class="products-container" >
+              <section class="new-category-container" >
 
-                <h1 class="categories">Categorias</h1>
+                <h1 class="new-category-title">Categorias</h1>
 
 
                   <% for (let i = 0; i<categories.length; i++) {%>
@@ -26,41 +26,31 @@
                  
                     <a  href="/products/list/<%=categories[i].id%>">
 
-                        <article class="product2" >
+                        <article class="new-category-box"  >
 
-                            <div class="category-container">
 
-                             <h1>  <%=/*categories[i].name*/%></h1>
+                            <div class="category-left-box">
 
+                            <div class="new-category-left-info"> 
+                                  <span class="new-category-name"> <%=categories[i].name%></span>
+                                <p class="new-category-description">
+                                    <%=categories[i].description%>
+                                </p>
+                            </div>
+                             
+                       
                             </div>
 
-                            <div class="img-container">
-                                <img src="/products/<%=categories[i].image%>" alt="" >
-                            </div>
+                            <div class="category-right-box">
 
-                            <div class="product-info">
-
-                                <div class="product-info-lef-container">
-
-                                    <span class="product-name"> <%=categories[i].name%></span>
-
-                                    <!--<span class="product-price">
-                                      $ <%= /*products[i].price*/%>
-                                    </span> -->
-
-                                </div >
-
-                                <div class="product-info-right-container">
-                                    <!--<span class="product-discount">
-                                        <%=/*products[i].discount*/%> % OFF 
-                                      </span> -->
-
+                                <div class="new-category-img-container">
+                                    <img src="/uploads/products/<%=categories[i].image%>" alt="" >
                                 </div>
-                               
-
-                                
-
                             </div>
+
+                        
+                     
+
                         </article>
                     </a>
                     <% } %>
