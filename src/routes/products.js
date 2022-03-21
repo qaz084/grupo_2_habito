@@ -21,20 +21,29 @@ const storage=multer.diskStorage({
 const upload = multer({storage});
 
 
-//router.get("/mock", controller.mock);
 
-// router.get("/cart", controller.productCart);
 
+//LIST
 router.get("/list/:categoryId",controller.productsList);
-// router.get("/detail/:id", controller.productDetail);
+
+//DETAIL
+router.get("/detail/:id", controller.productDetail);
+
+//CREATE
 router.get("/create",controller.createProduct);
 router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},{name:"image4"}]),controller.add);
 
+//EDIT
 router.get("/edit/:id",controller.editProduct);
+router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),controller.update);
+
+//CART
+router.get("/cart", controller.productCart);
+
+//SEARCH
 router.post("/search",controller.search);
 
-router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},]),controller.update);
-
+// DELETE
 router.delete('/:id',controller.delete);
 
 

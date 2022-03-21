@@ -19,6 +19,14 @@ const controller={
 		res.render("../views/products/productsList",{productsList})
 	},
 
+	productDetail: async (req, res) => {
+		const productID = req.params.id;
+		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
+		
+		return res.render("../views/products/productDetail2", { productDetail });
+		
+	},
+
 	createProduct: async (req,res) => {
 		try{
 			const size = await Size.findAll({});
@@ -75,6 +83,9 @@ const controller={
 	update : async(req,res)=>{
 		res.json(req.body)
 	},
+	productCart:(req,res)=>{
+        return res.render("../views/products/productCart")
+    },
 
 	search: (req, res) => {
 		productToSearch=req.body.mainSearchBar;
