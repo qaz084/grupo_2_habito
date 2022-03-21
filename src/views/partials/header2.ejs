@@ -2,8 +2,8 @@
 
     <section class="container-header">
 
-         <div class=" logo-main-navbar">
-             <a href="/"><img src="../../img/logo_blanco.svg" alt="logo Hábito"  ></a>
+        <div class=" logo-main-navbar">
+            <a href="/"><img src="../../img/logo_blanco.svg" alt="logo Hábito"  ></a>
             
         </div>
 
@@ -18,18 +18,20 @@
                     <a href="/products/cart">
                         <li>Carrito (0)</li>
                     </a>
-                    <a href="/products/create">
-                        <li>Crear Productos</li>
-                    </a>
+                    <% if (locals.userData.status == 1) { %>
+                        <a href="/products/create">
+                            <li>Crear Productos</li>
+                        </a>
+                    <% } %>
 <!-- -------------------NOMBRE DEL PERFIL--------- -->
                     <a href="/users/profile">
-                        <li><%=locals.user.name%> </li>
+                        <li><%=locals.userData.name%> </li>
                     </a>
 
                     <!-- <a class="name-img" href="/users/profile">
                         <li>  </li>
                         <img class = "profile-pic" src="../../uploads/users/ locals.userData.imagen " width="40px">
-                  </a> -->
+                </a> -->
                     
                 <% } else {%>
 
@@ -48,5 +50,5 @@
             </ul>
 
     </section>
- 
- </header>
+
+</header>

@@ -110,7 +110,7 @@ const controller = {
                 email: userEmail
             }
         });
-
+        let status = userToLogin.statusId
         //return res.json(userToLogin)
         //let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
         if (userToLogin) {
@@ -118,8 +118,9 @@ const controller = {
 
             if (okPassword) {
                 //delete userToLogin.password;
-              
+            
                 req.session.userLogged = userToLogin;
+                console.log(userToLogin)
                 if(req.body.rememberUser){
                     
                     res.cookie("userEmail", userToLogin.email,{

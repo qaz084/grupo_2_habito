@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
+/* middlewares */
+const authMiddlewareCreateAndEditProduct = require("../middlewares/authMiddlewareStatusProducts")
+
 const controller = require("../controllers/dbControllers/dbProductController");
 
 const multer=require("multer");
@@ -27,10 +30,10 @@ const upload = multer({storage});
 
 router.get("/list/:categoryId",controller.productsList);
 // router.get("/detail/:id", controller.productDetail);
-router.get("/create",controller.createProduct);
+router.get("/create",authMiddlewareCreateAndEditProduct,controller.createProduct);
 router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},{name:"image4"}]),controller.add);
 
-router.get("/edit/:id",controller.editProduct);
+router.get("/edit/:id",authMiddlewareCreateAndEditProduct,controller.editProduct);
 router.post("/search",controller.search);
 
 router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},]),controller.update);
