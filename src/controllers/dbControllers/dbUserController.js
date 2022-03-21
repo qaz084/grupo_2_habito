@@ -120,7 +120,6 @@ const controller = {
                 //delete userToLogin.password;
             
                 req.session.userLogged = userToLogin;
-                console.log(userToLogin)
                 if(req.body.rememberUser){
                     
                     res.cookie("userEmail", userToLogin.email,{
