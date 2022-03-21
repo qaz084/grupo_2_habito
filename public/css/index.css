@@ -889,6 +889,7 @@ body{
    flex-wrap: nowrap;
    width: 40%;
    justify-content:right;
+   align-items: center;
    }
    .product-price{
    
@@ -905,11 +906,12 @@ body{
    }
    
    .product-discount{
-       font-size: 1.5rem;
-       font-weight: bold;
-       
-       color: rgb(54, 202, 138)
-      
+    font-size: 1.3rem;
+    font-weight: bold;
+   position: relative;
+   top:12px;
+    color: rgb(54, 202, 138)
+   
    }
 
 }
@@ -1034,10 +1036,12 @@ justify-content:right;
 }
 
 .product-discount{
-   font-size: 1.5rem;
-   font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: bold;
+   position: relative;
+   top:12px;
+    color: rgb(54, 202, 138)
    
-   color: rgb(54, 202, 138)
   
 }
 }
@@ -1143,6 +1147,7 @@ display: flex;
 flex-wrap: nowrap;
 width: 40%;
 justify-content:right;
+align-items: center;
 }
 .product-price{
 
@@ -1159,9 +1164,11 @@ justify-content:right;
 }
 
 .product-discount{
-    font-size: 1.5rem;
+  
+    font-size: 1.3rem;
     font-weight: bold;
-    
+   position: relative;
+   top:10px;
     color: rgb(54, 202, 138)
    
 }
