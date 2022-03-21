@@ -31,7 +31,7 @@ router.get("/list/:categoryId",controller.productsList);
 
 
 //DETAIL
-router.get("/detail/:id" ,controller.productDetail);
+router.get("/detail/:id", controller.productDetail);
 
 //CREATE
 router.get("/create",authMiddlewareCreateAndEditProduct,controller.createProduct);

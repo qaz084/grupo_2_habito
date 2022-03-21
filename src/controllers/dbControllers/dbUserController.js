@@ -7,6 +7,8 @@ const Sequelize = require('sequelize');
 const Op = Sequelize. Op;
 
 const {User, Status} = require('../../database/models');
+const { send } = require('express/lib/response');
+const { localsName } = require('ejs');
 
 
 
@@ -41,10 +43,12 @@ const controller = {
         
         let statusUser = null;
         if (userEmail.includes('@habito.com')){
-            statusUser = 1 
+            statusUser = 1 ;
         }  else {
-            statusUser = 2
+            statusUser = 2;
         }
+        locals.userData.statusId=statusUser;
+       
 
         //Corroborar que password es igual a repeatPassword
         let userDoublePassword = undefined;
@@ -53,6 +57,7 @@ const controller = {
         } else {
             userDoublePassword = false;
         }
+
 
 
         // Si encuentra al usuario que lance error, de lo contrario, que genere un usuario nuevo
@@ -72,6 +77,7 @@ const controller = {
                                 //statusId: statusId
                                 statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
                             });
+                         
                             return res.redirect('../users/login');
                         } catch (err) {
                             console.log('error')
@@ -110,7 +116,7 @@ const controller = {
                 email: userEmail
             }
         });
-        let status = userToLogin.statusId
+        // let status = userToLogin.statusId;
         //return res.json(userToLogin)
         //let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
         if (userToLogin) {

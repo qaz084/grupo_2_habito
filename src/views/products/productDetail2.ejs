@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'></span>
-                                    <span class='signo-precio'><%= productDetail.discount? $`% {productDetail.discount}` :'' %> </span>
+                                    <span class='signo-precio'><%= productDetail.discount? productDetail.discount :'' %> </span>
                                    
             
             
@@ -117,21 +117,57 @@
                                 </div>
                             </div >
             
+                            <% if (locals.isAnUserLogged==false  ) { %>
+                                     <%=console.log(locals.userData);  %> 
                                 <div class="btn-container">
                                     <a href="../cart">
                                         <div class="btn-buy" >
-                                        
+                                    
                                             Comprar producto
+
                                         </div>
                                     </a>
+                                </div>
+
+                               
+                            
+                            <% }else{%>
+
+
+                                <% if (locals.userData.statusId==1) { %>
+                                 
+
+                                    <div class="btn-container">
+                                        <a href="../cart">
+                                            <div class="btn-buy" >
+                                        
+                                                Comprar producto
+                                            </div>
+                                        </a>
+                                    </div>
+    
                                     <a href="../edit/ <%=productDetail.id %>">
                                         <div class="btn-edit" >
                                         
                                             Editar producto
                                         </div>
                                     </a>
-                                </div>
-            
+                                <% }else{ %>
+                                    
+                                     <div class="btn-container">
+                                        <a href="../cart">
+                                            <div class="btn-buy" >
+                                        
+                                                Comprar producto
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                             <% }%>
+
+
+                             <% }%>
                         </div>
                     </div>
                 </form>

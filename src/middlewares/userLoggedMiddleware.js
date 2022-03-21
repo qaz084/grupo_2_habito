@@ -7,7 +7,7 @@ function userLoggedMiddleware (req, res, next) {
         res.locals.userData = {
             name: req.session.userLogged.name,
             imagen: req.session.userLogged.imagen,
-            status: req.session.userLogged.statusId
+            statusId: req.session.userLogged.statusId
         }
     }
 
