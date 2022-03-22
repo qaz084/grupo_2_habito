@@ -1547,7 +1547,8 @@ font-weight: 300;
         /* background-color:yellow; */
         height:40px;
         color: #3D3D3D;  
-        font-size: 1.5rem;  
+        font-size: 1.3rem; 
+       
        
     }
     
@@ -1635,19 +1636,20 @@ font-weight: 300;
         width: 100%;
         align-items:center;
         justify-content: right;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
         font-size: 1.1rem;
-        text-decoration: underline #3D3D3D 4px ;
+        text-decoration: underline 2px ;
        
     
     }
     .already-account-text:hover{
-        font-weight: 900;
+        font-weight: 500;
     }
     .already-account-text{
     
         font-weight: 400;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
     }
     
     
@@ -1688,10 +1690,10 @@ font-weight: 300;
     }
         .sign-in{
             display: flex;
-            color: #3D3D3D;
-            font-size:1.4rem;
+            color: rgb(21, 148, 221);
+            font-size:1.2rem;
             font-weight: 400;
-            text-decoration: underline #3D3D3D 4px ;
+            text-decoration: underline rgb(21, 148, 221) 2px ;
         }
         .sign-in:hover{
         

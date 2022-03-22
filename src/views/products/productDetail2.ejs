@@ -18,8 +18,7 @@
                 <span class="tituloForm">Detalle producto:</span>
             
             </div>
-                <form action="" method="" enctype="multipart/form-data">
-            
+             
             
                     <div class="menuContainer" >
             
@@ -60,25 +59,36 @@
                         <div class="rightContainer">
 
                             
-                                <input type="text" class="input-product-name" value="<%= productDetail.name %> "
-                                name="productName" required>
+                                <span class="input-product-name">
+                                    <%= productDetail.name %>
+
+                                </span>
+                               
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
                                     <span class='signo-precio'><%= productDetail.price %> </span>
             
                                 </div>
-                                <div class="contenedor-precio">
-                                    <span class='signo-precio'></span>
-                                    <span class='signo-precio'><%= productDetail.discount? productDetail.discount :'' %> </span>
+
+                                 <% if (productDetail.discount) { %>
+                                  
+                                    <div class="contenedor-precio">
+                                        <span class='signo-precio'></span>
+                                        <span class='signo-precio'><%= productDetail.discount %> </span>
                                    
-            
-            
-                                </div>
-                                <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." required><%= productDetail.description %></textarea  >
+                                    </div>
+                                 <% } %> 
+
+                                <span class="input-product-category" id="descriptionTitle">
+                                    Descripción:
+                                </span>
+                                <textarea readonly class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ><%= productDetail.description %></textarea  >
 
 
                                 <!-- TALLE------------------------------- -->
+
+                                <% if (productDetail.size.length > 0) { %>
+
                                 <div class="input-product-category">
                                     <SPAN >Talle: </SPAN>
             
@@ -94,7 +104,13 @@
            
                                             </div>
                                 </div>
+
+                                <% } %> 
+
                                         <!-- COLOR-------------------------- -->
+
+                                        <% if (productDetail.color.length > 0) { %>
+
                             <div class="input-product-color">
                                 <SPAN >Color: </SPAN>
                                 <div class="colorContainer">
@@ -104,6 +120,10 @@
            
                                 </div>
                             </div>
+
+                            <% } %> 
+
+                            <% if (productDetail.category) { %>
             
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
@@ -118,10 +138,18 @@
                                  
                                 </div>
                             </div >
+
+                            <% } %> 
             
                             <% if (locals.isAnUserLogged==false  ) { %>
                                      <%=console.log(locals.userData);  %> 
                                 <div class="btn-container">
+                                    <a href="#">
+                                        <div class="btn-addCart" >
+                                    
+                                           Agregar al carrito
+                                        </div>
+                                    </a>
                                     <a href="../cart">
                                         <div class="btn-buy" >
                                     
@@ -129,6 +157,7 @@
 
                                         </div>
                                     </a>
+
                                 </div>
 
                                
@@ -141,26 +170,35 @@
 
                                     <div class="btn-container">
                                         <a href="../cart">
+                                            <div class="btn-buy-admin" >
+                                        
+                                                Comprar producto
+                                            </div>
+                                        </a>
+
+                                        <a href="/products/edit/<%= productDetail.id %>">
+                                            <div class="btn-edit" >
+                                            
+                                                Editar producto
+                                            </div>
+                                        </a>
+                                    </div>
+    
+                                
+                                <% }else{ %>
+                                    
+                                     <div class="btn-container">
+
+                                        <a href="../cart">
                                             <div class="btn-buy" >
                                         
                                                 Comprar producto
                                             </div>
                                         </a>
-                                    </div>
-    
-                                    <a href="../edit/ <%=productDetail.id %>">
-                                        <div class="btn-edit" >
+                                        <a href="#">
+                                            <div class="btn-addCart" >
                                         
-                                            Editar producto
-                                        </div>
-                                    </a>
-                                <% }else{ %>
-                                    
-                                     <div class="btn-container">
-                                        <a href="../cart">
-                                            <div class="btn-buy" >
-                                        
-                                                Comprar producto
+                                               Agregar al carrito
                                             </div>
                                         </a>
                                     </div>
@@ -172,7 +210,7 @@
                              <% }%>
                         </div>
                     </div>
-                </form>
+             
         </div>
 
     </main>

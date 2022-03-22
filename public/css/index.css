@@ -332,18 +332,6 @@ body{
         cursor: pointer;
     }
 
-
-    .main-navbar li{
-        display: grid;
-     
-        margin: auto;
-        list-style: none;
-        color: rgb(230, 230, 230);
-        font-weight: 300;
-        font-size: 1rem;
-        transition: all 0.4s;
-    }
-
 }
 
 @media (min-width: 520px){

@@ -7,8 +7,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize. Op;
 
 const {User, Status} = require('../../database/models');
-const { send } = require('express/lib/response');
-const { localsName } = require('ejs');
+
 
 
 
@@ -47,7 +46,7 @@ const controller = {
         }  else {
             statusUser = 2;
         }
-        locals.userData.statusId=statusUser;
+        // locals.userData.statusId=statusUser;
        
 
         //Corroborar que password es igual a repeatPassword

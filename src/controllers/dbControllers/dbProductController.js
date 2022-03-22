@@ -71,14 +71,14 @@ const controller={
 	}, 
 
 	editProduct:async(req,res)=>{
-		let requestProduct= await Product.findByPk(req.params.id);
+		let requestProduct= await Product.findByPk(req.params.id, { include: ["size", "category",'color'] });
 		let requestCategories= await Category.findAll();
 		let requestSizes = await Size.findAll();
 		let requestColors = await Color.findAll();
 		for (let i = 0; i< requestColors.length; i++){
 			requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
 		}
-		res.render('../views/products/editProduct',{product:requestProduct,categories:requestCategories,sizes:requestSizes,color:requestColors})
+		return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
 	},
 	update : async(req,res)=>{
 		let product=await Product.findByPk(req.params.id,{include:["size","color"]})

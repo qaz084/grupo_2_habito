@@ -10,7 +10,18 @@
     text-decoration: none;
     list-style: none;
 }
-
+.colorSelectedd{
+    border-top: 5px solid #858585;
+    border-bottom: 5px solid #6B6B6B;
+}
+.blackException{
+    border-top: 5px solid #CCCCCC;
+    border-bottom: 5px solid #BBBBBB;
+}
+.purpleException{
+    border-top: 5px solid #525252;
+    border-bottom: 5px solid #5C5C5C;
+}
 
 body{
     font-family:roboto,sans-serif;
