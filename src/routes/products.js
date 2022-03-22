@@ -46,7 +46,7 @@ router.get("/cart", controller.productCart);
 
 //SEARCH
 
-router.post("/search",controller.search);
+router.get("/search",controller.search);
 
 // DELETE
 router.delete('/:id',controller.delete);

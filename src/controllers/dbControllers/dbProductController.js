@@ -88,24 +88,25 @@ const controller={
     },
 
 	search: (req, res) => {
-		productToSearch=req.body.mainSearchBar;
+		const productToSearch=req.query.search;
 		// return res.json({productToSearch});
 		Product.findAll({
 
-			include:['category'],
 			
 			where: {
 				name: { 
-				[Op.like] : '%' + req.body.mainSearchBar + '%' 
+				[Op.like] : `%${productToSearch}%`
 				}
-			}, 
+			}, include:['category'],
 		})
+		
 		.then(product => {
+			// return res.json(product);
 			let searchArray = [];
 			for ( let i = 0;  i < product.length; i++) {
 				searchArray.push(product[i]);
 			}
-			if ( searchArray == "" ) {
+			if ( searchArray.length == 0 ) {
 			res.redirect('/');
 			} else {
 				
