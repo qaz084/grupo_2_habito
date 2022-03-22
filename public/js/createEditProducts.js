@@ -1,36 +1,35 @@
 console.log("Hola mundo")
-let inputsColors = document.querySelectorAll(".colorContainer input")
-console.log(inputsColors)
-let colorWhiteInput = document.querySelectorAll(".red");
-console.log(colorWhiteInput)
-
-for (let i = 0; i<inputsColors.length; i++){
-    colorWhiteInput[i].style.backgroundColor = "#" + inputsColors[i].id
+let inputsCheckbox = document.querySelectorAll(".colorContainer input")
+let styleInputs = document.querySelectorAll(".red");
+for (let i = 0; i<inputsCheckbox.length; i++){
+    styleInputs[i].style.backgroundColor = "#" + inputsCheckbox[i].id
 }
-
-/* let colorRedInput = document.querySelector(".red");
-let colorBlueInput = document.querySelector(".blue");
-let colorGreenInput = document.querySelector(".green");
-let colorYellowInput = document.querySelector(".yellow");
- */
-
-/* let colorSelected = ((e)=>{
+let colorSelected = ((e)=>{
     let input = e.target
-    input.classList.toggle("colorSelected")
-}) */
-
-/* colorWhiteInput.addEventListener("click",colorSelected);
-colorRedInput.addEventListener("click",colorSelected);
-colorBlueInput.addEventListener("click",colorSelected);
-colorGreenInput.addEventListener("click",colorSelected);
-colorYellowInput.addEventListener("click",colorSelected); */
-
-let sizes = document.querySelectorAll(".check-product-size")
-
+    input.classList.toggle("colorSelectedd")
+})
+let blackException = ((e)=>{
+    let input = e.target
+    input.classList.toggle("blackException")
+})
+let purpleException = ((e)=>{
+    let input = e.target
+    input.classList.toggle("purpleException")
+})
+styleInputs.forEach((input)=>{
+    if(input.style.backgroundColor == "rgb(20, 20, 20)"){
+        input.addEventListener("click",blackException)
+    }else if(input.style.backgroundColor == "rgb(146, 116, 184)"){
+        input.addEventListener("click",purpleException)
+    }else{
+        input.addEventListener("click",colorSelected)
+    }
+})
+/* let sizes = document.querySelectorAll(".check-product-size")
 let sizeSelected = ((e)=>{
     let input = e.target
     input.classList.toggle("sizeSelected")
 })
 sizes.forEach((oneSize)=>{
     oneSize.addEventListener("click",sizeSelected);
-})
+}) */

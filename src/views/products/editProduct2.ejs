@@ -2,11 +2,11 @@
 
 <%- include('../partials/head', {
     pageTitle: 'Crear producto',
-    cssLink: 'href="/css/editProduct2.css" '
+    cssLink: 'href="/css/createProduct.css" '
 })%>
 
-
-    <%- include('../partials/header2')%>
+<body>
+    <%- include('../partials/headerSearchBar')%>
 
     <main>
 
@@ -15,7 +15,7 @@
                 <a href="/"><span>Volver</span></a>
             </div>
             <div class="headForm">
-                <span class="tituloForm">Crear producto:</span>
+                <span class="tituloForm">Editar producto:</span>
                 <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
             </div>
                 <form action="/products/" method="post" enctype="multipart/form-data">
@@ -28,15 +28,15 @@
             
             
                                 <label for="image-selection1">
-                                <img src="\img\createProduct\insert-product-image.png" class="left-img-container">
+                                <img src="/uploads/products/<%= product.image2 %> " class="left-img-container">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection1' accept="image/*,.pdf" name="image2">
                                 <label for="image-selection2">
-                                <img src="\img\createProduct\insert-product-image.png" class="left-img-container">
+                                <img src="/uploads/products/<%= product.image3 %> " class="left-img-container">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection2' accept="image/*,.pdf" name="image3">
                                 <label for="image-selection3">
-                                <img src="\img\createProduct\insert-product-image.png" class="left-img-container">
+                                <img src="/uploads/products/<%= product.image4 %> " class="left-img-container">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection3' accept="image/*,.pdf" name="image4">
                         </div>
@@ -47,7 +47,7 @@
                             <div class="middle-img-container">
                             <input class="img-checkbox" type="file" id='image-selection4' accept="image/*,.pdf" name="image1">
                                 <label for="image-selection4">
-                                    <img src="\img\createProduct\insert-product-image.png">
+                                    <img src="/uploads/products/<%= product.image1 %> ">
                                 </label>
             
                               </div>
@@ -58,23 +58,25 @@
                     <!-- RIGHT CONTAINER--------------------------- -->
 
                         <div class="rightContainer">
-                                <input type="text" class="input-product-name" placeholder="Nombre del producto"
+                                <input value="<%= product.name %>" type="text" class="input-product-name" placeholder="<%= product.name %>"
                                 name="productName" required>
+
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
-                                    <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="1700"
+                                    <input value="<%= product.price %>" type="number" class="input-product-price" min='0 ' step="0.01" placeholder="<%= product.price %>"
                                     name="productPrice" required>
             
                                 </div>
+
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>%</span>
-                                    <input type="number" class="input-product-price" min='0 ' max='100' placeholder="Tiene descuento del..."
+                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='0 ' max='100' placeholder="<%= product.discount %>"
                                     name="productDiscount" >
             
             
                                 </div>
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." required></textarea  >
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ><%= product.description %></textarea  >
 
 
                                 <!-- TALLE------------------------------- -->
@@ -82,18 +84,15 @@
                                     <SPAN >Talle: </SPAN>
             
                                             <div class="categoryContainer">
-                                                <select name="size" id="" required  >
-                                                    <option value="" disabled selected>Seleccionar Talle</option>
+                                                <select name="size" id=""  >
+                                                    <option value=" <%= product.size %>" disabled selected>
+                                                    <%= product.size %>
+                                                    </option>
                                                     <% size.forEach(oneSize => { %>
                                                         <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
                                                     <% }); %>
                                                 </select> 
-            <!--
-                                                    <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
-                                                    <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS" value = "2"><label for="sizeS" class="check-product-size" >S</label>
-                                                    <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
-                                                    <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
-                                                    <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->
+        
                                             </div>
                                 </div>
                                         <!-- COLOR-------------------------- -->
@@ -103,11 +102,7 @@
                                     <% color.forEach((oneColor)=>{%>
                                         <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                     <% }); %>
-            <!--                                 <input type="checkbox" class="checkbox" name="colorProductwhite" id="colorWhite"><label for="colorWhite"><div class="white"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductred" id="colorRed"><label for="colorRed"><div class="red"></div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductblue" id="colorBlue"><label for="colorBlue"><div class="blue"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductgreen" id="colorgreen"><label for="colorgreen"><div class="green"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow"><div class="yellow"> </div></label> -->
+  
                                 </div>
                             </div>
             
@@ -115,8 +110,8 @@
                             <div class="input-product-category">
                                 <SPAN >Categoria: </SPAN>
                                 <div class="categoryContainer">
-                                    <select name="category" id="" required>
-                                        <option value="" disabled selected>Seleccionar categoria</option>
+                                    <select name="category" id="" >
+                                        <option value="<%= category.name %>" disabled selected> <%= category.name %></option>
                                         <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
                                         <% }); %>
@@ -124,7 +119,12 @@
                                 </div>
                             </div>
             
-                                <button class="btn-add" type="submit">Crear producto</button>
+                                <div class="btn-container">
+
+                                    <button class="btn-add" type="submit">Editar producto</button>
+
+                                    <button class="btn-add" type="submit">Eliminar producto</button>
+                                </div>
             
                         </div>
                     </div>

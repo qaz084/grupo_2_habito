@@ -9,7 +9,7 @@
 
         <nav class="main-navbar">
 
-            <ul class = "ul-header2">
+            <ul class = "ul-header2" >
                 <% if (locals.isAnUserLogged === true) { %>
                     
                     <a href="/">
@@ -18,14 +18,17 @@
                     <a href="/products/cart">
                         <li>Carrito (0)</li>
                     </a>
-                    <% if (locals.userData.status == 1) { %>
+                    <% if (locals.userData.statusId == 1) { %>
                     <a href="/products/create">
                         <li>Crear Productos</li>
                     </a>
                     <% } %>
 <!-- -------------------NOMBRE DEL PERFIL--------- -->
                     <a href="/users/profile">
-                        <li><%=locals.userData.name%> </li>
+                        <li id="navBarUserName"><%=locals.userData.name%> </li>
+                    </a>
+                    <a href="/users/logout">
+                        <li id="logOutProfile">(LogOut) </li>
                     </a>
 
                     <!-- <a class="name-img" href="/users/profile">
@@ -57,13 +60,13 @@
 
 
             
-            <form class="search-bar" action="/products/search" method="POST">
+            <form class="search-bar" action="/products/search" method="GET">
 
-                    <input type="text" name="mainSearchBar" id="" placeholder="       Escribe aquí para buscar...">
+                    <input type="text" name="search" id="" placeholder="       Buscar producto...">
                     <button type="submit">Buscar</button>
                 
             </form>
     
     </section>
- 
+  
  </header>

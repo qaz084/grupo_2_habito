@@ -71,41 +71,80 @@ const controller={
 	}, 
 
 	editProduct:async(req,res)=>{
-		let requestProduct= await Product.findByPk(req.params.id);
+		let requestProduct= await Product.findByPk(req.params.id, { include: ["size", "category",'color'] });
 		let requestCategories= await Category.findAll();
 		let requestSizes = await Size.findAll();
 		let requestColors = await Color.findAll();
 		for (let i = 0; i< requestColors.length; i++){
 			requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
 		}
-		res.render('../views/products/editProduct',{product:requestProduct,categories:requestCategories,sizes:requestSizes,color:requestColors})
+		return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
 	},
 	update : async(req,res)=>{
-		res.json(req.body)
+		let product=await Product.findByPk(req.params.id,{include:["size","color"]})
+		product.removeSize(product.size);
+		product.removeColor(product.color);		
+		
+
+		try{
+			let a = Object.keys(req.body).filter((element)=>{
+				return element.length<=2
+			}) 
+			for ( let i = 0;  i <a.length;i++){
+				a[i] = a[i].split("").slice(1).join("")
+			}
+			console.log(a)
+			const updateProduct = await Product.update({
+				name: req.body.productName,
+				price: req.body.productPrice,
+				discount: req.body.productDiscount,
+				description: req.body.productDescription,
+				quantity: 10,
+				image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
+				image2: req.files.image2? req.files.image2[0].filename : "default-image.png",
+				image3: req.files.image3? req.files.image3[0].filename : "default-image.png",
+				image4: req.files.image4? req.files.image4[0].filename : "default-image.png",
+				categoryId: req.body.category
+			},{
+				where:{
+					id: req.params.id
+				}
+			});
+			await updateProduct.addColor(a)
+			await updateProduct.addSize(req.body.size)
+			res.redirect('../views/products/detail/'+ req.params.id)
+		}catch (err) {
+			console.log(err)
+		}
+			
+
+		
+		
 	},
 	productCart:(req,res)=>{
         return res.render("../views/products/productCart")
     },
 
 	search: (req, res) => {
-		productToSearch=req.body.mainSearchBar;
+		const productToSearch=req.query.search;
 		// return res.json({productToSearch});
 		Product.findAll({
 
-			include:['category'],
 			
 			where: {
 				name: { 
-				[Op.like] : '%' + req.body.mainSearchBar + '%' 
+				[Op.like] : `%${productToSearch}%`
 				}
-			}, 
+			}, include:['category'],
 		})
+		
 		.then(product => {
+			// return res.json(product);
 			let searchArray = [];
 			for ( let i = 0;  i < product.length; i++) {
 				searchArray.push(product[i]);
 			}
-			if ( searchArray == "" ) {
+			if ( searchArray.length == 0 ) {
 			res.redirect('/');
 			} else {
 				
