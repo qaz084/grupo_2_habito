@@ -1,16 +1,10 @@
 function authMiddlewareStatusProducts (req, res, next) {
 
-    if (req.session.userLogged) {
-
-        if (req.session.userLogged.statusId == 2)
-        return res.redirect("/");
-    }else{
-        return res.redirect("/");
-
+    if (req.session.userLogged && req.session.userLogged.statusId == 1) {
+        return next();
     }
-   
-
-    next();
+    res.redirect("/")
+    
 }
 
 module.exports = authMiddlewareStatusProducts;

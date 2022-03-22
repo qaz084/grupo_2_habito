@@ -48,9 +48,13 @@ justify-content: space-between;
 margin: auto;
 color: rgb(230, 230, 230);
 }
-.colorSelected{
-    border-top: 4px solid #616161;
-    border-bottom: 2px solid #616161
+.colorSelectedd{
+    border-top: 5px solid #616161;
+    border-bottom: 5px solid #616161
+}
+.blackException{
+    border-top: 5px solid #b9b9b9;
+    border-bottom: 5px solid #b4b4b4
 }
 .sizeSelected{
     color: #A96028;
