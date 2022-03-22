@@ -23,7 +23,7 @@ const { body } = require('express-validator');
 
 //Middlewares
 const validationLogin = require("../middlewares/validateLoginMiddleware");
-const validationRegister = require("../middlewares/validateRegisterMiddleware")
+const validationRegister = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 

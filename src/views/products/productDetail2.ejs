@@ -1,0 +1,181 @@
+
+
+<%- include('../partials/head', {
+    pageTitle: 'Detalle de Producto',
+    cssLink: 'href="/css/productDetail2.css" '
+})%>
+
+
+    <%- include('../partials/header2')%>
+
+    <main>
+
+        <div class="create-container">
+            <div class="backButton">
+                <a href="/products/list/<%= productDetail.categoryId %> "><span>Volver</span></a>
+            </div>
+            <div class="headForm">
+                <span class="tituloForm">Detalle producto:</span>
+            
+            </div>
+                <form action="" method="" enctype="multipart/form-data">
+            
+            
+                    <div class="menuContainer" >
+            
+                <!-- LEFT CONTAINER---------------------------- -->
+                        <div class="leftContainer">
+            
+            
+                                <label for="image-selection1">
+                                <img src="/uploads/products/<%= productDetail.image2 %> "class="left-img-container">
+                                </label>
+                               
+                                <label for="image-selection2">
+                                <img src="/uploads/products/<%= productDetail.image3 %> " class="left-img-container">
+                                </label>
+                              
+                                <label for="image-selection3">
+                                <img src="/uploads/products/<%= productDetail.image4 %> " class="left-img-container">
+                                </label>
+                               
+                        </div>
+
+                        <!-- MIDDLE CONTAINER--------------------- -->
+
+                        <div class="middleContainer">
+                            <div class="middle-img-container">
+                       
+                                <label for="image-selection4">
+                                    <img src="/uploads/products/<%= productDetail.image1 %> ">
+                                </label>
+            
+                              </div>
+            
+            
+                        </div>
+                        
+                    <!-- RIGHT CONTAINER--------------------------- -->
+
+                        <div class="rightContainer">
+                                <input type="text" class="input-product-name" value="<%= productDetail.name %> "
+                                name="productName" required>
+                                <div class="contenedor-precio">
+                                    <span class='signo-precio'>$</span>
+                                    <span class='signo-precio'><%= productDetail.price %> </span>
+            
+                                </div>
+                                <div class="contenedor-precio">
+                                    <span class='signo-precio'></span>
+                                    <span class='signo-precio'><%= productDetail.discount? productDetail.discount :'' %> </span>
+                                   
+            
+            
+                                </div>
+                                <span class="input-product-category" id="descriptionTitle">Descripción:</span>
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." required><%= productDetail.description %></textarea  >
+
+
+                                <!-- TALLE------------------------------- -->
+                                <div class="input-product-category">
+                                    <SPAN >Talle: </SPAN>
+            
+                                            <div class="categoryContainer">
+                                               
+                                          
+                                                    <% productDetail.size.forEach(oneSize => { %>
+                                                        <span class='signo-precio'>
+                                                             <%=oneSize.name %>
+                                                             </span>
+                                                    <% }); %>
+                                            
+           
+                                            </div>
+                                </div>
+                                        <!-- COLOR-------------------------- -->
+                            <div class="input-product-color">
+                                <SPAN >Color: </SPAN>
+                                <div class="colorContainer">
+                                    <% productDetail.color.forEach((oneColor)=>{%>
+                                        <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                    <% }); %>
+           
+                                </div>
+                            </div>
+            
+                            <!-- CATEGORIA------------------------- -->
+                            <div class="input-product-category">
+                                <SPAN >Categoria: </SPAN>
+                                <div class="categoryContainer">
+                                
+                                     
+                                    <span class='signo-precio'>
+                                        <%=productDetail.category.name %>
+                                        </span>
+                                     
+                                 
+                                </div>
+                            </div >
+            
+                            <% if (locals.isAnUserLogged==false  ) { %>
+                                     <%=console.log(locals.userData);  %> 
+                                <div class="btn-container">
+                                    <a href="../cart">
+                                        <div class="btn-buy" >
+                                    
+                                            Comprar producto
+
+                                        </div>
+                                    </a>
+                                </div>
+
+                               
+                            
+                            <% }else{%>
+
+
+                                <% if (locals.userData.statusId==1) { %>
+                                 
+
+                                    <div class="btn-container">
+                                        <a href="../cart">
+                                            <div class="btn-buy" >
+                                        
+                                                Comprar producto
+                                            </div>
+                                        </a>
+                                    </div>
+    
+                                    <a href="../edit/ <%=productDetail.id %>">
+                                        <div class="btn-edit" >
+                                        
+                                            Editar producto
+                                        </div>
+                                    </a>
+                                <% }else{ %>
+                                    
+                                     <div class="btn-container">
+                                        <a href="../cart">
+                                            <div class="btn-buy" >
+                                        
+                                                Comprar producto
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                             <% }%>
+
+
+                             <% }%>
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+    </main>
+
+    <script src="/js/createEditProducts.js"></script>
+</body>
+</html>
+

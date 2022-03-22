@@ -18,9 +18,11 @@
                     <a href="/products/cart">
                         <li>Carrito (0)</li>
                     </a>
+                    <% if (locals.userData.status == 1) { %>
                     <a href="/products/create">
                         <li>Crear Productos</li>
                     </a>
+                    <% } %>
 <!-- -------------------NOMBRE DEL PERFIL--------- -->
                     <a href="/users/profile">
                         <li><%=locals.userData.name%> </li>
