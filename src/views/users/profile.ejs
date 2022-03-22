@@ -5,121 +5,124 @@
 
     <body>
 
-        <%- include('../partials/header2')%>
-
-        <section class="profile-container">
-
-            <div class="upper-container" >
-
-
-                <div class="back">
-
-                    <a href="/">
-                        <h2>Volver</h2>
-                    </a>
-
-                </div>
-                <div class="profile-picture-container">
-                   
-                   <div class="profile-picture">
-
-                    <!-- ACA HAY QUE CAMBIAR CON LA IMAGEN DEL REGISTER -->
-                    <img src="/uploads/users/<%= locals.user.avatar %>" alt="Profile Picture">
-                    <!-- HAY QUE HACER UN IF PARA QUE APAREZCA LA FOTO POR DEFECTO EN CASO DE NO HABER IMAGEN DE USUARIO -->
-                   </div>
-                                     
-    <!-- ACA HAY QUE CAMBIAR CON EL NOMBRE DEL USUARIO DEL REGISTER -->
-
-                    <h1><%= locals.user.name %></h1>
-                    <a href="/users/logout">
-                        <h2>Cerrar sesión</h2>
-                    </a>
-
-                    <form action="/users/<%= locals.user.id %>?_method=delete" method="post"> 
-                        <button class="delete-account" type="submit"> <h2>Borrar suscripción</h2>  </button>   
-                    </form>
-
-                  </div>
-
-
-            
-
-            </div>
-
-            <!-- -------CONTENEDOR DEL FORM------- -->
-
-            <div class="bottom-container" >
-
-
-            
-                 <form class="personal-data" action="">
-
-                     <h1 class="personal-data-tittle">
-
-                        Datos personales
-
-                     </h1>
-
-                     
-                     <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%=user.name%>">
-                     
-                         
-                             <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%=user.email%>">
-                            
-
-                 </form>
-            
-
-              
-
-                 <form class="payment-method-container" action="">
-
-                        <h1 class="payment-method-tittle">
-
-                           Medios de pago
-                            
-                         </h1>
-
-                       <% mediosDePago=["Tarjeta de débito","Tarjeta de crédito"] %> 
-
-                       <% for( let index = 0; index < mediosDePago.length; index++ ) { %>
-                        
-                        <div class="payment-method-cards">
-
-                            <h2>
-                                <%=mediosDePago[index] %>
-                            </h2>
-                        </div>
-
-                       <% } %>
-                    
-                       <div class="payment-method-MercadoPago-cards">
-
-                       
-                           <img src="/img/icons/mercado_pago.png"  alt="">
-                        
-                    </div> 
-                    <div class="crear-tarjeta-container">
-
-                        <a href="">
-                            <h3 class="create-credit-card">Crear tarjeta</h3>
-                        </a>
-                    </div>
-                    </form>
-               
-
-
+        <%- include('../partials/headerSearchBar')%>
+            <main>
                 
-            </div>
-
-
-
-
-        </section>
-
+                        <section class="profile-container">
+                
+                            <div class="upper-container" >
+                
+                
+                                <div class="back">
+                
+                                    <a href="/">
+                                        <h2>Volver</h2>
+                                    </a>
+                
+                                </div>
+                                <div class="profile-picture-container">
+                
+                                <div class="profile-picture">
+                
+                                    <!-- ACA HAY QUE CAMBIAR CON LA IMAGEN DEL REGISTER -->
+                                    <img src="/uploads/users/<%= locals.user.avatar %>" alt="Profile Picture">
+                                    <!-- HAY QUE HACER UN IF PARA QUE APAREZCA LA FOTO POR DEFECTO EN CASO DE NO HABER IMAGEN DE USUARIO -->
+                                </div>
+                
+                    <!-- ACA HAY QUE CAMBIAR CON EL NOMBRE DEL USUARIO DEL REGISTER -->
+                
+                                    <h1><%= locals.user.name %></h1>
+                                    <a href="/users/logout">
+                                        <h2>Cerrar sesión</h2>
+                                    </a>
+                
+                                    <form action="/users/<%= locals.user.id %>?_method=delete" method="post">
+                                        <button class="delete-account" type="submit"> <h2>Borrar suscripción</h2>  </button>
+                                    </form>
+                
+                                </div>
+                
+                
+                
+                
+                            </div>
+                
+                            <!-- -------CONTENEDOR DEL FORM------- -->
+                
+                            <div class="bottom-container" >
+                
+                
+                
+                                <form class="personal-data" action="">
+                
+                                    <h1 class="personal-data-tittle">
+                
+                                        Datos personales
+                
+                                    </h1>
+                
+                
+                                    <input class="form-container-input" type="text" name="nombre" id="" placeholder="  Usuario:" value="<%=user.name%>">
+                
+                
+                                            <input class="form-container-input" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%=user.email%>">
+                
+                
+                                </form>
+                
+                
+                
+                
+                                <form class="payment-method-container" action="">
+                
+                                        <h1 class="payment-method-tittle">
+                
+                                        Medios de pago
+                
+                                        </h1>
+                
+                                    <% mediosDePago=["Tarjeta de débito","Tarjeta de crédito"] %>
+                
+                                    <% for( let index = 0; index < mediosDePago.length; index++ ) { %>
+                
+                                        <div class="payment-method-cards">
+                
+                                            <h2>
+                                                <%=mediosDePago[index] %>
+                                            </h2>
+                                        </div>
+                
+                                    <% } %>
+                
+                                    <div class="payment-method-MercadoPago-cards">
+                
+                
+                                        <img src="/img/icons/mercado_pago.png"  alt="">
+                
+                                    </div>
+                                    <div class="crear-tarjeta-container">
+                
+                                        <a href="">
+                                            <h3 class="create-credit-card">Crear tarjeta</h3>
+                                        </a>
+                                    </div>
+                                    </form>
+                
+                
+                
+                
+                            </div>
+                
+                
+                
+                
+                        </section>
+                
+            </main>
 
 
 
 
             <%- include('../partials/footer2')  %>
+            <script src="/js/navBarLogOut.js"></script>
     </body>
