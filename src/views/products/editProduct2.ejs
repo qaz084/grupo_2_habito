@@ -78,31 +78,38 @@
                                     
 
                                 <!-- TALLE------------------------------- -->
-                                <div class="input-product-category">
-                                    <SPAN >Talle: </SPAN>
+                                
+                                    <div class="input-product-category">
+                                        <SPAN >Talle: </SPAN>
+                
+                                                <div class="categoryContainer">
+                                                    <select name="size" id=""  >
+                                                    <% if (product.size[0]) { %>
+                                                        <option value=" <%= product.size[0].id%>" disabled selected>
+                                                        <%= product.size[0].name %>
+                                                        </option>
+                                                    <% }else{ %>
+                                                        <option value="" disabled selected>
+                                                            Seleccionar talle
+                                                        </option>
+                                                    <% } %>
+                                                        <% size.forEach(oneSize => { %>
+                                                            <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
+                                                        <% }); %>
+                                                    </select> 
             
-                                            <div class="categoryContainer">
-                                                <select name="size" id=""  >
-                                                    <option value=" <%= product.size[0].id%>" disabled selected>
-                                                    <%= product.size[0].name %>
-                                                    </option>
-                                                    <% size.forEach(oneSize => { %>
-                                                        <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
-                                                    <% }); %>
-                                                </select> 
-        
-                                            </div>
-                                </div>
+                                                </div>
+                                    </div>
+                                    
                                         <!-- COLOR-------------------------- -->
-                            <div class="input-product-color">
-                                <SPAN >Color: </SPAN>
-                                <div class="colorContainer">
-                                    <% color.forEach((oneColor)=>{%>
-                                        <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
-                                    <% }); %>
-  
-                                </div>
-                            </div>
+                                    <div class="input-product-color">
+                                        <SPAN >Color: </SPAN>
+                                        <div class="colorContainer">
+                                            <% color.forEach((oneColor)=>{%>
+                                                <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                            <% }); %>
+                                        </div>
+                                    </div>
             
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
