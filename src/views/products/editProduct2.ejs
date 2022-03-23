@@ -74,8 +74,8 @@
             
                                 </div>
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ><%= product.description %></textarea  >
-
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" ><%= product.description %></textarea  >
+                                    
 
                                 <!-- TALLE------------------------------- -->
                                 <div class="input-product-category">
@@ -109,7 +109,7 @@
                                 <SPAN >Categoria: </SPAN>
                                 <div class="categoryContainer">
                                     <select name="category" id="" >
-                                        <option value="<%= category.name %>" disabled selected> <%= category[0].name %></option>
+                                        <option value="<%= product.category.name %>" disabled selected> <%= product.category.name %></option>
                                         <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
                                         <% }); %>
@@ -121,13 +121,16 @@
 
                                     <button class="btn-add" type="submit">Editar producto</button>
 
-                                    <button class="btn-add" type="submit">Eliminar producto</button>
+                                    
                                 </div>
-            
+                                
+                            </div>
                         </div>
-                    </div>
-                </form>
-        </div>
+                    </form>
+                    <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
+                        <button class="btn-add" type="submit">Eliminar producto</button>
+                    </form>
+                </div>
 
     </main>
 

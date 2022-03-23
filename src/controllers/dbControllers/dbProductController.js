@@ -71,6 +71,7 @@ const controller={
 
 	editProduct:async(req,res)=>{
 		let requestProduct= await Product.findByPk(req.params.id, { include: ["size", "category",'color'] });
+		//return res.json(requestProduct)
 		let requestCategories= await Category.findAll();
 		let requestSizes = await Size.findAll();
 		let requestColors = await Color.findAll();
@@ -177,8 +178,8 @@ const controller={
 	},
 	delete: async(req,res) =>{
 		const productId= req.params.id;
-		Product.destroy({where: {id:productId}});
-		return res.redirect('./products/productsList')
+		await Product.destroy({where: {id:productId}});
+		return res.redirect('/')
 
 
 	}
