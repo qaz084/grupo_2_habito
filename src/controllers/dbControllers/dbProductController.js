@@ -49,7 +49,6 @@ const controller={
 			for ( let i = 0;  i <a.length;i++){
 				a[i] = a[i].split("").slice(1).join("")
 			}
-			console.log(a)
 			const newProduct = await Product.create({
 				name: req.body.productName,
 				price: req.body.productPrice,
@@ -81,18 +80,40 @@ const controller={
 		return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
 	},
 	update : async(req,res)=>{
-		let product=await Product.findByPk(req.params.id,{include:["size","color"]})
-		product.removeSize(product.size);
-		product.removeColor(product.color);		
-		
-
 		try{
+			let product = await Product.findByPk(req.params.id,{include:["size", "color"]});	
+			
 			let a = Object.keys(req.body).filter((element)=>{
 				return element.length<=2
 			}) 
 			for ( let i = 0;  i <a.length;i++){
 				a[i] = a[i].split("").slice(1).join("")
 			}
+
+			
+			product.name = req.body.productName?req.body.productName:product.name;
+			product.price = req.body.productPrice?req.body.productPrice:product.price;
+			product.discount = req.body.productDiscount?req.body.productDiscount:product.discount;
+			product.description = req.body.productDescription?req.body.productDescription:product.description;
+			product.categoryId = req.body.category?req.body.category:product.categoryId;
+			product.quantity = product.quantity;
+			product.image1 = req.files.image1? req.files.image1[0].filename :product.image1;
+			product.image2 = req.files.image2? req.files.image2[0].filename :product.image2;
+			product.image3 = req.files.image3? req.files.image3[0].filename :product.image3;
+			product.image4 = req.files.image4? req.files.image4[0].filename :product.image4
+			
+			if(a.length != 0){
+				await product.removeColor(product.color);
+				await product.addColor(a);
+			}
+			if(req.body.size){
+				await product.removeSize(product.size);
+				await product.addSize(req.body.size);
+			}
+			
+			product.save();
+			res.redirect("/products/detail/"+ req.params.id)
+/* 
 			console.log(a)
 			const updateProduct = await Product.update({
 				name: req.body.productName,
@@ -112,14 +133,11 @@ const controller={
 			});
 			await updateProduct.addColor(a)
 			await updateProduct.addSize(req.body.size)
-			res.redirect('../views/products/detail/'+ req.params.id)
+			res.redirect('../views/products/detail/'+ req.params.id) */
 		}catch (err) {
 			console.log(err)
 		}
-			
 
-		
-		
 	},
 	productCart:(req,res)=>{
         return res.render("../views/products/productCart")
