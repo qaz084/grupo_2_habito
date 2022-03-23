@@ -2,7 +2,7 @@
 
 <%- include('../partials/head', {
     pageTitle: 'Crear producto',
-    cssLink: 'href="/css/createProduct.css" '
+    cssLink: 'href="/css/editProduct2.css" '
 })%>
 
 <body>
@@ -126,17 +126,22 @@
             
                                 <div class="btn-container">
 
-                                    <button class="btn-add" type="submit">Editar producto</button>
-
-                                    
+                                   
+                                        <button class="btn-edit"  type="submit">Editar producto
+                                        
+                                        </button>
+                                   
+                                </form>
+                                  
+                                <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
+                                   <button class="btn-delete" type="submit">Eliminar producto</button>
+                                </form>
                                 </div>
                                 
                             </div>
                         </div>
-                    </form>
-                    <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
-                        <button class="btn-add" type="submit">Eliminar producto</button>
-                    </form>
+             
+               
                 </div>
 
     </main>

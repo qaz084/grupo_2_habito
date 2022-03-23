@@ -1,0 +1,135 @@
+<%- include('../partials/head', {
+    pageTitle: 'Registrarse',
+    cssLink: 'href="/css/productCart2.css" '
+})%>
+
+    <body>
+
+        <!------------ HEADER------------------- -->
+        <%- include('../partials/headerSearchBar')%>
+
+        <form action="">
+
+
+      
+            <section class="register-container">
+
+                <!-- --------------------LEFT CONTAINER--------------------------- -->
+
+                <div class="left-container">
+
+                    <img class="logo-left-container" src="/img/logo_negro.svg ">
+
+                    <div class="tittle-container">
+
+                        <h1>Datos de contacto</h1>
+
+                     
+                        <div class="already-account">
+    
+                            <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
+                            <a href="/users/login">
+                                <h3 class="sign-in">Iniciar sesión</h3>
+                            </a>
+                        </div>
+                    </div>
+                    
+                   
+
+                </div>
+
+
+                <!-- --------------------RIGHT CONTAINER--------------------------- -->
+
+                <div class="right-container">
+
+                  
+                <a href="/"><span>Volver</span></a>
+
+
+                <section class="productsInCart">
+
+                    <div class="productImage">
+                        
+                        <img src="" alt="">
+                        <h1>test</h1>
+                    </div>
+
+                    <div class="productDetail">
+
+                        <div class="leftDetail">
+
+                            <span class="productName">
+
+                               PRUEBA
+                            </span>
+
+                            <span class="productSize">
+                                PRUEBA
+                            </span>
+
+                            <span class="productColor">
+                                PRUEBA
+                            </span>
+
+                        </div>
+
+                        <div class="rightDetail">
+                            
+                            <span class="productPrice">
+                                PRUEBA
+                            </span>
+
+                            <span class="productCartDelete">
+                                PRUEBA
+                            </span>
+                            <span>
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                </section>
+
+                <section class="costCalculation">
+
+                    <hr>
+                    <div class="costDetail">
+
+                        <span>
+                                prueba
+                        </span>
+                        <span>
+                                prueba
+                        </span>
+                     
+
+
+                    </div>
+                    <hr>
+                     <div class="subtotal">
+                                            
+                     </div>
+
+              
+
+                <div class="buyButton">
+
+
+                </div>
+                  
+                </div>
+
+            </section>
+
+
+        </form>
+
+            <%- include('../partials/footer2')  %>
+    </body>
+
+    </html>
