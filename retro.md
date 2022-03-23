@@ -20,6 +20,8 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   _Sprint 4: Incrementar las reuniones de coordinación. En este último sprint tuvimos menos oportunidad de reunirnos por diferentes motivos con los cual perdimos un poco de dinámica._
   
   _Sprint 5: Incrementar las reuniones para el repaso de código y corroborar que todos están al tanto de las diferentes partes que cada integrante arregló._
+  
+  _Sprint 6: Código en pares. Nos ha facilitado bastante en momentos para solucionar códigos complejos._
 
 
 - #### Continuar haciendo:
@@ -32,6 +34,8 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   _Sprint 4: Comenzar la planificación del sprint en los primeros días para tener el mayor tiempo disponible de ejecutar las tareas. En general nos reunimos en las primeras 48 horas después del lanzamiento del sprint_
   
   _Sprint 5: Continuar con las reuniones semanales para la organización y distribución de tareas. En este sprint delimitamos bien y comunicamos los avances, por lo que todos estuvimos al tanto de dónde estabamos parados en cuanto a los avances. Por otra parte, todos están a disposición de ayudar al compañero si este está teniendo alguna dificultad con su parte._
+  
+  _Sprint 6: Reuniones de organización donde delimiatamos bien las tareas, más allá que después otros pueda haber una redistribución de las mismas._
 
 - #### Hacer menos/ Dejar de hacer:
   _Sprint 2: Por el momento, consideramos que no hay **algo** que deberíamos dejar de hacer o no hacer, ya nos iremos dando cuenta más adelante en futuros **sprints**_
@@ -40,6 +44,7 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   
   _Sprint 4: Chequear y Cerrar el sprint cercanos al deadline. Algunos de los entregables los terminamos el mismo día de entrega, cuando lo pudimos haber hecho antes._
   
+  _Sprint 6: Nuevamente finalizamos bastante sobre la fecha, pero en este caso fue debido a que fue un sprint más complejo que otros. Sobre todo nos trancamos con todo el armado de la base de datos. Más allá de las complejidades, siempre se puede mejorar en los tiempos de finalización de los trabajos._
   
 
 
