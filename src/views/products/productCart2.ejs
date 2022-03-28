@@ -8,128 +8,148 @@
         <!------------ HEADER------------------- -->
         <%- include('../partials/headerSearchBar')%>
 
+    <main>
         <form action="">
-
-
-      
-            <section class="register-container">
-
-                <!-- --------------------LEFT CONTAINER--------------------------- -->
-
+          <section class="register-container">
+                    <!-- --------------------LEFT CONTAINER--------------------------- -->
                 <div class="left-container">
-
-                    <img class="logo-left-container" src="/img/logo_negro.svg ">
-
-                    <div class="tittle-container">
-
-                        <h1>Datos de contacto</h1>
-
-                     
-                        <div class="already-account">
-    
-                            <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
-                            <a href="/users/login">
-                                <h3 class="sign-in">Iniciar sesión</h3>
-                            </a>
+                        <img class="logo-left-container" src="/img/logo_negro.svg ">
+                        <div class="tittle-container">
+                            <h1>Datos de contacto</h1>
+            
+                          
                         </div>
+
+                        <div class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>">
+                            <span>Usuario:</span>
+                        </div>
+                        <div class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>">
+                            <span>E-mail:</span>
+                        </div>
+                           
+            
+            
                     </div>
-                    
-                   
+                    <!-- --------------------RIGHT CONTAINER--------------------------- -->
+             <div class="right-container">
+                     <div class="right-container-content">
+                        <a href="/" class="back-button"><span>Volver</span></a>
+                
+            
+                <!---------------------- PRODUCT SECTION ------------------------->
+                        <section class="productsInCart">
+                            <div class="productImage">
+                                <img src="/uploads/products/<%= productDetail.image1 %> " alt="">
+                                <!-- <h1>test</h1> -->
+                            </div>
+                            <div class="productDetail">
+                                <div class="leftDetail">
+                                    
+                 <!---------------------- PRODUCT NAME ------------------------->
+                                    <span class="productName">
+                                        <%= productDetail.name %>
+                                    </span>
+            
+            
+              <!---------------------- PRODUCT SIZE ------------------------->
+                                    <% if (productDetail.size.length > 0) {  %>
+            <% productDetail.size.forEach(oneSize => { %>
 
+                                    <span class="productSize">
+                                        Talle:  <%=oneSize.name %>
+                                    </span>
+
+                                    <% }); %>
+                                    <% }; %>
+            
+               <!---------------------- PRODUCT COLOR ------------------------->
+               <% if (productDetail.color.length > 0) { %>
+
+                <div class="input-product-color">
+                  
+                    <div class="colorContainer">
+                        <% productDetail.color.forEach((oneColor)=>{%>
+                            <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                        <% }); %>
+
+                    </div>
                 </div>
+                <% } %> 
+                    </div>
+                      <!---------------------- PRODUCT PRICE------------------------->
+                              <div class="rightDetail">
+                                <span class="productPrice">
+                                   $ <%= productDetail.price %>
+                                </span>
+               <!---------------------- PRODUCT DELETE ------------------------->
+                                <span class="productCartDelete">
+                                    Quitar
+                                </span>
+                                <span>
+                                </span>
+                            </div>
+                        </section>
 
+                 <!---------------------- COST CALCULATION SECTION ------------------------->        
+                        <section class="costCalculation">
+                         
+                            <div class="costCalculation-container">
+                                <div class="costDetail">
+                                    <span class="subtotal">
+                                        Subtotal:
+                                    </span>
+                                    <span class="subtotal">
+                                        Envío:
+                                    </span>
+                                
+                                </div>
+                                <div class="costPrice">
+                                   <span class="subtotal">
+                                       $ <%= productDetail.price %>
+                                   </span>
+                                   <span class="subtotal">
+                                       $ 600
+                                   </span>
+                                </div>
+                            </div>
 
-                <!-- --------------------RIGHT CONTAINER--------------------------- -->
+                             <div class="totalCost">
+                                <span>
+                                    Total:
+                                 </span>
+                                <span>
+                                   
+                                    $ <%= productDetail.price %>
+                                 </span>
 
-                <div class="right-container">
+                             </div>
+                       </section>
 
                   
-                <a href="/"><span>Volver</span></a>
+                       <div class="btn-container">
 
-
-                <section class="productsInCart">
-
-                    <div class="productImage">
+                                   
+                        <button class="btn-edit"  type="submit">Comprar producto
                         
-                        <img src="" alt="">
-                        <h1>test</h1>
-                    </div>
-
-                    <div class="productDetail">
-
-                        <div class="leftDetail">
-
-                            <span class="productName">
-
-                               PRUEBA
-                            </span>
-
-                            <span class="productSize">
-                                PRUEBA
-                            </span>
-
-                            <span class="productColor">
-                                PRUEBA
-                            </span>
-
-                        </div>
-
-                        <div class="rightDetail">
-                            
-                            <span class="productPrice">
-                                PRUEBA
-                            </span>
-
-                            <span class="productCartDelete">
-                                PRUEBA
-                            </span>
-                            <span>
-
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-
-                </section>
-
-                <section class="costCalculation">
-
-                    <hr>
-                    <div class="costDetail">
-
-                        <span>
-                                prueba
-                        </span>
-                        <span>
-                                prueba
-                        </span>
-                     
-
-
-                    </div>
-                    <hr>
-                     <div class="subtotal">
-                                            
-                     </div>
-
+                        </button>
+                   
               
-
-                <div class="buyButton">
-
-
-                </div>
                   
+                <form action="#" method="">
+                   <button class="btn-delete" type="submit">Cancelar</button>
+                </form>
                 </div>
+                       
 
-            </section>
+                 </div>
+             </div>
+          </section>
 
-
-        </form>
+         </form>
+    </main>
 
             <%- include('../partials/footer2')  %>
-    </body>
+            <script src="/js/detailProduct.js"></script>
+ </body>
 
-    </html>
+ </html>

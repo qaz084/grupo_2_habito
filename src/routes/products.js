@@ -42,7 +42,7 @@ router.get("/edit/:id",controller.editProduct);
 router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),controller.update);
 
 //CART
-router.get("/cart", controller.productCart);
+router.get("/cart/:id", controller.productCart);
 
 //SEARCH
 

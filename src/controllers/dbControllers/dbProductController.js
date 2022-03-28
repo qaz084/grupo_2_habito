@@ -140,8 +140,14 @@ const controller={
 		}
 
 	},
-	productCart:(req,res)=>{
-        return res.render("../views/products/productCart")
+	productCart: async(req,res)=>{
+
+		const productID = req.params.id;
+		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
+		
+		return res.render("../views/products/productCart2", { productDetail });
+		
+        // return res.render("../views/products/productCart2")
     },
 
 	search: (req, res) => {
