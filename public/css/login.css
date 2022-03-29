@@ -133,6 +133,40 @@ a{
   
 }
 
+.pass-eye-container{
+
+    display:flex;
+    width: 100%;
+    position:relative;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+    #password-icon{
+    
+        display: flex;
+        color: rgb(94, 94, 94);
+        position: absolute;
+        z-index: 1;
+        right:10%;
+        bottom:50%;
+        cursor: pointer;
+       
+    }
+    #password-repeat-icon{
+    
+        display: flex;
+        color: rgb(94, 94, 94);
+        position: absolute;
+        z-index: 1;
+        right:10%;
+        bottom:50%;
+        cursor: pointer;
+       
+    }
+    
+
 
 /* -----------BODY -------- */
 

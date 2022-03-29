@@ -60,12 +60,17 @@
                         </div>
                         <% } %>
 
-                            <input class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" placeholder="Contraseña:">
-                            <% if (locals.errors && errors.password){%>
-                                <div class="text-danger">
-                                    <%= errors.password.msg %>
-                                </div>
-                                <% } %>
+                            <div class="pass-eye-container">
+                                <input id="password-container" class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" placeholder="Contraseña:">
+                                <% if (locals.errors && errors.password){%>
+                                    <div class="text-danger">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                    <% } %>
+                                    <span id="password-icon" class="material-icons-outlined">
+                                        visibility
+                                        </span>
+                            </div>
 
                                 <label class="remember-user" for="checkbox">
                                     <input type="checkbox" name="rememberUser" id="checkbox" class="remember-user-checkbox">Recordar usuario
@@ -78,67 +83,9 @@
 
                 </form>
             </section>
-            <!-- <main class="estructura">
-            
-              
-              
-                <div class="box-login">
-                    <div class="position-x">
-                        <a class="x" href="/"><i class="far fa-times-circle"></i></a>
-                    </div>
-                    <h2 class="size">Iniciá Sesión</h2>
-
-                    <div class="box-buttons">
-
-                        <div class="container-button">
-                            <a class="button" href="https://www.instagram.com/
-                    " target="_blank">
-                                <i class="fab fa-instagram"> </i> Instagram
-                            </a>
-                        </div>
-
-                        <div class="container-button">
-                            <a class="button" href="https://www.facebook.com/
-                    " target="_blank">
-                                <i class="fab fa-facebook"> </i> Facebook
-                            </a>
-                        </div>
-
-                        <div class="container-button">
-                            <a class="button" href="https://mail.google.com/mail/u/0/#inbox
-                    " target="_blank">
-                                <i class="fab fa-google"></i> Google
-                                </i>
-                            </a>
-                        </div>
-                    </div>
-                    <form action="/users/login" method="post" class="usuario">
-                        <div class="container-inputs">
-                            <br>
-                            <input class="inputs-color" type="email" name="email" placeholder="Email" required>
-                            <label for="usuario"></label>
-                        </div>
-                        <br>
-
-                        <div class="container-inputs">
-                            <input class="inputs-color" type="password" name="contrasenia" placeholder="Contraseña" required>
-                            <label for="contraseña"></label>
-                        </div>
-                        <br>
-
-                        <div class="container-password">
-                            <a class="x" href="">¿Te olvidaste la contraseña?</a>
-                            
-                        </div>
-
-                        <button class="button-sesion" type="submit">Iniciar Sesion</button>
-                    </form>
-
-                </div>
-
-            </main>
-            !-->
+         
             <%- include('../partials/footer2')  %>
+            <script src="/js/register.js"></script>
     </body>
 
     </html>

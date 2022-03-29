@@ -90,19 +90,35 @@
                                             <%= error.email %>
                                         </div>
                                         <% } %>
+                                     
+                                        <div class="pass-eye-container">
+                                            <input id="password-container"  class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password"  name="password" id="" placeholder="  Contraseña: ">
+                                            <% if (locals.errors && errors.password){%>
+                                                <div class="text-danger">
+                                                    <%= errors.password.msg %>
+                                                </div>
+                                                <%}%>
+                                                <span id="password-icon" class="material-icons-outlined">
+                                                    visibility
+                                                    </span>
+                                                   
+                                        </div>
+                                  
+                                                <div class="pass-eye-container">
+                                                    <input  id="password-repeat-container"  class="form-container-input <%= locals.errors && errors.repeatPassword? 'input-data-wrong':null %>"  type="password" name="repeatPassword" id="" placeholder="  Repetir contraseña:">
+                                                    <% if (locals.error && error.repeatPassword){%>
+                                                        <div class="text-danger">
+                                                            <%= error.repeatPassword %>
+                                                        </div>
+                                                        <% } %>
+                                                        <span id="password-repeat-icon" class="material-icons-outlined">
+                                                            visibility
+                                                            </span>
+                                                    
+                                                </div>
 
-                                        <input class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" id="" placeholder="  Contraseña: ">
-                                        <% if (locals.errors && errors.password){%>
-                                            <div class="text-danger">
-                                                <%= errors.password.msg %>
-                                            </div>
-                                            <%}%>
-                                                <input class="form-container-input <%= locals.errors && errors.repeatPassword? 'input-data-wrong':null %>"  type="password" name="repeatPassword" id="" placeholder="  Repetir contraseña:">
-                                                <% if (locals.error && error.repeatPassword){%>
-                                                    <div class="text-danger">
-                                                        <%= error.repeatPassword %>
-                                                    </div>
-                                                    <% } %>
+
+
                                                 <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
                                         <input  type="file" name="avatar" accept="image/*,.jpg .png" id="Imagen de perfil" > Imagen de perfil  </label>
                                                 <% if (locals.errors && errors.avatar){%>
@@ -129,6 +145,7 @@
 
 
             <%- include('../partials/footer2')  %>
+            <script src="/js/register.js"></script>
     </body>
 
     </html>
