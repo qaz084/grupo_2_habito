@@ -154,9 +154,10 @@ body{
 .pass-eye-container{
 
     display:flex;
+    flex-direction: column;
     width: 100%;
     position:relative;
-    align-items: center;
+    align-items: rigth;
     flex-wrap: nowrap;
 
 }
