@@ -90,17 +90,20 @@
                                             <%= error.email %>
                                         </div>
                                         <% } %>
-                                     
+
+                                     <!-- PASSWORD-  --> 
+
                                         <div class="pass-eye-container">
+                                            <span id="password-icon" class="material-icons-outlined">
+                                                visibility
+                                                </span>
                                             <input id="password-container"  class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password"  name="password" id="" placeholder="  Contraseña: ">
                                             <% if (locals.errors && errors.password){%>
                                                 <div class="text-danger">
                                                     <%= errors.password.msg %>
                                                 </div>
+                                             
                                                 <%}%>
-                                                <span id="password-icon" class="material-icons-outlined">
-                                                    visibility
-                                                    </span>
                                                    
                                         </div>
                                   
@@ -120,7 +123,7 @@
 
 
                                                 <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                                        <input  type="file" name="avatar" accept="image/*,.jpg .png" id="Imagen de perfil" > Imagen de perfil  </label>
+                                        <input  type="file" name="avatar"  id="Imagen de perfil" > Imagen de perfil  </label>
                                                 <% if (locals.errors && errors.avatar){%>
                                                     <div class="text-danger">
                                                         <%= errors.avatar.msg %>
