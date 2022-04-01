@@ -13,53 +13,34 @@
                 <!-- --------------------LEFT CONTAINER--------------------------- -->
 
                 <div class="left-container">
-
                     <img class="logo-left-container" src="/img/logo_negro.svg ">
-
                     <img class="background-img" src="/img/register-left-img.jpg">
-
-
                 </div>
                 <!-- --------------------RIGHT CONTAINER--------------------------- -->
 
                 <div class="right-container">
 
                     <div class="tittle-container">
-
                         <h1>Crear cuenta</h1>
-
                         <a href="/"><span>Volver</span></a>
                     </div>
 
 
                     <nav class="register-navbar">
-
                         <h2>Usando:</h2>
-
-
-
                         <ul class="sessions-container-icons">
                             <li>
-
                                 <img src="/img/icons/google.jpg" alt="Google">
-
                             </li>
-
                             <li>
-
                                 <img src="/img/icons/facebook.png" alt="Facebook">
                             </li>
-
                             <li>
-
                                 <img src="/img/icons/instagram.png" alt="Instagram">
                             </li>
                         </ul>
 
-
-
                         <div class="already-account">
-
                             <h3 class="already-account-text">¿Ya tenés cuenta?</h3>
                             <a href="/users/login">
                                 <h3 class="sign-in">Iniciar sesión</h3>
@@ -69,27 +50,48 @@
 
                     <!-- ------------FORMULARIO-------------------- -->
 
-                    <form class="form-container" action="/users/" method="post" enctype="multipart/form-data">
+                    <form 
+                        class="form-container" 
+                        action="/users/" 
+                        method="post" 
+                        enctype="multipart/form-data" 
+                        id="register-form"
+                    >
                         <H1>O con tu correo electrónico</H1>
 
-                        <input class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>" type="text" name="name" id="" placeholder="  Usuario:" value="<%= locals.oldData?oldData.name:null%>">
-                        <% if (locals.errors && errors.name){%>
-                            <div class="text-danger">
-                                <%= errors.name.msg %>
-                            </div>
-                            <% } %>
-                                <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" id="" placeholder="  email@gmail.com" value="<%= locals.oldData?oldData.email:null%>">
-                                <% if (locals.errors && errors.email){%>
+                        <input 
+                            class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>" 
+                            type="text" 
+                            name="name" 
+                            placeholder="  Usuario:" 
+                            value="<%= locals.oldData?oldData.name:null%>"
+                        >                            
+                        <span class="text-danger"></span>
+                            <% if (locals.errors && errors.name){%>
+                                <div class="text-danger">
+                                    <%= errors.name.msg %>
+                                </div>
+                                <% } %>
+
+                        <input 
+                            class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" 
+                            type="email" 
+                            name="email" 
+                            placeholder="  email@gmail.com" 
+                            value="<%= locals.oldData?oldData.email:null%>"
+                        >
+                        <span></span>
+                            <% if (locals.errors && errors.email){%>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
+                                <% if (locals.error && error.email){%>
                                     <div class="text-danger">
-                                        <%= errors.email.msg %>
+                                        <%= error.email %>
                                     </div>
                                     <% } %>
 
-                                    <% if (locals.error && error.email){%>
-                                        <div class="text-danger">
-                                            <%= error.email %>
-                                        </div>
-                                        <% } %>
 
                                      <!-- PASSWORD-  --> 
 
@@ -105,37 +107,55 @@
                                              
                                                 <%}%>
                                                    
-                                        </div>
+                        </div>
                                   
-                                                <div class="pass-eye-container">
-                                                    <input  id="password-repeat-container"  class="form-container-input <%= locals.errors && errors.repeatPassword? 'input-data-wrong':null %>"  type="password" name="repeatPassword" id="" placeholder="  Repetir contraseña:">
-                                                    <% if (locals.error && error.repeatPassword){%>
-                                                        <div class="text-danger">
-                                                            <%= error.repeatPassword %>
-                                                        </div>
-                                                        <% } %>
-                                                        <span id="password-repeat-icon" class="material-icons-outlined">
-                                                            visibility
-                                                            </span>
-                                                    
-                                                </div>
+                        <div class="pass-eye-container">
+                            <input  
+                                id="password-repeat-container"  
+                                class="form-container-input <%= locals.errors && errors.repeatPassword? 'input-data-wrong':null %>"  
+                                type="password" name="repeatPassword" 
+                                placeholder="  Repetir contraseña:"
+                            >
+                            <span class="text-danger"></span>
+                            <% if (locals.error && error.repeatPassword){%>
+                                <div class="text-danger">
+                                    <%= error.repeatPassword %>
+                                </div>
+                                <% } %>
+                                <span id="password-repeat-icon" class="material-icons-outlined">
+                                    visibility
+                                    </span>
+                        </div>
 
 
 
-                                                <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
-                                        <input  type="file" name="avatar"  id="Imagen de perfil" > Imagen de perfil  </label>
-                                                <% if (locals.errors && errors.avatar){%>
-                                                    <div class="text-danger">
-                                                        <%= errors.avatar.msg %>
-                                                    </div>
-                                                    <%}%>
+                        <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
+                        <input  
+                            type="file" 
+                            name="avatar" 
+                            accept="image/*,.jpg .png" 
+                            id="Imagen de perfil" > Imagen de perfil  
+                        </label>    
+                            <% if (locals.errors && errors.avatar){%>
+                                <div class="text-danger">
+                                    <%= errors.avatar.msg %>
+                                </div>
+                                <% } %>
 
-                                                        <div class="offertConfirmation">
-                                                            <input type="checkbox"  name="recibir-ofertas" id="offertConfirmation">
-                                                            <label for="offertConfirmation">Quiero recibir ofertas en mi correo</label>
-                                                        </div>
+                        <div class="offertConfirmation">
+                            <input 
+                                type="checkbox"  
+                                name="recibir-ofertas" 
+                                id="offertConfirmation"
+                            >
+                            <label for="offertConfirmation"> 
+                                Quiero recibir ofertas en mi correo 
+                            </label>
+                        </div>
 
-                                                        <button class="submit-btn" type="submit">Registrarme</button>
+                        <button class="submit-btn" type="submit">
+                            Registrarme
+                        </button>
 
                     </form>
 
