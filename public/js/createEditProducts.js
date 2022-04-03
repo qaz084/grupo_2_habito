@@ -1,4 +1,4 @@
-console.log("Hola mundo")
+//console.log("Hola mundo")
 let inputsCheckbox = document.querySelectorAll(".colorContainer input")
 let styleInputs = document.querySelectorAll(".red");
 for (let i = 0; i<inputsCheckbox.length; i++){
