@@ -1,7 +1,7 @@
 
 
 <%- include('../partials/head', {
-    pageTitle: 'Crear producto',
+    pageTitle: 'Editar producto',
     cssLink: 'href="/css/editProduct2.css" '
 })%>
 
@@ -18,7 +18,7 @@
                 <span class="tituloForm">Editar producto:</span>
                 <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
             </div>
-                <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="formContainer" id="form-edit-product" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="menuContainer" >
             
                 <!-- LEFT CONTAINER---------------------------- -->
@@ -28,61 +28,91 @@
                                 <label for="image-selection1">
                                 <img src="/uploads/products/<%= product.image2 %> " class="left-img-container">
                                 </label>
-                                <input class="img-checkbox" type="file" id='image-selection1' accept="image/*,.pdf" name="image2">
+                                <input class="img-checkbox" type="file" id='image-selection1' accept="image/*,.pdf .jpg .jpeg .gif" name="image2">
                                 <label for="image-selection2">
                                 <img src="/uploads/products/<%= product.image3 %> " class="left-img-container">
                                 </label>
-                                <input class="img-checkbox" type="file" id='image-selection2' accept="image/*,.pdf" name="image3">
+                                <input class="img-checkbox" type="file" id='image-selection2' accept="image/*,.pdf .jpg .jpeg .gif" name="image3">
                                 <label for="image-selection3">
                                 <img src="/uploads/products/<%= product.image4 %> " class="left-img-container">
                                 </label>
-                                <input class="img-checkbox" type="file" id='image-selection3' accept="image/*,.pdf" name="image4">
+                                <input class="img-checkbox" type="file" id='image-selection3' accept="image/*,.pdf .jpg .jpeg .gif" name="image4">
                         </div>
 
                         <!-- MIDDLE CONTAINER--------------------- -->
 
                         <div class="middleContainer">
                             <div class="middle-img-container">
-                            <input class="img-checkbox" type="file" id='image-selection4' accept="image/*,.pdf" name="image1">
+                            <input id='image-selection4' class="img-checkbox" type="file"  accept="image/*,.pdf .jpg .jpeg .gif" name="image1">
                                 <label for="image-selection4">
-                                    <img src="/uploads/products/<%= product.image1 %> ">
+                                    <img  src="/uploads/products/<%= product.image1 %> ">
                                 </label>
-            
-                              </div>
+                                
+                            </div>
+
+                   
+                             
+                                <div id="input-data-wrong-container" class="input-data-wrong-off" >
+                                    <div 
+                                    class="text-danger">
+                                     
+                                    </div>
+                                </div>
+                        
             
             
                         </div>
                         
                     <!-- RIGHT CONTAINER--------------------------- -->
 
+                    
+                            <!-- NAME  ------------------------------- -->
                         <div class="rightContainer">
-                                <input value="<%= product.name %>" type="text" class="input-product-name" placeholder="<%= product.name %>"
-                                name="productName" required>
+
+                                <div class="contenedor-precio">
+                                    <input value="<%= product.name %>" type="text" class="input-product-price"
+                                    name="productName" >
+                                    <span id="spanMsgError" class="text-danger"></span>
+                                </div>
+
+                            <!-- PRICE  ------------------------------- -->
 
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
-                                    <input value="<%= product.price %>" type="number" class="input-product-price" min='0 ' step="0.01" placeholder="<%= product.price %>"
-                                    name="productPrice" required>
-            
+                                    <input value="<%= product.price %>"  class="input-product-price" min='0 ' 
+                                    name="productPrice" >
+                                    
+                                    <span id="spanMsgError" class="text-danger"></span>
+
+                                    
                                 </div>
+
+                                 <!-- DISCOUNT  ------------------------------- -->
 
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>%</span>
-                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='0 ' max='100' placeholder="<%= product.discount %>"
+                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='' max='100' placeholder="<%= product.discount %>"
                                     name="productDiscount" >
             
-            
+                                    <span id="spanMsgError" class="text-danger"></span>
                                 </div>
+
+                                <!-- DESCRIPTION   ------------------------------- -->
+
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" ><%= product.description %></textarea  >
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="50" ><%= product.description %></textarea  >
+
+                                <span id="spanMsgError" class="text-danger"></span>
                                     
 
-                                <!-- TALLE------------------------------- -->
+                                <!-- SIZE------------------------------- -->
                                 
                                     <div class="input-product-category">
-                                        <SPAN >Talle: </SPAN>
-                
-                                                <div class="categoryContainer">
+                                        
+                                        <span >Talle: </span>
+                                         <div class="categoryContainer">
+
+
                                                     <select name="size" id=""  >
                                                     <% if (product.size[0]) { %>
                                                         <option value=" <%= product.size[0].id%>" disabled selected>
@@ -97,30 +127,56 @@
                                                             <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
                                                         <% }); %>
                                                     </select> 
-            
-                                                </div>
+                                                    <span id="spanMsgError" class="text-category-danger"></span>
+                                         </div>
                                     </div>
                                     
                                         <!-- COLOR-------------------------- -->
-                                    <div class="input-product-color">
-                                        <SPAN >Color: </SPAN>
-                                        <div class="colorContainer">
-                                            <% color.forEach((oneColor)=>{%>
-                                                <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
-                                            <% }); %>
+                                
+
+                                        <div class="input-product-color">
+                                            <SPAN >Color: </SPAN>
+                                            <div class="colorContainer">
+                                                <% color.forEach((oneColor)=>{%>
+                                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"> 
+                                                    <label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                                    <% }); %>
+                                                   
+                                               
+                                            </div>
+                                            <span id="colorMsgError" class="text-category-danger"></span>
                                         </div>
-                                    </div>
+                                     
+                                 
             
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
                                 <SPAN >Categoria: </SPAN>
                                 <div class="categoryContainer">
+
+                                 <% if (product.category) { %>    
                                     <select name="category" id="" >
-                                        <option value="<%= product.category.name %>" disabled selected> <%= product.category.name %></option>
+                                        <option value="<%= product.category.name %>" disabled selected> 
+                                            <%= product.category.name %></option>
                                         <% category.forEach(oneCategory => { %>
-                                        <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
+                                        <option value="<%= oneCategory.id %>">
+                                            <%= oneCategory.name %></option>
                                         <% }); %>
                                     </select>
+                                    <span id="spanMsgError" class="text-danger"></span>
+                                <% }else{ %> 
+
+                                    <select name="category" id="" >
+                                        <option value="" disabled selected>Seleccionar categoria</option>
+                                        <% category.forEach(oneCategory => { %>
+                                        <option value="<%= oneCategory.id %>">
+                                            <%= oneCategory.name %></option>
+                                        <% }); %>
+                                    </select>
+                                    <span id="spanMsgError" class="text-danger"></span>
+
+                                    <% } %> 
+                                 
                                 </div>
                             </div>
             
@@ -147,6 +203,7 @@
     </main>
 
     <script src="/js/createEditProducts.js"></script>
+    <script src="/js/editProducts.js"></script>
 </body>
 </html>
 

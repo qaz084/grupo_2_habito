@@ -18,7 +18,7 @@
                 <span class="tituloForm">Crear producto:</span>
                 <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
             </div>
-                <form action="/products/" method="post" enctype="multipart/form-data">
+                <form action="/products/" method="post" enctype="multipart/form-data" id="form">
             
             
                     <div class="menuContainer" >
@@ -49,32 +49,27 @@
                                 <label for="image-selection4">
                                     <img src="\img\createProduct\insert-product-image.png">
                                 </label>
-            
-                              </div>
-            
-            
+                            </div>
                         </div>
                         
                     <!-- RIGHT CONTAINER--------------------------- -->
 
                         <div class="rightContainer">
                                 <input type="text" class="input-product-name" placeholder="Nombre del producto"
-                                name="productName" required>
+                                name="productName" > <span class=""></span>
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
-                                    <input type="number" class="input-product-price" min='0 ' step="0.01" placeholder="1700"
-                                    name="productPrice" required>
-            
+                                    <input type="number" class="input-product-price" placeholder="1700"                                    
+                                    name="productPrice" >
                                 </div>
+                                <span class="" id="errorPrice"></span>
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>%</span>
                                     <input type="number" class="input-product-price" min='0 ' max='100' placeholder="Tiene descuento del..."
                                     name="productDiscount" >
-            
-            
                                 </div>
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." required></textarea  >
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ></textarea><span class=""></span>
 
 
                                 <!-- TALLE------------------------------- -->
@@ -82,13 +77,13 @@
                                     <SPAN >Talle: </SPAN>
             
                                             <div class="categoryContainer">
-                                                <select name="size" id="" required  >
+                                                <select name="size" id="">
                                                     <option value="" disabled selected>Seleccionar Talle</option>
                                                     <% size.forEach(oneSize => { %>
                                                         <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
                                                     <% }); %>
                                                 </select> 
-            <!--
+                                                <!--
                                                     <input type="checkbox" class="checkbox" name="sizeProductXS" id="sizeXS" value = "1"><label for="sizeXS" class="check-product-size" >XS</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductS" id="sizeS" value = "2"><label for="sizeS" class="check-product-size" >S</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
@@ -96,6 +91,8 @@
                                                     <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->
                                             </div>
                                 </div>
+                                        <span class="" id ="errorSize"></span>
+                                            
                                         <!-- COLOR-------------------------- -->
                             <div class="input-product-color">
                                 <SPAN >Color: </SPAN>
@@ -110,12 +107,12 @@
                                     <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow"><div class="yellow"> </div></label> -->
                                 </div>
                             </div>
-            
+                                <span class="" id ="errorColors"></span>
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
                                 <SPAN >Categoria: </SPAN>
                                 <div class="categoryContainer">
-                                    <select name="category" id="" required>
+                                    <select name="category" id="" >
                                         <option value="" disabled selected>Seleccionar categoria</option>
                                         <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
@@ -123,7 +120,7 @@
                                     </select>
                                 </div>
                             </div>
-            
+                            <span class="" id ="errorCategory"></span>
                                 <button class="btn-add" type="submit">Crear producto</button>
             
                         </div>
@@ -132,7 +129,7 @@
         </div>
 
     </main>
-
+    <script src="/js/createProduct.js"></script>
     <script src="/js/createEditProducts.js"></script>
 </body>
 </html>

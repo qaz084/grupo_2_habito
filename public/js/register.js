@@ -7,6 +7,10 @@ const eyeIconRepeat = document.querySelector('#password-repeat-icon');
 
 const passwordRepeatContainer = document.querySelector('#password-repeat-container');
 
+
+
+
+
 eyeIcon.addEventListener('click',()=>{   
 //    console.log(passwordContainer.type); 
    if(passwordContainer.type=='password'){

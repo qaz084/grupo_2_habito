@@ -58,7 +58,8 @@ body{
         
     }
     .text-danger{
-        
+        /* display:flex;
+        width:100%; */
         color:rgb(245, 60, 60);
         text-align: right;
         margin-bottom: 25px;
@@ -154,11 +155,12 @@ body{
 .pass-eye-container{
 
     display:flex;
-    flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
+    height: 100PX;
     position:relative;
-    align-items: rigth;
-    flex-wrap: nowrap;
+    align-items: center;
+    flex-wrap: wrap;
 
 }
 
