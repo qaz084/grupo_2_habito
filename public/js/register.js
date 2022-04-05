@@ -1,5 +1,4 @@
 
-
 const eyeIcon = document.querySelector('#password-icon');
 
 const passwordContainer = document.querySelector('#password-container');
@@ -46,6 +45,7 @@ eyeIconRepeat.addEventListener('click',()=>{
 const userCreateform = document.querySelector('#register-form');
 const userNameField = document.querySelector('input[name = name]');
 const userEmailField = document.querySelector('input[name = email]');
+const avatarFile = document.querySelector('input[name = avatar]');
 
 
 //Validacion de campos nombre e email
@@ -110,7 +110,6 @@ const validatePassword = (e) => {
 };
 
 //Validación de repetición de contraseña
-
 const validateRepeatedPassword = (e) => {
     const field = e.target;
     const spanTagError = field.nextElementSibling;
@@ -133,9 +132,9 @@ userNameField.addEventListener('blur', validateField);
 userEmailField.addEventListener('blur', validateEmail);
 passwordContainer.addEventListener('blur', validatePassword);
 passwordRepeatContainer.addEventListener('blur', validateRepeatedPassword);
+//avatarFile.addEventListener('click', validateAvatar)
 
-
-//Validar que no se envíe el formulario con errores
+//Validar que no se envíe el formulario co;rores
 /*
 userCreateform.addEventListener('submit', function(e) {
     let errorsCount = 0;
