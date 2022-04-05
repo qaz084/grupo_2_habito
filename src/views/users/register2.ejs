@@ -77,7 +77,7 @@
                             class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" 
                             type="email" 
                             name="email" 
-                            placeholder="  email@gmail.com" 
+                            placeholder="  user@email.com" 
                             value="<%= locals.oldData?oldData.email:null%>"
                         >
                         <span></span>
@@ -130,13 +130,11 @@
                                     </span>
                         </div>
 
-
-
                         <label placeholder="Imagen de perfil" for="Imagen de perfil" class="input-avatar">   
                         <input  
                             type="file" 
                             name="avatar" 
-                            accept="image/*,.jpg .png" 
+                            accept="image/*,.jpg .png .jpeg .gif" 
                             id="Imagen de perfil" > Imagen de perfil  
                         </label>    
                             <% if (locals.errors && errors.avatar){%>
