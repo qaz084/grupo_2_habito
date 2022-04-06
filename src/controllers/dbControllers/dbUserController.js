@@ -66,7 +66,7 @@ const controller = {
         } else {
             if (!findEmail) {
                 if (userDoublePassword == true) {
-                    if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png")) {
+                    if ((path.extname(req.file.filename) == ".jpg") || (path.extname(req.file.filename) == ".png") || (path.extname(req.file.filename) == ".jpeg") || (path.extname(req.file.filename) == ".gif")) {
                         try {
                             const addUser = await User.create({
                                 name: req.body.name,

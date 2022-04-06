@@ -15,14 +15,14 @@ const validationRegister = [
 
     body('avatar').custom((value, { req }) => {
         let file = req.file;
-        let extensionAccepted = ['.jpg', '.png'];
+        let extensionAccepted = ['.jpg', '.png', '.jpeg', '.gif'];
         if (!file) {
             throw new Error('Tienes que subir una imagen');
 
         } else {
             let extensionFile = path.extname(file.originalname);
             if (!extensionAccepted.includes(extensionFile)) {
-                throw new Error('Debes cargar una imagen en formato .jpg o .png');
+                throw new Error('Debes cargar una imagen en los formatos .jpg, .png, .jpeg, .gif');
 
             }
         }
