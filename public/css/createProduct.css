@@ -11,26 +11,8 @@
     list-style: none;
 }
 
-.text-danger{
-    /* display:flex;
-    width:100%; */
-    /* position:relative;
-    top: -33px;
-    left:10px; */
-    color:rgb(245, 60, 60);
-    text-align: left;
-    /* margin:5px 0; */
-    width:100%;
-    font-size:.9rem;
-}
-.input-data-wrong{
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
-    outline: 2px solid rgb(245, 60, 60);
-    border-radius: 2%;
-    /* padding: 20px; */
-}
+
+
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -73,7 +55,15 @@ body{
     overflow: hidden;
     display:flex;
 }
-
+.rightContainer{
+    justify-content: flex-start
+}
+.formContainer{
+    display:flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+}
 
 .profile-pic img{
     width: 100%;
@@ -195,6 +185,267 @@ body{
     text-decoration: underline;
  
 }
+.contenedor-precio{
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    width: 100%;
+    /* height: 20px;  */
+   
+    color: #3D3D3D;
+    /* background-color: #71AAFF; */
+    cursor: pointer;
+    position:relative;
+
+
+}
+#discountsign{
+
+    position: absolute;
+     top:7px; 
+
+}
+.input-product-price{
+
+    width: 100%; 
+    height: 40px;
+    font-family: Roboto;
+    font-style:normal;
+    font-weight: 400;
+    font-size: 1.3em;
+    /* line-height: 43px; */
+    /* display: flex;
+    align-items:flex-start; */
+    border: none;
+  background-color: #ee242400;  
+  border-bottom: 1px solid #3D3D3D;
+    color: #3d3d3d;
+    padding-left: 10%;
+    /* position: relative;
+    top: 20px; */
+    
+    }  
+   
+
+.input-product-price:focus{
+
+  
+    outline: 2px solid rgb(21, 148, 221);
+  background-color: #ee242400;  
+  border-bottom:none;
+    color: #3d3d3d;
+
+    }  
+.input-product-price:hover{
+
+cursor: pointer;
+
+}  
+
+.text-danger{
+        /* display:flex;
+        width:100%;  */
+        /* position:relative;
+        top: -33px;
+        left:10px; */
+       
+        color:rgb(245, 60, 60);
+        text-align: left;
+     /* margin:3% 0; */
+       width:100%;
+        font-size:.9rem;
+        margin-bottom:5%;
+      
+    }  
+
+
+.text-category-danger{
+        display:flex;
+        width:100%; 
+       
+        /* position:relative;
+        top: -33px;
+        left:10px; */
+       font-weight: 400;
+        color:rgb(245, 60, 60);
+        text-align: left;
+     /* margin:3% 0; */
+       width:100%;
+        font-size:.9rem;
+        margin-bottom:5%;
+        margin-top:12%;
+    }  
+    
+.input-data-wrong{
+
+       display:flex;
+        flex-wrap: wrap; 
+        width:100%;
+       outline: 2px solid rgb(245, 60, 60); 
+        border-radius: 2%;
+        /* padding: 20px; */
+        position: relative;
+        bottom:10px;
+        /* background-color:green; */
+        margin-top: 4%;
+       
+        
+    }
+.signo-precio{
+
+        display: flex;
+        flex-wrap: nowrap;
+        width: 10%;
+        font-family: Roboto;
+        font-style:normal;
+        font-weight: 300;
+        font-size: 1.3em;
+        color: #3d3d3d;
+        position: absolute;
+        bottom:40%; 
+        z-index: 2; 
+        /* background-color:orangered; */
+       }
+.signo-precio-wrong{
+
+        display: flex;
+        flex-wrap: nowrap;
+        width: 10%;
+        font-family: Roboto;
+        font-style:normal;
+        font-weight: 300;
+        font-size: 1.3em;
+        color: #3d3d3d;
+        position: absolute;
+        bottom:60%; 
+        z-index: 2; 
+        /* background-color:orangered; */
+       }
+
+
+
+.input-description{
+display: flex;
+width: 100%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 1em;
+/* line-height: 19px; */
+color:#3D3D3D;
+border: none;
+outline: none;
+margin-top: 10px;
+margin-bottom:5%;
+background-color: rgb(247, 247, 247);
+/* border-bottom: 2px solid #aaaaaa; */
+
+}
+textarea{
+resize:none;
+ 
+ min-height: 100px;
+}
+.input-description:focus{
+outline: 2px solid rgb(21, 148, 221);
+background-color: #ee242400;  
+border-bottom:none;
+  color: #3d3d3d;
+  border-radius: 2%;
+
+}
+
+.input-description:hover{
+cursor: pointer;
+
+}
+
+
+
+
+
+.input-product-category{
+
+display: flex;
+flex-wrap: wrap;
+align-content: center;
+align-items: center;
+font-family: Roboto;
+font-style: normal;
+font-weight: 300;
+font-size: 1.3em;
+line-height: 34px;
+color: #3d3d3d;
+margin-top: 20px;
+margin-bottom: 10px;
+border: none;
+outline: none;
+border-bottom: 2px solid #aaaaaa;
+position: relative;
+
+}
+.input-product-category:focus{
+
+
+outline: 2px solid #3e68da;
+border: 2px solid #3e68da;
+background-color: none;
+
+
+}
+
+.input-product-category span{
+
+position: absolute;
+z-index:2;
+
+}
+
+.categoryContainer{
+display: flex;
+flex-wrap: wrap;
+align-items: stretch;
+justify-content: space-around;
+height: 45px;
+width: 100%;
+
+}
+.categoryContainer select{
+
+border: none;
+outline: none;
+
+font-family: Roboto;
+font-style: normal;
+font-weight:400;
+font-size: 1em;
+text-align: center;
+color: #3d3d3d;
+width: 100%;
+background-color: #ffffff00;
+cursor: pointer;
+
+}
+.categoryContainer option{
+
+border: none;
+outline: none;
+
+font-family: Roboto;
+font-style: normal;
+font-weight:400;
+font-size: 14px;
+text-align: center;
+color: #3d3d3d;
+width: 100%;
+
+cursor: pointer;
+
+}
+
+
+
 
 /* -----------NUEVO HEADER QUERIES-------- */
 
@@ -797,61 +1048,10 @@ top: 526px; */
          
         }
 
-        .input-product-price{
+     
 
-            width: 80%;
-            height: 40px;
-            font-family: Roboto;
-            font-style:normal;
-            font-weight: 400;
-            font-size: 1.3em;
-            line-height: 43px;
-            /* display: flex;
-            align-items:flex-start; */
-            border: none;
-            background-color: #72727200;
-            color: #3d3d3d;
-             
-            }  
+    
 
-        .input-product-price:hover,.input-product-price:focus, .input-product-price:active{
-
-            outline: none;
-            /* background-color: rgb(247, 247, 247); */
-           
-            color: #3d3d3d;
-            
-        }
-
-        
-    .contenedor-precio{
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        border-bottom: 2px solid #aaaaaa;
-        color: #3D3D3D;
-        padding-top: 10px;
-        cursor: pointer;
-
-    }
-    .contenedor-precio:hover{
-        background-color: rgb(247, 247, 247);
-        
-
-    }
-   .signo-precio{
-
-    display: flex;
-    flex-wrap: nowrap;
-    width: 10%;
-    font-family: Roboto;
-    font-style:normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    color: #3d3d3d;
-   }
     .product-description{
 
         display: flex;
@@ -1096,79 +1296,8 @@ top: 526px; */
 
 
 /* CATEGORIAS------------- */
-.input-product-category{
 
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    line-height: 34px;
-    color: #3d3d3d;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #aaaaaa;
 
-}
-
-.input-product-category span{
-    color:#3D3D3D;
-    font-weight: 400;
-}
-
-.input-product-category:active,.input-product-category:hover,.input-product-category:focus{
-
-background-color: rgb(247, 247, 247);
-outline: none;
-border: none;
-border-bottom: 2px solid #aaaaaa;
-cursor: pointer;
-}
-
-.categoryContainer{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    height: 35px;
-    width: 100%;
-  
-}
-.categoryContainer select{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 1em;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    background-color: #ffffff00;
-    cursor: pointer;
-    
-}
-.categoryContainer option{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 14px;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    
-    cursor: pointer;
-    
-}
 
 
     /*-------------------------- BTN------------- */
@@ -1452,61 +1581,10 @@ top: 526px; */
          
         }
 
-        .input-product-price{
-
-            width: 80%;
-            height: 40px;
-            font-family: Roboto;
-            font-style:normal;
-            font-weight: 400;
-            font-size: 1.3em;
-            line-height: 43px;
-            /* display: flex;
-            align-items:flex-start; */
-            border: none;
-            background-color: #72727200;
-            color: #3d3d3d;
-             
-            }  
-
-        .input-product-price:hover,.input-product-price:focus, .input-product-price:active{
-
-            outline: none;
-            /* background-color: rgb(247, 247, 247); */
-           
-            color: #3d3d3d;
-            
-        }
+     
 
         
-    .contenedor-precio{
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        border-bottom: 2px solid #aaaaaa;
-        color: #3D3D3D;
-        padding-top: 10px;
-        cursor: pointer;
-
-    }
-    .contenedor-precio:hover{
-        background-color: rgb(247, 247, 247);
-        
-
-    }
-   .signo-precio{
-
-    display: flex;
-    flex-wrap: nowrap;
-    width: 10%;
-    font-family: Roboto;
-    font-style:normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    color: #3d3d3d;
-   }
+  
     .product-description{
 
         display: flex;
@@ -1745,79 +1823,7 @@ top: 526px; */
 
 
 /* CATEGORIAS------------- */
-.input-product-category{
 
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    line-height: 34px;
-    color: #3d3d3d;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #aaaaaa;
-
-}
-
-.input-product-category span{
-    color:#3D3D3D;
-    font-weight: 400;
-}
-
-.input-product-category:active,.input-product-category:hover,.input-product-category:focus{
-
-background-color: rgb(247, 247, 247);
-outline: none;
-border: none;
-border-bottom: 2px solid #aaaaaa;
-cursor: pointer;
-}
-
-.categoryContainer{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    height: 35px;
-    width: 100%;
-  
-}
-.categoryContainer select{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 1em;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    background-color: #ffffff00;
-    cursor: pointer;
-    
-}
-.categoryContainer option{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 14px;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    
-    cursor: pointer;
-    
-}
 
 
     /*-------------------------- BTN------------- */
@@ -2097,61 +2103,9 @@ top: 526px; */
          
         }
 
-        .input-product-price{
-
-            width: 80%;
-            height: 40px;
-            font-family: Roboto;
-            font-style:normal;
-            font-weight: 400;
-            font-size: 1.3em;
-            line-height: 43px;
-            /* display: flex;
-            align-items:flex-start; */
-            border: none;
-            background-color: #72727200;
-            color: #3d3d3d;
-             
-            }  
-
-        .input-product-price:hover,.input-product-price:focus, .input-product-price:active{
-
-            outline: none;
-            /* background-color: rgb(247, 247, 247); */
-           
-            color: #3d3d3d;
-            
-        }
-
         
-    .contenedor-precio{
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        border-bottom: 2px solid #aaaaaa;
-        color: #3D3D3D;
-        padding-top: 10px;
-        cursor: pointer;
-
-    }
-    .contenedor-precio:hover{
-        background-color: rgb(247, 247, 247);
-        
-
-    }
-   .signo-precio{
-
-    display: flex;
-    flex-wrap: nowrap;
-    width: 10%;
-    font-family: Roboto;
-    font-style:normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    color: #3d3d3d;
-   }
+   
+  
     .product-description{
 
         display: flex;
@@ -2390,79 +2344,9 @@ top: 526px; */
 
 
 /* CATEGORIAS------------- */
-.input-product-category{
 
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    line-height: 34px;
-    color: #3d3d3d;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #aaaaaa;
 
-}
 
-.input-product-category span{
-    color:#3D3D3D;
-    font-weight: 400;
-}
-
-.input-product-category:active,.input-product-category:hover,.input-product-category:focus{
-
-background-color: rgb(247, 247, 247);
-outline: none;
-border: none;
-border-bottom: 2px solid #aaaaaa;
-cursor: pointer;
-}
-
-.categoryContainer{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    height: 35px;
-    width: 100%;
-  
-}
-.categoryContainer select{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 1em;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    background-color: #ffffff00;
-    cursor: pointer;
-    
-}
-.categoryContainer option{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 14px;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    
-    cursor: pointer;
-    
-}
 
 
     /*-------------------------- BTN------------- */
@@ -2742,61 +2626,10 @@ top: 526px; */
          
         }
 
-        .input-product-price{
+      
 
-            width: 80%;
-            height: 40px;
-            font-family: Roboto;
-            font-style:normal;
-            font-weight: 400;
-            font-size: 1.3em;
-            line-height: 43px;
-            /* display: flex;
-            align-items:flex-start; */
-            border: none;
-            background-color: #72727200;
-            color: #3d3d3d;
-             
-            }  
 
-        .input-product-price:hover,.input-product-price:focus, .input-product-price:active{
 
-            outline: none;
-            /* background-color: rgb(247, 247, 247); */
-           
-            color: #3d3d3d;
-            
-        }
-
-        
-    .contenedor-precio{
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        border-bottom: 2px solid #aaaaaa;
-        color: #3D3D3D;
-        padding-top: 10px;
-        cursor: pointer;
-
-    }
-    .contenedor-precio:hover{
-        background-color: rgb(247, 247, 247);
-        
-
-    }
-   .signo-precio{
-
-    display: flex;
-    flex-wrap: nowrap;
-    width: 10%;
-    font-family: Roboto;
-    font-style:normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    color: #3d3d3d;
-   }
     .product-description{
 
         display: flex;
@@ -3035,79 +2868,7 @@ top: 526px; */
 
 
 /* CATEGORIAS------------- */
-.input-product-category{
 
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: center;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1.3em;
-    line-height: 34px;
-    color: #3d3d3d;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #aaaaaa;
-
-}
-
-.input-product-category span{
-    color:#3D3D3D;
-    font-weight: 400;
-}
-
-.input-product-category:active,.input-product-category:hover,.input-product-category:focus{
-
-background-color: rgb(247, 247, 247);
-outline: none;
-border: none;
-border-bottom: 2px solid #aaaaaa;
-cursor: pointer;
-}
-
-.categoryContainer{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    height: 35px;
-    width: 100%;
-  
-}
-.categoryContainer select{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 1em;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    background-color: #ffffff00;
-    cursor: pointer;
-    
-}
-.categoryContainer option{
-  
-    border: none;
-    outline: none;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight:400;
-    font-size: 14px;
-    text-align: center;
-    color: #3d3d3d;
-    width: 100%;
-    
-    cursor: pointer;
-    
-}
 
 
     /*-------------------------- BTN------------- */

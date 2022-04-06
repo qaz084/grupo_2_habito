@@ -27,14 +27,15 @@ const validationRegister = require("../middlewares/validateRegisterMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 
+// guestMiddleware,
 //GET - http://localhost3000/users/login
-router.get("/login", guestMiddleware, controller.userLogin);
+router.get("/login",guestMiddleware  ,controller.userLogin);
 
 //POST - http://localhost3000/users/login
 router.post("/login", validationLogin, controller.logUser);
 
 //GET - http://localhost3000/users/register
-router.get("/register2", guestMiddleware, controller.userRegister);
+router.get("/register2",guestMiddleware ,controller.userRegister);
 
 //POST - http://localhost3000/users
 router.post("/", upload.single('avatar'), validationRegister, controller.addUser);

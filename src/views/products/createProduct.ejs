@@ -2,7 +2,7 @@
 
 <%- include('../partials/head', {
     pageTitle: 'Crear producto',
-    cssLink: 'href="/css/createProduct.css" '
+    cssLink: 'href="/css/createEdit.css" '
 })%>
 
 <body>
@@ -53,28 +53,44 @@
                         </div>
                         
                     <!-- RIGHT CONTAINER--------------------------- -->
-
+                    <!-- NAME  ------------------------------- -->
                         <div class="rightContainer">
-                                <input type="text" class="input-product-name" placeholder="Nombre del producto"
-                                name="productName" > <span class=""></span>
+
                                 <div class="contenedor-precio">
-                                    <span class='signo-precio'>$</span>
-                                    <input type="number" class="input-product-price" placeholder="1700"                                    
-                                    name="productPrice" >
+                                    <input type="text" class="input-product-price" placeholder="Nombre del producto"
+                                    name="productName" >
+                                     <span class="text-danger"></span>
+
                                 </div>
-                                <span class="" id="errorPrice"></span>
+                     <!-- PRICE  ------------------------------- --> 
+                                    <div class="contenedor-precio">
+
+                                        <span class='signo-precio'>$</span>
+                                        <input type="number" class="input-product-price" placeholder="1700"
+                                        name="productPrice" >
+                                        <span class="text-danger" id="errorPrice"></span>
+                                    </div>
+                              
+
+                     <!-- DISCOUNT  ------------------------------- -->
+                              
                                 <div class="contenedor-precio">
-                                    <span class='signo-precio'>%</span>
-                                    <input type="number" class="input-product-price" min='0 ' max='100' placeholder="Tiene descuento del..."
+                                    <span id="discountsign" class='signo-precio'>%</span>
+                                    <input type="number" class="input-product-price"  min='0' max='100' placeholder="Tiene descuento del..."
                                     name="productDiscount" >
                                 </div>
+
+
+                 <!-- DESCRIPTION   ------------------------------- -->
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ></textarea><span class=""></span>
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ></textarea>
+
+                                <span class="text-danger"></span>
 
 
                                 <!-- TALLE------------------------------- -->
                                 <div class="input-product-category">
-                                    <SPAN >Talle: </SPAN>
+                               
             
                                             <div class="categoryContainer">
                                                 <select name="size" id="">
@@ -89,9 +105,9 @@
                                                     <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->
+                                                    <span class="text-category-danger" id ="errorSize"></span>
                                             </div>
                                 </div>
-                                        <span class="" id ="errorSize"></span>
                                             
                                         <!-- COLOR-------------------------- -->
                             <div class="input-product-color">
@@ -100,27 +116,25 @@
                                     <% color.forEach((oneColor)=>{%>
                                         <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                     <% }); %>
-            <!--                                 <input type="checkbox" class="checkbox" name="colorProductwhite" id="colorWhite"><label for="colorWhite"><div class="white"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductred" id="colorRed"><label for="colorRed"><div class="red"></div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductblue" id="colorBlue"><label for="colorBlue"><div class="blue"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductgreen" id="colorgreen"><label for="colorgreen"><div class="green"> </div></label>
-                                    <input type="checkbox" class="checkbox" name="colorProductyellow" id="coloryellow"><label for="coloryellow"><div class="yellow"> </div></label> -->
+        
                                 </div>
                             </div>
                                 <span class="" id ="errorColors"></span>
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
-                                <SPAN >Categoria: </SPAN>
+                          
                                 <div class="categoryContainer">
                                     <select name="category" id="" >
-                                        <option value="" disabled selected>Seleccionar categoria</option>
+                                        <option value="" disabled selected>   
+                                              Seleccionar categoría</option>
                                         <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
                                         <% }); %>
                                     </select>
+                                    <span class="text-category-danger" id ="errorCategory"></span>
                                 </div>
                             </div>
-                            <span class="" id ="errorCategory"></span>
+                       
                                 <button class="btn-add" type="submit">Crear producto</button>
             
                         </div>

@@ -111,6 +111,7 @@ const priceValidator=(e)=>{
 }
 
 
+
 const descriptionValidator=(e)=>{
     const field =productDescription;
     const spanMsgError=field.nextElementSibling;
@@ -175,18 +176,18 @@ const colorValidator= ()=>{
             
             // productColor[i].classList.add('input-data-wrong');
             errorColor.innerText='Debes seleccionar al menos 1 color';
-            errorSpanTag.classList.add('signo-precio-wrong');
+            errorColor.classList.add('text-danger');
             // productColor.style.border ='red 1px solid';
 
            errorCount= errorCount +1;
-            console.log(errorCount);
+      
 
         }else{
         
             // productColor.classList.remove('input-data-wrong');
             errorColor.innerText='';
-            errorSpanTag.classList.remove('signo-precio-wrong');
-            productColor.style.border ='none';
+            errorColor.classList.remove('text-danger');
+            // productColor.style.border ='none';
           
         }
 
@@ -195,7 +196,7 @@ const colorValidator= ()=>{
 const categoryValidator=(e)=>{
     const field =productCategory;
     const spanMsgError=field.nextElementSibling;
-    console.log(field.value);
+
     if(field.value== ''){
 
         field.classList.add('input-data-wrong');
@@ -203,7 +204,7 @@ const categoryValidator=(e)=>{
         errorSpanTag.classList.add('signo-precio-wrong');
         field.style.border ='red 1px solid';
         errorCount++;
-        console.log('atroden');
+     
     }else{
         field.classList.remove('input-data-wrong');
         spanMsgError.innerText='';
@@ -252,14 +253,15 @@ productSize.addEventListener('blur',sizeValidator);
 editProductForm.addEventListener('submit',(e)=>{
    
 //  errorCount=0;
-    
+    // e.preventDefault();
+    // console.log(errorCount);
     nameValidator();
     priceValidator();
      priceTypeValidator();
   descriptionValidator();
     sizeValidator();
     colorValidator();
-   //categoryValidator();
+  categoryValidator();
     // e.preventDefault();
 
     if(errorCount>0){

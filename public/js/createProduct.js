@@ -1,8 +1,9 @@
 
 let createProductForm = document.querySelector("#form");
 
-let nameField = document.querySelector(".input-product-name");
-let priceField = document.querySelector(".input-product-price");
+let errorSpanTag= document.querySelector('.signo-precio');
+let nameField = document.querySelector("[name=productName]");
+let priceField = document.querySelector("[name=productPrice]");
 let errorPrice = document.querySelector("#errorPrice");
 let descriptionField = document.querySelector(".input-description");
 let sizeField = document.querySelector("[name = size]");
@@ -11,6 +12,162 @@ let categoryField = document.querySelector("[name = category]");
 let errorCategory = document.querySelector("#errorCategory");
 let errorColor = document.querySelector("#errorColors")
 let colors = document.querySelectorAll(".checkbox")
+
+
+
+
+lengthValidation = (e) =>{
+    let field = nameField;
+    let errorMessage = field.nextElementSibling
+    if(field.value.trim().length < 4){
+        field.classList.add("input-data-wrong")
+        errorMessage.classList.add("text-danger")
+        fieldName = "El nombre debe contener al menos 4 caracteres"
+        errorMessage.innerHTML = fieldName
+    }else{
+        field.classList.remove("input-data-wrong")
+        errorMessage.classList.remove("text-danger")
+        fieldName = ""
+        errorMessage.innerHTML = fieldName
+    }
+};
+lengthValidation2 = (e) =>{
+    let field = nameField;
+    let errorMessage = field.nextElementSibling
+    if(field.value.trim().length < 4){
+        field.classList.add("input-data-wrong")
+        errorMessage.classList.add("text-danger")
+        fieldName = "El nombre debe contener al menos 4 caracteres"
+        errorMessage.innerHTML = fieldName
+        error = error +1
+    }else{
+        field.classList.remove("input-data-wrong")
+        errorMessage.classList.remove("text-danger")
+        fieldName = ""
+        errorMessage.innerHTML = fieldName
+    }
+};
+
+priceValidation = (e) =>{
+    let field = priceField;
+    if(field.value.trim().length <2 || field.value.trim() == 0){
+        field.classList.add("input-data-wrong")
+        errorPrice.classList.add("text-danger")
+        errorSpanTag.classList.add('signo-precio-wrong');
+        fieldName = "El precio debe contener al menos 2 dígitos"
+        errorPrice.innerHTML = fieldName
+    }else{
+        field.classList.remove("input-data-wrong");
+        errorPrice.classList.remove("text-danger");
+        errorSpanTag.classList.remove('signo-precio-wrong');
+        fieldName = "";
+        errorPrice.innerHTML = fieldName;
+    }
+};
+
+priceValidation2 = (e) =>{
+    let field = priceField;
+    let price= field.value;
+    if(field.value.trim().length <2 || field.value.trim() == 0){
+        field.classList.add("input-data-wrong")
+        errorPrice.classList.add("text-danger")
+        fieldName = "El precio debe contener al menos 2 dígitos"
+        errorSpanTag.classList.add('signo-precio-wrong');
+        errorPrice.innerHTML = fieldName
+        error = error +1
+    }else if(isNaN(price)){
+
+        field.classList.add('input-data-wrong');
+        spanMsgError.innerText='Debes ingresar sólo números';
+        errorSpanTag.classList.add('signo-precio-wrong');
+        error = error +1;
+    }
+    else{
+        field.classList.remove("input-data-wrong");
+        errorPrice.classList.remove("text-danger");
+        errorSpanTag.classList.remove('signo-precio-wrong');
+        fieldName = "";
+        errorPrice.innerHTML = fieldName;
+    }
+};
+
+descriptionValidation = (e) =>{
+    let field = descriptionField;
+    let errorMessage = field.nextElementSibling
+    let caractersNumber= 20;
+
+    if(field.value.trim().length < caractersNumber){
+
+        field.classList.add("input-data-wrong")
+        errorMessage.classList.add("text-danger")
+        fieldName = `La descripción debe contener al menos ${caractersNumber} caracteres`
+        errorMessage.innerHTML = fieldName
+        field.style.border ='red 1px solid';
+    }else{
+        field.classList.remove("input-data-wrong");
+        errorMessage.classList.remove("text-danger");
+        fieldName = "";
+        errorMessage.innerHTML = fieldName;
+        field.style.border ='none';
+    }
+};
+
+descriptionValidation2 = (e) =>{
+    let field = descriptionField;
+    let errorMessage = field.nextElementSibling
+    if(field.value.trim()== 0){
+        field.classList.add("input-data-wrong");
+        errorMessage.classList.add("text-danger");
+        fieldName = "Este campo es obligatorio";
+        errorMessage.innerHTML = fieldName;
+        field.style.border ='red 1px solid';
+        error = error +1;
+    }else{
+        field.classList.remove("input-data-wrong");
+        errorMessage.classList.remove("text-danger");
+        fieldName = "";
+        errorMessage.innerHTML = fieldName;
+        field.style.border ='none';
+    }
+};
+
+sizeValidation=(e)=>{
+    let field = sizeField;
+    let errorMessage = field.nextElementSibling
+    
+    if(field.value ==""){
+        field.classList.add("input-data-wrong");
+        errorMessage.classList.add("text-danger");
+        fieldName = "Debes seleccionar un talle";
+        errorMessage.innerHTML = fieldName;
+        field.style.border ='red 1.7px solid';
+        error = error +1
+    }else{
+        field.classList.remove("input-data-wrong");
+        errorMessage.classList.remove("text-danger");
+        fieldName = "";
+        field.style.border ='none';
+        errorMessage.innerHTML = fieldName;
+    }
+}
+
+categoryValidation=(e)=>{
+    let field = categoryField;
+    if(field.value == ""){
+        field.classList.add("input-data-wrong")
+        errorCategory.classList.add("text-danger")
+        fieldName = "Debes seleccionar una categoria"
+        errorCategory.innerHTML = fieldName;
+        error = error +1;
+        field.style.border ='red 1px solid';
+    }else{
+        field.classList.remove("input-data-wrong")
+        errorCategory.classList.remove("text-danger")
+        fieldName = ""
+        errorCategory.innerHTML = fieldName
+    }
+    
+}
 
 
 colorsCheck =()=>{
@@ -22,7 +179,7 @@ colorsCheck =()=>{
     })
     if(colorsChecked == 0){
         errorColor.classList.add("text-danger") 
-        errorColor.innerHTML = "* Debe seleccionar al menos un color"
+        errorColor.innerHTML = "Debes seleccionar al menos un color"
         error = error +1
     }else{
         errorColor.classList.remove("text-danger")
@@ -30,140 +187,11 @@ colorsCheck =()=>{
     }
 }
 
-lengthValidation = (e) =>{
-    let field = nameField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = "* Como minimo 4 caracteres"
-        errorMessage.innerHTML = fieldName
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorMessage.classList.remove("text-danger")
-        fieldName = ""
-        errorMessage.innerHTML = fieldName
-    }
-};
-
-priceValidation = (e) =>{
-    let field = priceField;
-    if(field.value.trim().length == 0 || field.value.trim() == 0){
-        field.classList.add("input-data-wrong")
-        errorPrice.classList.add("text-danger")
-        fieldName = "* Seleccionar un precio valido"
-        errorPrice.innerHTML = fieldName
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorPrice.classList.remove("text-danger")
-        fieldName = ""
-        errorPrice.innerHTML = fieldName
-    }
-};
-
-descriptionValidation = (e) =>{
-    let field = descriptionField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = "* Como minimo 4 caracteres"
-        errorMessage.innerHTML = fieldName
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorMessage.classList.remove("text-danger")
-        fieldName = ""
-        errorMessage.innerHTML = fieldName
-    }
-};
-
-sizeValidation=(e)=>{
-    let field = sizeField;
-    console.log(field.value)
-    if(field.value ==""){
-        field.classList.add("input-data-wrong")
-        errorSize.classList.add("text-danger")
-        fieldName = "* Debe seleccionar un talle"
-        errorSize.innerHTML = fieldName
-        error = error +1
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorSize.classList.remove("text-danger")
-        fieldName = ""
-        errorSize.innerHTML = fieldName
-    }
-}
-
-categoryValidation=(e)=>{
-    let field = categoryField;
-    if(field.value == ""){
-        field.classList.add("input-data-wrong")
-        errorCategory.classList.add("text-danger")
-        fieldName = "* Debe seleccionar una categoria"
-        errorCategory.innerHTML = fieldName
-        error = error +1
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorCategory.classList.remove("text-danger")
-        fieldName = ""
-        errorCategory.innerHTML = fieldName
-    }
-    
-}
-
 nameField.addEventListener("blur",lengthValidation);
 priceField.addEventListener("blur", priceValidation);
 descriptionField.addEventListener("blur",descriptionValidation);
-
-lengthValidation2 = (e) =>{
-    let field = nameField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = "* Como minimo 4 caracteres"
-        errorMessage.innerHTML = fieldName
-        error = error +1
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorMessage.classList.remove("text-danger")
-        fieldName = ""
-        errorMessage.innerHTML = fieldName
-    }
-};
-
-priceValidation2 = (e) =>{
-    let field = priceField;
-    if(field.value.trim().length == 0 || field.value.trim() == 0){
-        field.classList.add("input-data-wrong")
-        errorPrice.classList.add("text-danger")
-        fieldName = "* Seleccionar un precio valido"
-        errorPrice.innerHTML = fieldName
-        error = error +1
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorPrice.classList.remove("text-danger")
-        fieldName = ""
-        errorPrice.innerHTML = fieldName
-    }
-};
-
-descriptionValidation2 = (e) =>{
-    let field = descriptionField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = "* Como minimo 4 caracteres"
-        errorMessage.innerHTML = fieldName
-        error = error +1
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorMessage.classList.remove("text-danger")
-        fieldName = ""
-        errorMessage.innerHTML = fieldName
-    }
-};
+sizeField.addEventListener("blur",sizeValidation);
+categoryField.addEventListener("blur",categoryValidation);
 
 
 let error=0

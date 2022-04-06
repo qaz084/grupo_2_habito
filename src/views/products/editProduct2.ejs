@@ -2,7 +2,7 @@
 
 <%- include('../partials/head', {
     pageTitle: 'Editar producto',
-    cssLink: 'href="/css/editProduct2.css" '
+    cssLink: 'href="/css/createEdit.css" '
 })%>
 
 <body>
@@ -79,7 +79,7 @@
 
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
-                                    <input value="<%= product.price %>"  class="input-product-price" min='0 ' 
+                                    <input type="number" value="<%= product.price %>"  class="input-product-price" min='0 ' 
                                     name="productPrice" >
                                     
                                     <span id="spanMsgError" class="text-danger"></span>
@@ -91,10 +91,10 @@
 
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>%</span>
-                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='' max='100' placeholder="<%= product.discount %>"
+                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='0' max='100' placeholder="<%= product.discount %>"
                                     name="productDiscount" >
             
-                                    <span id="spanMsgError" class="text-danger"></span>
+                                    <!-- <span id="spanMsgError" class="text-danger"></span> -->
                                 </div>
 
                                 <!-- DESCRIPTION   ------------------------------- -->
@@ -144,8 +144,8 @@
                                                    
                                                
                                             </div>
-                                            <span id="colorMsgError" class="text-category-danger"></span>
                                         </div>
+                                        <span id="colorMsgError" class="text-danger"></span>
                                      
                                  
             
