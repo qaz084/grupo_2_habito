@@ -54,6 +54,7 @@
                 <form class="form-container-bottom" action="/users/login" method="post">
 
                     <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" placeholder="user@email.com:" value="<%= locals.oldData ? oldData.email:null %>">
+                    <span></span>
                     <% if (locals.errors && errors.email){%>
                         <div class="text-danger">
                             <%= errors.email.msg %>
@@ -62,6 +63,7 @@
 
                             <div class="pass-eye-container">
                                 <input id="password-container" class="form-container-input <%= locals.errors && errors.password? 'input-data-wrong':null %>" type="password" name="password" placeholder="Contraseña:">
+                                <span></span>
                                 <% if (locals.errors && errors.password){%>
                                     <div class="text-danger">
                                         <%= errors.password.msg %>
@@ -85,6 +87,7 @@
             </section>
          
             <%- include('../partials/footer2')  %>
+            <script src="/js/login.js"></script>
             <script src="/js/register.js"></script>
             
     </body>
