@@ -137,14 +137,18 @@
                         <input  
                             type="file" 
                             name="avatar" 
-                            accept="image/*,.jpg .png .jpeg .gif" 
+                             
                             id="Imagen de perfil" > Imagen de perfil  
+    
+                        
                         </label>    
                             <% if (locals.errors && errors.avatar){%>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg %>
                                 </div>
                                 <% } %>
+
+                        <span id = "avatarErrorMessage" class="text-danger"></span>
 
                         <div class="offertConfirmation">
                             <input 
@@ -176,6 +180,7 @@
 
             <%- include('../partials/footer2')  %>
             <script src="/js/register.js"></script>
+            
     </body>
 
     </html>

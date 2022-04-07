@@ -46,10 +46,10 @@ eyeIconRepeat.addEventListener('click',()=>{
 })
 
 
-const userCreateform = document.querySelector('#register-form');
+const userCreateForm = document.querySelector('#register-form');
 const userNameField = document.querySelector('input[name = name]');
 const userEmailField = document.querySelector('input[name = email]');
-const avatarFile = document.querySelector('input[name = avatar]');
+//const avatarFile = document.querySelector('input[name = avatar]');
 
 
 //Validacion de campos nombre e email
@@ -60,11 +60,11 @@ const validateField = (e) => {
     if (field.value.trim() === '') {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} es obligatorio`;
+        spanTagError.innerText = `El campo 'Usuario' es obligatorio`;
     } else if (field.value.length < 2) {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} debe tener al menos 2 carácteres`;
+        spanTagError.innerText = `El campo 'Usuario' debe tener al menos 2 carácteres`;
     } else {
         field.style.border ='none';
         spanTagError.classList.remove('text-danger');
@@ -80,11 +80,11 @@ const validateEmail = (e) => {
     if (field.value.trim() === '') {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} es obligatorio`;
+        spanTagError.innerText = `El campo 'Email' es obligatorio`;
     } else if (!field.value.match(emailFormat)) {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} debe tener un formato de email`;
+        spanTagError.innerText = `El campo 'Email' debe tener un formato de correo`;
     } else {
         field.style.border ='none';
         spanTagError.classList.remove('text-danger');
@@ -101,11 +101,11 @@ const validatePassword = (e) => {
     if (field.value.trim() === '') {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} es obligatorio`;
+        spanTagError.innerText = `El campo 'Contraseña' es obligatorio`;
     } else if (field.value.length < 8) {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} debe contener al menos 8 carácteres`;
+        spanTagError.innerText = `El campo 'Contraseña' debe contener al menos 8 carácteres`;
     } else {
         field.style.border ='none';
         spanTagError.classList.remove('text-danger');
@@ -121,10 +121,10 @@ const validateRepeatedPassword = (e) => {
     if (field.value.trim() === '') {
         spanTagError.classList.add('text-danger');
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} es obligatorio`;
+        spanTagError.innerText = `El campo 'Repetir Contraseña' es obligatorio`;
     } else if (field.value !== passwordContainer.value) {
         field.style.border ='red 1px solid';
-        spanTagError.innerText = `El campo ${field.name} no coincide con la contraseña`;
+        spanTagError.innerText = `El campo 'Repetir Contraseña' no coincide con la contraseña`;
     } else {
         field.style.border ='none';
         spanTagError.classList.remove('text-danger');
@@ -132,37 +132,50 @@ const validateRepeatedPassword = (e) => {
     }
 };
 
+
+//Validacion de imagen
+const avatarFile = document.querySelector('input[name = avatar]');
+let avatarId = document.querySelector('#avatarErrorMessage')
+
+const validateAvatar = (e) => {
+    const extension = e.currentTarget.files[0].type.split('/').pop();
+    const allowedExtensions = ['jpg', 'png', 'jpeg', 'gif'];
+    if(!allowedExtensions.includes(extension)) {
+        avatarErrorMessage.innerText = `El campo 'Imagen de perfil' solo acepta formatos jpg, jpeg, png y gif`;
+    } else { console.log('file allowed')}
+}
+
 userNameField.addEventListener('blur', validateField);
 userEmailField.addEventListener('blur', validateEmail);
 passwordContainer.addEventListener('blur', validatePassword);
 passwordRepeatContainer.addEventListener('blur', validateRepeatedPassword);
-//avatarFile.addEventListener('click', validateAvatar)
+avatarFile.addEventListener('change', validateAvatar)
 
-//Validar que no se envíe el formulario co;rores
-/*
-userCreateform.addEventListener('submit', function(e) {
-    let errorsCount = 0;
+//Validar que no se envíe el formulario con errores
 
-    const formFields = [...userCreateform.elements]
-    formFields.pop();
-
+userCreateForm.addEventListener('submit', function(e) {
+    let errorsCount = 0
+    
+    const formFields = [...userCreateForm.elements];
+    formFields.splice(4, 3)
+    console.log(formFields);
     formFields.forEach(oneField => {
-        //const spanTagError = field.nextElementSibiling;
+        const spanTagError = oneField.nextElementSibling;
+
         if (oneField.value.trim() === '') {
-            //field.classList.add('is-invalid');
-            field.style.border ='red 1px solid'
-            spanTagError.innerText = `El campo ${oneField.name} es obligatorio`;
-        
+            spanTagError.classList.add('text-danger');
+            oneField.style.border ='red 1px solid';
+            spanTagError.innerText = `El campo es obligatorio`;
             errorsCount++;
         } else {
-            //field.classList.remove('is-invalid');
-            oneField.style.border ='none'
-            spanTagError.innerText = `El campo ${oneField.name} es obligatorio`;
+            oneField.style.border ='none';
+            spanTagError.classList.remove('text-danger');
+            spanTagError.innerText = '';
         }
-    });
 
-    if (errorsCount > 0 {
-        e.preventDefault();
     })
+
+    if(errorsCount > 0) {
+        e.preventDefault();
+    }
 });
-*/
