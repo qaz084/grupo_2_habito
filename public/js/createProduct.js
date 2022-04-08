@@ -207,3 +207,57 @@ createProductForm.addEventListener("submit",(e)=>{
         e.preventDefault();
     }
 })
+
+let img1 = document.querySelector("[name = image1]");
+let previewimg1 = document.querySelector("#uploadPreview1")
+let img2 = document.querySelector("[name = image2]");
+let previewimg2 = document.querySelector("#uploadPreview2")
+let img3 = document.querySelector("[name = image3]");
+let previewimg3 = document.querySelector("#uploadPreview3")
+let img4 = document.querySelector("[name = image4]");
+let previewimg4 = document.querySelector("#uploadPreview4")
+let spanWrongImage = document.querySelector("#wrongImage");
+
+let imageValidation = (e)=>{
+    let inputImage = e.currentTarget.files[0].type.split('/').pop();
+    let allowedExtensions = ['jpg', 'png', 'jpeg']
+    if(!(allowedExtensions.includes(inputImage))){
+        spanWrongImage.innerHTML = "Solo imagenes en formato jpg png jpeg"
+    }
+};
+
+img1.addEventListener("change",imageValidation);
+img2.addEventListener("change",imageValidation);
+img3.addEventListener("change",imageValidation);
+img4.addEventListener("change",imageValidation);
+
+img1.onchange=function(e){
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    console.log(e.target.files[0])
+    reader.onload=function(){
+    previewimg1.src=reader.result;
+    
+    }
+}
+img2.onchange=function(e){
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=function(){
+    previewimg2.src=reader.result
+    }
+}
+img3.onchange=function(e){
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=function(){
+    previewimg3.src=reader.result
+    }
+}
+img4.onchange=function(e){
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    reader.onload=function(){
+    previewimg4.src=reader.result
+    }
+}
