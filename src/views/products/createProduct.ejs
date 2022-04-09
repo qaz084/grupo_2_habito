@@ -52,7 +52,7 @@
                                 </label>
 
                             </div>
-                            <span class="text-category-danger" id="image1Error"></span>
+                            <span class="text-category-danger" id="image1Error"><%= locals.errorImages ? errorImages:""%></span>
                             <span class="text-category-danger" id="image2Error"></span>
                             <span class="text-category-danger" id="image3Error"></span>
                             <span class="text-category-danger" id="image4Error"></span> 
@@ -66,7 +66,7 @@
 
                                 <div class="contenedor-precio">
                                     <input type="text" class="input-product-price" placeholder="Nombre del producto"
-                                    name="productName">
+                                    name="productName" value="<%= locals.oldData && oldData.productName? oldData.productName:""%>">
                                     <span class="text-danger"><%= locals.errors && errors.productName? errors.productName.msg:""%></span>
 
                                 </div>
@@ -75,23 +75,23 @@
 
                                         <span class='signo-precio'>$</span>
                                         <input type="number" class="input-product-price" placeholder="1700"
-                                        name="productPrice" >
-                                        <span class="text-danger" id="errorPrice"></span>
+                                        name="productPrice" value="<%= locals.oldData && oldData.productPrice? oldData.productPrice:""%>" >
+                                        <span class="text-danger" id="errorPrice"><%= locals.errors && errors.productPrice? errors.productPrice.msg:""%></span>
                                     </div>
                     <!-- DISCOUNT  ------------------------------- -->
 
                                 <div class="contenedor-precio">
                                     <span id="discountsign" class='signo-precio'>%</span>
                                     <input type="number" class="input-product-price"  min='0' max='100' placeholder="Tiene descuento del..."
-                                    name="productDiscount" >
+                                    name="productDiscount" value="<%= locals.oldData && oldData.productDiscount? oldData.productDiscount:""%>">
                                 </div>
 
 
                 <!-- DESCRIPTION   ------------------------------- -->
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ></textarea>
+                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ><%= locals.oldData && oldData.productDescription? oldData.productDescription:""%> </textarea>
 
-                                <span class="text-danger"></span>
+                                <span class="text-danger"><%= locals.errors && errors.productDescription? errors.productDescription.msg:""%></span>
 
 
                                 <!-- TALLE------------------------------- -->
@@ -102,7 +102,9 @@
                                                 <select name="size" id="">
                                                     <option value="" disabled selected>Seleccionar Talle</option>
                                                     <% size.forEach(oneSize => { %>
-                                                        <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
+                                                        <option value="<%= oneSize.id %>" class="check-product-size"
+                                                            <%= locals.oldData && oldData.size? oldData.size == oneSize.id? "selected" :"" :""    
+                                                                %>><%= oneSize.name %></option>
                                                     <% }); %>
                                                 </select> 
                                                 <!--
@@ -111,7 +113,7 @@
                                                     <input type="checkbox" class="checkbox" name="sizeProductM" id="sizeM" value = "3"><label for="sizeM" class="check-product-size" >M</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductL" id="sizeL" value = "4"><label role="button" for="sizeL" class="check-product-size" >L</label>
                                                     <input type="checkbox" class="checkbox" name="sizeProductXL" id="sizeXL" value = "5"><label for="sizeXL" class="check-product-size" >XL</label>  -->
-                                                    <span class="text-category-danger" id ="errorSize"></span>
+                                                    <span class="text-category-danger" id ="errorSize"><%= locals.errors && errors.size? errors.size.msg:""%></span>
                                             </div>
                                 </div>
                                             
@@ -133,10 +135,12 @@
                                         <option value="" disabled selected>   
                                             Seleccionar categoría</option>
                                         <% category.forEach(oneCategory => { %>
-                                        <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
+                                        <option value="<%= oneCategory.id %>"
+                                            <%= locals.oldData && oldData.category? oldData.category == oneCategory.id? "selected" :"" :"" %>
+                                            ><%= oneCategory.name %></option>
                                         <% }); %>
                                     </select>
-                                    <span class="text-category-danger" id ="errorCategory"></span>
+                                    <span class="text-category-danger" id ="errorCategory"><%= locals.errors && errors.category? errors.category.msg:""%></span>
                                 </div>
                             </div>
                                 <button class="btn-add" type="submit">Crear producto</button>

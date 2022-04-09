@@ -4,6 +4,13 @@ const { body } = require('express-validator');
 const authCreateProduct = [
     body('productName').notEmpty().withMessage('Debes ingresar un nombre').bail()
     .isLength({ min: 4 }).withMessage('Al menos debes 4 caracteres'),
+    
+    body('productPrice').notEmpty().withMessage('Debes ingresar un precio').bail().isNumeric().withMessage("Solo se aceptan numeros"),
+
+    body('productDescription').notEmpty().withMessage('Debes ingresar una descripcion').bail()
+    .isLength({ min: 20 }).withMessage('Debe contener al menos 20 caracteres'),
+
+    body('size').notEmpty().withMessage('Debes seleccionar un talle'),
 
     body("a1").notEmpty().withMessage('Debes seleccionar un color'),
     body("a2").notEmpty().withMessage('Debes seleccionar un color'),
@@ -14,14 +21,9 @@ const authCreateProduct = [
     body("a7").notEmpty().withMessage('Debes seleccionar un color'),
     body("a8").notEmpty().withMessage('Debes seleccionar un color'),
     body("a9").notEmpty().withMessage('Debes seleccionar un color'),
-/*    body('email').notEmpty().withMessage('Debes ingresar un email').bail()
-    .isEmail().withMessage('Debe ingresar un Email valido'),
 
-    body('password').notEmpty().withMessage('Debes ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
+    body('category').notEmpty().withMessage('Debes seleccionar una categoria'),
 
-    body('repeatPassword').notEmpty().withMessage('Debes ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'), */
 
 /*  body('avatar').custom((value, { req }) => {
         let file = req.file;
