@@ -3,6 +3,7 @@ const{Product,Category,Color,Size}=require('../../database/models');
 const fs = require('fs');
 const path=require('path');
 const { Op } = require("sequelize");
+const { validationResult } = require('express-validator');
 
 const controller={
 
@@ -26,13 +27,39 @@ const controller={
 		return res.render("../views/products/productDetail2", { productDetail });
 		
 	},
+	errorCreate: async (req,res) => {
+		try{
+			const errors = validationResult(req);
+			let colorsContainerFiltered = errors.errors.filter(oneColor=>{
+				return(oneColor.msg == "Debes seleccionar un color")
+			});
 
+			console.log(errors.errors);
+			console.log(colorsContainerFiltered);
+
+			let colorErrorMessage = "";
+			if(colorsContainerFiltered.length === 9){
+				colorErrorMessage = "Debes seleccionar por lo menos un color"
+			} else if(colorsContainerFiltered.length < 8){
+				colorErrorMessage = "Solo es posible un color"
+			}
+
+			const size = await Size.findAll({});
+			const colors = await Color.findAll({});
+			const categories = await Category.findAll({});
+			for (let i = 0; i< colors.length; i++){
+				colors[i].name = colors[i].name.split("").slice(1).join("")
+			};
+			res.render("../views/products/createProduct",{category : categories, color : colors, size : size, errors : errors.mapped(), errorColor : colorErrorMessage});
+		}catch (err) {
+			console.log(err);
+		}
+	},
 	createProduct: async (req,res) => {
 		try{
 			const size = await Size.findAll({});
 			const colors = await Color.findAll({});
 			const categories = await Category.findAll({});
-
 			for (let i = 0; i< colors.length; i++){
 				colors[i].name = colors[i].name.split("").slice(1).join("")
 			}
@@ -42,6 +69,8 @@ const controller={
 		}
 	},
 	add :async (req, res) => {
+		const errors = validationResult(req);
+		if(errors.isEmpty()){
 		try{
 			let a = Object.keys(req.body).filter((element)=>{
 				return element.length<=2
@@ -63,10 +92,13 @@ const controller={
 			});
 			await newProduct.addColor(a)
 			await newProduct.addSize(req.body.size)
-			return res.redirect("/") 
+			return res.redirect("/")
 		}catch (err) {
 			console.log(err)
 		}
+	}else{ 
+		return controller.errorCreate(req,res)
+	}
 	}, 
 
 	editProduct:async(req,res)=>{
@@ -192,3 +224,8 @@ const controller={
 }
 
 module.exports = controller
+
+
+
+
+

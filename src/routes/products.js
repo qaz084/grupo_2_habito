@@ -3,7 +3,8 @@ const router = express.Router();
 const path = require("path");
 
 /* middlewares */
-const authMiddlewareCreateAndEditProduct = require("../middlewares/authMiddlewareStatusProducts")
+const authMiddlewareCreateAndEditProduct = require("../middlewares/authMiddlewareStatusProducts");
+const authCreateProduct = require("../middlewares/authCreateProduct")
 
 const controller = require("../controllers/dbControllers/dbProductController");
 
@@ -35,7 +36,7 @@ router.get("/detail/:id", controller.productDetail);
 
 //CREATE
 router.get("/create",controller.createProduct);
-router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},{name:"image4"}]),controller.add);
+router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},{name:"image4"}]),authCreateProduct,controller.add);
 
 //EDIT
 router.get("/edit/:id",controller.editProduct);

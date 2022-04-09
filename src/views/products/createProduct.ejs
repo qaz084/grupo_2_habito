@@ -66,11 +66,11 @@
 
                                 <div class="contenedor-precio">
                                     <input type="text" class="input-product-price" placeholder="Nombre del producto"
-                                    name="productName" >
-                                     <span class="text-danger"></span>
+                                    name="productName">
+                                    <span class="text-danger"><%= locals.errors && errors.productName? errors.productName.msg:""%></span>
 
                                 </div>
-                     <!-- PRICE  ------------------------------- --> 
+                    <!-- PRICE  ------------------------------- --> 
                                     <div class="contenedor-precio">
 
                                         <span class='signo-precio'>$</span>
@@ -78,10 +78,8 @@
                                         name="productPrice" >
                                         <span class="text-danger" id="errorPrice"></span>
                                     </div>
-                              
+                    <!-- DISCOUNT  ------------------------------- -->
 
-                     <!-- DISCOUNT  ------------------------------- -->
-                              
                                 <div class="contenedor-precio">
                                     <span id="discountsign" class='signo-precio'>%</span>
                                     <input type="number" class="input-product-price"  min='0' max='100' placeholder="Tiene descuento del..."
@@ -89,7 +87,7 @@
                                 </div>
 
 
-                 <!-- DESCRIPTION   ------------------------------- -->
+                <!-- DESCRIPTION   ------------------------------- -->
                                 <span class="input-product-category" id="descriptionTitle">Descripción:</span>
                                 <textarea class="input-description" name="productDescription" id="" cols="50" rows="30" placeholder="Escribe la descripción..." ></textarea>
 
@@ -98,7 +96,7 @@
 
                                 <!-- TALLE------------------------------- -->
                                 <div class="input-product-category">
-                               
+
             
                                             <div class="categoryContainer">
                                                 <select name="size" id="">
@@ -124,17 +122,16 @@
                                     <% color.forEach((oneColor)=>{%>
                                         <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                     <% }); %>
-        
                                 </div>
                             </div>
-                                <span class="" id ="errorColors"></span>
+                            <span class="text-danger"><%= locals.errorColor? errorColor:""%></span>
+                            <span class="" id ="errorColors"></span>
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category">
-                          
                                 <div class="categoryContainer">
                                     <select name="category" id="" >
                                         <option value="" disabled selected>   
-                                              Seleccionar categoría</option>
+                                            Seleccionar categoría</option>
                                         <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>"><%= oneCategory.name %></option>
                                         <% }); %>
@@ -142,7 +139,6 @@
                                     <span class="text-category-danger" id ="errorCategory"></span>
                                 </div>
                             </div>
-                       
                                 <button class="btn-add" type="submit">Crear producto</button>
             
                         </div>

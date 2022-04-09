@@ -206,7 +206,7 @@ createProductForm.addEventListener("submit",(e)=>{
     if(error>0){
         e.preventDefault();
     }
-})
+});
 
 let img1 = document.querySelector("[name = image1]");
 let img2 = document.querySelector("[name = image2]");
@@ -217,12 +217,12 @@ let multiplicador = 1;
 
 let imageValidation = (e)=>{
     let inputImage = e.currentTarget.files[0].type.split('/').pop();
-    let allowedExtensions = ['jpg', 'png', 'jpeg',"PNG","JPG","JPEG"]
+    let allowedExtensions = ['jpg', 'png', 'jpeg',"PNG","JPG","JPEG"];
     if(!allowedExtensions.includes(inputImage)){
-        document.getElementById(e.target.name + "Error").innerHTML = "Solo imagenes en formato jpg png jpeg "
+        document.getElementById(e.target.name + "Error").innerHTML = "Solo imagenes en formato jpg png jpeg ";
     }else{
-        document.getElementById(e.target.name + "Error").innerHTML = ""
-    }
+        document.getElementById(e.target.name + "Error").innerHTML = "";
+    };
 };
 
 img1.addEventListener("change",imageValidation);
@@ -235,11 +235,12 @@ img4.addEventListener("change",imageValidation);
 let preview=(e)=>{
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
+    
     reader.onload=function(){
         document.getElementById(e.target.name).src=reader.result;
-    }
-}
-img1.addEventListener("change",preview)
-img2.addEventListener("change",preview)
-img3.addEventListener("change",preview)
-img4.addEventListener("change",preview)
+    };
+};
+img1.addEventListener("change",preview);
+img2.addEventListener("change",preview);
+img3.addEventListener("change",preview);
+img4.addEventListener("change",preview);
