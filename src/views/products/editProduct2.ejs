@@ -18,10 +18,11 @@
                 <span class="tituloForm">Editar producto:</span>
                 <span class="ayudaCrearProducto">Selecciona el elemento que quieras modificar</span>
             </div>
-                <form class="formContainer" id="form-edit-product" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="menuContainer" >
+            <form class="formContainer" id="form-edit-product" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                <div class="menuContainer" >
             
-                <!-- LEFT CONTAINER---------------------------- -->
+                 <!-- LEFT CONTAINER---------------------------- -->
                         <div class="leftContainer">
             
             
@@ -68,41 +69,48 @@
                     
                             <!-- NAME  ------------------------------- -->
                         <div class="rightContainer">
-
-                                <div class="contenedor-precio">
-                                    <input value="<%= product.name %>" type="text" class="input-product-price"
-                                    name="productName" >
+                                <div>
+    
+                                    <div class="contenedor-precio" id="name">
+                                        <span class='signo-precio'></span>
+                                        <input value="<%= product.name %>" type="text" class="input-product-price"
+                                        name="productName" >
+                                    </div>
                                     <span id="spanMsgError" class="text-danger"></span>
                                 </div>
 
                             <!-- PRICE  ------------------------------- -->
 
-                                <div class="contenedor-precio">
-                                    <span class='signo-precio'>$</span>
-                                    <input type="number" value="<%= product.price %>"  class="input-product-price" min='0 ' 
-                                    name="productPrice" >
+                                <div>
+                                    <div class="contenedor-precio" id="price">
+                                        <span class='signo-precio'>$</span>
+                                        <input type="number" value="<%= product.price %>"  class="input-product-price" min='0 '
+                                        name="productPrice" >
+                                    
+                                    </div>
                                     
                                     <span id="spanMsgError" class="text-danger"></span>
-
-                                    
                                 </div>
 
                                  <!-- DISCOUNT  ------------------------------- -->
-
-                                <div class="contenedor-precio">
-                                    <span class='signo-precio'>%</span>
-                                    <input value="<%= product.discount %>" type="number" class="input-product-price" min='0' max='100' placeholder="<%= product.discount %>"
-                                    name="productDiscount" >
-            
-                                    <!-- <span id="spanMsgError" class="text-danger"></span> -->
-                                </div>
+                                    <div>
+    
+                                    <div class="contenedor-precio">
+                                        <span class='signo-precio'>%</span>
+                                        <input value="<%= product.discount %>" type="number" class="input-product-price" min='0' max='100' placeholder="<%= product.discount %>"
+                                        name="productDiscount" >
+                                    </div>
+    
+                                     <span id="spanMsgError" class="text-danger"></span>
+                                    </div>
 
                                 <!-- DESCRIPTION   ------------------------------- -->
 
-                                <span class="input-product-category" id="descriptionTitle">Descripción:</span>
-                                <textarea class="input-description" name="productDescription" id="" cols="50" rows="50" ><%= product.description %></textarea  >
-
-                                <span id="spanMsgError" class="text-danger"></span>
+                                <div>
+                                    <span class="input-product-category" id="descriptionTitle">Descripción:</span>
+                                    <textarea class="input-description" name="productDescription" id="" cols="50" rows="50" ><%= product.description %></textarea  >
+                                    <span id="spanMsgError" class="text-danger"></span>
+                                </div>
                                     
 
                                 <!-- SIZE------------------------------- -->
@@ -132,29 +140,36 @@
                                     </div>
                                     
                                         <!-- COLOR-------------------------- -->
-                                
-
+                                <% if (product.color) { %>
+                                 
+                                    
+                                    <div>
                                         <div class="input-product-color">
                                             <SPAN >Color: </SPAN>
                                             <div class="colorContainer">
                                                 <% color.forEach((oneColor)=>{%>
-                                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"> 
+                                                    <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>">
                                                     <label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                                     <% }); %>
-                                                   
-                                               
+                                        
+                                        
                                             </div>
                                         </div>
                                         <span id="colorMsgError" class="text-danger"></span>
-                                     
+                                    </div>
+                                 
+                                <% } %>
+
                                  
             
                             <!-- CATEGORIA------------------------- -->
+                            
+                            <% if (product.category) { %>  
                             <div class="input-product-category">
+                               
                                 <SPAN >Categoria: </SPAN>
                                 <div class="categoryContainer">
 
-                                 <% if (product.category) { %>    
                                     <select name="category" id="" >
                                         <option value="<%= product.category.name %>" disabled selected> 
                                             <%= product.category.name %></option>
@@ -164,7 +179,7 @@
                                         <% }); %>
                                     </select>
                                     <span id="spanMsgError" class="text-danger"></span>
-                                <% }else{ %> 
+                                 <% }else{ %> 
 
                                     <select name="category" id="" >
                                         <option value="" disabled selected>Seleccionar categoria</option>
@@ -179,31 +194,33 @@
                                  
                                 </div>
                             </div>
+                            
             
-                                <div class="btn-container">
+                            <div class="btn-container">
 
                                    
                                         <button class="btn-edit"  type="submit">Editar producto
-                                        
                                         </button>
                                    
-                                </form>
+                               
                                   
                                 <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
                                    <button class="btn-delete" type="submit">Eliminar producto</button>
                                 </form>
-                                </div>
-                                
+          
                             </div>
+                                
                         </div>
-             
-               
                 </div>
+             
+            </form> 
+        </div>
 
     </main>
 
     <script src="/js/createEditProducts.js"></script>
     <script src="/js/editProducts.js"></script>
+
 </body>
 </html>
 

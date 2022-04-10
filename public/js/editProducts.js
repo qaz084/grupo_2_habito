@@ -5,6 +5,8 @@ console.log('Funciona script');
 //SELECTORES
 
 let editProductForm= document.querySelector('#form-edit-product');
+let contenedorPrecio= document.querySelector('.contenedor-precio');
+let namespanMsgError= document.querySelector('#namespanMsgError');
 
 
 let errorSpanTag= document.querySelector('.signo-precio');
@@ -34,13 +36,16 @@ let errorCount=0;
 //FUNCIONES DE VALIDACION
 
 const nameValidator=(e)=>{
-    const field =productName;
-    const spanMsgError=field.nextElementSibling;
+    // const productName =productName;
+    const field =contenedorPrecio;
+     const spanMsgError=document.querySelector('#name').nextElementSibling;
    
-    if(field.value.trim().length <4 ){
-
+    if(productName.value.trim().length <4 ){
+        productName.style.border='none';
+        field.style.border='none';
         field.classList.add('input-data-wrong');
-        spanMsgError.innerHTML='El nombre debe contener al menos 4 caracteres';
+        spanMsgError.innerText='El nombre debe contener al menos 4 caracteres';
+        console.log(spanMsgError.innerHTML);
         errorCount++;
        
 
@@ -48,6 +53,8 @@ const nameValidator=(e)=>{
        
         field.classList.remove('input-data-wrong');
         spanMsgError.innerText='';
+        // field.style.borderBottom ='1px solid #3D3D3D';  
+        field.style.borderBottom= '1px solid #3D3D3D';
         if(errorCount>0){
             errorCount--;
          
@@ -57,55 +64,58 @@ const nameValidator=(e)=>{
 }
 
 const priceTypeValidator=(e)=>{
-    const field =productPrice;
-    const price = field.value;
-    const spanMsgError=field.nextElementSibling;
+    const field =contenedorPrecio;
+    const price = productPrice.value;
+    const spanMsgError=document.querySelector('#price').nextElementSibling;
    
     if((isNaN(price))||(isNaN(price.trim().length <2)) ){
-
+        field.style.border='none';
         field.classList.add('input-data-wrong');
         spanMsgError.innerText='Debes ingresar sólo números';
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         errorCount++;
 
-    }else if( (field.value.trim().length <2) ) {
-       
+    }else if( (price.value.trim().length <2) ) {
+        field.style.border='none';
         field.classList.add('input-data-wrong');
         spanMsgError.innerText='El precio debe contener al menos 2 dígitos';
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         errorCount++;
+        // field.style.borderBottom ='1px solid #3D3D3D';  
     
    }
     
 
 }
 const priceValidator=(e)=>{
-    const field =productPrice;
-    const spanMsgError=field.nextElementSibling;
-    const price = field.value;
-    if(field.value.trim().length <2 ){
-
+    const field =document.querySelector('#price');
+    const spanMsgError=document.querySelector('#price').nextElementSibling;
+    const price = productPrice.value;
+    if(price.trim().length <2 ){
+        field.style.border='none';
         field.classList.add('input-data-wrong');
         spanMsgError.innerText='El precio debe contener al menos 2 dígitos';
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         errorCount++;
+    console.log('entro');
 
     }else if(isNaN(price)){
 
         field.classList.add('input-data-wrong');
         spanMsgError.innerText='Debes ingresar sólo números';
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         errorCount++;
     
     }else{
 
         field.classList.remove('input-data-wrong');
         spanMsgError.innerText='';
-        errorSpanTag.classList.remove('signo-precio-wrong');
+        // errorSpanTag.classList.remove('signo-precio-wrong');
         if(errorCount>0){
             errorCount--;
            
         }
+        field.style.borderBottom ='1px solid #3D3D3D';  
     }
 
 }
@@ -272,3 +282,27 @@ editProductForm.addEventListener('submit',(e)=>{
     
 
 });
+
+//Evento que muestra preview imagen cuando se carga
+
+// let img1 = document.querySelector("[name = image1]");
+// let img2 = document.querySelector("[name = image2]");
+// let img3 = document.querySelector("[name = image3]");
+// let img4 = document.querySelector("[name = image4]");
+
+
+// console.log(e.target);
+
+
+// let preview=(e)=>{
+//     let reader = new FileReader();
+//     reader.readAsDataURL(e.target.files[0]);
+    
+//     reader.onload=function(){
+//         document.getElementById(e.target.name).src=reader.result;
+//     };
+// };
+// img1.addEventListener("change",preview);
+// img2.addEventListener("change",preview);
+// img3.addEventListener("change",preview);
+// img4.addEventListener("change",preview);

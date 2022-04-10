@@ -1,6 +1,12 @@
 
 let createProductForm = document.querySelector("#form");
 
+let contenedorPrecio= document.querySelector('.contenedor-precio');
+let idcontenedorPrecio= document.querySelector('#price');
+let namespanMsgError= document.querySelector('#namespanMsgError');
+let inputCategory= document.querySelector('input-product-category');
+
+
 let errorSpanTag= document.querySelector('.signo-precio');
 let nameField = document.querySelector("[name=productName]");
 let priceField = document.querySelector("[name=productPrice]");
@@ -12,29 +18,33 @@ let categoryField = document.querySelector("[name = category]");
 let errorCategory = document.querySelector("#errorCategory");
 let errorColor = document.querySelector("#errorColors")
 let colors = document.querySelectorAll(".checkbox")
+let categoryContainer = document.querySelector(".categoryContainer select")
 
 
 
 
 lengthValidation = (e) =>{
-    let field = nameField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
+    let field = contenedorPrecio;
+    let errorMessage = document.querySelector('#name').nextElementSibling
+    if(nameField.value.trim().length < 4){
+        field.style.border='none';
         field.classList.add("input-data-wrong")
         errorMessage.classList.add("text-danger")
         fieldName = "El nombre debe contener al menos 4 caracteres"
         errorMessage.innerHTML = fieldName
+
     }else{
         field.classList.remove("input-data-wrong")
         errorMessage.classList.remove("text-danger")
         fieldName = ""
         errorMessage.innerHTML = fieldName
+        field.style.borderBottom ='1px solid #3D3D3D';  
     }
 };
 lengthValidation2 = (e) =>{
-    let field = nameField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim().length < 4){
+    let field = contenedorPrecio;
+    let errorMessage = document.querySelector('#name').nextElementSibling;
+    if(nameField.value.trim().length < 4){
         field.classList.add("input-data-wrong")
         errorMessage.classList.add("text-danger")
         fieldName = "El nombre debe contener al menos 4 caracteres"
@@ -49,43 +59,46 @@ lengthValidation2 = (e) =>{
 };
 
 priceValidation = (e) =>{
-    let field = priceField;
-    if(field.value.trim().length <2 || field.value.trim() == 0){
+    let field = idcontenedorPrecio;
+    
+    if(priceField.value.trim().length <2 || priceField.value.trim() == 0){
+        field.style.border='none';
         field.classList.add("input-data-wrong")
         errorPrice.classList.add("text-danger")
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         fieldName = "El precio debe contener al menos 2 dígitos"
         errorPrice.innerHTML = fieldName
     }else{
         field.classList.remove("input-data-wrong");
         errorPrice.classList.remove("text-danger");
-        errorSpanTag.classList.remove('signo-precio-wrong');
+        // errorSpanTag.classList.remove('signo-precio-wrong');
         fieldName = "";
         errorPrice.innerHTML = fieldName;
+        field.style.borderBottom ='1px solid #3D3D3D'; 
     }
 };
 
 priceValidation2 = (e) =>{
-    let field = priceField;
-    let price= field.value;
-    if(field.value.trim().length <2 || field.value.trim() == 0){
+    let field = idcontenedorPrecio;
+    let price= priceField.value;
+    if(price.trim().length <2 || price.trim() == 0){
         field.classList.add("input-data-wrong")
         errorPrice.classList.add("text-danger")
         fieldName = "El precio debe contener al menos 2 dígitos"
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         errorPrice.innerHTML = fieldName
         error = error +1
     }else if(isNaN(price)){
 
         field.classList.add('input-data-wrong');
         spanMsgError.innerText='Debes ingresar sólo números';
-        errorSpanTag.classList.add('signo-precio-wrong');
+        // errorSpanTag.classList.add('signo-precio-wrong');
         error = error +1;
     }
     else{
         field.classList.remove("input-data-wrong");
         errorPrice.classList.remove("text-danger");
-        errorSpanTag.classList.remove('signo-precio-wrong');
+        // errorSpanTag.classList.remove('signo-precio-wrong');
         fieldName = "";
         errorPrice.innerHTML = fieldName;
     }
@@ -136,11 +149,17 @@ sizeValidation=(e)=>{
     let errorMessage = field.nextElementSibling
     
     if(field.value ==""){
+        field.style.borderBottom='none';
+        field.style.outline='none';
+      
         field.classList.add("input-data-wrong");
         errorMessage.classList.add("text-danger");
         fieldName = "Debes seleccionar un talle";
         errorMessage.innerHTML = fieldName;
-        field.style.border ='red 1.7px solid';
+        // field.style.border='5px green';
+        field.style.backgroundColor='none';
+         field.style.border ='red 1.7px solid';
+
         error = error +1
     }else{
         field.classList.remove("input-data-wrong");
@@ -148,6 +167,9 @@ sizeValidation=(e)=>{
         fieldName = "";
         field.style.border ='none';
         errorMessage.innerHTML = fieldName;
+        // field.style.borderBottom ='.5px solid #3D3D3D'; 
+        field.style.backgroundColor='none';
+       
     }
 }
 

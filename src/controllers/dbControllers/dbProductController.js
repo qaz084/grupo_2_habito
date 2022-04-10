@@ -194,13 +194,24 @@ const controller={
 		const productToSearch=req.query.search;
 		// return res.json({productToSearch});
 		Product.findAll({
+			include:{
 
+				model: Category,
+				as: 'category',
+				where:{
+
+					name:{
+						[Op.like] : `%${productToSearch}%` 
+					}
+				}
+				
+			},
 			
 			where: {
 				name: { 
 				[Op.like] : `%${productToSearch}%`
 				}
-			}, include:['category'],
+			}, 
 		})
 		
 		.then(product => {

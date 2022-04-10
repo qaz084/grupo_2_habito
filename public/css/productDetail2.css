@@ -579,7 +579,7 @@ color: #7D7D7D;
     justify-content: space-between; 
     /* gap:10px; */
     margin: auto;
-    margin-top: 10%;
+    margin-top: -15%;
     margin-bottom: 20%;
 
     width: 100%;
@@ -612,9 +612,10 @@ color: #7D7D7D;
 .left-img-container{
 
 
-width: 100%;
+width: 110%;
 overflow: hidden;
-padding-top: 5px;;
+padding-top: 5px;
+/* padding:10px; */
 /* height: 151px; */
 border-radius: 4.08353px;
 box-shadow: 0.816707px 2.04177px 6.1253px 2.04177px rgba(0, 0, 0, 0.04);
@@ -703,6 +704,7 @@ top: 526px; */
         order: 3;
         color: #3d3d3d;
         margin-top:10%;
+       
     }
 
     .input-product-name {
@@ -1116,7 +1118,7 @@ cursor: pointer;
         width:100%;
         justify-content: space-between;
         margin:auto;
-        
+        margin-bottom:50px;
         
     }
     .btn-edit{
@@ -1270,6 +1272,7 @@ cursor: pointer;
     line-height: 33px;
     color: #727272;
     margin-bottom: 30px;
+    margin-top:20px;
     text-decoration: underline;
  
 }
@@ -1334,12 +1337,11 @@ color: #7D7D7D;
     gap:10px;
     margin: auto;
     width: 100%;
-    height:  800px;
-  
-   
+    height: 100%;
 
-    /* margin-top: 12%; */
-  
+}
+.main-navbar{
+    height: 37px;
 }
 
 /* -----------------------LEFT CONTAINER------------------------ */
@@ -1368,7 +1370,7 @@ width: 100%;
 overflow: hidden;
 padding-top: 5px;;
 /* height: 151px; */
-border-radius: 4.08353px;
+border-radius: 6px;
 box-shadow: 0.816707px 2.04177px 6.1253px 2.04177px rgba(0, 0, 0, 0.04);
 margin: auto;
 
@@ -1393,7 +1395,7 @@ top: 526px; */
    justify-content: center; 
    align-items: flex-start;
      width: 40%;
-     height:70%;
+     height:55%;
     order: 2;
     align-self: flex-start;
     margin:0;
@@ -1403,7 +1405,7 @@ top: 526px; */
 .middle-img-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
     height: inherit;
     box-shadow: 2px 5px 15px 5px rgba(0, 0, 0, 0.04);
@@ -1444,7 +1446,7 @@ top: 526px; */
         flex-wrap: nowrap;
         flex-direction: column; 
         /* position: absolute; */
-        width: 45%;
+        width: 50%;
         height: 100%;
        /* left: 897px;
         top: 476px; 
@@ -1453,6 +1455,7 @@ top: 526px; */
         order: 3;
         color: #3d3d3d;
         margin:0;
+     
     }
 
     .input-product-name {
@@ -1777,6 +1780,7 @@ top: 526px; */
 
     display: flex;
     flex-wrap: nowrap;
+    width:100%;
     align-content: center;
     font-family: Roboto;
     font-style: normal;
@@ -1809,9 +1813,10 @@ cursor: pointer;
 .categoryContainer{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     height: 35px;
     width: 100%;
+ 
   
 }
 .categoryContainer select{
@@ -1857,6 +1862,7 @@ cursor: pointer;
     width:100%;
     justify-content: space-between;
     margin:auto;
+    /* margin-top: -100px; */
     
     
 }
@@ -2010,6 +2016,7 @@ cursor: pointer;
     line-height: 33px;
     color: #727272;
     margin-bottom: 30px;
+    margin-top:70px;
     text-decoration: underline;
  
 }
@@ -2074,7 +2081,7 @@ color: #7D7D7D;
     gap:10px;
     margin: auto;
     width: 100%;
-    height:  800px;
+    height: 100%;
   
    
 
@@ -2550,7 +2557,7 @@ cursor: pointer;
     flex-wrap: nowrap;
     justify-content: space-around;
     height: 35px;
-    width: 100%;
+    width: 50%;
   
 }
 .categoryContainer select{
@@ -2732,7 +2739,7 @@ cursor: pointer;
     height:100%;
     margin: auto;
     margin-top: 15%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     
     
    
@@ -2815,12 +2822,12 @@ color: #7D7D7D;
   
      margin: auto;
     width: 100%;
-    height:  800px;
-  
-   
+    height: 100%;
 
-    /* margin-top: 12%; */
   
+}
+.main-navbar{
+    height: 60px;
 }
 
 /* -----------------------LEFT CONTAINER------------------------ */
@@ -3263,7 +3270,7 @@ cursor: pointer;
     flex-wrap: nowrap;
     justify-content: space-around;
     height: 35px;
-    width: 100%;
+    width: 50%;
   
 }
 .categoryContainer select{
