@@ -29,14 +29,14 @@ const controller={
 	},
 	errorCreate: async (req,res) => {
 		try{
-			let errorImages="";
+			/* let errorImages="";
 			for (let i=1; i<=4; i++){
 				if(req.files.image + [i] && req.files.image+ [i] +[0].filename){
-					if(!(path.extname(req.files.image+ [i]) == ".jpg") || (path.extname(req.files.image+ [i]) == ".png") || (path.extname(req.files.image+ [i]) == ".jpeg") /* || (path.extname(req.files.image+ [i]) == ".gif") */){
+					if(!(path.extname(req.files.image+ [i]) == ".jpg") || (path.extname(req.files.image+ [i]) == ".png") || (path.extname(req.files.image+ [i]) == ".jpeg")){
 						errorImages = "Solo imagenes en formato jpg png jpeg"
 					}
 				}
-			}
+			} */
 			const errors = validationResult(req);
 			let colorsContainerFiltered = errors.errors.filter(oneColor=>{
 				return(oneColor.msg == "Debes seleccionar un color")
@@ -47,9 +47,9 @@ const controller={
 
 			let colorErrorMessage = "";
 			if(colorsContainerFiltered.length === 9){
-				colorErrorMessage = "Debes seleccionar por lo menos un color"
+				colorErrorMessage = "Debes seleccionar un color"
 			} else if(colorsContainerFiltered.length < 8){
-				colorErrorMessage = "Solo es posible un color"
+				colorErrorMessage = "Debes seleccionar un color"
 			}
 
 			const size = await Size.findAll({});
@@ -58,7 +58,7 @@ const controller={
 			for (let i = 0; i< colors.length; i++){
 				colors[i].name = colors[i].name.split("").slice(1).join("")
 			};
-			res.render("../views/products/createProduct",{category : categories, color : colors, size : size, errors : errors.mapped(), errorColor : colorErrorMessage, oldData:req.body,errorImages });
+			res.render("../views/products/createProduct",{category : categories, color : colors, size : size, errors : errors.mapped(), errorColor : colorErrorMessage, oldData:req.body });
 		}catch (err) {
 			console.log(err);
 		}
@@ -77,8 +77,20 @@ const controller={
 		}
 	},
 	add :async (req, res) => {
+
 		const errors = validationResult(req);
-		if(errors.isEmpty()){
+		console.log(errors)
+		let error = false;
+		errors.errors.forEach((a)=>{
+			if(a.value != undefined){
+				error = true
+			}
+		});
+		if(errors.errors.length != 8 ){
+			error = true
+		}
+		
+		if(error == false){
 		try{
 			let a = Object.keys(req.body).filter((element)=>{
 				return element.length<=2
