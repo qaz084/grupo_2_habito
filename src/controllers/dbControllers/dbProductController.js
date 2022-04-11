@@ -29,26 +29,14 @@ const controller={
 	},
 	errorCreate: async (req,res) => {
 		try{
-			/* let errorImages="";
-			for (let i=1; i<=4; i++){
-				if(req.files.image + [i] && req.files.image+ [i] +[0].filename){
-					if(!(path.extname(req.files.image+ [i]) == ".jpg") || (path.extname(req.files.image+ [i]) == ".png") || (path.extname(req.files.image+ [i]) == ".jpeg")){
-						errorImages = "Solo imagenes en formato jpg png jpeg"
-					}
-				}
-			} */
 			const errors = validationResult(req);
+			console.log(errors)
 			let colorsContainerFiltered = errors.errors.filter(oneColor=>{
 				return(oneColor.msg == "Debes seleccionar un color")
 			});
 
-			console.log(errors.errors);
-			console.log(colorsContainerFiltered);
-
 			let colorErrorMessage = "";
-			if(colorsContainerFiltered.length === 9){
-				colorErrorMessage = "Debes seleccionar un color"
-			} else if(colorsContainerFiltered.length < 8){
+			if(colorsContainerFiltered.length === 9 || colorsContainerFiltered.length < 8){
 				colorErrorMessage = "Debes seleccionar un color"
 			}
 
@@ -58,6 +46,7 @@ const controller={
 			for (let i = 0; i< colors.length; i++){
 				colors[i].name = colors[i].name.split("").slice(1).join("")
 			};
+			console.log(errors.mapped())
 			res.render("../views/products/createProduct",{category : categories, color : colors, size : size, errors : errors.mapped(), errorColor : colorErrorMessage, oldData:req.body });
 		}catch (err) {
 			console.log(err);
@@ -79,10 +68,9 @@ const controller={
 	add :async (req, res) => {
 
 		const errors = validationResult(req);
-		console.log(errors)
 		let error = false;
 		errors.errors.forEach((a)=>{
-			if(a.value != undefined){
+			if(a.msg != 'Debes seleccionar un color'){
 				error = true
 			}
 		});
