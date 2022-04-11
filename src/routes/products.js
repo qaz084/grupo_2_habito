@@ -35,11 +35,11 @@ router.get("/list/:categoryId",controller.productsList);
 router.get("/detail/:id", controller.productDetail);
 
 //CREATE
-router.get("/create",controller.createProduct);
+router.get("/create",authMiddlewareCreateAndEditProduct,controller.createProduct);
 router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},{name:"image4"}]),authCreateProduct,controller.add);
 
 //EDIT
-router.get("/edit/:id",controller.editProduct);
+router.get("/edit/:id",authMiddlewareCreateAndEditProduct,controller.editProduct);
 router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),controller.update);
 
 //CART

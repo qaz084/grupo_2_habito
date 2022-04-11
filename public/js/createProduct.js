@@ -21,8 +21,7 @@ let colors = document.querySelectorAll(".checkbox")
 let categoryContainer = document.querySelector(".categoryContainer select")
 console.log(errorColor)
 
-
-
+let error=0
 /* lengthValidation = (e) =>{
     let field = contenedorPrecio;
     let errorMessage = document.querySelector('#name').nextElementSibling
@@ -216,7 +215,7 @@ sizeField.addEventListener("blur",sizeValidation);
 categoryField.addEventListener("blur",categoryValidation);
 
 
-let error=0
+
 createProductForm.addEventListener("submit",(e)=>{
     error=0
     lengthValidation();
