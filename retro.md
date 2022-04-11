@@ -10,6 +10,8 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   _Sprint 3: Hacer funcionar la el video share de Visual Studio. Quisimos tocar código de manera conjunta, pero nos arrojó un problema el visual studio que no pudimos resolver. Nos gustaría poder hacer uso de esa herramienta que ofrece VS._
   
   _Sprint 5: No ha costado adaptarnos al trabajo con la plantilla de Trello, subimos las tareas, más no todos le dan el seguimiento adecuado, por lo que no está siendo del todo confiable como herramienta de actualización del proyecto._
+  
+  _Sprint 7: Ya divisando la fecha de finalización del proyecto, en la próxima semana comenzaremos a ir analizando cómo presentar el proyecto, dividir las partes, sacarnos dudas de código, etc._
 
 
 - #### Hacer más:
@@ -22,6 +24,8 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   _Sprint 5: Incrementar las reuniones para el repaso de código y corroborar que todos están al tanto de las diferentes partes que cada integrante arregló._
   
   _Sprint 6: Código en pares. Nos ha facilitado bastante en momentos para solucionar códigos complejos._
+  
+  _Sprint 7: Finalizamos el sprint con anticipación, lo cual nos permitió repasar y testear todo sin apuro. Creemos que es una práctica que conviene seguir aplicando para lograr mejor resultado._
 
 
 - #### Continuar haciendo:
@@ -36,6 +40,8 @@ A partir del **primer sprint**, pudimos empezar a conocernos como grupo y adentr
   _Sprint 5: Continuar con las reuniones semanales para la organización y distribución de tareas. En este sprint delimitamos bien y comunicamos los avances, por lo que todos estuvimos al tanto de dónde estabamos parados en cuanto a los avances. Por otra parte, todos están a disposición de ayudar al compañero si este está teniendo alguna dificultad con su parte._
   
   _Sprint 6: Reuniones de organización donde delimiatamos bien las tareas, más allá que después otros pueda haber una redistribución de las mismas._
+  
+  _Sprint 7: Se aodptó el tablero de trabajo bastante más que en entregas anteriores. De a poco con la práctica nos vamos acostrumbrando a la herramienta. Integramos el Trello al canal de Slack para que aparezca una notificación en el Slack, cada vez que se realiza una actualización en el tablero de trabajo. Con esto estamos pendientes de cambios sin necesidad de ingresar al tablero._
 
 - #### Hacer menos/ Dejar de hacer:
   _Sprint 2: Por el momento, consideramos que no hay **algo** que deberíamos dejar de hacer o no hacer, ya nos iremos dando cuenta más adelante en futuros **sprints**_
