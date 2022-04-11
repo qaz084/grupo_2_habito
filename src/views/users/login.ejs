@@ -51,9 +51,9 @@
 
                     </div>
                 </nav>
-                <form class="form-container-bottom" action="/users/login" method="post">
+                <form id = "login-form"class="form-container-bottom" action="/users/login" method="post">
 
-                    <input class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" placeholder="user@email.com:" value="<%= locals.oldData ? oldData.email:null %>">
+                    <input  class="form-container-input <%= locals.errors && errors.email? 'input-data-wrong':null %>" type="email" name="email" placeholder="user@email.com:" value="<%= locals.oldData ? oldData.email:null %>">
                     <span></span>
                     <% if (locals.errors && errors.email){%>
                         <div class="text-danger">
