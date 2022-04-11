@@ -52,10 +52,10 @@
                                 </label>
 
                             </div>
-                            <span class="text-category-danger" id="image1Error"><%= locals.errorImages ? errorImages:""%></span>
-                            <span class="text-category-danger" id="image2Error"></span>
-                            <span class="text-category-danger" id="image3Error"></span>
-                            <span class="text-category-danger" id="image4Error"></span> 
+                            <span class="text-category-danger" id="image1Error"><%= locals.errorImages ? errorImages:""%><%= locals.errors && errors.image1?errors.image1.msg:""%></span>
+                            <span class="text-category-danger" id="image2Error"><%= locals.errors && errors.image2?errors.image2.msg:""%></span>
+                            <span class="text-category-danger" id="image3Error"><%= locals.errors && errors.image3?errors.image3.msg:""%></span>
+                            <span class="text-category-danger" id="image4Error"><%= locals.errors && errors.image4?errors.image4.msg:""%></span> 
 
                         </div>
                         
@@ -132,15 +132,13 @@
                                         <% }); %>
                                     </div>
                                 </div>
-                                <span class="text-danger"><%= locals.errorColor? errorColor:""%></span>
+                                <span class="text-danger" id="errorColors"><%= locals.errorColor? errorColor:""%></span>
                             
                             </div>
 
-
-
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category ">
-                                <div class="categoryContainer <%=locals.errors && errors.category?'input-data-wrong':null %>">
+                                <div class="categoryContainer <%=locals.errors && errors.category?'input-data-wrong':null %>" id="categoria">
                                     <select name="category" id="" >
                                         <option value="" disabled selected>   
                                             Seleccionar categoría</option>

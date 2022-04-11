@@ -25,21 +25,54 @@ const authCreateProduct = [
     body('category').notEmpty().withMessage('Debes seleccionar una categoria'),
 
 
-/*  body('avatar').custom((value, { req }) => {
-        let file = req.file;
-        let extensionAccepted = ['.jpg', '.png', '.jpeg', '.gif'];
-        if (!file) {
-            throw new Error('Tienes que subir una imagen');
-
-        } else {
-            let extensionFile = path.extname(file.originalname);
-            if (!extensionAccepted.includes(extensionFile)) {
-                throw new Error('Debes cargar una imagen en los formatos .jpg, .png, .jpeg, .gif');
-
+    body('image1').custom((value, { req }) => {
+        let file = req.files.image1? req.files.image1[0].filename : "default-image.png";
+        console.log(path.extname(file))
+        let extensionAccepted = ['.jpg', '.png', '.jpeg'];
+        if (!(file === "default-image.png")) {
+            let extensionFile = path.extname(file);
+            if (!(extensionAccepted.includes(extensionFile))) {
+                throw new Error('Solo imagenes en formato jpg png jpeg');
             }
         }
         return true;
-    }) */
+    }),
+    body('image2').custom((value, { req }) => {
+        let file = req.files.image2? req.files.image2[0].filename : "default-image.png";
+        console.log(path.extname(file))
+        let extensionAccepted = ['.jpg', '.png', '.jpeg'];
+        if (!(file === "default-image.png")) {
+            let extensionFile = path.extname(file);
+            if (!(extensionAccepted.includes(extensionFile))) {
+                throw new Error('Solo imagenes en formato jpg png jpeg');
+            }
+        }
+        return true;
+    }),
+    body('image3').custom((value, { req }) => {
+        let file = req.files.image3? req.files.image3[0].filename : "default-image.png";
+        
+        let extensionAccepted = ['.jpg', '.png', '.jpeg'];
+        if (!(file === "default-image.png")) {
+            let extensionFile = path.extname(file);
+            if (!(extensionAccepted.includes(extensionFile))) {
+                throw new Error('Solo imagenes en formato jpg png jpeg');
+            }
+        }
+        return true;
+    }),
+    body('image4').custom((value, { req }) => {
+        let file = req.files.image4? req.files.image4[0].filename : "default-image.png";
+        
+        let extensionAccepted = ['.jpg', '.png', '.jpeg'];
+        if (!(file === "default-image.png")) {
+            let extensionFile = path.extname(file);
+            if (!(extensionAccepted.includes(extensionFile))) {
+                throw new Error('Solo imagenes en formato jpg png jpeg');
+            }
+        }
+        return true;
+    })
 ]
 
 module.exports = authCreateProduct;
