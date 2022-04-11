@@ -3,9 +3,9 @@ const { body } = require('express-validator');
 
 const authCreateProduct = [
     body('productName').notEmpty().withMessage('Debes ingresar un nombre').bail()
-    .isLength({ min: 4 }).withMessage('Al menos debes 4 caracteres'),
+    .isLength({ min: 4 }).withMessage('Al menos debe tener 4 caracteres'),
     
-    body('productPrice').notEmpty().withMessage('Debes ingresar un precio').bail().isNumeric().withMessage("Solo se aceptan numeros"),
+    body('productPrice').notEmpty().withMessage('Debes ingresar un precio').bail().isNumeric().withMessage("Sólo se aceptan números"),
 
     body('productDescription').notEmpty().withMessage('Debes ingresar una descripcion').bail()
     .isLength({ min: 20 }).withMessage('Debe contener al menos 20 caracteres'),

@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-const { body } = require('express-validator');
+
 
 
 //Middlewares

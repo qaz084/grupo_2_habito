@@ -2,11 +2,15 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 
+
+
 /* middlewares */
 const authMiddlewareCreateAndEditProduct = require("../middlewares/authMiddlewareStatusProducts");
 const authCreateProduct = require("../middlewares/authCreateProduct")
+const authEditProduct = require("../middlewares/authEditProduct")
 
 const controller = require("../controllers/dbControllers/dbProductController");
+
 
 const multer=require("multer");
 
@@ -40,7 +44,8 @@ router.post('/', upload.fields([{name:"image1"},{name:"image2"},{name:"image3"},
 
 //EDIT
 router.get("/edit/:id",authMiddlewareCreateAndEditProduct,controller.editProduct);
-router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),controller.update);
+
+router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),authEditProduct,controller.update);
 
 //CART
 router.get("/cart/:id", controller.productCart);

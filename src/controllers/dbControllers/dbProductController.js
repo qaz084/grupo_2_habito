@@ -132,64 +132,100 @@ const controller={
 		}
 		return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
 	},
-	update : async(req,res)=>{
-		try{
-			let product = await Product.findByPk(req.params.id,{include:["size", "color"]});	
+
+	update :async (req,res)=>{
+		const resultValidation= validationResult(req);
+		let id= Number(req.params.id);
+		let product = await Product.findByPk(req.params.id,{include:["size", "category",'color']});
+		let requestCategories= await Category.findAll();
+		let requestSizes = await Size.findAll();
+		let requestColors = await Color.findAll();
+
+		// return res.json(resultValidation);
+		 //return res.json(product);
+		// return res.json(product);
+		 if(resultValidation.errors.length >0){
+			 // return res.json(resultValidation)
+			 
+			 res.render("../views/products/editProduct2",{
+				 
+				product:product,
+				category:requestCategories,
+				size:requestSizes,
+				color:requestColors,
+				oldData:req.body,
+
+				errors: resultValidation.mapped(),
+				})
 			
-			let a = Object.keys(req.body).filter((element)=>{
-				return element.length<=2
-			}) 
-			for ( let i = 0;  i <a.length;i++){
-				a[i] = a[i].split("").slice(1).join("")
-			}
+				
+			}else{
+		
 
 			
-			product.name = req.body.productName?req.body.productName:product.name;
-			product.price = req.body.productPrice?req.body.productPrice:product.price;
-			product.discount = req.body.productDiscount?req.body.productDiscount:product.discount;
-			product.description = req.body.productDescription?req.body.productDescription:product.description;
-			product.categoryId = req.body.category?req.body.category:product.categoryId;
-			product.quantity = product.quantity;
-			product.image1 = req.files.image1? req.files.image1[0].filename :product.image1;
-			product.image2 = req.files.image2? req.files.image2[0].filename :product.image2;
-			product.image3 = req.files.image3? req.files.image3[0].filename :product.image3;
-			product.image4 = req.files.image4? req.files.image4[0].filename :product.image4
-			
-			if(a.length != 0){
-				await product.removeColor(product.color);
-				await product.addColor(a);
-			}
-			if(req.body.size){
-				await product.removeSize(product.size);
-				await product.addSize(req.body.size);
-			}
-			
-			product.save();
-			res.redirect("/products/detail/"+ req.params.id)
-/* 
-			console.log(a)
-			const updateProduct = await Product.update({
-				name: req.body.productName,
-				price: req.body.productPrice,
-				discount: req.body.productDiscount,
-				description: req.body.productDescription,
-				quantity: 10,
-				image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
-				image2: req.files.image2? req.files.image2[0].filename : "default-image.png",
-				image3: req.files.image3? req.files.image3[0].filename : "default-image.png",
-				image4: req.files.image4? req.files.image4[0].filename : "default-image.png",
-				categoryId: req.body.category
-			},{
-				where:{
-					id: req.params.id
+			try{
+				
+				let product = await Product.findByPk(req.params.id,{include:["size", "color"]});	
+				
+				let a = Object.keys(req.body).filter((element)=>{
+					return element.length<=2
+				}) 
+				for ( let i = 0;  i <a.length;i++){
+					a[i] = a[i].split("").slice(1).join("")
 				}
-			});
-			await updateProduct.addColor(a)
-			await updateProduct.addSize(req.body.size)
-			res.redirect('../views/products/detail/'+ req.params.id) */
-		}catch (err) {
-			console.log(err)
+	
+				
+				product.name = req.body.productName?req.body.productName:product.name;
+				product.price = req.body.productPrice?req.body.productPrice:product.price;
+				product.discount = req.body.productDiscount?req.body.productDiscount:product.discount;
+				product.description = req.body.productDescription?req.body.productDescription:product.description;
+				product.categoryId = req.body.category?req.body.category:product.categoryId;
+				product.quantity = product.quantity;
+				product.image1 = req.files.image1? req.files.image1[0].filename :product.image1;
+				product.image2 = req.files.image2? req.files.image2[0].filename :product.image2;
+				product.image3 = req.files.image3? req.files.image3[0].filename :product.image3;
+				product.image4 = req.files.image4? req.files.image4[0].filename :product.image4
+				
+				if(a.length != 0){
+					await product.removeColor(product.color);
+					await product.addColor(a);
+				}
+				if(req.body.size){
+					await product.removeSize(product.size);
+					await product.addSize(req.body.size);
+				}
+				
+				product.save();
+				res.redirect("/products/detail/"+ req.params.id)
+			
+				}
+	/* 
+				console.log(a)
+				const updateProduct = await Product.update({
+					name: req.body.productName,
+					price: req.body.productPrice,
+					discount: req.body.productDiscount,
+					description: req.body.productDescription,
+					quantity: 10,
+					image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
+					image2: req.files.image2? req.files.image2[0].filename : "default-image.png",
+					image3: req.files.image3? req.files.image3[0].filename : "default-image.png",
+					image4: req.files.image4? req.files.image4[0].filename : "default-image.png",
+					categoryId: req.body.category
+				},{
+					where:{
+						id: req.params.id
+					}
+				});
+				await updateProduct.addColor(a)
+				await updateProduct.addSize(req.body.size)
+				res.redirect('../views/products/detail/'+ req.params.id) */
+				
+			catch (err) {
+				console.log(err)
+			}
 		}
+
 
 	},
 	productCart: async(req,res)=>{
