@@ -132,15 +132,13 @@
                                         <% }); %>
                                     </div>
                                 </div>
-                                <span class="text-danger"><%= locals.errorColor? errorColor:""%></span>
+                                <span class="text-danger" id="errorColors"><%= locals.errorColor? errorColor:""%></span>
                             
                             </div>
 
-
-
                             <!-- CATEGORIA------------------------- -->
                             <div class="input-product-category ">
-                                <div class="categoryContainer <%=locals.errors && errors.category?'input-data-wrong':null %>">
+                                <div class="categoryContainer <%=locals.errors && errors.category?'input-data-wrong':null %>" id="categoria">
                                     <select name="category" id="" >
                                         <option value="" disabled selected>   
                                             Seleccionar categoría</option>
@@ -161,7 +159,7 @@
         </div>
 
     </main>
-    <!-- <script src="/js/createProduct.js"></script> -->
+    <<script src="/js/createProduct.js"></script>
     <script src="/js/createEditProducts.js"></script>
 </body>
 </html>

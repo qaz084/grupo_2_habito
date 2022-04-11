@@ -19,11 +19,11 @@ let errorCategory = document.querySelector("#errorCategory");
 let errorColor = document.querySelector("#errorColors")
 let colors = document.querySelectorAll(".checkbox")
 let categoryContainer = document.querySelector(".categoryContainer select")
+console.log(errorColor)
 
 
 
-
-lengthValidation = (e) =>{
+/* lengthValidation = (e) =>{
     let field = contenedorPrecio;
     let errorMessage = document.querySelector('#name').nextElementSibling
     if(nameField.value.trim().length < 4){
@@ -40,8 +40,8 @@ lengthValidation = (e) =>{
         errorMessage.innerHTML = fieldName
         field.style.borderBottom ='1px solid #3D3D3D';  
     }
-};
-lengthValidation2 = (e) =>{
+}; */
+lengthValidation = (e) =>{
     let field = contenedorPrecio;
     let errorMessage = document.querySelector('#name').nextElementSibling;
     if(nameField.value.trim().length < 4){
@@ -58,7 +58,7 @@ lengthValidation2 = (e) =>{
     }
 };
 
-priceValidation = (e) =>{
+/* priceValidation = (e) =>{
     let field = idcontenedorPrecio;
     
     if(priceField.value.trim().length <2 || priceField.value.trim() == 0){
@@ -76,9 +76,9 @@ priceValidation = (e) =>{
         errorPrice.innerHTML = fieldName;
         field.style.borderBottom ='1px solid #3D3D3D'; 
     }
-};
+}; */
 
-priceValidation2 = (e) =>{
+priceValidation = (e) =>{
     let field = idcontenedorPrecio;
     let price= priceField.value;
     if(price.trim().length <2 || price.trim() == 0){
@@ -104,7 +104,7 @@ priceValidation2 = (e) =>{
     }
 };
 
-descriptionValidation = (e) =>{
+/* descriptionValidation = (e) =>{
     let field = descriptionField;
     let errorMessage = field.nextElementSibling
     let caractersNumber= 20;
@@ -123,9 +123,9 @@ descriptionValidation = (e) =>{
         errorMessage.innerHTML = fieldName;
         field.style.border ='none';
     }
-};
+}; */
 
-descriptionValidation2 = (e) =>{
+descriptionValidation = (e) =>{
     let field = descriptionField;
     let errorMessage = field.nextElementSibling
     if(field.value.trim()== 0){
@@ -151,14 +151,14 @@ sizeValidation=(e)=>{
     if(field.value ==""){
         field.style.borderBottom='none';
         field.style.outline='none';
-      
+
         field.classList.add("input-data-wrong");
         errorMessage.classList.add("text-danger");
         fieldName = "Debes seleccionar un talle";
         errorMessage.innerHTML = fieldName;
         // field.style.border='5px green';
         field.style.backgroundColor='none';
-         field.style.border ='red 1.7px solid';
+        field.style.border ='red 1.7px solid';
 
         error = error +1
     }else{
@@ -169,7 +169,7 @@ sizeValidation=(e)=>{
         errorMessage.innerHTML = fieldName;
         // field.style.borderBottom ='.5px solid #3D3D3D'; 
         field.style.backgroundColor='none';
-       
+
     }
 }
 
@@ -219,9 +219,9 @@ categoryField.addEventListener("blur",categoryValidation);
 let error=0
 createProductForm.addEventListener("submit",(e)=>{
     error=0
-    lengthValidation2();
-    priceValidation2();
-    descriptionValidation2();
+    lengthValidation();
+    priceValidation();
+    descriptionValidation();
     sizeValidation();
     categoryValidation();
     colorsCheck();
