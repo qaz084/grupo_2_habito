@@ -232,7 +232,6 @@ const controller={
 
 		const productID = req.params.id;
 		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
-		 locals.idProduct= productID;
 		
 		return res.render("../views/products/productCart2", { productDetail });
 		

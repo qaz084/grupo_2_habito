@@ -176,7 +176,7 @@ const controller = {
         const userId = req.params.id;
         User.destroy({ where: {id: userId}});
         return res.redirect('../users/register2')
-    }
+    },
 
 }
 

@@ -64,6 +64,9 @@ app.use("/products", productsRoutes);
 const usersRoutes = require("./routes/users");
 app.use("/users", usersRoutes);
 
+const apiRoutes = require('./routes/api/apiRoutes');
+app.use('/api', apiRoutes);
+
 
 
 

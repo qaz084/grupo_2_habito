@@ -45,7 +45,7 @@ router.get("/profile", authMiddleware, controller.userProfile);
 
 router.get('/logout', controller.logOut);
 
-router.delete('/:id', controller.delete)
+router.delete('/:id', controller.delete);
 
 
 module.exports = router;
