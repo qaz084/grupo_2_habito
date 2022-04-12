@@ -96,17 +96,22 @@ search
                     </form>
 
                     <div class="burger-button-container">
-        
-                    
+                        <%console.log(locals.idProduct)%>
+                  
                         <ul class = "mobile-ul-header2" >
                             <% if (locals.isAnUserLogged === true) { %>
                                 
                                 <a href="/">
                                     <li>Inicio</li>
                                 </a>
-                                <a href="/products/cart/">
-                                    <li>Carrito (0)</li>
-                                </a>
+
+                                <% if (locals.idProduct) { %>
+                                 
+                                    <a href="/products/cart/<%=locals.idProduct.name%>">
+                                        <li>Carrito (0)</li>
+                                    </a>
+                                <% } %>
+
                                 <% if (locals.userData.statusId == 1) { %>
                                 <a href="/products/create">
                                     <li>Crear Productos</li>

@@ -273,6 +273,7 @@ body{
         font-size: 14px;
         cursor: pointer;
     }
+    
 
 /*----------- mobile burger-btn------------ */
 
@@ -281,7 +282,7 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
     width:57%;
-    min-height: 250px; 
+    min-height: 270px; 
     height:100%;
     padding:10px;
    
@@ -289,9 +290,10 @@ body{
      z-index: 4; 
     top:100%;
     left:0%;
-    background-color:#3d3d3db3;
+    background-color:rgba(61, 61, 61, 0.584);
     /* background-color:#ff0404b3; */
     box-shadow: 0px 9px 7px rgba(0, 0, 0, 0.253);
+
     
   
 
@@ -309,8 +311,10 @@ body{
     width:50px;
     height:50px;
     color:white;
+ 
   
 }
+
 
 .mobile-ul-header2  {
 
@@ -353,6 +357,12 @@ body{
      
      
  }
+ .ul-header2 li{
+     
+    font-size: 16px;
+   width:130px;
+}
+   
    
     .container-header{
 

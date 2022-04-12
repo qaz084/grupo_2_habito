@@ -393,7 +393,7 @@ body{
     align-items: flex-start;
     justify-content: flex-start;
     width:57%;
-    min-height: 250px; 
+    min-height: 270px; 
     height:100%;
     padding:10px;
    
@@ -460,14 +460,17 @@ body{
 .ul-header2{
     display:flex;
     width:50%;
-     height:50px;
+     height:60px;
      justify-content: center;
      gap:20px;
      align-items: center;
-   
-     
-     
+    
  }
+ .ul-header2 li{
+     
+    font-size: 16px;
+   width:130px;
+}
    
     .container-header{
 

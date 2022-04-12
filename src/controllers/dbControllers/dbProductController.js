@@ -4,6 +4,7 @@ const fs = require('fs');
 const path=require('path');
 const { Op } = require("sequelize");
 const { validationResult } = require('express-validator');
+const { localsName } = require('ejs');
 
 const controller={
 
@@ -231,6 +232,7 @@ const controller={
 
 		const productID = req.params.id;
 		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
+		 locals.idProduct= productID;
 		
 		return res.render("../views/products/productCart2", { productDetail });
 		
