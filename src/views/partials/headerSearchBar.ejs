@@ -53,25 +53,104 @@
 
             </ul>
 
-            <div class="burger-button-container">
-
-                <div class='burger-button'>
-
-
-                </div>
-
-            </div>
+        
             
             
 
-            <div class="burger-navBar-container-off">
-
-
-            </div>
+       
 <!-- --------------------SEARCH BAR-------------- -->
           
 
         </nav>
+
+
+        <!-- ---------MOBILE HEADER-------------------- -->
+        
+        <div class=" logo-mobile-navbar">
+            <a href="/"><img src="../../img/logo_blanco.svg" alt="logo Hábito"  ></a>
+           
+       </div>
+        <nav class="mobile-navbar">
+
+
+         
+           <div class='burger-button'>
+
+          <span class="material-icons-outlined">
+menu
+</span>
+             </div>
+
+
+             <section class="mobile-container-search-bar">
+       
+                 <form class="mobile-search-bar" action="/products/search" method="GET">
+                     
+                     <input type="text" name="search" id="" placeholder="       Buscar producto...">
+
+
+                     <button type="submit"><span class="material-icons-outlined">
+search
+</span></button>
+                     
+                    </form>
+
+                    <div class="burger-button-container">
+        
+                    
+                        <ul class = "mobile-ul-header2" >
+                            <% if (locals.isAnUserLogged === true) { %>
+                                
+                                <a href="/">
+                                    <li>Inicio</li>
+                                </a>
+                                <a href="/products/cart/">
+                                    <li>Carrito (0)</li>
+                                </a>
+                                <% if (locals.userData.statusId == 1) { %>
+                                <a href="/products/create">
+                                    <li>Crear Productos</li>
+                                </a>
+                                <% } %>
+            <!-- -------------------NOMBRE DEL PERFIL--------- -->
+                                <a href="/users/profile">
+                                    <li id="navBarUserName"><%=locals.userData.name%> </li>
+                                </a>
+                                <a href="/users/logout">
+                                    <li > LogOut </li>
+                                </a>
+            
+                                <!-- <a class="name-img" href="/users/profile">
+                                    <li>  </li>
+                                    <img class = "profile-pic" src="../../uploads/users/ locals.userData.imagen " width="40px">
+                              </a> -->
+                                
+                            <% } else {%>
+            
+                                <a href="/">
+                                    <li>Inicio</li>
+                                </a>
+            
+                                <a href="/users/register2">
+                                    <li>Registrarse</li>
+                                </a>
+                                <a href="/users/login">
+                                    <li>Login</li>
+                                </a>
+                              
+                            <% } %>
+            
+                        </ul>
+                   
+                    </div>
+                    
+
+            </section>
+
+
+        </nav>
+
+          <!-- ---------ENDS MOBILE HEADER-------------------- -->
  
         <section class="main-search-bar">
 

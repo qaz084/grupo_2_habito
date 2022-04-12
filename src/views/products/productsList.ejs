@@ -18,7 +18,7 @@
              
       <section class="products-container" >
 
-         <h1 class="categories">Productos</h1>
+         <h1 class="categories"><%=categoryName.name%></h1>
 
 
                   <% for (let i = 0; i<productsList.length; i++) {%>
@@ -73,6 +73,7 @@
 <!-- --------------------FOOTER--------------------- -->
             </main>
             <%- include('../partials/footer2')  %>
+            <script src="/js/navBarMobile.js"></script>
     </body>
 
     </html>

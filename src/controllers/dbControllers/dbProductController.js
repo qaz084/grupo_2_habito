@@ -11,13 +11,24 @@ const controller={
 	productsList:async (req,res)=>{
 		
 		const category=req.params.categoryId;
+
+
 		const productsList= await Product.findAll({
 			
 			where:{
 				categoryId: Number(category)
 			}
 		});
-		res.render("../views/products/productsList",{productsList})
+
+		
+		const categoryName= await Category.findByPk(
+
+		Number(category)
+			
+		);
+		
+		//  console.log(categoryName.name);
+		res.render("../views/products/productsList",{productsList,categoryName})
 	},
 
 	productDetail: async (req, res) => {
@@ -230,18 +241,18 @@ const controller={
 		const productToSearch=req.query.search;
 		// return res.json({productToSearch});
 		Product.findAll({
-			include:{
+			// include:{
 
-				model: Category,
-				as: 'category',
-				where:{
+			// 	model: Category,
+			// 	as: 'category',
+			// 	where:{
 
-					name:{
-						[Op.like] : `%${productToSearch}%` 
-					}
-				}
+			// 		name:{
+			// 			[Op.like] : `%${productToSearch}%` 
+			// 		}
+			// 	}
 				
-			},
+			// },
 			
 			where: {
 				name: { 

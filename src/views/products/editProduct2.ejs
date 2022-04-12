@@ -87,7 +87,7 @@
                                 <div>
                                     <div class="contenedor-precio  <%=locals.errors && errors.productPrice?'input-data-wrong': null %>" id="price">
                                         <span class='signo-precio'>$</span>
-                                        <input type="number" value="<%=locals.errors && errors.productName?oldData.productPrice:product.price %>"  class="input-product-price" min='0 '
+                                        <input type="number" value="<%=locals.errors && errors.productPrice?oldData.productPrice:product.price %>"  class="input-product-price" min='0 '
                                         name="productPrice" >
                                     
                                     </div>
@@ -179,13 +179,14 @@
                                  
             
                             <!-- CATEGORIA------------------------- -->
-                            <% let arrayCategory= Object.keys(category)  %> 
+                          
+                          
 
-                            <div class="input-product-category  <%=locals.errors && errors.category?'input-data-wrong': null %>" >
+                            <div class="input-product-category " >
                                 <% if (product.category) { %>  
                                
                                 <SPAN >Categoria: </SPAN>
-                                <div class="categoryContainer">
+                                <div class="categoryContainer  <%=locals.errors && errors.category?'input-data-wrong': null %>">
 
                                     <select name="category" id="" >
                                         
@@ -194,13 +195,22 @@
                                             <%= product.category.name %>
                                         
                                         </option>
-                                        <% arrayCategory.forEach(oneCategory => { %>
+                                      
+                                        <% category.forEach(oneCategory => { %>
                                         <option value="<%= oneCategory.id %>">
                                             <%= oneCategory.name %>
+                                           
                                         </option>
                                         <% }); %>
+
+                                    
+
                                     </select>
-                                    <span id="spanMsgError" class="text-danger"></span>
+                                    
+                                    <% if (locals.errors && errors.category) { %>
+                                        <span class="text-danger"><%= errors.productDescription.msg %> </span>
+                                    <% } %>
+                                  
                                  <% }else{ %> 
 
                                     <select name="category" id="" >
@@ -242,6 +252,7 @@
 
     <script src="/js/createEditProducts.js"></script>
     <script src="/js/editProducts.js"></script>
+    <script src="/js/navBarMobile.js"></script>
 
 </body>
 </html>

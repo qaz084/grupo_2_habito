@@ -15,7 +15,7 @@ const authEditProduct = [
     // body('color').notEmpty().withMessage('Debes seleccionar un color'),
 
  
-    // body('category').notEmpty().withMessage('Debes seleccionar una categoría'),
+    body('category').notEmpty().withMessage('Debes seleccionar una categoría'),
 
 
 /*  body('avatar').custom((value, { req }) => {

@@ -432,6 +432,7 @@ textarea{
 .input-product-category{
 
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
     align-content: center;
     font-family: Roboto;
@@ -446,6 +447,7 @@ textarea{
     outline: none;
     border-bottom: 1px solid #aaaaaa;
     position: relative;
+   
 
 }
 
@@ -461,10 +463,19 @@ z-index:2;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 35px;
+    min-height: 35px;
     width: 100%;
   
 }
+.categoryContainer:hover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 35px;
+    width: 100%;
+  
+}
+
 .categoryContainer select{
   
     border: none;
@@ -477,7 +488,7 @@ z-index:2;
     text-align: center;
     color: #3d3d3d;
     width: 100%;
-    /* background-color: #ffffff00; */
+   background-color: #3d3d3d00; 
     cursor: pointer;
    
 }
@@ -494,6 +505,7 @@ z-index:2;
     /* margin-left: 15px; */
     color: #3d3d3d;
     width: 80%;
+  
     
     cursor: pointer;
     
