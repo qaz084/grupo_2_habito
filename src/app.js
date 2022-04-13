@@ -30,7 +30,7 @@ app.use(express.static(publicPath));
 
 
 //SERVER CONFIG --------------------------------
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("Server running in port 3000")
 });
 

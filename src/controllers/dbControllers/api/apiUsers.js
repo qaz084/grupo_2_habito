@@ -15,8 +15,6 @@ module.exports = {
         delete userDetail.dataValues.statusId;
 
         userDetail.dataValues.avatar = 'http://localhost:3000/uploads/users/'+ userDetail.avatar;
-        
-        console.log(userDetail);
 
         return res.json({
             userData: userDetail,
@@ -27,12 +25,11 @@ module.exports = {
         const users = await User.findAll({
             attributes: ['id', 'name', 'email']
         });
-
-        users.forEach(oneUser => {oneUser.detail = 'api/users/' + oneUser.id})
-        console.log(users.detail)
+        users.forEach(oneUser => {oneUser.dataValues.detail = 'api/users/' + oneUser.id})
+        
         return res.json({
             total: users.length,
-            users: users  
+            users: users
         })
     }
 }
