@@ -15,9 +15,9 @@
                     <a href="/">
                         <li>Inicio</li>
                     </a>
-                    <a href="/products/cart/">
+                    <!-- <a href="/products/cart/">
                         <li>Carrito (0)</li>
-                    </a>
+                    </a> -->
                     <% if (locals.userData.statusId == 1) { %>
                     <a href="/products/create">
                         <li>Crear Productos</li>
@@ -105,12 +105,12 @@ search
                                     <li>Inicio</li>
                                 </a>
 
-                                <% if (locals.idProduct) { %>
+                          <!-- <<%# if (locals.idProduct) { %>
                                  
-                                    <a href="/products/cart/<%=locals.idProduct.name%>">
+                                    <a href="/products/cart/<%#=locals.idProduct.name%>">
                                         <li>Carrito (0)</li>
                                     </a>
-                                <% } %>
+                                <%# } %>       -->
 
                                 <% if (locals.userData.statusId == 1) { %>
                                 <a href="/products/create">
