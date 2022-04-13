@@ -8,21 +8,18 @@ module.exports = {
             where: {
                 id: req.params.id
             },
-            attributes: [
-                'id', 
-                'name', 
-                'email', 
-                'avatar',  
-                'createdAt', 
-                'updatedAt', 
-                'deletedAt'
-            ]
-            
-        });        
+        });
+        
+        delete userDetail.dataValues.password;
+        delete userDetail.dataValues.StatusId;
+        delete userDetail.dataValues.statusId;
+
+        userDetail.dataValues.avatar = 'http://localhost:3000/uploads/users/'+ userDetail.avatar;
+        
+        console.log(userDetail);
 
         return res.json({
             userData: userDetail,
-            avatar: 'http://localhost:3000/uploads/users/'+ userDetail.avatar
         })
     },
 
@@ -30,6 +27,9 @@ module.exports = {
         const users = await User.findAll({
             attributes: ['id', 'name', 'email']
         });
+
+        users.forEach(oneUser => {oneUser.detail = 'api/users/' + oneUser.id})
+        console.log(users.detail)
         return res.json({
             total: users.length,
             users: users  
