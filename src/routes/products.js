@@ -8,6 +8,7 @@ const path = require("path");
 const authMiddlewareCreateAndEditProduct = require("../middlewares/authMiddlewareStatusProducts");
 const authCreateProduct = require("../middlewares/authCreateProduct")
 const authEditProduct = require("../middlewares/authEditProduct")
+// const userInCart = require("../middlewares/userInCart")
 
 const controller = require("../controllers/dbControllers/dbProductController");
 
@@ -48,7 +49,7 @@ router.get("/edit/:id",authMiddlewareCreateAndEditProduct,controller.editProduct
 router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: 'image3'},{name: 'image4'}]),authEditProduct,controller.update);
 
 //CART
-router.get("/cart/:id", controller.productCart);
+router.get("/cart/:id",controller.productCart);
 
 //SEARCH
 

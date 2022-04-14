@@ -21,10 +21,21 @@
                         </div>
 
                         <div class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>">
-                            <span>Usuario:</span>
+                            
+                            <% if (userInCart) { %>
+                             
+                                <span><%= userInCart.name %></span>
+                            <% }else{ %>
+                                <span>Nombre:</span>
+                                <% } %>
                         </div>
                         <div class="form-container-input <%= locals.errors && errors.name? 'input-data-wrong':null %>">
-                            <span>E-mail:</span>
+                            <% if (userInCart) { %>
+                             
+                                <span><%= userInCart.email %></span>
+                            <% }else{ %>
+                                <span>Email:</span>
+                                <% } %>
                         </div>
                            
             

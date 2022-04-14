@@ -1,10 +1,10 @@
-const{Product,Category,Color,Size}=require('../../database/models');
+const{Product,Category,Color,Size,User}=require('../../database/models');
 
 const fs = require('fs');
 const path=require('path');
 const { Op } = require("sequelize");
 const { validationResult } = require('express-validator');
-const { localsName } = require('ejs');
+
 
 const controller={
 
@@ -231,9 +231,12 @@ const controller={
 	productCart: async(req,res)=>{
 
 		const productID = req.params.id;
+		 const userInCart= req.session.userLogged
+
+		//  return res.json( userInCart);
 		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
 		
-		return res.render("../views/products/productCart2", { productDetail });
+		return res.render("../views/products/productCart2", { productDetail,userInCart});
 		
         // return res.render("../views/products/productCart2")
     },

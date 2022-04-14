@@ -315,10 +315,13 @@ CREATE TABLE `users` (
 --
 -- Dumping data for table `users`
 --
+--
+-- Mary password: mary321
+--Raul password: habito123
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Raul','raul@habito.ac.uk','loyd.jpeg','habito123',1,NULL,NULL,NULL),(2,'Mary Swamson','swillett0@gmail.com','Mary-Swanson.png','Mary321',2,NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'Raul','raul@habito.com','loyd.jpeg','$2a$10$CknB2e76I2cyv51bHs5TPeE2TG2NQdu4trJdmMEqfWCXYn5LG.1ry',1,NULL,NULL,NULL),(2,'Mary Swamson','mary@gmail.com','Mary-Swanson.png','$2a$10$jjJJeGD6QkZ0p4jMy1eUG.arKfnjMPCWbOQYUQWLbYN67vg9H7F12',2,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

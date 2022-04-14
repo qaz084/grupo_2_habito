@@ -72,7 +72,7 @@ const controller = {
                                 name: req.body.name,
                                 email: req.body.email,
                                 password: bcrypt.hashSync(req.body.password, 10),
-                                avatar: req.file && req.file.filename ? req.file.filename : "default-image.png",
+                                avatar: req.file && req.file.filename ? req.file.filename : "default-user.jpg",
                                 //statusId: statusId
                                 statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
                             });
@@ -116,11 +116,12 @@ const controller = {
             }
         });
         // let status = userToLogin.statusId;
-        //return res.json(userToLogin)
+      // return res.json(userToLogin)
         //let  userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
         if (userToLogin) {
-            let okPassword =  bcrypt.compareSync(req.body.password, userToLogin.password);
 
+            let okPassword =  bcrypt.compareSync(req.body.password, userToLogin.password);
+            // return res.json({usertologin:  bcrypt.hashSync(req.body.password)})
             if (okPassword) {
                 //delete userToLogin.password;
             
@@ -162,6 +163,7 @@ const controller = {
             user: req.session.userLogged
         });
     },    
+ 
 
     logOut: (req, res) => {
 

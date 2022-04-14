@@ -145,7 +145,7 @@
                                                         <option value="" disabled selected>
                                                             Seleccionar talle
                                                         </option>
-                                                        <% product.size.forEach(oneSize => { %>
+                                                        <% size.forEach(oneSize => { %>
                                                             <option value="<%= oneSize.id %>" class="check-product-size"><%= oneSize.name %></option>
                                                         <% }); %>
                                                     <% } %>
@@ -156,14 +156,13 @@
                                     </div>
                                     
                                         <!-- COLOR-------------------------- -->
-                                <% if (product.color) { %>
-                                 
-                                    
-                                    <div>
+                                        
+                                        <% if (product.color[0]) { %>
+                                        <div>
                                         <div class="input-product-color">
                                             <SPAN >Color: </SPAN>
                                             <div class="colorContainer">
-                                                <% product.color.forEach((oneColor)=>{%>
+                                                <% color.forEach((oneColor)=>{%>
                                                     <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>">
                                                     <label for="<%= oneColor.name %>"><div class="red"> </div></label>
                                                     <% }); %>
@@ -173,10 +172,23 @@
                                         </div>
                                         <span id="colorMsgError" class="text-danger"></span>
                                     </div>
-                                 
-                                <% } %>
-
-                                 
+                                    <% }else{ %>
+                                        <div>
+                                            <div class="input-product-color">
+                                                <SPAN >Color: </SPAN>
+                                                <div class="colorContainer">
+                                                    <% console.log(color)%>
+                                                    <% color.forEach((oneColor)=>{%>
+                                                        <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>">
+                                                        <label for="<%= oneColor.name %>"><div class="red" style="background-color:<%= oneColor.name %>"> </div></label>
+                                                        <% }); %>
+                                            
+                                            
+                                                </div>
+                                            </div>
+                                            <span id="colorMsgError" class="text-danger"></span>
+                                        </div>
+                                <%  }   %> 
             
                             <!-- CATEGORIA------------------------- -->
                           
@@ -231,14 +243,14 @@
                             <div class="btn-container">
 
                                    
+                                    <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
+                                    <button class="btn-delete" type="submit">Eliminar producto</button>
+                                    </form>
                                         <button class="btn-edit"  type="submit">Editar producto
                                         </button>
                                    
                                
                                   
-                                <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
-                                   <button class="btn-delete" type="submit">Eliminar producto</button>
-                                </form>
           
                             </div>
                                 
