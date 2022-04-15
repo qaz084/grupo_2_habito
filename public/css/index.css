@@ -725,8 +725,8 @@ body{
         
         width: 100%;
         height: 150px;
-        background-color: red;
-        background-image: url(/img/CARROUSEL/img-banner.jpeg);
+        /* background-color: red;
+        background-image: url(/img/CARROUSEL/img-banner.jpeg); */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -768,8 +768,8 @@ body{
         
         width: 100%;
         height: 300px;
-        background-color: red;
-        background-image: url(/img/CARROUSEL/img-banner.jpeg);
+        /* background-color: red;
+        background-image: url(/img/CARROUSEL/img-banner.jpeg); */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
@@ -855,30 +855,51 @@ body{
 
 }
 
-@media(min-width:1280px){
+@media(min-width:1020px){
 
     .banner-container{
 
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        /* align-items: center;  */
+        /* flex-direction: row;
         justify-content:center;
-        
+        flex-wrap: wrap; */
         width: 100%;
-        height: 450px;
-        background-color: red;
-        background-image: url(/img/CARROUSEL/img-banner.jpeg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top center;
-        position: relative;
-        top: 0px;
-        margin: auto;
+        height: 400px;
+        /* background-color: red;   */
+        margin-bottom: 100px;
         margin-top: 120px;
-        margin-bottom: 80px;
-        
+       position: relative; 
+       top: 80px; 
+        /* margin: auto;   */
+        /*;
+        */
+        /* z-index: 0; */
+        /* overflow: hidden;  */
+     
         
     }
+ 
+
+    .caja-imagen{
+         display: flex;  
+         width: 100%;  
+         overflow: hidden;
+        /* margin:auto;   */
+        /* align-items: center;
+       */
+        /*  */
+         /* background-color: green;  */
+        /*
+         overflow: hidden; */
+        /* text-align:center; */
+    }
+
+ .caja-imagen img{
+        width:100%;
+       
+    }    
+
     .caja{
 
         display: flex;
@@ -888,8 +909,11 @@ body{
         height: 60px;
         background-color: #3d3d3d79;
         gap: 60px;
+        position: absolute;
+        z-index: 2;
       
     }
+
     .caja h1{
         color: rgb(228, 228, 228);
         font-weight: 300;

@@ -72,7 +72,7 @@ const controller = {
                                 name: req.body.name,
                                 email: req.body.email,
                                 password: bcrypt.hashSync(req.body.password, 10),
-                                avatar: req.file && req.file.filename ? req.file.filename : "default-user.jpg",
+                                avatar: req.file.filename,
                                 //statusId: statusId
                                 statusId: statusUser //agregar funcion que traiga el email e identifique si es @habito
                             });
