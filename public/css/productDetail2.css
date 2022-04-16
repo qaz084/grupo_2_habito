@@ -2874,7 +2874,7 @@ cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 65%;
+    width: 55%;
     height:100%;
     margin: auto;
     margin-top: 12%;
@@ -2895,16 +2895,16 @@ cursor: pointer;
     font-weight:400;
     font-size: 1.375rem ;
     line-height: 33px;
-    color: #727272;
+
     margin-bottom: 30px;
-    text-decoration: underline;
+  
  
 }
 
 .backButton a{
+    color: rgb(21, 148, 221);
+    text-decoration: underline 2px ;
 
-    text-decoration: none;
-    color: #3D3D3D;
 }
 
 .backButton a:hover{

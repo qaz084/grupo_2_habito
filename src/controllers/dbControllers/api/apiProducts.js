@@ -41,7 +41,7 @@ module.exports = {
 
             include: ["category"],
 
-            attributes: ['id', 'name', 'description']
+            attributes: ['id', 'name', 'description','image1']
 
 
         });

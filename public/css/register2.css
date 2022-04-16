@@ -1955,12 +1955,12 @@ body{
         flex-wrap: wrap;
         width: 100%;
         background-color:#3D3D3D;
-        height:230px;
+        height:130px;
     }
     
     .logo-footer{
         text-align: center;
-        width: 100%;
+        width: 50%;
     
     }
     
@@ -1979,8 +1979,7 @@ body{
         width: 100%;
         color: white;
         margin: auto;
-        position:relative;
-        bottom:20px;
+      
     }
     .footer-icons2 li{
         display:inline;

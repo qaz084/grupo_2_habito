@@ -728,6 +728,8 @@ font-weight: 300;
     width: 100%;
     background-color:#3D3D3D;
     height:120px;
+    position: fixed;
+    bottom:0;
 }
 
 .logo-footer{
@@ -779,13 +781,16 @@ font-weight: 300;
     width: 100%;
     background-color:#3D3D3D;
     height:120px;
-    position: relative;
-    bottom:0px;
+    position:fixed;
+    bottom:0;
+    z-index: 2;
+   
+ 
 }
 
 .logo-footer{
     text-align: center;
-    width: 100%;
+    width: 80%;
 
 }
 
@@ -828,18 +833,22 @@ font-weight: 300;
 .footer-container2{
     display: flex;
     justify-content:center;
+    align-content: space-around;
     align-items:center;
     flex-wrap: wrap;
     width: 100%;
     background-color:#3D3D3D;
-    height:230px;
+    height:130px;
+    position:relative;
+    bottom:0;
+    z-index: 2;
    
  
 }
 
 .logo-footer{
     text-align: center;
-    width: 100%;
+    width: 30%;
 
 }
 
@@ -858,8 +867,8 @@ font-weight: 300;
     width: 100%;
     color: white;
     margin: auto;
-    position:relative;
-    bottom:20px;
+    /* position:relative;
+    bottom:20px; */
 }
 .footer-icons2 li{
     display:inline;
@@ -897,9 +906,9 @@ font-weight: 300;
         background-color: rgb(255, 255, 255);
         width: 95%;
         padding:20px;
-        height: 710px;
+        height: 100%;
         margin-top: 150px;
-        margin-bottom: 20px;
+        margin-bottom: 120px;
         overflow: hidden;
     }
     .close-x{
@@ -1000,7 +1009,7 @@ font-weight: 300;
         justify-content: right;
         color: #3D3D3D;
         font-size: 1.1rem;
-        text-decoration: underline #3D3D3D 4px ;
+      
        
     
     }
@@ -1010,7 +1019,8 @@ font-weight: 300;
     .already-account-text{
     
         font-weight: 400;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
     }
     
     
@@ -1053,14 +1063,10 @@ font-weight: 300;
     }
         .sign-in{
             display: flex;
-            justify-content: right;
-           
-            text-align: right;
-            color: #3D3D3D;
-            width: 100%;
+            color: rgb(21, 148, 221);
             font-size:1.2rem;
             font-weight: 400;
-            text-decoration: underline #3D3D3D 2px ;
+            text-decoration: underline rgb(21, 148, 221) 2px ;
             margin-bottom:20px;
         }
         .sign-in:hover{
@@ -1101,10 +1107,10 @@ font-weight: 300;
         margin: auto;
         background-color: rgb(255, 255, 255);
         width: 75%;
-        padding:10px;
-        height: 670px;
-        margin-top: 200px;
-        margin-bottom: 20px;
+        padding:15px;
+        height: 100vh;
+        margin-top: 160px;
+        margin-bottom: 50px; 
         overflow: hidden;
     }
     .close-x{
@@ -1126,6 +1132,7 @@ font-weight: 300;
         height:80px;
         color: #3D3D3D;
         font-weight: 400;
+        font-size:14px;
        
     }
     
@@ -1148,7 +1155,7 @@ font-weight: 300;
         align-self: flex-start;
         color: #3D3D3D;
         font-weight: 400;
-        font-size: 1.8rem;
+        font-size: 1.1rem;
         margin-bottom:-50px;
     }
     
@@ -1204,8 +1211,8 @@ font-weight: 300;
         align-items:center;
         justify-content: right;
         color: #3D3D3D;
-        font-size: 1.1rem;
-        text-decoration: underline #3D3D3D 4px ;
+        font-size: 1rem;
+       
        
     
     }
@@ -1215,7 +1222,8 @@ font-weight: 300;
     .already-account-text{
     
         font-weight: 400;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
     }
     
     
@@ -1257,10 +1265,10 @@ font-weight: 300;
     }
         .sign-in{
             display: flex;
-            color: #3D3D3D;
-            font-size:1.2rem;
+            color: rgb(21, 148, 221);
+            font-size:1rem;
             font-weight: 400;
-            text-decoration: underline #3D3D3D 4px ;
+            text-decoration: underline rgb(21, 148, 221) 2px ;
         }
         .sign-in:hover{
         
@@ -1301,7 +1309,7 @@ font-weight: 300;
         background-color: rgb(255, 255, 255);
         width: 80%;
         padding:40px;
-        height: 750px;
+        height: 100vh;
         margin-top: 200px;
         margin-bottom: 20px;
         overflow: hidden;
@@ -1404,7 +1412,7 @@ font-weight: 300;
         justify-content: right;
         color: #3D3D3D;
         font-size: 1.1rem;
-        text-decoration: underline #3D3D3D 4px ;
+      
        
     
     }
@@ -1414,7 +1422,8 @@ font-weight: 300;
     .already-account-text{
     
         font-weight: 400;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
     }
     
     
@@ -1457,10 +1466,10 @@ font-weight: 300;
     }
         .sign-in{
             display: flex;
-            color: #3D3D3D;
-            font-size:1.4rem;
+            color: rgb(21, 148, 221);
+            font-size:1.2rem;
             font-weight: 400;
-            text-decoration: underline #3D3D3D 4px ;
+            text-decoration: underline rgb(21, 148, 221) 2px ;
         }
         .sign-in:hover{
         
@@ -1501,7 +1510,7 @@ font-weight: 300;
         background-color: rgb(255, 255, 255);
         width: 60%;
         padding:20px;
-        height: 750px;
+        height: 100vh;
         margin-top: 200px;
         margin-bottom: 20px;
         overflow: hidden;
@@ -1604,7 +1613,7 @@ font-weight: 300;
         justify-content: right;
         color: #3D3D3D;
         font-size: 1.1rem;
-        text-decoration: underline #3D3D3D 4px ;
+      
        
     
     }
@@ -1614,7 +1623,8 @@ font-weight: 300;
     .already-account-text{
     
         font-weight: 400;
-        color: #3D3D3D;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
     }
     
     
@@ -1657,10 +1667,10 @@ font-weight: 300;
     }
         .sign-in{
             display: flex;
-            color: #3D3D3D;
-            font-size:1.4rem;
+            color: rgb(21, 148, 221);
+            font-size:1.2rem;
             font-weight: 400;
-            text-decoration: underline #3D3D3D 4px ;
+            text-decoration: underline rgb(21, 148, 221) 2px ;
         }
         .sign-in:hover{
         
@@ -1701,9 +1711,9 @@ font-weight: 300;
         background-color: rgb(255, 255, 255);
         width: 40%;
         padding:40px;
-        height: 750px;
+        height: 80vh;
         margin-top: 200px;
-        margin-bottom: 20px;
+       
         overflow: hidden;
     }
     .close-x{
@@ -1723,7 +1733,7 @@ font-weight: 300;
     
         width: 100%;
         /* background-color:green; */
-        height:80px;
+        height:60px;
         color: #3D3D3D;
         font-weight: 400;
        
@@ -1734,11 +1744,11 @@ font-weight: 300;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        height:200px;
+        height:100px;
         /* background-color:pink; */
         align-items:space-around;
         align-self: flex-start;
-        margin-bottom: 20px;
+        margin-bottom: 80px;
       
     
     }
@@ -1748,8 +1758,9 @@ font-weight: 300;
         align-self: flex-start;
         color: #3D3D3D;
         font-weight: 400;
-        font-size: 1.8rem;
-        margin-bottom:-50px;
+        font-size: 1.5rem;
+        margin-top: 20px;
+        margin-bottom:20px;
     }
     
     .sessions-container-icons{
@@ -1757,15 +1768,13 @@ font-weight: 300;
         display: flex;
        
         width: 90%;
-        height:80px;
+        height:40px;
         /* background-color:rgb(111, 156, 224); */
         justify-content: space-around;
         align-items: center;
         margin: auto;
        
-       
       
-       
     }
     .sessions-container-icons li{
         display:inline-block;
@@ -1777,7 +1786,7 @@ font-weight: 300;
         align-items: center;
      
         width: 140px;
-        height:70px;
+        height:60px;
         background-color:rgb(255, 255, 255);
         /* overflow: hidden; */
         border-radius: 7px;
@@ -1803,9 +1812,10 @@ font-weight: 300;
         width: 100%;
         align-items:center;
         justify-content: right;
-        color: rgb(21, 148, 221);
-        font-size: 1.1rem;
-        text-decoration: underline 2px ;
+     margin-top: 30px;
+    
+        font-size: 1rem;
+      
        
     
     }
@@ -1858,7 +1868,7 @@ font-weight: 300;
         .sign-in{
             display: flex;
             color: rgb(21, 148, 221);
-            font-size:1.2rem;
+            font-size:1rem;
             font-weight: 400;
             text-decoration: underline rgb(21, 148, 221) 2px ;
         }
@@ -1869,7 +1879,7 @@ font-weight: 300;
     
         .submit-btn{
     
-            width: 40%;
+            width: 50%;
             background-color:#3D3D3D;
             border-radius:5px;
             height: 75px;

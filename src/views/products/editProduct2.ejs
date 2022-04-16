@@ -242,22 +242,23 @@
             
                             <div class="btn-container">
 
-                                   
+                                <button class="btn-edit"  type="submit">Editar producto
+                                </button>
+                        
+                                </form> 
                                     <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
-                                    <button class="btn-delete" type="submit">Eliminar producto</button>
+                                        <button class="btn-delete" type="submit">Eliminar producto</button>
+
                                     </form>
-                                        <button class="btn-edit"  type="submit">Editar producto
-                                        </button>
-                                   
-                               
+
                                   
-          
+
                             </div>
                                 
                         </div>
                 </div>
              
-            </form> 
+          
         </div>
 
     </main>
@@ -265,6 +266,7 @@
     <script src="/js/createEditProducts.js"></script>
     <script src="/js/editProducts.js"></script>
     <script src="/js/navBarMobile.js"></script>
+  
 
 </body>
 </html>

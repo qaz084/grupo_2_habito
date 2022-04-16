@@ -285,24 +285,39 @@ editProductForm.addEventListener('submit',(e)=>{
 
 //Evento que muestra preview imagen cuando se carga
 
-// let img1 = document.querySelector("[name = image1]");
-// let img2 = document.querySelector("[name = image2]");
-// let img3 = document.querySelector("[name = image3]");
-// let img4 = document.querySelector("[name = image4]");
+let img1 = document.querySelector("[name = image1]");
+let img2 = document.querySelector("[name = image2]");
+let img3 = document.querySelector("[name = image3]");
+let img4 = document.querySelector("[name = image4]");
+
+let multiplicador = 1;
+
+let imageValidation = (e)=>{
+    let inputImage = e.currentTarget.files[0].type.split('/').pop();
+    let allowedExtensions = ['jpg', 'png', 'jpeg',"PNG","JPG","JPEG"];
+    if(!allowedExtensions.includes(inputImage)){
+        document.getElementById(e.target.name + "Error").innerHTML = "Solo imagenes en formato jpg png jpeg ";
+    }else{
+        document.getElementById(e.target.name + "Error").innerHTML = "";
+    };
+};
+
+img1.addEventListener("change",imageValidation);
+img2.addEventListener("change",imageValidation);
+img3.addEventListener("change",imageValidation);
+img4.addEventListener("change",imageValidation);
 
 
-// console.log(e.target);
 
-
-// let preview=(e)=>{
-//     let reader = new FileReader();
-//     reader.readAsDataURL(e.target.files[0]);
+let preview=(e)=>{
+    let reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
     
-//     reader.onload=function(){
-//         document.getElementById(e.target.name).src=reader.result;
-//     };
-// };
-// img1.addEventListener("change",preview);
-// img2.addEventListener("change",preview);
-// img3.addEventListener("change",preview);
-// img4.addEventListener("change",preview);
+    reader.onload=function(){
+        document.getElementById(e.target.name).src=reader.result;
+    };
+};
+img1.addEventListener("change",preview);
+img2.addEventListener("change",preview);
+img3.addEventListener("change",preview);
+img4.addEventListener("change",preview);
