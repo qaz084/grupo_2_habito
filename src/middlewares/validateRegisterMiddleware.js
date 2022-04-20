@@ -8,10 +8,10 @@ const validationRegister = [
     .isEmail().withMessage('Debe ingresar un Email valido'),
 
     body('password').notEmpty().withMessage('Debes ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
+    .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
     body('repeatPassword').notEmpty().withMessage('Debes ingresar la contraseña').bail()
-    .isLength({ min: 5 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
+    .isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 5 caracteres'),
 
     body('avatar').custom((value, { req }) => {
         let file = req.file;
