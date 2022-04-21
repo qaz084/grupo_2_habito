@@ -230,16 +230,30 @@ const controller={
 	},
 	productCart: async(req,res)=>{
 
-		const productID = req.params.id;
+		// const productID = req.params.id;
 		 const userInCart= req.session.userLogged
+		//  const carrito =req.window.localStorage;
+		//  return console.log(carrito);
 
 		//  return res.json( userInCart);
-		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
+		// const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
 		
-		return res.render("../views/products/productCart2", { productDetail,userInCart});
+		return res.render("../views/products/productCart2", { userInCart});
 		
         // return res.render("../views/products/productCart2")
     },
+
+	// addToCart: async(req,res)=>{
+
+	// 	// const productID = req.params.id;
+	// 	const userInCart= req.session.userLogged
+
+	//    //  return res.json( userInCart);
+	//    const productDetail = await Product.findAll( { include: ["size", "category",'color'] });
+	   
+	//    return res.render("../views/products/addToCart", { productDetail,userInCart});
+
+	// },
 
 	search: (req, res) => {
 		const productToSearch=req.query.search;

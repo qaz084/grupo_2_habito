@@ -289,9 +289,9 @@ body{
 
     .back-button{
         font-size: 1.1rem;
-        font-weight:400;
-        color: #3D3D3D;
-        text-decoration: underline #3D3D3D 2px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all ;
         text-align: right;
     }
@@ -603,9 +603,9 @@ body{
        
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
         width: 90%;
-        height: 600px;
+        height: 100%;;
         margin: auto;
         justify-content: center;
         margin-top: 200px;
@@ -750,9 +750,9 @@ body{
 
     .back-button{
         font-size: 1.1rem;
-        font-weight:400;
-        color: #3D3D3D;
-        text-decoration: underline #3D3D3D 2px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all ;
         text-align: right;
     }
@@ -1063,9 +1063,9 @@ body{
        
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
         width: 70%;
-        height: 600px;
+        height: 100%;;
         margin: auto;
         justify-content: center;
         margin-top: 200px;
@@ -1210,9 +1210,9 @@ body{
 
     .back-button{
         font-size: 1.1rem;
-        font-weight:400;
-        color: #3D3D3D;
-        text-decoration: underline #3D3D3D 2px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all ;
         text-align: right;
     }
@@ -1524,9 +1524,10 @@ body{
        
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
-        width: 60%;
-        height: 600px;
+        flex-direction: row;
+        width: 800px;
+        min-height:600px;
+        height: 100%;;
         margin: auto;
         justify-content: center;
         margin-top: 200px;
@@ -1649,6 +1650,7 @@ body{
 
         background-color :whitesmoke;
         width: 50%;
+        min-height:600px;
         height:100%;
      
 
@@ -1662,6 +1664,7 @@ body{
         align-content: space-around;
         width: 95%;
         height:100%;
+        min-height:600px;
         margin:auto;
         margin-top:20px;
    
@@ -1671,9 +1674,9 @@ body{
 
     .back-button{
         font-size: 1.1rem;
-        font-weight:400;
-        color: #3D3D3D;
-        text-decoration: underline #3D3D3D 2px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all ;
         text-align: right;
     }
@@ -1715,6 +1718,7 @@ body{
     .productImage img{
         width:100%;
         height:100%;
+        object-fit: cover;
        
     }
     .productDetail{
@@ -1842,6 +1846,7 @@ body{
 .costCalculation-container{
 
     display: flex;
+    flex-wrap: wrap;
     width:100%;
     height:100%;
     border-bottom: 1px solid #3D3D3D;
@@ -1854,11 +1859,11 @@ body{
 
 .costDetail{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
-    width:60%;
+    width:100%;
     height:100%;
     color:#3D3D3D;
 
@@ -1866,15 +1871,17 @@ body{
 }
 .costDetail span{
    color:#3D3D3D;
+   font-size: 18px;
+   font-weight: 600;
   
 }
 .costPrice{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-end;
-    width:40%;
+    width:100%;
     height:100%;
     color:#3D3D3D;
   

@@ -15,9 +15,9 @@
                     <a href="/">
                         <li>Inicio</li>
                     </a>
-                    <!-- <a href="/products/cart/">
-                        <li>Carrito (0)</li>
-                    </a> -->
+                   <a class="cartTextContainer" href="/products/cart/">
+                        <li class="cartText"></li>
+                    </a> 
                     <% if (locals.userData.statusId == 1) { %>
                     <a href="/products/create">
                         <li>Crear Productos</li>
@@ -48,6 +48,9 @@
                     <a href="/users/login">
                         <li>Login</li>
                     </a>
+                    <a class="cartTextContainer" href="/products/cart/">
+                        <li class="cartText"></li>
+                    </a> 
                   
                 <% } %>
 

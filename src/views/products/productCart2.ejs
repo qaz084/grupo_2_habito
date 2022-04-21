@@ -45,62 +45,10 @@
              <div class="right-container">
                      <div class="right-container-content">
                         <a href="/" class="back-button"><span>Volver</span></a>
-                
-            
+                      
+                      
                 <!---------------------- PRODUCT SECTION ------------------------->
-                        <section class="productsInCart">
-                            <div class="productImage">
-                                <img src="/uploads/products/<%= productDetail.image1 %> " alt="">
-                                <!-- <h1>test</h1> -->
-                            </div>
-                            <div class="productDetail">
-                                <div class="leftDetail">
-                                    
-                 <!---------------------- PRODUCT NAME ------------------------->
-                                    <span class="productName">
-                                        <%= productDetail.name %>
-                                    </span>
-            
-            
-              <!---------------------- PRODUCT SIZE ------------------------->
-                                    <% if (productDetail.size.length > 0) {  %>
-            <% productDetail.size.forEach(oneSize => { %>
-
-                                    <span class="productSize">
-                                        Talle:  <%=oneSize.name %>
-                                    </span>
-
-                                    <% }); %>
-                                    <% }; %>
-            
-               <!---------------------- PRODUCT COLOR ------------------------->
-               <% if (productDetail.color.length > 0) { %>
-
-                <div class="input-product-color">
-                  
-                    <div class="colorContainer">
-                        <% productDetail.color.forEach((oneColor)=>{%>
-                            <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>"><label for="<%= oneColor.name %>"><div class="red"> </div></label>
-                        <% }); %>
-
-                    </div>
-                </div>
-                <% } %> 
-                    </div>
-                      <!---------------------- PRODUCT PRICE------------------------->
-                              <div class="rightDetail">
-                                <span class="productPrice">
-                                   $ <%= productDetail.price %>
-                                </span>
-               <!---------------------- PRODUCT DELETE ------------------------->
-                                <span class="productCartDelete">
-                                    Quitar
-                                </span>
-                                <span>
-                                </span>
-                            </div>
-                        </section>
-
+                    
                  <!---------------------- COST CALCULATION SECTION ------------------------->        
                         <section class="costCalculation">
                          
@@ -109,16 +57,16 @@
                                     <span class="subtotal">
                                         Subtotal:
                                     </span>
+                                    
+                                    <span id="subTotalCost" class="subtotal">
+                                     
+                                    </span>
+                                </div>
+                                <div class="costPrice">
                                     <span class="subtotal">
                                         Envío:
                                     </span>
-                                
-                                </div>
-                                <div class="costPrice">
-                                   <span class="subtotal">
-                                       $ <%= productDetail.price %>
-                                   </span>
-                                   <span class="subtotal">
+                                   <span id="deliveryCost" class="subtotal">
                                        $ 600
                                    </span>
                                 </div>
@@ -128,10 +76,7 @@
                                 <span>
                                     Total:
                                  </span>
-                                <span>
-                                   
-                                    $ <%= productDetail.price %>
-                                 </span>
+                                <span id="totalCost"></span>
 
                              </div>
                        </section>
@@ -152,7 +97,7 @@
                 </div>
                        
 
-                 </div>
+                     </div>
              </div>
           </section>
 
@@ -162,6 +107,10 @@
             <%- include('../partials/footer2')  %>
             <script src="/js/detailProduct.js"></script>
             <script src="/js/navBarMobile.js"></script>
+            <script src="/js/cart.js"></script>
+            <!-- <script src="/js/indexCart.js"></script> -->
+           
+
  </body>
 
  </html>

@@ -22,15 +22,18 @@
 
 
                   <% for (let i = 0; i<productsList.length; i++) {%>
-                    <a class="a-product-list"  href="/products/detail/<%=productsList[i].id%>">
-
-                        <article class="product2" >
-
+                    
+                    <article class="product2" >
+                        
+                        <a class="a-product-list"  href="/products/detail/<%=productsList[i].id%>">
                          
+                       
 
                             <div class="img-container">
                                 <img src="/uploads/products/<%=productsList[i].image1%>" alt=" <%=productsList[i].categories%>" >
                             </div>
+
+
 
                             <div class="product-info">
 
@@ -61,8 +64,20 @@
                                 
 
                             </div>
+                          
+                        
+                          
+                            
+                        </a>
+
+                            <div class="add-To-Cart-Container">
+                                <span class="material-icons">
+                                    shopping_cart
+                                    </span>
+                            </div>
+                            
+                          
                         </article>
-                    </a>
                     <% } %>
 
                 </section >
@@ -75,6 +90,9 @@
             <%- include('../partials/footer2')  %>
             <script src="/js/navBarMobile.js"></script>
             <script src="/js/banner.js"></script>
+            <script src="/js/productCart.js"></script>
+            <!-- <script src="/js/cartMain.js"></script> -->
+            <!-- <script src="/js/cart.js"></script> -->
     </body>
 
     </html>

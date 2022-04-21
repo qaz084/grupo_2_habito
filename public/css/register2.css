@@ -260,8 +260,9 @@ body{
     }
     .tittle-container span{
         font-size: 1.1rem;
-        font-weight:400;
-        text-decoration: underline #3D3D3D 4px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all 
         
     }
@@ -533,8 +534,9 @@ body{
     }
     .tittle-container span{
         font-size: 1.2rem;
-        font-weight:400;
-        text-decoration: underline #3D3D3D 4px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all 
     }
     
@@ -812,8 +814,9 @@ body{
     }
     .tittle-container span{
         font-size: 1.5rem;
-        font-weight:400;
-        text-decoration: underline #3D3D3D 4px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all 
     }
     
@@ -1108,9 +1111,9 @@ body{
     }
     .tittle-container span{
         font-size: 1.1rem;
-        font-weight:400;
-        color: #3D3D3D;
-        text-decoration: underline #3D3D3D 2px ;
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
         transition: all 
     }
     

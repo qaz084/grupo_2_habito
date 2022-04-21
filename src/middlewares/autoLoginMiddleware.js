@@ -1,17 +1,21 @@
 const Sequelize = require('sequelize');
 const {User} = require('../database/models');
 
-function autoLoginMiddleware(req,res,next){
+async function  autoLoginMiddleware(req,res,next){
 
     const emailInCookie=req.cookies.userEmail;
 
+   
     if (emailInCookie) {
 
-        let userToLogin = User.findOne({
+        let userToLogin = await User.findOne({
             where: {
                 email: emailInCookie
             }
+
         })
+        req.session.userLogged = userToLogin;
+      
     }
 
     next();
