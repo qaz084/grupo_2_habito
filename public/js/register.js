@@ -66,7 +66,7 @@ const validateField = (e) => {
         field.style.border ='red 1px solid';
         spanTagError.innerText = `El campo 'Usuario' debe tener al menos 2 carácteres`;
     } else {
-        field.style.border ='none';
+        field.style.border ='green 2px solid';
         spanTagError.classList.remove('text-danger');
         spanTagError.innerText = '';
     };
@@ -86,7 +86,7 @@ const validateEmail = (e) => {
         field.style.border ='red 1px solid';
         spanTagError.innerText = `El campo 'Email' debe tener un formato de correo`;
     } else {
-        field.style.border ='none';
+        field.style.border ='green 2px solid';
         spanTagError.classList.remove('text-danger');
         spanTagError.innerText = '';
     };
@@ -107,7 +107,7 @@ const validatePassword = (e) => {
         field.style.border ='red 1px solid';
         spanTagError.innerText = `El campo 'Contraseña' debe contener al menos 8 carácteres`;
     } else {
-        field.style.border ='none';
+        field.style.border ='green 2px solid';
         spanTagError.classList.remove('text-danger');
         spanTagError.innerText = '';
     }
@@ -126,7 +126,7 @@ const validateRepeatedPassword = (e) => {
         field.style.border ='red 1px solid';
         spanTagError.innerText = `El campo 'Repetir Contraseña' no coincide con la contraseña`;
     } else {
-        field.style.border ='none';
+        field.style.border ='green 2px solid';
         spanTagError.classList.remove('text-danger');
         spanTagError.innerText = '';
     }
