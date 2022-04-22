@@ -1,14 +1,12 @@
 
 const eyeIcon = document.querySelector('#password-icon');
-
 const passwordContainer = document.querySelector('#password-container');
-
 const eyeIconRepeat = document.querySelector('#password-repeat-icon');
-
 const passwordRepeatContainer = document.querySelector('#password-repeat-container');
-
-
-
+const userCreateForm = document.querySelector('#register-form');
+const userNameField = document.querySelector('input[name = name]');
+const userEmailField = document.querySelector('input[name = email]');
+//const avatarFile = document.querySelector('input[name = avatar]');
 
 
 eyeIcon.addEventListener('click',()=>{   
@@ -43,16 +41,9 @@ eyeIconRepeat.addEventListener('click',()=>{
         console.log(passwordRepeatContainer); 
         eyeIconRepeat.innerHTML='visibility';
     }
-})
+};
 
-
-const userCreateForm = document.querySelector('#register-form');
-const userNameField = document.querySelector('input[name = name]');
-const userEmailField = document.querySelector('input[name = email]');
-//const avatarFile = document.querySelector('input[name = avatar]');
-
-
-//Validacion de campos nombre e email
+//Validacion de nombre
 const validateField = (e) => {
     const field = e.target;
     const spanTagError = field.nextElementSibling;
@@ -72,6 +63,7 @@ const validateField = (e) => {
     };
 };
 
+//Validacion de email
 const validateEmail = (e) => {
     const field = e.target;
     const spanTagError = field.nextElementSibling;
@@ -179,3 +171,6 @@ userCreateForm.addEventListener('submit', function(e) {
         e.preventDefault();
     }
 });
+
+
+

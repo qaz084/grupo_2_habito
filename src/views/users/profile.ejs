@@ -37,8 +37,8 @@
                                         <h2>Cerrar sesión</h2>
                                     </a>
                 
-                                    <form action="/users/<%= locals.user.id %>?_method=delete" method="post">
-                                        <button class="delete-account" type="submit"> <h2>Borrar suscripción</h2>  </button>
+                                    <form class="delete-user" action="/users/<%= locals.user.id %>?_method=delete" method="post">
+                                        <button class="delete-account" type="submit"> <h3>Borrar cuenta</h3>  </button>
                                     </form>
                 
                                 </div>
@@ -127,4 +127,5 @@
             <%- include('../partials/footer2')  %>
             <script src="/js/navBarLogOut.js"></script>
             <script src="/js/navBarMobile.js"></script>
+            <script src="/js/deleteUserProfile.js"></script>
     </body>
