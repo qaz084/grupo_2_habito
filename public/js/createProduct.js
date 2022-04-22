@@ -199,8 +199,6 @@ img2.addEventListener("change",imageValidation);
 img3.addEventListener("change",imageValidation);
 img4.addEventListener("change",imageValidation);
 
-
-
 let preview=(e)=>{
     let reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
@@ -209,6 +207,7 @@ let preview=(e)=>{
         document.getElementById(e.target.name).src=reader.result;
     };
 };
+
 img1.addEventListener("change",preview);
 img2.addEventListener("change",preview);
 img3.addEventListener("change",preview);

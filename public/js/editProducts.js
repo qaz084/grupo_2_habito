@@ -291,6 +291,20 @@ let img2 = document.querySelector("[name = image2]");
 let img3 = document.querySelector("[name = image3]");
 let img4 = document.querySelector("[name = image4]");
 
+let imageValidation = (e)=>{
+    let inputImage = e.currentTarget.files[0].type.split('/').pop();
+    let allowedExtensions = ['jpg', 'png', 'jpeg',"PNG","JPG","JPEG"];
+    if(!allowedExtensions.includes(inputImage)){
+        document.getElementById(e.target.name + "Error").innerHTML = "Solo imagenes en formato jpg png jpeg ";
+    }else{
+        document.getElementById(e.target.name + "Error").innerHTML = "";
+    };
+};
+
+img1.addEventListener("change",imageValidation);
+img2.addEventListener("change",imageValidation);
+img3.addEventListener("change",imageValidation);
+img4.addEventListener("change",imageValidation);
 
 
 let preview=(e)=>{
@@ -298,7 +312,7 @@ let preview=(e)=>{
     reader.readAsDataURL(e.target.files[0]);
     
     reader.onload=function(){
-        document.getElementById(e.target.name).src=reader.result;
+        document.getElementById("a" + e.target.name).src=reader.result;
     };
 };
 img1.addEventListener("change",preview);

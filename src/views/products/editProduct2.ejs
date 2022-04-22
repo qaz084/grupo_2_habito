@@ -27,15 +27,15 @@
             
             
                                 <label for="image-selection1">
-                                <img src="/uploads/products/<%= product.image2 %> " class="left-img-container">
+                                <img src="/uploads/products/<%= product.image2 %> " class="left-img-container" id="aimage2">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection1' accept="image/*,.pdf .jpg .jpeg .gif" name="image2">
                                 <label for="image-selection2">
-                                <img src="/uploads/products/<%= product.image3 %> " class="left-img-container">
+                                <img src="/uploads/products/<%= product.image3 %> " class="left-img-container" id="aimage3">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection2' accept="image/*,.pdf .jpg .jpeg .gif" name="image3">
                                 <label for="image-selection3">
-                                <img  src="/uploads/products/<%= product.image4 %> " class="left-img-container">
+                                <img  src="/uploads/products/<%= product.image4 %> " class="left-img-container" id="aimage4">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection3' accept="image/*,.pdf .jpg .jpeg .gif" name="image4">
                         </div>
@@ -46,20 +46,20 @@
                             <div class="middle-img-container">
                             <input id='image-selection4' class="img-checkbox" type="file"  accept="image/*,.pdf .jpg .jpeg .gif" name="image1">
                                 <label for="image-selection4">
-                                    <img id="image1"  src="/uploads/products/<%= product.image1 %> ">
+                                    <img id="aimage1"  src="/uploads/products/<%= product.image1 %> ">
                                 </label>
                                 
                             </div>
 
-                   
-                             
                                 <div id="input-data-wrong-container" class="input-data-wrong-off" >
                                     <div 
                                     class="text-danger">
-                                     
                                     </div>
                                 </div>
-                        
+                                <span class="text-category-danger" id="image1Error"><%= locals.errorImages ? errorImages:""%><%= locals.errors && errors.image1?errors.image1.msg:""%></span>
+                                <span class="text-category-danger" id="image2Error"><%= locals.errors && errors.image2?errors.image2.msg:""%></span>
+                                <span class="text-category-danger" id="image3Error"><%= locals.errors && errors.image3?errors.image3.msg:""%></span>
+                                <span class="text-category-danger" id="image4Error"><%= locals.errors && errors.image4?errors.image4.msg:""%></span>
             
             
                         </div>
