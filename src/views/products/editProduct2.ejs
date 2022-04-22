@@ -35,7 +35,7 @@
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection2' accept="image/*,.pdf .jpg .jpeg .gif" name="image3">
                                 <label for="image-selection3">
-                                <img src="/uploads/products/<%= product.image4 %> " class="left-img-container">
+                                <img  src="/uploads/products/<%= product.image4 %> " class="left-img-container">
                                 </label>
                                 <input class="img-checkbox" type="file" id='image-selection3' accept="image/*,.pdf .jpg .jpeg .gif" name="image4">
                         </div>
@@ -46,7 +46,7 @@
                             <div class="middle-img-container">
                             <input id='image-selection4' class="img-checkbox" type="file"  accept="image/*,.pdf .jpg .jpeg .gif" name="image1">
                                 <label for="image-selection4">
-                                    <img  src="/uploads/products/<%= product.image1 %> ">
+                                    <img id="image1"  src="/uploads/products/<%= product.image1 %> ">
                                 </label>
                                 
                             </div>
@@ -87,7 +87,7 @@
                                 <div>
                                     <div class="contenedor-precio  <%=locals.errors && errors.productPrice?'input-data-wrong': null %>" id="price">
                                         <span class='signo-precio'>$</span>
-                                        <input type="number" value="<%=locals.errors && errors.productPrice?oldData.productPrice:product.price %>"  class="input-product-price" min='0 '
+                                        <input type="number" value="<%=locals.errors && errors.productPrice?oldData.productPrice:product.price %>"  class="input-product-price" min='0'
                                         name="productPrice" >
                                     
                                     </div>
@@ -102,7 +102,7 @@
     
                                     <div class="contenedor-precio">
                                         <span class='signo-precio'>%</span>
-                                        <input value="<%= product.discount %>" type="number" class="input-product-price" min='0' max='100' placeholder="<%= product.discount %>"
+                                        <input value="<%= product.discount %>" type="number" class="input-product-price" min='0' max='100' 
                                         name="productDiscount" >
                                     </div>
     
@@ -164,7 +164,7 @@
                                             <div class="colorContainer">
                                                 <% color.forEach((oneColor)=>{%>
                                                     <input type="checkbox" class="checkbox" name="a<%= oneColor.id%>" id="<%= oneColor.name %>" value="<%= oneColor.id %>">
-                                                    <label for="<%= oneColor.name %>"><div class="red"> </div></label>
+                                                    <label for="<%= oneColor.name %>"><div class="red" style="background-color:' <%= oneColor.name %>'"> </div></label>
                                                     <% }); %>
                                         
                                         

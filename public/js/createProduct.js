@@ -22,24 +22,7 @@ let categoryContainer = document.querySelector(".categoryContainer select")
 console.log(errorColor)
 
 let error=0
-/* lengthValidation = (e) =>{
-    let field = contenedorPrecio;
-    let errorMessage = document.querySelector('#name').nextElementSibling
-    if(nameField.value.trim().length < 4){
-        field.style.border='none';
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = "El nombre debe contener al menos 4 caracteres"
-        errorMessage.innerHTML = fieldName
 
-    }else{
-        field.classList.remove("input-data-wrong")
-        errorMessage.classList.remove("text-danger")
-        fieldName = ""
-        errorMessage.innerHTML = fieldName
-        field.style.borderBottom ='1px solid #3D3D3D';  
-    }
-}; */
 lengthValidation = (e) =>{
     let field = contenedorPrecio;
     let errorMessage = document.querySelector('#name').nextElementSibling;
@@ -57,25 +40,7 @@ lengthValidation = (e) =>{
     }
 };
 
-/* priceValidation = (e) =>{
-    let field = idcontenedorPrecio;
-    
-    if(priceField.value.trim().length <2 || priceField.value.trim() == 0){
-        field.style.border='none';
-        field.classList.add("input-data-wrong")
-        errorPrice.classList.add("text-danger")
-        // errorSpanTag.classList.add('signo-precio-wrong');
-        fieldName = "El precio debe contener al menos 2 dígitos"
-        errorPrice.innerHTML = fieldName
-    }else{
-        field.classList.remove("input-data-wrong");
-        errorPrice.classList.remove("text-danger");
-        // errorSpanTag.classList.remove('signo-precio-wrong');
-        fieldName = "";
-        errorPrice.innerHTML = fieldName;
-        field.style.borderBottom ='1px solid #3D3D3D'; 
-    }
-}; */
+
 
 priceValidation = (e) =>{
     let field = idcontenedorPrecio;
@@ -103,34 +68,17 @@ priceValidation = (e) =>{
     }
 };
 
-/* descriptionValidation = (e) =>{
-    let field = descriptionField;
-    let errorMessage = field.nextElementSibling
-    let caractersNumber= 20;
 
-    if(field.value.trim().length < caractersNumber){
-
-        field.classList.add("input-data-wrong")
-        errorMessage.classList.add("text-danger")
-        fieldName = `La descripción debe contener al menos ${caractersNumber} caracteres`
-        errorMessage.innerHTML = fieldName
-        field.style.border ='red 1px solid';
-    }else{
-        field.classList.remove("input-data-wrong");
-        errorMessage.classList.remove("text-danger");
-        fieldName = "";
-        errorMessage.innerHTML = fieldName;
-        field.style.border ='none';
-    }
-}; */
 
 descriptionValidation = (e) =>{
     let field = descriptionField;
-    let errorMessage = field.nextElementSibling
-    if(field.value.trim()== 0){
+    console.log("🚀 ~ file: createProduct.js ~ line 75 ~ field", field)
+    let errorMessage = field.nextElementSibling;
+    
+    if(field.value.trim().length<20){
         field.classList.add("input-data-wrong");
         errorMessage.classList.add("text-danger");
-        fieldName = "Este campo es obligatorio";
+        fieldName = "Debe tener por lo menos 20 caracteres";
         errorMessage.innerHTML = fieldName;
         field.style.border ='red 1px solid';
         error = error +1;

@@ -30,8 +30,9 @@ app.use(express.static(publicPath));
 
 
 //SERVER CONFIG --------------------------------
-app.listen(3001, () => {
-    console.log("Server running in port 3001")
+let portNumber=3000;
+app.listen(portNumber, () => {
+    console.log(`Server running in port ${portNumber}`) ;
 });
 
 // Setup template engine

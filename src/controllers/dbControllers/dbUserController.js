@@ -88,7 +88,7 @@ const controller = {
                     return res.render("../views/users/register2", { error: { contraseña: "Las contraseñas no coinciden" }, oldData: req.body })
                 }
             } else {
-                return res.render("../views/users/register2", { error: { correo: "Correo existente" }, oldData: req.body })
+                return res.render("../views/users/register2", { error: { email: "Correo existente" }, oldData: req.body })
             }
         }
         

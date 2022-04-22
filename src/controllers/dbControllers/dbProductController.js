@@ -27,16 +27,30 @@ const controller={
 		Number(category)
 			
 		);
+		if(categoryName){
+
+			res.render("../views/products/productsList",{productsList,categoryName})
+
+		}else{
+			return res.redirect('/');
+		}
 		
-		//  console.log(categoryName.name);
-		res.render("../views/products/productsList",{productsList,categoryName})
+
+	
 	},
 
 	productDetail: async (req, res) => {
 		const productID = req.params.id;
 		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
+
+		if(productDetail){
+
+			return res.render("../views/products/productDetail2", { productDetail });
+
+		}else{
+			return res.redirect('/');
+		}
 		
-		return res.render("../views/products/productDetail2", { productDetail });
 		
 	},
 	errorCreate: async (req,res) => {
@@ -127,10 +141,17 @@ const controller={
 		let requestCategories= await Category.findAll();
 		let requestSizes = await Size.findAll();
 		let requestColors = await Color.findAll();
-		for (let i = 0; i< requestColors.length; i++){
-			requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
+
+		if(requestProduct){
+
+			// return res.json(requestProduct);
+			for (let i = 0; i< requestColors.length; i++){
+				requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
+			}
+			return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
+		}else{
+			return res.redirect('/');
 		}
-		return res.render('../views/products/editProduct2',{product:requestProduct,category:requestCategories,size:requestSizes,color:requestColors})
 	},
 
 	update :async (req,res)=>{
@@ -199,27 +220,7 @@ const controller={
 				res.redirect("/products/detail/"+ req.params.id)
 			
 				}
-	/* 
-				console.log(a)
-				const updateProduct = await Product.update({
-					name: req.body.productName,
-					price: req.body.productPrice,
-					discount: req.body.productDiscount,
-					description: req.body.productDescription,
-					quantity: 10,
-					image1: req.files.image1? req.files.image1[0].filename : "default-image.png",
-					image2: req.files.image2? req.files.image2[0].filename : "default-image.png",
-					image3: req.files.image3? req.files.image3[0].filename : "default-image.png",
-					image4: req.files.image4? req.files.image4[0].filename : "default-image.png",
-					categoryId: req.body.category
-				},{
-					where:{
-						id: req.params.id
-					}
-				});
-				await updateProduct.addColor(a)
-				await updateProduct.addSize(req.body.size)
-				res.redirect('../views/products/detail/'+ req.params.id) */
+
 				
 			catch (err) {
 				console.log(err)

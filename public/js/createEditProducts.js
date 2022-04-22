@@ -33,3 +33,5 @@ let sizeSelected = ((e)=>{
 sizes.forEach((oneSize)=>{
     oneSize.addEventListener("click",sizeSelected);
 }) */
+
+
