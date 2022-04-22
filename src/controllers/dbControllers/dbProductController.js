@@ -8,45 +8,29 @@ const { validationResult } = require('express-validator');
 
 const controller={
 
-
-	productsList:async (req,res)=>{
-		
+	productsList:async (req,res)=>{		
 		const category=req.params.categoryId;
-
-
-		const productsList= await Product.findAll({
-			
+		const productsList= await Product.findAll({			
 			where:{
 				categoryId: Number(category)
 			}
 		});
-
 		
 		const categoryName= await Category.findByPk(
-
-		Number(category)
-			
+		Number(category)			
 		);
 		if(categoryName){
-
 			res.render("../views/products/productsList",{productsList,categoryName})
-
 		}else{
 			return res.redirect('/');
-		}
-		
-
-	
+		}	
 	},
 
 	productDetail: async (req, res) => {
 		const productID = req.params.id;
 		const productDetail = await Product.findByPk(productID, { include: ["size", "category",'color'] });
-
 		if(productDetail){
-
 			return res.render("../views/products/productDetail2", { productDetail });
-
 		}else{
 			return res.redirect('/');
 		}
@@ -74,7 +58,7 @@ const controller={
 			};
 			console.log(errors.mapped())
 			res.render("../views/products/createProduct",{category : categories, color : colors, size : size, errors : errors.mapped(), errorColor : colorErrorMessage, oldData:req.body });
-		}catch (err) {
+		} catch (err) {
 			console.log(err);
 		}
 	},
@@ -83,7 +67,7 @@ const controller={
 			const size = await Size.findAll({});
 			const colors = await Color.findAll({});
 			const categories = await Category.findAll({});
-			for (let i = 0; i< colors.length; i++){
+			for (let i = 0; i< colors.length; i++) {
 				colors[i].name = colors[i].name.split("").slice(1).join("")
 			}
 			res.render("../views/products/createProduct",{category : categories, color : colors, size : size})
@@ -257,7 +241,7 @@ const controller={
 	// },
 
 	search: (req, res) => {
-		const productToSearch=req.query.search;
+		const productToSearch = req.query.search;
 		// return res.json({productToSearch});
 		Product.findAll({
 			// include:{
@@ -280,7 +264,7 @@ const controller={
 			}, 
 		})
 		
-		.then(product => {
+		.then (product => {
 			// return res.json(product);
 			let searchArray = [];
 			for ( let i = 0;  i < product.length; i++) {
