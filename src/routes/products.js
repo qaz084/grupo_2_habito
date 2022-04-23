@@ -51,6 +51,7 @@ router.put('/edit/:id',upload.fields([{name: 'image1'},{name: 'image2'},{name: '
 //CART
 router.get("/cart",controller.productCart);
 
+
 //ADD TO CART_MAIN
 // router.get("/cart/",controller.addToCart);
 

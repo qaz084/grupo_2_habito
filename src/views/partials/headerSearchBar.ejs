@@ -15,9 +15,7 @@
                     <a href="/">
                         <li>Inicio</li>
                     </a>
-                   <a class="cartTextContainer" href="/products/cart/">
-                        <li class="cartText"></li>
-                    </a> 
+               
                     <% if (locals.userData.statusId == 1) { %>
                     <a href="/products/create">
                         <li>Crear Productos</li>
@@ -28,9 +26,12 @@
                         <li id="navBarUserName"><%=locals.userData.name%> </li>
                     </a>
                     <a href="/users/logout">
-                        <li > LogOut </li>
+                        <li class="logOutText" > LogOut </li>
                     </a>
 
+                    <a class="cartTextContainer" href="/products/cart/">
+                        <li class="cartText"></li>
+                    </a> 
                     <!-- <a class="name-img" href="/users/profile">
                         <li>  </li>
                         <img class = "profile-pic" src="../../uploads/users/ locals.userData.imagen " width="40px">
@@ -48,6 +49,8 @@
                     <a href="/users/login">
                         <li>Login</li>
                     </a>
+
+
                     <a class="cartTextContainer" href="/products/cart/">
                         <li class="cartText"></li>
                     </a> 
@@ -127,6 +130,10 @@ search
                                 <a href="/users/logout">
                                     <li > LogOut </li>
                                 </a>
+
+                                <a class="cartTextContainer" href="/products/cart/">
+                                    <li class="cartText"></li>
+                                </a> 
             
                                 <!-- <a class="name-img" href="/users/profile">
                                     <li>  </li>
@@ -142,9 +149,14 @@ search
                                 <a href="/users/register2">
                                     <li>Registrarse</li>
                                 </a>
+                                
                                 <a href="/users/login">
                                     <li>Login</li>
                                 </a>
+
+                                <a class="cartTextContainer" href="/products/cart/">
+                                    <li class="cartText"></li>
+                                </a> 
                               
                             <% } %>
             

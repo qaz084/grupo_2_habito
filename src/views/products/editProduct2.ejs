@@ -246,7 +246,7 @@
                                 </button>
                         
                                 </form> 
-                                    <form action="/products/<%= product.id %>/?_method=DELETE" method="POST">
+                                    <form id="cancelCart" action="/products/<%= product.id %>/?_method=DELETE" method="POST">
                                         <button class="btn-delete" type="submit">Eliminar producto</button>
 
                                     </form>
@@ -266,6 +266,7 @@
     <script src="/js/createEditProducts.js"></script>
     <script src="/js/editProducts.js"></script>
     <script src="/js/navBarMobile.js"></script>
+    <script src="/js/indexCart.js"></script>
   
 
 </body>

@@ -11,16 +11,27 @@ const items=document.querySelector('.right-container-content');
 const costCalculation=document.querySelector('.costCalculation');
 
 
-
 const subTotalCost=document.querySelector('#subTotalCost');
 
 const deliveryCost=document.querySelector('#deliveryCost').textContent;
 
 const totalCost=document.querySelector('#totalCost');
 
-
 cartText= document.querySelector('.cartText');
 cartTextContainer= document.querySelector('.cartTextContainer');
+
+
+
+//Al hacer click en cancelar, limpia el local.storage y redirecciona al Home.
+
+cancelButton= document.querySelector('#cancelCart');
+cancelButton.addEventListener('click', (e) => { 
+    e.preventDefault();
+    console.log('cancel'); 
+    localStorage.clear();
+    window.location.href = '/';
+
+});
 
 //INICIALIZACION DE VARIABLES
 
@@ -33,6 +44,8 @@ var values1 = [];
 let subTotalArray=[];
 
 //FUNCION DE summar
+
+
 function sumTotal(){
 
     sumSubTotal();
@@ -58,9 +71,7 @@ function sumSubTotal(){
     
     console.log('RESTA',subTotalCost);
 
-}
-   
-  
+} 
 
 
 if(localStorage.carrito>0){
@@ -78,7 +89,7 @@ window.onload=getData();
 
 function getData() {
 
-    function allStorage() {
+function allStorage() {
        
         values1= JSON.parse(localStorage.getItem('productos')) ;
         
@@ -97,7 +108,7 @@ function getData() {
 const deleteButtons= document.querySelectorAll('.productCartDelete');
 
 
-//VALIDA SI NO HAY MÀS PRODUCTOS REDIRECCIONA AL HOME
+//VALIDA SI NO HAY MÀS PRODUCTOS, REDIRECCIONA AL HOME
 
 if(carrito.length > 0){
 

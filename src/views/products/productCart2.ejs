@@ -1,5 +1,5 @@
 <%- include('../partials/head', {
-    pageTitle: 'Registrarse',
+    pageTitle: 'Carrito',
     cssLink: 'href="/css/productCart2.css" '
 })%>
 
@@ -90,10 +90,12 @@
                         </button>
                    
               
-                  
-                <form action="#" method="">
+                    </form> 
+
+                <form id="cancelCart" >
                    <button class="btn-delete" type="submit">Cancelar</button>
                 </form>
+
                 </div>
                        
 
@@ -101,14 +103,14 @@
              </div>
           </section>
 
-         </form>
+      
     </main>
 
             <%- include('../partials/footer2')  %>
             <script src="/js/detailProduct.js"></script>
             <script src="/js/navBarMobile.js"></script>
             <script src="/js/cart.js"></script>
-            <!-- <script src="/js/indexCart.js"></script> -->
+            <script src="/js/indexCart.js"></script>
            
 
  </body>

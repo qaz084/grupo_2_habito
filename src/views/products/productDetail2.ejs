@@ -59,14 +59,14 @@
                         <div class="rightContainer">
 
                             
-                                <span class="input-product-name">
+                                <span id="id-product-name" class="input-product-name">
                                     <%= productDetail.name %>
 
                                 </span>
                                
                                 <div class="contenedor-precio">
                                     <span class='signo-precio'>$</span>
-                                    <span class='signo-precio'><%= productDetail.price %> </span>
+                                    <span id="price" class='signo-precio'><%= productDetail.price %> </span>
             
                                 </div>
 
@@ -96,7 +96,7 @@
                                                
                                           
                                                     <% productDetail.size.forEach(oneSize => { %>
-                                                        <span class='signo-precio'>
+                                                        <span class='signo-precio' >
                                                              <%=oneSize.name %>
                                                              </span>
                                                     <% }); %>
@@ -141,17 +141,15 @@
 
                             <% } %> 
             
+<!-- --------------------------------------------------------------------------------------------------- -->
+                            <!-- ---------------------BUTTONS SECTION----------------- -->
+                            <!-- ------------------------------------------------------ -->
                             <% if (locals.isAnUserLogged==false  ) { %>
                                      <%=console.log(locals.userData);  %> 
                                 <div class="btn-container">
-                                    <a href="#">
-                                        <div class="btn-addCart" >
-                                    
-                                           Agregar al carrito
-                                        </div>
-                                    </a>
-                                    <a href="../../users/login">
-                                        <div class="btn-buy" >
+                                  
+                                    <a href="../../products/cart" >
+                                        <div id="btn-buy" class="btn-buy"  >
                                     
                                             Comprar producto
 
@@ -169,8 +167,8 @@
                                  
 
                                     <div class="btn-container">
-                                        <a href="../cart/<%= productDetail.id %>">
-                                            <div class="btn-buy-admin" >
+                                        <a  href="../../products/cart" >
+                                            <div id="btn-buy" class="btn-buy-admin  add-To-Cart-Container"  >
                                         
                                                 Comprar producto
                                             </div>
@@ -180,6 +178,7 @@
                                             <div class="btn-edit" >
                                             
                                                 Editar producto
+
                                             </div>
                                         </a>
                                     </div>
@@ -189,18 +188,14 @@
                                     
                                      <div class="btn-container">
 
-                                        <a href="../cart/<%= productDetail.id %>">
-                                            <div class="btn-buy" >
+                                        <a href="../../products/cart">
+                                            <div id="btn-buy" class="btn-buy" class="add-To-Cart-Container"  >
                                         
                                                 Comprar producto
+                                                
                                             </div>
                                         </a>
-                                        <a href="#">
-                                            <div class="btn-addCart" >
-                                        
-                                               Agregar al carrito
-                                            </div>
-                                        </a>
+                                      
                                     </div>
 
 
@@ -209,6 +204,7 @@
 
                              <% }%>
                         </div>
+                        
                     </div>
              
         </div>
@@ -216,9 +212,9 @@
     </main>
 
     <script src="/js/detailProduct.js"></script>
-   
-    <script src="/js/productCart.js"></script>
     <script src="/js/navBarMobile.js"></script>
+    <script src="/js/indexCart.js"></script>
+    <script src="/js/cartDetailProduct.js"></script>
   
 </body>
 </html>

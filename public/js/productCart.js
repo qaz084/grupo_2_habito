@@ -4,17 +4,22 @@ console.log('FUNCA CART');
  let productsArray=[];
 
 const article= document.querySelectorAll('.add-To-Cart-Container');
+const articleDetail= document.querySelector('.add-To-Cart-Container');
 
 const cartText= document.querySelector('.cartText');
 const cartTextContainer= document.querySelector('.cartTextContainer');
 
 let carrito;
 console.log('carrito',localStorage.carrito);
-
+console.log('ARRAY',productsArray);
 
 if(localStorage.carrito>0){
 
     console.log('con carrito');
+    console.log(localStorage.productos);
+    productsArray= JSON.parse(localStorage.getItem('productos')) ;
+   
+    console.log('ARRAY DENTRO',productsArray);
     // cartText.style.display='block';
     cartTextContainer.style.display='block';
     carrito= localStorage.getItem('carrito');
@@ -38,9 +43,13 @@ if(localStorage.carrito>0){
 //39
 
 
- article.forEach((element) => {
+article.forEach((element) => {
+  element.addEventListener("click", addToCartClicked);
+});
+
+articleDetail.forEach((element) => {
      
-     element.addEventListener('click',addToCartClicked)
+ element.addEventListener('click',addToCartClicked)
             
     })
     
@@ -87,6 +96,7 @@ if(localStorage.carrito>0){
     // }
 
     const product=productClicked.closest('.product2');
+   
    
    
     const productTitle= product.querySelector('.product-name').textContent.trim();
