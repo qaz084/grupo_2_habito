@@ -149,11 +149,14 @@ const controller={
 		// return res.json(resultValidation);
 		 //return res.json(product);
 		// return res.json(product);
-		 if(resultValidation.errors.length >0){
+		if(resultValidation.errors.length >0){
 			 // return res.json(resultValidation)
-			 
-			 res.render("../views/products/editProduct2",{
-				 
+			for (let i = 0; i< requestColors.length; i++){
+				requestColors[i].name = requestColors[i].name.split("").slice(1).join("")
+			}
+			
+			res.render("../views/products/editProduct2",{
+
 				product:product,
 				category:requestCategories,
 				size:requestSizes,
