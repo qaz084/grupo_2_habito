@@ -8,8 +8,7 @@ const controller = require("../controllers/dbControllers/dbUserController");
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.resolve("public/uploads/users/"))
-     
+        cb(null, path.resolve("public/uploads/users"))
     },
     filename: (req, file, cb) => {
         const suffix = Date.now() + '_' + Math.round(Math.random() * 1E9);

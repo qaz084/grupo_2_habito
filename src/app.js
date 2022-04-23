@@ -30,7 +30,7 @@ app.use(express.static(publicPath));
 
 
 //SERVER CONFIG --------------------------------
-let portNumber=3000;
+let portNumber=3001;
 app.listen(portNumber, () => {
     console.log(`Server running in port ${portNumber}`) ;
 });

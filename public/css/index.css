@@ -2551,8 +2551,18 @@ align-items: center;
         transition: all;
     }
 
+    .upper-container h3{
+        color:#3D3D3D;
+        font-weight: 500;
+        font-size: 0.7rem;
+        text-decoration: underline;
+        text-align: right;
+        transition: all;
+    }
+
     .delete-account {
         background-color: #ffffff;
+        font-size: 6px;
     }
 
     .upper-container h2:hover{
