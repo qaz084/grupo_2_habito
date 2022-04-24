@@ -5,7 +5,7 @@
         autoplay:true,
        arrows:false,
         autoplaySpeed: 3000,
-         speed: 1500,
+         speed: 2700,
         dots:false,
         infinite: true
 

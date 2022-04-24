@@ -7,7 +7,7 @@
             
         </div>
 
-        <nav class="main-navbar">
+        <nav id="longNavbar" class="main-navbar">
 
             <ul class = "ul-header2" >
                 <% if (locals.isAnUserLogged === true) { %>
@@ -92,7 +92,7 @@ menu
        
                  <form class="mobile-search-bar" action="/products/search" method="GET">
                      
-                     <input type="text" name="search" id="" placeholder="       Buscar producto...">
+                     <input type="text" name="search" id="" placeholder="Buscar producto...">
 
 
                      <button type="submit"><span class="material-icons-outlined">
@@ -101,22 +101,16 @@ search
                      
                     </form>
 
-                    <div class="burger-button-container">
+                    <div id="mobile-navbar" class="main-navbar"> 
                         <%console.log(locals.idProduct)%>
                   
-                        <ul class = "mobile-ul-header2" >
+                        <ul id="mobile-ul-header" class = "ul-header2" >
                             <% if (locals.isAnUserLogged === true) { %>
                                 
                                 <a href="/">
                                     <li>Inicio</li>
                                 </a>
 
-                          <!-- <<%# if (locals.idProduct) { %>
-                                 
-                                    <a href="/products/cart/<%#=locals.idProduct.name%>">
-                                        <li>Carrito (0)</li>
-                                    </a>
-                                <%# } %>       -->
 
                                 <% if (locals.userData.statusId == 1) { %>
                                 <a href="/products/create">
@@ -135,10 +129,7 @@ search
                                     <li class="cartText"></li>
                                 </a> 
             
-                                <!-- <a class="name-img" href="/users/profile">
-                                    <li>  </li>
-                                    <img class = "profile-pic" src="../../uploads/users/ locals.userData.imagen " width="40px">
-                              </a> -->
+                            
                                 
                             <% } else {%>
             
@@ -153,11 +144,12 @@ search
                                 <a href="/users/login">
                                     <li>Login</li>
                                 </a>
-
+                              
                                 <a class="cartTextContainer" href="/products/cart/">
                                     <li class="cartText"></li>
                                 </a> 
-                              
+
+                            
                             <% } %>
             
                         </ul>
@@ -178,8 +170,10 @@ search
             
             <form class="search-bar" action="/products/search" method="GET">
 
-                    <input type="text" name="search" id="" placeholder="       Buscar producto...">
-                    <button type="submit">Buscar</button>
+                    <input type="text" name="search" placeholder="Buscar producto...">
+                    <button type="submit"><span class="material-icons-outlined">
+                        search
+                        </span></button>
                 
             </form>
     

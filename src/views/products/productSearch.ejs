@@ -3,7 +3,7 @@
     cssLink: 'href="/css/index.css" '
 })%>
 
- <body>
+<body>
 
 
 <!------------ HEADER------------------- -->
@@ -20,21 +20,19 @@
 
                 <h1 class="categories">Resultado de la búsqueda</h1>
 
+                <% for (let i = 0; i<searchArray.length; i++) {%>
+                    
+                    <article class="product2" >
+                        
+                        <a class="a-product-list"  href="/products/detail/<%=searchArray[i].id%>">
+                         
+                       
 
-                  <% for (let i = 0; i<searchArray.length; i++) {%>
-                    <a  href="/products/detail/<%=searchArray[i].id%>">
-
-                        <article class="product2" >
-
-                            <div class="category-container">
-
-                             <h1>  <%=searchArray[i].categories%></h1>
-
-                            </div>
- 
                             <div class="img-container">
-                                <img src="/uploads/products/<%=searchArray[i].image1%>" alt="<%=searchArray[i].name%>" >
+                                <img src="/uploads/products/<%=searchArray[i].image1%>" alt=" <%=searchArray[i].categories%>" >
                             </div>
+
+
 
                             <div class="product-info">
 
@@ -50,20 +48,36 @@
 
                                 <div class="product-info-right-container">
                                    <span class="product-discount">
-
-                                       <% if (searchArray[i].discount>0) { %>
+                                       
+                                    <% if (searchArray[i].discount>0) { %>
         
                                         <%=searchArray[i].discount%> % OFF 
+                                       
                                        <% } %>
 
                                       </span> 
 
                                 </div>
-                            
+                               
+
+                                
+
                             </div>
+                          
+                        
+                          
+                            
+                        </a>
+
+                            <div class="add-To-Cart-Container">
+                                <span class="material-icons">
+                                    shopping_cart
+                                    </span>
+                            </div>
+                              
                         </article>
-                    </a>
                     <% } %>
+
 
                 </section >
 
@@ -72,12 +86,14 @@
              
 <!-- --------------------FOOTER--------------------- -->
             </main>
+            
             <%- include('../partials/footer2')  %>
 
+            <script src="/js/indexCart.js"></script>
             <script src="/js/navBarMobile.js"></script>
             <script src="/js/banner.js"></script>
             <script src="/js/productCart.js"></script>
-            <script src="/js/indexCart.js"></script>
-    </body>
+            <script src="/js/buyButtonAnimation.js"></script>
+</body>
 
     </html>

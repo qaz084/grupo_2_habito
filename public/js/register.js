@@ -41,7 +41,7 @@ eyeIconRepeat.addEventListener('click',()=>{
         console.log(passwordRepeatContainer); 
         eyeIconRepeat.innerHTML='visibility';
     }
-};
+});
 
 //Validacion de nombre
 const validateField = (e) => {

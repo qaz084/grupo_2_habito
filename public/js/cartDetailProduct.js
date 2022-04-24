@@ -10,8 +10,8 @@ const article= document.querySelector('#btn-buy');
 
 
 
-const cartText= document.querySelector('.cartText');
-const cartTextContainer= document.querySelector('.cartTextContainer');
+// const cartText= document.querySelector('.cartText');
+// const cartTextContainer= document.querySelector('.cartTextContainer');
 
 let carrito;
 console.log('carrito',localStorage.carrito);
