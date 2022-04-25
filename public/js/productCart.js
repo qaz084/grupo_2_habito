@@ -3,11 +3,12 @@ console.log('FUNCA CART');
 
  let productsArray=[];
 
-const article= document.querySelectorAll('.add-To-Cart-Container');
-const articleDetail= document.querySelector('.add-To-Cart-Container');
+let article= document.querySelectorAll('.add-To-Cart-Container');
+let articleDetail= document.querySelector('.add-To-Cart-Container');
 
-const cartText= document.querySelector('.cartText');
-const cartTextContainer= document.querySelector('.cartTextContainer');
+let cartText= document.querySelector('.cartText');
+// const cartTextContainer= document.querySelector('.cartTextContainer');
+let cartTextContainer= document.querySelectorAll('.cartTextContainer');
 
 let carrito;
 console.log('carrito',localStorage.carrito);
@@ -18,17 +19,28 @@ if(localStorage.carrito>0){
     console.log('con carrito');
     console.log(localStorage.productos);
     productsArray= JSON.parse(localStorage.getItem('productos')) ;
-   
+    cartText= document.querySelector('.cartText');
+    cartTextContainer= document.querySelector('.cartTextContainer');
+    
+    
     console.log('ARRAY DENTRO',productsArray);
+    cartTextContainer.forEach(element=>{
+
+        element.style.display = "block";
+      })
+    //   cartTextContainer.style.display='block';
     // cartText.style.display='block';
-    cartTextContainer.style.display='block';
     carrito= localStorage.getItem('carrito');
     cartText.innerHTML = `Carrito (${carrito})`;
 
 }else{
     console.log('sin carrito');
     // cartText.style.display='none';
-    cartTextContainer.style.display='none';
+    cartTextContainer.forEach(element=>{
+
+        element.style.display = "none";
+      })
+    // cartTextContainer.style.display='none';
     carrito=0;
     localStorage.setItem('carrito',carrito)
     var carTextNumber = localStorage.getItem('carrito');
@@ -45,6 +57,7 @@ if(localStorage.carrito>0){
 
 article.forEach((element) => {
   element.addEventListener("click", addToCartClicked);
+  console.log('CLIQUEADO');
 });
 
 articleDetail.forEach((element) => {
@@ -57,11 +70,16 @@ articleDetail.forEach((element) => {
  function addToCartClicked(e){
     console.log('cliqueado')
     const productClicked= e.target;
-
-    cartTextContainer.style.display='block';
+    cartTextContainer.forEach((element) => {
+     
+        element.style.display='block';
+                   
+           })
+    
     carrito++;
     localStorage.setItem('carrito',carrito)
     carrito= localStorage.getItem('carrito');
+
     cartText.innerHTML = `Carrito (${carrito})`;
     console.log(localStorage.length);
     

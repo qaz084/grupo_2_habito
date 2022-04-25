@@ -13,7 +13,7 @@ module.exports = {
         
       
 
-         productDetail.dataValues.image1 = 'http://localhost:3001/uploads/products/'+ productDetail.image1;
+         productDetail.dataValues.image1 = 'http://localhost:3000/uploads/products/'+ productDetail.image1;
 
         return res.json({
 

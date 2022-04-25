@@ -14,7 +14,7 @@ module.exports = {
         delete userDetail.dataValues.StatusId;
         delete userDetail.dataValues.statusId;
 
-        userDetail.dataValues.avatar = 'http://localhost:3001/uploads/users/'+ userDetail.avatar;
+        userDetail.dataValues.avatar = 'http://localhost:3000/uploads/users/'+ userDetail.avatar;
  
         return res.json({
             userData: userDetail,

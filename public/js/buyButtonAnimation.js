@@ -19,6 +19,6 @@ function productAdded(e) {
     icon.innerText = "shopping_cart";
     icon.style.color = "white";
     // target.removeAttribute('style');
-    target.style.backgroundColor = "#3d3d3d";
+    target.style.backgroundColor = "#272727";
   }, 1000);
 }

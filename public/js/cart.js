@@ -7,7 +7,7 @@ console.log('FUNCIONA CART ');
 
 //SELECCIÒN DE ELEMENTOS
 
-const items=document.querySelector('.right-container-content');
+let items=document.querySelector('.right-container-content');
 const costCalculation=document.querySelector('.costCalculation');
 
 
@@ -40,11 +40,12 @@ let subTotalFinal=0;
 let delivery=deliveryCostNumber;
 let finalCost=0 ;
 
-var values1 = [];
+
 let subTotalArray=[];
 
 //FUNCION DE summar
-
+var values1;
+window.onload=getData();
 
 function sumTotal(){
 
@@ -53,8 +54,6 @@ function sumTotal(){
 
 function sumSubTotal(){
 
-   
-   
     values1.forEach((value) => {
 
         subTotalArray.push(Number(value.price.replace('$', '')));
@@ -76,7 +75,7 @@ function sumSubTotal(){
 
 if(localStorage.carrito>0){
 
-    console.log('con carrito');
+    console.log('CART con carrito');
     cartTextContainer.style.display='block';
     carrito= localStorage.getItem('carrito');
     cartText.innerHTML = `Carrito (${carrito})`; 
@@ -84,15 +83,15 @@ if(localStorage.carrito>0){
 }
 
 
-window.onload=getData();
-
 
 function getData() {
 
 function allStorage() {
-       
+    console.log('PRODUCTOSS CART',localStorage.productos);
         values1= JSON.parse(localStorage.getItem('productos')) ;
-        
+
+        // localStorage.setItem('productos',values1)
+        localStorage.setItem('productos', JSON.stringify(values1));
         return values1;
     }
     
@@ -101,7 +100,7 @@ function allStorage() {
         sumTotal();
         finalCost= subTotalFinal+deliveryCostNumber;
         totalCost.innerText= `$ ${finalCost}` ;
-       
+
 }
 
 
@@ -132,14 +131,24 @@ function deleteProduct(e){
     const productClicked= e.target;
    
     const productsInCart=productClicked.closest('.productsInCart');
-    console.log("🚀 ~ file: cart.js ~ line 144 ~ deleteProduct ~ productsInCart", productsInCart)
+  
  
 
     let priceToDelete= productsInCart.querySelector('.productPrice').textContent.trim();
 
+   
+    values1= values1.filter(value=>{
+
+      return value.price!==priceToDelete;
+    })
+
+    console.log("🚀 ~ file: cart.js ~ line 144 ~ deleteProduct ~ productsInCart", values1)
 
     localStorage.removeItem(productsInCart);
     productsInCart.remove();
+
+    
+     localStorage.setItem('productos', JSON.stringify(values1));
   
 
     let numberToDelete= Number(priceToDelete.replace('$', ''));
@@ -158,6 +167,15 @@ function deleteProduct(e){
     localStorage.setItem('carrito',carrito)
     cartText.innerHTML = `Carrito (${carrito})`;
 
+  
+    
+    //  values1= JSON.parse(localStorage.getItem('productos')) ;
+    
+    // // localStorage.setItem('productos',values1)
+    //  localStorage.setItem('productos', JSON.stringify(values1));
+
+     console.log('SALE LOCALSTORAGEEE',localStorage.productos);
+
     //VALIDA SI NO HAY MÀS PRODUCTOS REDIRECCIONA AL HOME
     
     if(carrito==0){
@@ -174,11 +192,12 @@ function deleteProduct(e){
         
     values1.forEach(item => {
 
-        productTitle=item.title;
-       productPrice=item.price;
-        productImage=item.image;
+    productTitle=item.title;
+    productPrice=item.price;
+    productImage=item.image;
 
-        printData(productTitle,productPrice,productImage);
+    printData(productTitle,productPrice,productImage);
+
     })
    
  };
