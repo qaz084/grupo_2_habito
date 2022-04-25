@@ -439,6 +439,7 @@ body{
       text-decoration: underline;
       margin-top: 100%;
       color:crimson;
+      cursor: pointer;
       
   }
 .productCartDelete:hover{
@@ -454,8 +455,7 @@ body{
     align-items: flex-start;
     width:100%;
     height:20%;
-    
-   
+    margin-bottom:10%;
     
 }
 .costCalculation-container{
@@ -570,7 +570,7 @@ body{
     text-align: center;
     width: 50%;
     height: 60px;
-  
+    margin-left: 50%;
     border: none;
     font-family: Roboto;
     font-style: normal;

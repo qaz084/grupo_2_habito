@@ -1,7 +1,7 @@
 
 console.log('FUNCIONA CART ');
 
-//console.log(localStorage);
+console.log('LOCAL STORAGE: ',localStorage);
 //localStorage.clear();
 
 

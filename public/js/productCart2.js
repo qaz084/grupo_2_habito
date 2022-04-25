@@ -1,4 +1,4 @@
-console.log('FUNCA CART');
+console.log('FUNCIONA PRODUCT CART');
 //localStorage.clear();
 
 

@@ -1,53 +1,71 @@
-
-
-
+console.log('ENTRO AL MOBILE BAR');
  //localStorage.clear();
 
-const cartText= document.querySelectorAll('.cartText');
+let cartText2= document.querySelectorAll('.cartText');
+var cartTextContainer2= document.querySelectorAll('.cartTextContainer');
+let logOutText= document.querySelector('.logOutText');
 
-const logOutText= document.querySelector('.logOutText');
-var cartTextContainer= document.querySelectorAll('.cartTextContainer');
+// if(logOutText){
+//    logOutText.addEventListener('click', () => localStorage.clear());
+// }
 
-if(logOutText){
-   logOutText.addEventListener('click', () => localStorage.clear());
-}
+// let carrito;
 
-
-
-carrito= localStorage.getItem('carrito');
-
-
-cartText.forEach(element=>{
-
-  element.innerHTML = `Carrito (${carrito})`;
-})
+// carrito= localStorage.getItem('carrito');
 
 
-if (localStorage.carrito > 0) {
-   
-  console.log("TRAE CARRITO");
-  // cartText.style.display='block';
-  // cartTextContainer.style.display = "block";
+if(localStorage.carrito>0){
 
-  cartTextContainer.forEach(element=>{
+  console.log('CART con carrito');
+  cartTextContainer2.forEach(element=>{
 
     element.style.display = "block";
   })
+  cartText2.forEach(element=>{
 
-} else {
-  console.log("entro al if");
-  // cartText.style.display='none';
+    element.style.display = "block";
+    cartText2.innerHTML = `Carrito (${carrito})`;
+  })
  
-  cartTextContainer.forEach(element=>{
-
-    element.style.display = "none";
-  })
-
-
-  cartText.forEach(element=>{
-
-    element.style.display = "none";
-  })
-
+  carrito= localStorage.getItem('carrito');
+  cartText.innerHTML = `Carrito (${carrito})`; 
+  
 }
+
+
+
+// if(localStorage.carrito>0){
+
+//   console.log('con carrito');
+ 
+//   carrito= localStorage.getItem('carrito');
+
+//   cartTextContainer2.forEach(element=>{
+
+//     element.style.display = "block";
+//   })
+
+//   cartText2.forEach(element=>{
+
+//     element.style.display = "block";
+//     cartText2.innerHTML = `Carrito (${carrito})`;
+//   })
+ 
+//   localStorage.setItem('carrito',carrito)
+
+// }else{
+//   console.log('sin carrito');
+  
+//   cartTextContainer2.forEach(element=>{
+
+//     element.style.display = "none";
+//   })
+
+
+//   cartText2.forEach(element=>{
+
+//     element.style.display = "none";
+//   })
+ 
+// }
 
