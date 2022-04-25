@@ -820,20 +820,22 @@ align-items: flex-start;
     }  
     
   
-  .ul-header2{
-   display:flex;
-   flex-direction: row;
-   width:100%;
-    height:70px;
-    justify-content: center;
-    gap:20px;
-    align-items: center;
- 
-}
-.ul-header2 li{
-    width: 100px;
-  
-}
+    .ul-header2{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+         height:70px;
+         justify-content: center;
+         gap:20px;
+         align-items: center;
+         text-align: center;
+        padding:0;
+     }
+     .ul-header2 li{
+         width: 100%;
+        
+       
+     }
 
     .mobile-container-search-bar{
         display: none;
@@ -896,7 +898,7 @@ align-items: flex-start;
         
         justify-content:center;
         align-items: center;
-        align-content:center;
+        align-content: space-between;
         
         position: fixed;
         top: 0px;
@@ -960,7 +962,22 @@ align-items: flex-start;
         padding-left: 20px;
         color:white;
     }
-
+    .ul-header2{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+         height:70px;
+         justify-content: center;
+         gap:20px;
+         align-items: center;
+         text-align: center;
+        padding:0;
+     }
+     .ul-header2 li{
+         width: 100%;
+        
+       
+     }
 
 }
 @media (min-width: 1200px){
@@ -3603,6 +3620,253 @@ align-items: center;
 }
 
 
+@media(min-width:720px){
+
+
+
+    body{
+        font-family:roboto,sans-serif;
+        background-color:#ffffff;
+      
+       }
+
+  
+
+     .profile-container{
+
+        width: 70%;
+        background-color: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        margin-top: 230px;
+        margin-bottom: 100px;
+        align-items: flex-start;
+    } 
+
+    
+     .upper-container{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+       margin-top: 30px;
+       margin-bottom: 40px;
+        align-items:center ;
+        justify-content: space-between;
+
+    }
+
+    .upper-container h1{
+        font-weight: 400;
+        font-size: 1.5rem;
+    }
+    .upper-container h2{
+        color:#272727;
+        font-weight: 500;
+        font-size: 1.1rem;
+        text-decoration: underline;
+        transition: all;
+    }
+    .upper-container h2:hover{
+       
+        font-weight: 800;
+    } 
+ 
+    .profile-picture-container{
+
+        width: 50%;
+        height: 100%;
+    
+        color:#272727;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        
+    } 
+     .profile-picture{
+
+        width: 200px;
+        height: 200px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        overflow: hidden;
+        align-self: center;
+        box-shadow: 3px 7px 7px #ffffff44;
+        cursor:pointer;
+        background-color: rgb(255, 255, 255);
+        
+    } 
+
+     .profile-picture img{
+
+      width:70%;
+     
+    } 
+
+    
+
+    .back{
+
+        width: 40%;
+        text-align: right;
+        font-weight:300;
+        align-self: flex-start;
+        position: relative;
+        right: 45px;
+        font-size: 1.3rem ;
+        cursor:pointer;
+        margin-top: 30px;
+
+     
+    } 
+
+
+
+   .back h2{
+        font-weight:300;
+        font-size: 1.11rem;
+        transition: all;
+        list-style: none;
+           color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
+    }
+    .back h2:hover{
+        font-weight:900;
+    }
+
+    .bottom-container{
+        width: 100%;
+       
+        height: 70%;
+        display: flex; 
+        flex-wrap: wrap;
+     
+        align-self:center;
+        align-items:center ;
+        justify-content: space-around;
+        margin-bottom: 30px;
+
+    }
+
+    .personal-data{
+        width: 40%;
+      
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+       align-items: center;
+       align-self: flex-start;
+
+    }
+    .personal-data-tittle{
+        text-align: center;
+        font-weight: 500;
+        color: #272727;
+    }
+    .form-container-input{
+    
+        width: 100%;
+        height: 60px;
+        border: none;
+        font-size: 1.2rem;
+        background-color:#F8F8F8;
+        border-radius:5px;
+        color: #272727;
+        padding-left: 10px;
+      
+        margin-bottom: 20px;
+        }
+
+    .payment-method-container{
+        width: 40%;
+        
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        
+
+    }
+    .payment-method-tittle{
+
+        text-align: center;
+        font-weight: 500;
+        color: #272727;
+    }
+    .payment-method-cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 78px;
+        
+        background-color: #272727;
+        color: white;
+        border-radius:5px;
+        text-align: center;
+        cursor:pointer;
+        margin-bottom: 20px;
+    }
+    .payment-method-cards h2{
+        font-weight: 400;
+    }
+    .payment-method-MercadoPago-cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 78px;
+        background-color: #ffffff;
+        color: white;
+        box-shadow: 3px 7px 7px #27272744;
+        border-radius:5px;
+         cursor:pointer;
+       
+        margin-bottom: 20px;
+
+    }
+    .payment-method-MercadoPago-cards img{
+        width: 150px;
+       
+    }
+
+    .crear-tarjeta-container{
+    
+        display: flex;
+        width: 100%;
+        align-items:center;
+        justify-content: right;
+        color: #272727;
+        font-size:1 rem;
+    
+    }
+   
+    .create-credit-card{
+        display: flex;
+      
+        font-weight: 400;
+        color: rgb(21, 148, 221);
+        text-decoration: underline 2px ;
+        margin-top:30px;
+        margin-bottom: 40px;
+    }
+    .create-credit-card:hover{
+    
+     font-weight: 900;
+    }
+
+}
 @media(min-width:1020px){
 
 

@@ -834,20 +834,22 @@ align-items: flex-start;
     }  
     
   
-  .ul-header2{
-   display:flex;
-   flex-direction: row;
-   width:100%;
-    height:70px;
-    justify-content: center;
-    gap:20px;
-    align-items: center;
- 
-}
-.ul-header2 li{
-    width: 100px;
-  
-}
+    .ul-header2{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+         height:70px;
+         justify-content: center;
+         gap:20px;
+         align-items: center;
+         text-align: center;
+        padding:0;
+     }
+     .ul-header2 li{
+         width: 100%;
+        
+       
+     }
 
     .mobile-container-search-bar{
         display: none;

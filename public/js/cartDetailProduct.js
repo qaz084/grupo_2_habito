@@ -1,66 +1,54 @@
 console.log('FUNCA CART');
  //localStorage.clear();
 
-let productsArray=[];
-console.log("🚀 ~ file: cartDetailProduct.js ~ line 5 ~ productsArray", productsArray)
 
 
-const article= document.querySelector('#btn-buy');
-// const article= document.querySelector('.add-To-Cart-Container');
+let article= document.querySelector('.btn-buy');
+let cartText= document.querySelector('.cartText');
+let cartTextContainer= document.querySelector('.cartTextContainer');
 
-
-
-// const cartText= document.querySelector('.cartText');
-// const cartTextContainer= document.querySelector('.cartTextContainer');
-
+let productsArray;
 let carrito;
-console.log('carrito',localStorage.carrito);
-console.log('ARRAY',productsArray);
 
 
 if(localStorage.carrito>0){
 
     console.log('con carrito');
-    
     productsArray= JSON.parse(localStorage.getItem('productos')) ;
    
     console.log('ARRAY DENTRO',productsArray);
-    // cartText.style.display='block';
+    cartText.style.display='block';
     cartTextContainer.style.display='block';
     carrito= localStorage.getItem('carrito');
     cartText.innerHTML = `Carrito (${carrito})`;
+    localStorage.setItem('carrito',carrito)
 
 }else{
-    productsArray=[];
     console.log('sin carrito');
-    // cartText.style.display='none';
+    productsArray=[];
+    cartText.style.display='none';
     cartTextContainer.style.display='none';
     carrito=0;
     localStorage.setItem('carrito',carrito)
-    var carTextNumber = localStorage.getItem('carrito');
+    // var carTextNumber = localStorage.getItem('carrito');
 }
 
 
 article.addEventListener("click", addToCartClicked);
 console.log('ARTICULO',article);
 
-
-// articleDetail.forEach((element) => {
-//  element.addEventListener('click',addToCartClicked)
-            
-//     })
-    
     
 function addToCartClicked(e){
+    // e.preventDefault();
     console.log('cliqueado')
-    const productClicked= e.target;
-    console.log(productClicked);
     cartTextContainer.style.display='block';
+    cartText.style.display='block';
+    let productClicked= e.target;
+    carrito= localStorage.getItem('carrito');
     carrito++;
     localStorage.setItem('carrito',carrito)
-    carrito= localStorage.getItem('carrito');
     cartText.innerHTML = `Carrito (${carrito})`;
-    console.log(localStorage.length);
+   
 
 
     const product=productClicked.closest('.menuContainer');
@@ -82,11 +70,8 @@ function addToCartClicked(e){
     }
 
     productsArray.push( productAdded);
-
-    console.log(productsArray);
     localStorage.setItem('productos', JSON.stringify(productsArray));
-    console.log(localStorage.productos);
-    
-
+    console.log('PRODUCTOS AGREGADOS',localStorage.productos);
+   
 } 
 

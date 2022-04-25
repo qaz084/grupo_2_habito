@@ -61,9 +61,8 @@ function addToCartClicked(e){
     carrito= localStorage.getItem('carrito');
     carrito++;
     localStorage.setItem('carrito',carrito)
-     
-    console.log('cliqueado con carrito',carrito);
     cartText.innerHTML = `Carrito (${carrito})`;
+    console.log('cliqueado con carrito',carrito);
 
     const product=productClicked.closest('.product2');
 

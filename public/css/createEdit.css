@@ -1254,6 +1254,22 @@ align-items: flex-start;
         color:white;
         cursor: pointer;
     }
+    .ul-header2{
+        display:flex;
+        flex-direction: row;
+        width:100%;
+         height:70px;
+         justify-content: center;
+         gap:20px;
+         align-items: center;
+         text-align: center;
+        padding:0;
+     }
+     .ul-header2 li{
+         width: 100%;
+        
+       
+     }
 
 
     } 
@@ -1605,10 +1621,11 @@ top: 526px; */
 
     .middle-img-container img{
    
-        margin: auto;
+        /* margin: auto; */
         width:100%;
-        height: 100%;
+        /* height: 100%; */
         object-fit: cover;
+        padding:0;
     
     }
 
@@ -1915,7 +1932,7 @@ top: 526px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     height:100%;
     margin: auto;
     margin-top: 30%;
@@ -1944,8 +1961,8 @@ top: 526px; */
 
 .backButton a{
 
-    text-decoration: none;
-    color: #272727;
+    color: rgb(21, 148, 221);
+    text-decoration: underline 2px ;
 }
 
 .backButton a:hover{
@@ -2020,15 +2037,20 @@ margin-top: 12%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
+    width: 400px;
     order:1;
+    margin-bottom: 5%;
    
     
 }
 
 .leftContainer img{
- 
-    object-fit: cover;
+
+    width: 100%;
+    /* height: 100%;  */
+    margin: auto;
+    object-fit:cover;
+    padding:0;
 }
 
 .left-img-container{
@@ -2065,7 +2087,7 @@ top: 526px; */
    align-items: flex-start;
    align-content: flex-start;
      width:50%;
-     height: 300px;
+     height: 400px;
     order: 2;
     align-self: flex-start;
     margin:0;
@@ -2093,7 +2115,6 @@ top: 526px; */
    
         margin: auto;
         width:100%;
-        height: 100%;
         object-fit: cover;
     
     }
@@ -2455,8 +2476,8 @@ top: 526px; */
 
 .backButton a{
 
-    text-decoration: none;
-    color: #272727;
+    color: rgb(21, 148, 221);
+    text-decoration: underline 2px ;
 }
 
 .backButton a:hover{
@@ -2506,10 +2527,10 @@ color: #7D7D7D;
 
 .menuContainer{
     display: flex;
- flex-direction: row;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-items: flex-start;
-    justify-content: space-between; 
+    justify-content: center;
     gap:10px;
     margin: auto;
     width: 100%;
@@ -2530,10 +2551,11 @@ color: #7D7D7D;
     left: 120px;
     top: 526px; */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
     width: 15%;
     order:1;
    
@@ -2541,7 +2563,8 @@ color: #7D7D7D;
 }
 
 .leftContainer img{
- 
+    width:100%;
+   
     object-fit: cover;
 }
 
@@ -2583,6 +2606,7 @@ top: 526px; */
     order: 2;
     align-self: flex-start;
     margin:0;
+   
     
 }
 
@@ -2595,6 +2619,7 @@ top: 526px; */
     box-shadow: 2px 5px 15px 5px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
     overflow: hidden;
+    
    
     }
 
@@ -2606,8 +2631,8 @@ top: 526px; */
    
         margin: auto;
         width:100%;
-        height: 100%;
         object-fit: cover;
+        margin:auto;
     
     }
 
@@ -3048,10 +3073,11 @@ color: #7D7D7D;
     left: 120px;
     top: 526px; */
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    align-content: center;
     width: 15%;
     order:1;
    
@@ -3059,7 +3085,8 @@ color: #7D7D7D;
 }
 
 .leftContainer img{
-   
+    width:100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -3097,7 +3124,7 @@ top: 526px; */
    align-items: flex-start;
    align-content: flex-start;
      width: 35%;
-     height:70%;
+     height:60%;
     order: 2;
     align-self: flex-start;
     margin:0;
@@ -3122,10 +3149,10 @@ top: 526px; */
 
     .middle-img-container img{
    
-        margin: auto;
+        /* margin: auto; */
         width:100%;
         height: 100%;
-        object-fit: cover;
+        object-fit:cover;
     
     }
 

@@ -144,7 +144,7 @@ function deleteProduct(e){
 
     console.log("🚀 ~ file: cart.js ~ line 144 ~ deleteProduct ~ productsInCart", values1)
 
-    localStorage.removeItem(productsInCart);
+    // localStorage.removeItem(productsInCart);
     productsInCart.remove();
 
     
